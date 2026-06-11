@@ -1,0 +1,186 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "611f5018-ed85-4d8c-a064-f36c65994fc3": {
+      "type": "is--banner",
+      "blocks": {
+        "87fcd09c-a3d3-4a47-ad0f-e0ce11a9195d": {
+          "type": "banner_image",
+          "settings": {
+            "video": "shopify://files/videos/New Web Video.mp4"
+          }
+        },
+        "8eda76aa-716f-4c46-81a9-2ab199c8e616": {
+          "type": "banner_detail",
+          "settings": {
+            "banner_title": "Effortless, Affordable Luxury Self Care",
+            "sub_title": "Over 1,000,000+ bags sold",
+            "banner_btn": "Shop now",
+            "button_url": "https://mybodyrestore.com/products/eucalyptus-shower-steamers",
+            "star_banner": "",
+            "review_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "87fcd09c-a3d3-4a47-ad0f-e0ce11a9195d",
+        "8eda76aa-716f-4c46-81a9-2ab199c8e616"
+      ],
+      "disabled": true,
+      "settings": {
+        "custom_class": "collection Banner",
+        "text_position": "right"
+      }
+    },
+    "f2dea057-3b89-4963-b273-d07debf8292c": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14471204077664__f2dea057-3b89-4963-b273-d07debf8292c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Steam Your Stress Away",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "template--14471204077664__f2dea057-3b89-4963-b273-d07debf8292c-heading-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 80,
+        "padding_bottom": 0
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "2f1d9e1c-be76-4ea6-9a71-1b389da7ab67": {
+      "type": "featured-collection",
+      "settings": {
+        "custom_class": "",
+        "title": "Shower Steamers",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "shower-steamers",
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_zkWw9m": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "custom_class": "",
+        "title": "Steam Eye Masks",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "steam-eye-masks",
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_y8npt4": {
+      "type": "featured-collection",
+      "settings": {
+        "custom_class": "",
+        "title": "Whipped Beef Tallow Balm",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "whipped-beef-tallow-balm",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "c87141b2-d854-4c0e-92f1-c30e50dee5c7": {
+      "type": "is--customers",
+      "blocks": {
+        "2ef7f217-40da-4cdf-b5ce-c922f73bcbff": {
+          "type": "image",
+          "settings": {
+            "review_star": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"27\" height=\"25\" viewbox=\"0 0 27 25\" fill=\"none\">\n  <path d=\"M12.5854 0.708467C13.0518 -0.0665173 14.1753 -0.0665186 14.6417 0.708465L18.0897 6.43792C18.2573 6.71633 18.5306 6.91489 18.8472 6.98821L25.3617 8.49699C26.2429 8.70107 26.5901 9.76964 25.9971 10.4527L21.6136 15.5025C21.4006 15.7478 21.2962 16.0691 21.3243 16.3929L21.9025 23.0548C21.9807 23.9559 21.0717 24.6163 20.2389 24.2635L14.0816 21.655C13.7824 21.5282 13.4446 21.5282 13.1454 21.655L6.98823 24.2635C6.15538 24.6163 5.24641 23.9559 5.32461 23.0548L5.90278 16.3929C5.93088 16.0691 5.82648 15.7478 5.61347 15.5025L1.22994 10.4527C0.637013 9.76964 0.98421 8.70107 1.86539 8.49699L8.37992 6.98821C8.69648 6.91489 8.96978 6.71633 9.13733 6.43792L12.5854 0.708467Z\" fill=\"#FFBD11\"></path>\n</svg>\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"27\" height=\"25\" viewbox=\"0 0 27 25\" fill=\"none\">\n  <path d=\"M12.5854 0.708467C13.0518 -0.0665173 14.1753 -0.0665186 14.6417 0.708465L18.0897 6.43792C18.2573 6.71633 18.5306 6.91489 18.8472 6.98821L25.3617 8.49699C26.2429 8.70107 26.5901 9.76964 25.9971 10.4527L21.6136 15.5025C21.4006 15.7478 21.2962 16.0691 21.3243 16.3929L21.9025 23.0548C21.9807 23.9559 21.0717 24.6163 20.2389 24.2635L14.0816 21.655C13.7824 21.5282 13.4446 21.5282 13.1454 21.655L6.98823 24.2635C6.15538 24.6163 5.24641 23.9559 5.32461 23.0548L5.90278 16.3929C5.93088 16.0691 5.82648 15.7478 5.61347 15.5025L1.22994 10.4527C0.637013 9.76964 0.98421 8.70107 1.86539 8.49699L8.37992 6.98821C8.69648 6.91489 8.96978 6.71633 9.13733 6.43792L12.5854 0.708467Z\" fill=\"#FFBD11\"></path>\n</svg>\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"27\" height=\"25\" viewbox=\"0 0 27 25\" fill=\"none\">\n  <path d=\"M12.5854 0.708467C13.0518 -0.0665173 14.1753 -0.0665186 14.6417 0.708465L18.0897 6.43792C18.2573 6.71633 18.5306 6.91489 18.8472 6.98821L25.3617 8.49699C26.2429 8.70107 26.5901 9.76964 25.9971 10.4527L21.6136 15.5025C21.4006 15.7478 21.2962 16.0691 21.3243 16.3929L21.9025 23.0548C21.9807 23.9559 21.0717 24.6163 20.2389 24.2635L14.0816 21.655C13.7824 21.5282 13.4446 21.5282 13.1454 21.655L6.98823 24.2635C6.15538 24.6163 5.24641 23.9559 5.32461 23.0548L5.90278 16.3929C5.93088 16.0691 5.82648 15.7478 5.61347 15.5025L1.22994 10.4527C0.637013 9.76964 0.98421 8.70107 1.86539 8.49699L8.37992 6.98821C8.69648 6.91489 8.96978 6.71633 9.13733 6.43792L12.5854 0.708467Z\" fill=\"#FFBD11\"></path>\n</svg>\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"27\" height=\"25\" viewbox=\"0 0 27 25\" fill=\"none\">\n  <path d=\"M12.5854 0.708467C13.0518 -0.0665173 14.1753 -0.0665186 14.6417 0.708465L18.0897 6.43792C18.2573 6.71633 18.5306 6.91489 18.8472 6.98821L25.3617 8.49699C26.2429 8.70107 26.5901 9.76964 25.9971 10.4527L21.6136 15.5025C21.4006 15.7478 21.2962 16.0691 21.3243 16.3929L21.9025 23.0548C21.9807 23.9559 21.0717 24.6163 20.2389 24.2635L14.0816 21.655C13.7824 21.5282 13.4446 21.5282 13.1454 21.655L6.98823 24.2635C6.15538 24.6163 5.24641 23.9559 5.32461 23.0548L5.90278 16.3929C5.93088 16.0691 5.82648 15.7478 5.61347 15.5025L1.22994 10.4527C0.637013 9.76964 0.98421 8.70107 1.86539 8.49699L8.37992 6.98821C8.69648 6.91489 8.96978 6.71633 9.13733 6.43792L12.5854 0.708467Z\" fill=\"#FFBD11\"></path>\n</svg>\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"27\" height=\"25\" viewbox=\"0 0 27 25\" fill=\"none\">\n  <path d=\"M12.5854 0.708467C13.0518 -0.0665173 14.1753 -0.0665186 14.6417 0.708465L18.0897 6.43792C18.2573 6.71633 18.5306 6.91489 18.8472 6.98821L25.3617 8.49699C26.2429 8.70107 26.5901 9.76964 25.9971 10.4527L21.6136 15.5025C21.4006 15.7478 21.2962 16.0691 21.3243 16.3929L21.9025 23.0548C21.9807 23.9559 21.0717 24.6163 20.2389 24.2635L14.0816 21.655C13.7824 21.5282 13.4446 21.5282 13.1454 21.655L6.98823 24.2635C6.15538 24.6163 5.24641 23.9559 5.32461 23.0548L5.90278 16.3929C5.93088 16.0691 5.82648 15.7478 5.61347 15.5025L1.22994 10.4527C0.637013 9.76964 0.98421 8.70107 1.86539 8.49699L8.37992 6.98821C8.69648 6.91489 8.96978 6.71633 9.13733 6.43792L12.5854 0.708467Z\" fill=\"#FFBD11\"></path>\n</svg>",
+            "review_count": "(40,000+)",
+            "cust_title": "SEE WHAT Millions of customers are saying",
+            "user_title1": "The Perfect Morning Boost!",
+            "user_content1": "I really enjoyed using the product! I was surprised by the calming citrus scent. It also dissolves really well so there’s no mess to clean up afterwards. I highly recommend this for after a morning workout!",
+            "user_name1": "- Ellen H.",
+            "user_title2": "These Shower Bombs Are Amazing!",
+            "user_content2": "I normally prefer long baths just because I could soak and enjoy my bubble bath or bath bombs. The thing I love about this is I could enjoy aromatherapy when I need a quick shower.",
+            "user_name2": "- Taylor P."
+          }
+        }
+      },
+      "block_order": [
+        "2ef7f217-40da-4cdf-b5ce-c922f73bcbff"
+      ],
+      "settings": {
+        "bg_color": "#0c2331"
+      }
+    }
+  },
+  "order": [
+    "611f5018-ed85-4d8c-a064-f36c65994fc3",
+    "f2dea057-3b89-4963-b273-d07debf8292c",
+    "banner",
+    "product-grid",
+    "2f1d9e1c-be76-4ea6-9a71-1b389da7ab67",
+    "featured_collection_zkWw9m",
+    "featured_collection_y8npt4",
+    "c87141b2-d854-4c0e-92f1-c30e50dee5c7"
+  ]
+}

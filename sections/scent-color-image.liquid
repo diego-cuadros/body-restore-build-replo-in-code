@@ -1,0 +1,49 @@
+{% style %}
+   {% for block in section.blocks %}
+     {% if block.settings.title != blank and block.settings.image != blank %}
+       .scent-color-image--{{ block.settings.title | handle }}::after {
+          background: url({{ block.settings.image | image_url: width: 74 }});
+          background-size: cover;
+          background-position: center;
+       }
+    {% endif %}
+   {% endfor %}
+{% endstyle %}
+
+{% schema %}
+  {
+    "name": "Scent image",
+    "enabled_on": {
+      "groups": ["footer"]
+    },
+    "blocks": [
+      {
+        "type": "image-color",
+        "name": "image & color",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Scent Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Scent image"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

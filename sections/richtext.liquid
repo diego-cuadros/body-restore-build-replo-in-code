@@ -1,0 +1,590 @@
+<style>
+  #shopify-section-{{section.id}} strong {font-weight:700 !important;}
+  #shopify-section-{{section.id}} {position:relative;}
+  #shopify-section-{{section.id}} .heading {margin-top:0px !important;}
+  #shopify-section-{{section.id}} .gif-image {position:absolute;max-width:140px;width:25%; left:10%;right:auto;top:auto;    transform: translateY(50%);bottom:0%;z-index:1;}
+  #shopify-section-{{section.id}} .gif-image img{width:100%;}
+  .richtext--{{ section.id }} {position:relative;overflow:hidden;}
+  .richtext--{{ section.id }} .page-width{max-width:{{section.settings.width}}px;width:100%;}
+  .richtext--{{ section.id }} .page-width p {margin:0px;}
+  .richtext--{{ section.id }} .page-width .line {display:block;height:2px;}
+  .richtext--{{ section.id }} .overlay {position:absolute;max-width:300px;width:35%; }
+  .richtext--{{ section.id }} .dot {position:absolute;max-width:250px;width:40%; left:auto;right:2%;top:10%;z-index:1;}
+  .richtext--{{ section.id }} .dot img{width:100%;height:auto;  transform: rotate(-88deg); }
+  .richtext--{{ section.id }} .overlay svg {width:100%;height: auto;display: flex;}
+  .richtext--{{ section.id }} .firstimage { top:auto;left:0;bottom:0px;}
+  .richtext--{{ section.id }} .lastimage { top:0;right:0;bottom:auto;transform:rotate(180deg);}
+  .richtext--{{ section.id }} .main-container{display:flex;flex-direction:column;align-items:{{section.settings.align}};justify-content:{{section.settings.align}};text-align:{{section.settings.align}};position:relative;z-index:2;}
+  .richtext--{{ section.id }} .dot {display:none;}
+  .richtext--{{ section.id }} .author-profile {display:flex;flex-direction:row;gap:10px;align-items:center;justify-content:start;text-align:start;}
+  .richtext--{{ section.id }} .author-profile .image {display:flex;width:50px;height:50px;min-width:50px;border-radius:100px;overflow:hidden;}
+  .richtext--{{ section.id }} .author-profile .image img{width:100%;height:100%;object-fit:cover;}
+  .richtext--{{ section.id }} .author-profile .text-container {line-height:1.2;}
+
+  @media screen and (max-width:768px) {
+  .richtext--{{ section.id }} .main-container{display:flex;flex-direction:column;align-items:{{section.settings.alignmob}};justify-content:{{section.settings.alignmob}};text-align:{{section.settings.alignmob}};}
+  .richtext--{{ section.id }} .dot {display:none;}
+
+  }
+</style>
+{% if section.settings.lemon != blank %}
+  <div class="gif-image">
+    <img src="{{ section.settings.lemon | img_url : 'master'}}">
+  </div>
+{% endif %}
+<section
+  class="richtext--{{ section.id }} padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} padding-top-mob-{{ section.settings.mobile_padding_top }} padding-bottom-mob-{{ section.settings.mobile_padding_bottom }}"
+  style="background:{{ section.settings.bg-color }};"
+>
+  <div class="firstimage overlay">
+    <svg xmlns="http://www.w3.org/2000/svg" width="574" height="466" viewBox="0 0 574 466" fill="none">
+      <path d="M3.33333 0H28L37.3333 2L54 7.33333L62.6667 11.3333L68.6667 14L82.6667 20.6667L87.3333 23.3333V24.6667L90 26L97.3333 31.3333L102 35.3333V36.6667H103.333V38L106 39.3333L112 47.3333L118 56.6667L125.333 68.6667L134.667 80.6667L142 90.6667L144.667 94.6667L149.333 104.667L152 111.333L155.333 119.333L161.333 132.667L167.333 143.333L173.333 156L178 165.333L185.333 180.667L192 192.667L196.667 199.333L202 207.333L209.333 217.333L215.333 224.667L224.667 233.333L236.667 242L244.667 246.667L248 248V249.333L250.667 250L261.333 255.333L274.667 260.667L283.333 264.667L292.667 268L304 271.333L310 273.333L320.667 276L343.333 280L372 284L404 289.333L415.333 292L428 294L457.333 299.333L471.333 303.333L482.667 306.667L495.333 311.333L503.333 314.667L513.333 320L524.667 327.333L526 328V329.333L528.667 330V331.333L531.333 332.667L538 338.667L542.667 344L545.333 346.667V348H546.667L555.333 360.667L562 372L567.333 384.667L570 391.333L572.667 404L574 416.667V439.333L572 452L567.333 466H0V0.666667L3.33333 0Z" fill="{{ section.settings.svgcolor }}"/>
+    </svg>
+  </div>
+  <div class="dot"><img src="https://cdn.shopify.com/s/files/1/0220/5935/2160/files/hEUH6a01_1.svg?v=1718627069"></div>
+  <div class="page-width">
+    <div class="main-container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'title' %}
+            <h1
+              class="h1 heading margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }} font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+              style="color:{{ block.settings.color }};max-width:{{ block.settings.width }}px;width:100%;"
+            >
+              {{ block.settings.heading }}
+            </h1>
+          {% when 'heading' %}
+            <div
+              class="h3 heading margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }} font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+              style="color:{{ block.settings.color }};max-width:{{ block.settings.width }}px;width:100%;"
+            >
+              {{ block.settings.heading }}
+            </div>
+          {% when 'author-profile' %}
+            <div class="author-profile  margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}">
+              <div class="image"><img src="{{ block.settings.image | img_url : 'master' }}"></div>
+              <div class="text-container">
+                <div
+                  class=" text font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                  style="color:{{ block.settings.color }};"
+                >
+                  {{ block.settings.text }}
+                </div>
+              </div>
+            </div>
+          {% when 'content' %}
+            <div
+              class="content margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }} font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+              style="color:{{ block.settings.color }};max-width:{{ block.settings.width }}px;width:100%;"
+            >
+              {{ block.settings.content }}
+            </div>
+          {% when 'line' %}
+            <div
+              class="line margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}"
+              style="background-color:{{ block.settings.color }};max-width:{{ block.settings.width }}px;width:100%;"
+            ></div>
+          {% when 'button' %}
+            {% if block.settings.button != blank %}
+              <div class="banner_inner_detail margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}">
+                <a
+                  href="{{ block.settings.button_link }}"
+                  class="brightangel-button btn brightangel-{{ block.settings.button_type }}-button  font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                  style="color:{{ block.settings.color }};"
+                >
+                  {{ block.settings.button }}
+                </a>
+              </div>
+            {% endif %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="lastimage overlay">
+    <svg xmlns="http://www.w3.org/2000/svg" width="574" height="466" viewBox="0 0 574 466" fill="none">
+      <path d="M3.33333 0H28L37.3333 2L54 7.33333L62.6667 11.3333L68.6667 14L82.6667 20.6667L87.3333 23.3333V24.6667L90 26L97.3333 31.3333L102 35.3333V36.6667H103.333V38L106 39.3333L112 47.3333L118 56.6667L125.333 68.6667L134.667 80.6667L142 90.6667L144.667 94.6667L149.333 104.667L152 111.333L155.333 119.333L161.333 132.667L167.333 143.333L173.333 156L178 165.333L185.333 180.667L192 192.667L196.667 199.333L202 207.333L209.333 217.333L215.333 224.667L224.667 233.333L236.667 242L244.667 246.667L248 248V249.333L250.667 250L261.333 255.333L274.667 260.667L283.333 264.667L292.667 268L304 271.333L310 273.333L320.667 276L343.333 280L372 284L404 289.333L415.333 292L428 294L457.333 299.333L471.333 303.333L482.667 306.667L495.333 311.333L503.333 314.667L513.333 320L524.667 327.333L526 328V329.333L528.667 330V331.333L531.333 332.667L538 338.667L542.667 344L545.333 346.667V348H546.667L555.333 360.667L562 372L567.333 384.667L570 391.333L572.667 404L574 416.667V439.333L572 452L567.333 466H0V0.666667L3.33333 0Z" fill="{{ section.settings.svgcolor }}"/>
+    </svg>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Richtext Landing",
+  "settings": [
+    {
+      "type":"color",
+      "id":"bg-color",
+      "label":"Background Color"
+    },
+    {
+      "type":"color",
+      "id":"svgcolor",
+      "label":"Svg Color"
+    },
+    {
+      "type":"image_picker",
+      "id":"lemon",
+      "label":"Background Image",
+      "info":"Image Size should be 140 x 206 in px"
+    },
+    {
+      "type":"number",
+      "id":"width",
+      "label":"Section Width"
+    },
+     {
+        "type": "select",
+        "options": [
+          {
+            "value": "start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "Right"
+          }
+        ],
+        "id": "align",
+        "default": "center",
+       "label":"Content Alignment"
+      },
+     {
+        "type": "select",
+        "options": [
+          {
+            "value": "start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "Right"
+          }
+        ],
+        "id": "alignmob",
+        "default": "center",
+       "label":"Mobile Content Alignment"
+      },
+    {
+      "type": "header",
+      "content": "Spacing Customization"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "mobile Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Padding bottom",
+      "default": 0
+    }
+  ],
+  "blocks":[
+    {
+      "type":"heading",
+      "name":"Heading",
+      "settings":[
+        {
+          "type":"number",
+          "id":"width",
+          "label":"Width"
+        },
+        {
+          "type":"richtext",
+          "id":"heading",
+          "label":"Heading"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"title",
+      "name":"Title",
+      "settings":[
+        {
+          "type":"number",
+          "id":"width",
+          "label":"Width"
+        },
+        {
+          "type":"text",
+          "id":"heading",
+          "label":"Title"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"content",
+      "name":"Content",
+      "settings":[
+        {
+          "type":"number",
+          "id":"width",
+          "label":"Width"
+        },
+        {
+          "type":"richtext",
+          "id":"content",
+          "label":"Content"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"line",
+      "name":"Line",
+      "settings":[
+        {
+          "type":"number",
+          "id":"width",
+          "label":"Width"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"author-profile",
+      "name":"Author Profile",
+      "settings":[
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Profile"
+        },
+        {
+          "type":"header",
+          "content":"Author Text Customization"
+        },
+        {
+          "type":"richtext",
+          "id":"text",
+          "label":"Text"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"header",
+          "content":"Block Spacing Customization"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"button",
+      "name":"Button",
+      "settings":[
+        {
+          "type":"text",
+          "id":"button",
+          "label":"Button Label"
+        },
+        {
+          "type":"url",
+          "id":"button_link",
+          "label":"Button Link"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"Richtext Landing"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,115 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+{% if settings.image_shape == 'blob' %}
+  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- if settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li>
+        {%- if link.links != blank -%}
+          <header-menu>
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+              <summary id="HeaderMenu-{{ link.handle }}" class="header__menu-item list-menu__item link focus-inset">
+                <span {%- if link.child_active %}class="header__active-menu-item"{% endif %}>
+                  {{- link.title | escape -}}
+                </span>
+                {% render 'icon-caret' %}
+              </summary>
+              <div id="MegaMenu-Content-{{ forloop.index }}" class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup" tabindex="-1">
+                <div class="page-width mega-menu__list_warpper">
+                  <ul class="mega-menu__list {% if link.levels == 1 %} mega-menu__list--condensed{% endif %}" role="list">
+                    {%- for childlink in link.links -%}
+                      <li>
+                        {% assign collection_handle = null %}
+                        {% assign collections_all_products = null %}
+                        {% if childlink.type == 'collection_link' %}
+                          {% assign collection_handle = childlink.url | split:"/collections/" | last %}
+                          {% assign collections_all_products = collections[collection_handle].products %}
+                        {% endif %}
+                        <a id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}" href="{{ childlink.url }}" class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %} {% if collections_all_products.size > 0 %}mega-menu__link_product{% endif %}"
+                          data-header-menu="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-products" {% if childlink.current %} aria-current="page"{% endif %}>
+                          {{ childlink.title | escape }}
+                            {% if collections_all_products.size > 0 %}
+                              {% render 'icon-caret' %}
+                            {% endif %}
+                        </a>
+                      
+                        {%- if childlink.links != blank -%}
+                          <ul class="list-unstyled" role="list">
+                            {%- for grandchildlink in childlink.links -%}
+                              <li>
+                                <a id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}" href="{{ grandchildlink.url }}"
+                                  class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}" {% if grandchildlink.current %}aria-current="page"{% endif %}>
+                                  {{ grandchildlink.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                  <div class="mega-menu__product_list_wrapper">
+                    {%- for childlink in link.links -%}
+                      {% if childlink.type == 'collection_link' %}
+                        {% assign collection_handle = childlink.url | split:"/collections/" | last %}
+                        {% assign collections_all_products = collections[collection_handle].products %}
+                        {% if collections_all_products.size > 0 %}
+                          <div class="mega-menu__product_list_grid {% if forloop.first %}menu__product_open{% endif %}" id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-products">
+                            {% for product in collections_all_products limit: 5 %}
+                              <div class="grid__item contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %}">
+                                {% render 'card-product',
+                                  card_product: product,
+                                  media_aspect_ratio: settings.image_ratio,
+                                  image_shape: settings.image_shape,
+                                  show_secondary_image: settings.show_secondary_image,
+                                  show_product_subtitle: settings.show_product_subtitle,
+                                  show_vendor: settings.show_product_vendor,
+                                  show_rating: settings.show_rating,
+                                  show_quick_shop: true,
+                                  extend_height: true,
+                                  section_id: section.id
+                                %}
+                              </div>                 
+                            {% endfor %}
+                          </div>                 
+                        {% endif %}
+                      {% endif %}
+                    {%- endfor -%}
+                  </div>                 
+                </div>
+              </div>
+            </details>
+          </header-menu>
+        {%- else -%}
+          <a id="HeaderMenu-{{ link.handle }}" href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset"
+            {% if link.current %} aria-current="page"{% endif %}>
+            <span {%- if link.current %}class="header__active-menu-item"{% endif %}>
+              {{- link.title | escape -}}
+            </span>
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>
+
+{% if settings.image_shape == 'arch' %}
+  {% render 'mask-arch' %}
+{%- endif -%}

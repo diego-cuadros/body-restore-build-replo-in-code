@@ -1,0 +1,50 @@
+<section class="cta_bottom_sec aa">
+  <div class="cta_container">
+    <div class="row">
+      <div class="cta_wrapper">
+        <h2>{{ section.settings.grow_title }}</h2>
+        <p>{{ section.settings.grow_content }}</p>
+        <a href="{{ section.settings.grow_btn_link }}">{{ section.settings.grow_img }}
+          {{ section.settings.grow_btn_text }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Grow Together",
+    "settings": [
+      {
+       "type": "text",
+        "id": "grow_title",
+        "label": "Grow Title"
+      },
+      {
+        "type": "text",
+        "id": "grow_content",
+        "label": "Grow Content"
+     },
+     {
+        "type": "html",
+        "id": "grow_img",
+        "label": "Grow Image"
+     },
+    {
+        "type": "url",
+        "id": "grow_btn_link",
+        "label": "Grow Button Link"
+     },
+      {
+        "type": "text",
+        "id": "grow_btn_text",
+        "label": "Grow Button Title"
+     }
+    ],
+    "presets": [
+      {
+        "name": "Grow Together"
+      }
+    ]
+  }
+{% endschema %}

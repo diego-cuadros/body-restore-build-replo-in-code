@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "custom_liquid_Fyrh3j": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script>\n  window.ALBSS = {\n    event_key: '08f49747-9816-4866-acd7-c5b320777ed9'\n  };\n</script>\n<script src=\"https://c.albss.com/p/l/loader.iife.js\" async></script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "c78c9dd5-aff1-4e2e-95f1-4f4a250ea373": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<script>\nwindow.addEventListener('load', function() {\nvar _learnq = window._learnq || [];\nfunction addedToCart() {\n  fetch(`${window.location.origin}/cart.js`)\n  .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price/100,\n      $value: data.total_price/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', cart]);\n        klAjax = false;\n      }\n  }))\n};\n(function (ns, fetch) {\n  ns.fetch = function() {\n    const response = fetch.apply(this, arguments);\n    response.then(res => {\n      if (`${window.location.origin}/cart/add.js`\n      \t.includes(res.url)) {\n        \taddedToCart()\n      }\n    });\n    return response\n  }\n}(window, window.fetch));\nvar klAjax = true;\nvar atcButtons = document.querySelectorAll(\"form[action*='/cart/add'] button[type='submit']\");\nfor (var i = 0; i < atcButtons.length; i++) {\n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n}\n});\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "4e6fd90c-9793-4e60-86df-b20e364b0be4": {
+      "type": "scent-color-image",
+      "blocks": {
+        "ae572f3c-cc3d-4f6f-9214-acdb1c5cce9f": {
+          "type": "image-color",
+          "settings": {
+            "title": "EUCALYPTUS",
+            "image": "shopify://shop_images/Mask_group_15_1.png"
+          }
+        },
+        "af2aba53-3653-4cca-8e5e-69867c5024a2": {
+          "type": "image-color",
+          "settings": {
+            "title": "LAVENDER",
+            "image": "shopify://shop_images/Mask_group_16_1.png"
+          }
+        },
+        "b816f325-70c6-4433-b781-279d5a3d52e4": {
+          "type": "image-color",
+          "settings": {
+            "title": "CITRUS",
+            "image": "shopify://shop_images/Mask_group_17_1.png"
+          }
+        },
+        "430ff064-16f8-4545-b4f8-afd803a2ada8": {
+          "type": "image-color",
+          "settings": {
+            "title": "TEA TREE",
+            "image": "shopify://shop_images/Mask_group_20_1.png"
+          }
+        },
+        "ccb7c9db-be6a-498a-90b5-39c6b2263e50": {
+          "type": "image-color",
+          "settings": {
+            "title": "FLORAL ROSE",
+            "image": "shopify://shop_images/Mask_group_23_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "ae572f3c-cc3d-4f6f-9214-acdb1c5cce9f",
+        "af2aba53-3653-4cca-8e5e-69867c5024a2",
+        "b816f325-70c6-4433-b781-279d5a3d52e4",
+        "430ff064-16f8-4545-b4f8-afd803a2ada8",
+        "ccb7c9db-be6a-498a-90b5-39c6b2263e50"
+      ],
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "69ca7b55-ba5a-427c-a86f-4b83068507e9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo-dark.svg",
+            "image_width": 150,
+            "alignment": ""
+          }
+        },
+        "image_landing_tTdRtd": {
+          "type": "image_landing",
+          "settings": {
+            "image": "shopify://shop_images/LogoSheet_Logo_Stacked_Black_3.png",
+            "image_width": 125,
+            "alignment": ""
+          }
+        },
+        "link_list_landing_3MtRUX": {
+          "type": "link_list_landing",
+          "settings": {
+            "heading_landing": "Shop",
+            "menu": "footer"
+          }
+        },
+        "link_list_landing_F4ngn8": {
+          "type": "link_list_landing",
+          "settings": {
+            "heading_landing": "Support",
+            "menu": "eg-support"
+          }
+        },
+        "f5f04dd2-bbed-4763-a46f-45e1043a84f9": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "footer"
+          }
+        },
+        "4d86ab5f-a005-49f6-b0c5-c95d2c508d66": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Support",
+            "menu": "eg-support"
+          }
+        },
+        "361af1f5-8efc-4609-9823-5fda5e64fb64": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Account",
+            "menu": "eg-account"
+          }
+        }
+      },
+      "block_order": [
+        "69ca7b55-ba5a-427c-a86f-4b83068507e9",
+        "image_landing_tTdRtd",
+        "link_list_landing_3MtRUX",
+        "link_list_landing_F4ngn8",
+        "f5f04dd2-bbed-4763-a46f-45e1043a84f9",
+        "4d86ab5f-a005-49f6-b0c5-c95d2c508d66",
+        "361af1f5-8efc-4609-9823-5fda5e64fb64"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "color_scheme_landing": "inverse",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_Fyrh3j",
+    "c78c9dd5-aff1-4e2e-95f1-4f4a250ea373",
+    "4e6fd90c-9793-4e60-86df-b20e364b0be4",
+    "footer"
+  ]
+}

@@ -1,0 +1,224 @@
+{%- for i in (0..500) -%}
+  .margin-top-{{ i }}{margin-top:{{i}}px !important;}
+  .margin-bottom-{{ i }}{margin-bottom:{{i}}px !important;}
+  .padding-top-{{ i }}{padding-top:{{i}}px;}
+  .padding-bottom-{{ i }}{padding-bottom:{{i}}px;}
+  .margin-top-{{ i }} > p{margin-top:{{i}}px !important;}
+  .margin-bottom-{{ i }} > p{margin-bottom:{{i}}px !important;}
+  .padding-top-{{ i }} > p{padding-top:{{i}}px;}
+  .padding-bottom-{{ i }} > p{padding-bottom:{{i}}px;}
+  .padding-left-{{ i }}{padding-left:{{i}}px;}
+  .padding-right-{{ i }}{padding-right:{{i}}px;}
+  .padding-top-img-{{ i }}{padding-top:{{i}}%;}
+  .section-width-{{ i }}{width:{{i}}px;}
+  .width-{{i}}{width:{{i}}%;}
+  .font-size-{{ i }}{font-size:{{i}}px !important;}
+  .font-size-{{ i }} *{font-size:{{i}}px !important;}
+  .line-height-{{i}}{line-height:{{i}}px;}
+  .line-height-{{i}} > p{line-height:{{i}}px;}
+  .top-{{i}}{top:{{i}}%;}
+  .left-{{i}}{left:{{i}}%;}
+  .grid-col-{{i}}{grid-template-columns:repeat({{ i }}, 1fr);}
+{%- endfor -%}
+
+{%- for i in (1..9) -%}
+    .font-weight-{{ i | append:'00' }}{font-weight:{{i | append : '00' }}!important;}
+{%- endfor -%} 
+
+.swiper-button-lock {display:none !important;}
+.text-align-left{text-align:left;}
+.text-align-center{text-align:center;}
+.text-align-right{text-align:right;}
+
+
+.top-left{justify-content:flex-start;text-align:left;align-items: flex-start;}
+.top-center{justify-content:center;text-align:center;align-items: flex-start;}
+.top-right{justify-content:flex-end;text-align:right;align-items: flex-start;}
+.middle-left{justify-content:flex-start;text-align:left;align-items: center;}
+.middle-center{justify-content:center;text-align:center;align-items: center;}
+.middle-right{justify-content:flex-end;text-align:right;align-items: center;}
+.bottom-left{justify-content:flex-start;text-align:left;align-items: flex-end;}
+.bottom-center{justify-content:center;text-align:center;align-items: flex-end;}
+.bottom-right{justify-content:flex-end;text-align:right;align-items: flex-end;}
+
+@media all and (max-width:768px){
+  {%- for i in (0..500) -%}
+    .margin-top-mob-{{ i }}{margin-top:{{i}}px !important;} 
+    .margin-bottom-mob-{{ i }}{margin-bottom:{{i}}px !important;}
+    .padding-top-mob-{{ i }}{padding-top:{{i}}px;}
+    .padding-bottom-mob-{{ i }}{padding-bottom:{{i}}px;}
+    .margin-top-mob-{{ i }} > p{margin-top:{{i}}px !important;} 
+    .margin-bottom-mob-{{ i }} > p{margin-bottom:{{i}}px !important;}
+    .padding-top-mob-{{ i }} > p{padding-top:{{i}}px;}
+    .padding-bottom-mob-{{ i }} > p{padding-bottom:{{i}}px;}
+    .mobile-padding-top-{{ i }}{padding-top:{{i}}px;}
+    .mobile-padding-bottom-{{ i }}{padding-bottom:{{i}}px;}
+    .padding-left-mob-{{ i }}{padding-left:{{i}}px;}
+    .padding-left-mob-{{ i }}{padding-left:{{i}}px;}
+    .margin-left-mob-{{ i }}{margin-left:{{i}}px;}
+    .padding-right-mob-{{ i }}{padding-right:{{i}}px;}
+    .section-width-mob-{{ i }}{width:{{i}}%;}
+    .padding-top-img-mob-{{ i }}{padding-top:{{i}}%;}
+    .width-mob-{{i}}{width:{{i}}%;} 
+    .font-size-mob-{{i}}{font-size:{{i}}px!important;} 
+    .font-size-mob-{{i}} *{font-size:{{i}}px!important;}
+    .mobile-font-size-{{i}}{font-size:{{i}}px!important;} 
+    .mobile-font-size-{{i}} *{font-size:{{i}}px!important;}
+    .line-height-mob-{{i}}{line-height:{{i}}px;}
+    .line-height-mob-{{i}} > p{line-height:{{i}}px;}
+    .top-mob-{{i}}{top:{{i}}%;}
+    .left-mob-{{i}}{left:{{i}}%;}
+    .grid-col-mob-{{i}}{grid-template-columns:repeat({{ i }}, 1fr);}
+  {%- endfor -%}
+  {%- for i in (1..9) -%}
+    .font-weight-mob-{{ i | append:'00' }}{font-weight:{{i | append : '00' }}!important;}
+  {%- endfor -%} 
+  
+  .text-align-mob-left{text-align:left;}
+  .text-align-mob-center{text-align:center;}
+  .text-align-mob-right{text-align:right;}
+
+    .mobile_top-left{justify-content:flex-start;text-align:left;align-items: flex-start;}
+    .mobile_top-center{justify-content:center;text-align:center;align-items: flex-start;}
+    .mobile_top-right{justify-content:flex-end;text-align:right;align-items: flex-start;}
+    .mobile_middle-left{justify-content:flex-start;text-align:left;align-items: center;}
+    .mobile_middle-center{justify-content:center;text-align:center;align-items: center;}
+    .mobile_middle-right{justify-content:flex-end;text-align:right;align-items: center;}
+    .mobile_bottom-left{justify-content:flex-start;text-align:left;align-items: flex-end;}
+    .mobile_bottom-center{justify-content:center;text-align:center;align-items: flex-end;}
+    .mobile_bottom-right{justify-content:flex-end;text-align:right;align-items: flex-end;}
+} 
+
+/* video mute unmute */
+.speaker-button{position:absolute;top:auto;bottom:10px;left:10px;right:auto;width:30px;height:20px;}
+
+.fancybox-slide--image {
+  background-color: #fff;
+}
+.fancybox-stage {background-color: #fff;} 
+.fancybox-button--play,
+.fancybox-button--zoom,
+.fancybox-button--thumbs,
+.fancybox-infobar {
+  display: none !important;
+}
+
+.fancybox-button--close {
+  border-radius: 100px;
+  top: 10px;
+  right: 10px;
+}
+
+
+
+/* Roboto Font Family  */
+@font-face{
+  font-family:"Roboto";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-Thin.woff?v=1751449354");
+  font-weight:100;
+}
+@font-face{
+  font-family:"Roboto";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-ExtraLight.woff?v=1751449354");
+  font-weight:200;
+}
+@font-face{
+  font-family:"Roboto";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-Light.woff?v=1751449354");
+  font-weight:300;
+}
+@font-face{
+  font-family:"Roboto";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-Regular.woff?v=1751449354");
+  font-weight:400;
+}
+@font-face{
+  font-family:"Roboto";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-Medium.woff?v=1751449354");
+  font-weight:500;
+}
+@font-face{
+  font-family:"Roboto";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-SemiBold.woff?v=1751449354");
+  font-weight:600;
+}
+@font-face{
+  font-family:"Roboto";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-Bold.woff?v=1751449354");
+  font-weight:700;
+}
+@font-face{
+  font-family:"Roboto";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-ExtraBold.woff?v=1751449354");
+  font-weight:800;
+}
+@font-face{
+  font-family:"Roboto";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-Black.woff?v=1751449354");
+  font-weight:900;
+}
+/* Roboto Font Family End */
+
+/* Poppins Font Family  */
+@font-face{
+  font-family:"Poppins";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Poppins-Thin.woff?v=1752063413");
+  font-weight:100;
+}
+@font-face{
+  font-family:"Poppins";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Poppins-ExtraLight.woff?v=1752063413");
+  font-weight:200;
+}
+@font-face{
+  font-family:"Poppins";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Poppins-Light.woff?v=1752063413");
+  font-weight:300;
+}
+@font-face{
+  font-family:"Poppins";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Roboto-Regular.woff?v=1751449354");
+  font-weight:400;
+}
+@font-face{
+  font-family:"Poppins";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Poppins-Medium.woff?v=1752063413");
+  font-weight:500;
+}
+@font-face{
+  font-family:"Poppins";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Poppins-SemiBold.woff?v=1752063413");
+  font-weight:600;
+}
+@font-face{
+  font-family:"Poppins";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Poppins-Bold.woff?v=1752063413");
+  font-weight:700;
+}
+@font-face{
+  font-family:"Poppins";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Poppins-ExtraBold.woff?v=1752063413");
+  font-weight:800;
+}
+@font-face{
+  font-family:"Poppins";
+  src:url("https://cdn.shopify.com/s/files/1/0220/5935/2160/files/Poppins-Black.woff?v=1752063413");
+  font-weight:900;
+}
+/* Poppins Font Family End */
+
+.font-montserrat{font-family:'Montserrat' !important;letter-spacing:0px;}
+.font-robot{font-family:'Roboto' !important;letter-spacing:0px;}
+.font-raleway{font-family:'Raleway' !important;letter-spacing:0px;}
+.font-poppins{font-family:'Poppins' !important;}
+.no-text-decoration{text-decoration:none !important;}
+
+
+
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* just in case */
+  -webkit-touch-callout: none; /* disables text popup on long press */
+}
+

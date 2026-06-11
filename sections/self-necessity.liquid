@@ -1,0 +1,49 @@
+<section class="lr_section">
+  <div class="lr_container">
+    <div class="row lr_reverse">
+      {% if section.settings.necessity_img != blank or section.settings.necessity_text != blank or section.settings.necessity_content != blank %}
+      <div class="col-6">
+        <div class="lr_img_wrapper">
+          <img src="{{ section.settings.necessity_img | img_url: 'master' }}">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="lr_info_wrapper">
+          <h2>{{ section.settings.necessity_text }}</h2>
+          <div class="lr_info_text">
+            <p>{{ section.settings.necessity_content }}</p>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Self Necessity",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "necessity_img",
+        "label": "Necessity Image"
+      },
+      {
+        "type": "text",
+        "id": "necessity_text",
+        "label": "Necessity Title"
+      },
+      {
+        "type": "text",
+        "id": "necessity_content",
+        "label": "Necessity Content"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Self Necessity"
+      }
+    ]
+  }
+{% endschema %}

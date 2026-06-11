@@ -1,0 +1,216 @@
+{% style %}
+  {% if section.settings.sticky == true %}
+  #shopify-section-{{ section.id }} {position:sticky;top:0;z-index:99;}
+  {% endif %}
+   #shopify-section-{{ section.id }} .announcement-bar-container{width: 100%;}
+   #shopify-section-{{ section.id }} .announcement_slider-main{width: 100%;{% if section.settings.text_width %} max-width: {{section.settings.text_width}}px; {% endif %} ;margin:auto; display:flex;justify-content:center;}
+   #shopify-section-{{ section.id }} .announcement_slider{display:flex;justify-content:center; align-items:center;text-align:center;}
+   #shopify-section-{{ section.id }} .announcement_slider-main .swiper-button-disabled{opacity:0.5;}
+   #shopify-section-{{ section.id }} .announcement_slider-main .custom-button-next,
+   #shopify-section-{{ section.id }} .announcement_slider-main .custom-button-prev{position:unset;  display:flex;justify-content:center; align-items:center;margin-top:0;cursor:pointer;}
+   #shopify-section-{{ section.id }} .announcement_slider-main .nav_icon{width: 24px;height:24px;}
+   #shopify-section-{{ section.id }} .announcement_slider-main .swiper-slide{ display:flex;justify-content:center; }
+   #shopify-section-{{ section.id }} .announcement-text{display:flex;justify-content:center; align-items:center;text-align:center; text-decoration:none;}
+   #shopify-section-{{ section.id }} .announcement-text p{ margin: 0px;text-align:center;line-height:1.1;}
+{% endstyle %}
+
+{% if template.suffix == 'listicle' or template.suffix == 'bundle-pack' %}
+<div
+  data-id="{{ section.id }}" data-section-height="{{ section.settings.section_height }}"
+  class="announcement-bar-container padding-top-{{ section.settings.padding_top }} mobile-padding-top-{{ section.settings.padding_top_mob }} padding-bottom-{{ section.settings.padding_bottom }} mobile-padding-bottom-{{ section.settings.padding_bottom_mob }}"
+  style="background:{{ section.settings.sec-bg }}"
+>
+  <div class="page-width">
+    <div class="announcement_slider-main">
+        <div class="custom-button-prev">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            transform="matrix(-1, 0, 0, 1, 0, 0)"
+            class="nav_icon"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 7L15 12L10 17" stroke="{{ section.settings.color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+          </svg>
+        </div>
+      <div class="swiper announcement_slider  announcement_slider--{{ section.id }}">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            {% if block.type == 'text' %}
+              <div class="swiper-slide">
+               
+                <{% if block.settings.url != blank %}a href="{{ block.settings.url }}"{% else %}div{% endif %}
+                  class="announcement-text font-size-{{ section.settings.font_size }} font-size-mob-{{ section.settings.font_size_mob }} font-weight-{{ section.settings.font_weight }} font-weight-mob-{{ section.settings.font_weight_mob }}"
+                  style="color:{{ section.settings.color }}"
+                >
+                  {{ block.settings.text }}
+                </{% if block.settings.url != blank %}a{% else %}div{% endif %}>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      </div>
+        <div class="custom-button-next">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav_icon">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 7L15 12L10 17" stroke="{{ section.settings.color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+          </svg>
+        </div>
+    </div>
+  </div>
+</div>
+<script>
+  var section = document.querySelector('.announcement-bar-container')
+  var sectionId = section.getAttribute('data-id')
+  var height = section.getAttribute('data-section-height')
+
+  console.log(sectionId + "TEST SLIDER")
+  console.log(height + "TEST Height")
+
+  var swiper = new Swiper(".announcement_slider--" + sectionId, {
+    slidePerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".custom-button-next",
+      prevEl: ".custom-button-prev",
+    },
+  });
+</script>
+{% endif %}
+{% schema %}
+{
+  "name": "Announ(Bundle & Listicle)",
+  "settings": [
+    {
+      "type": "color",
+      "id": "sec-bg",
+      "label": "Background Color"
+    },
+    {
+      "type":"checkbox",
+      "id":"sticky",
+      "label":"Enable Sticky Bar"
+    }, 
+    {
+      "type": "header",
+      "content": "Text Customization"
+    },
+    {
+      "type": "number",
+      "id": "text_width",
+      "default":600,
+      "label": "Text Width"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text Color"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":16,
+      "label": "Font Size"
+    },
+    {
+      "type": "range",
+      "id": "font_weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default":600,
+      "label": "Font weight"
+    },
+    {
+      "type": "range",
+      "id": "font_size_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":16,
+      "label": "Font Size Mobile"
+    },
+    {
+      "type": "range",
+      "id": "font_weight_mob",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default":600,
+      "label": "Font Weight Mobile"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Bottom Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Top Padding Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Bottom Padding Mobile"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name":"Announment Text ",
+      "settings": [
+        {
+          "type":"richtext",
+          "id": "text",
+          "label": "Add Text"
+        },
+        {
+          "type":"url",
+          "id": "url",
+          "label": "Add Url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar Text",
+    }
+  ]
+}
+{% endschema %}

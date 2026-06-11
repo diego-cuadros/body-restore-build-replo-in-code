@@ -1,0 +1,216 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement_bar_bundle_landing_page_763AwN": {
+      "type": "announcement-bar-bundle-landing-page",
+      "blocks": {
+        "text_EiUmKY": {
+          "type": "text",
+          "settings": {
+            "text": "<p>🎁 FATHER'S DAY SALE 🎁 </p>",
+            "url": "",
+            "color": "#ffffff",
+            "font_size": 16,
+            "font_size_mob": 12,
+            "font_weight": 800
+          }
+        },
+        "countdown_hCcMwa": {
+          "type": "countdown",
+          "settings": {
+            "badge_text": "SAVE UP TO 40% OFF",
+            "bcolor": "#0c2331",
+            "bbg-color": "#ffffff",
+            "bfont_size": 16,
+            "bfont_weight": 600,
+            "bfont_size_mob": 12,
+            "background": "#ffffff",
+            "color": "#0c2331",
+            "t_font_size": 14,
+            "t_font_size_mob": 12,
+            "t_font_weight": 600,
+            "label_color": "#0c2331",
+            "font_size": 8,
+            "font_size_mob": 7,
+            "font_weight": 600
+          }
+        }
+      },
+      "block_order": [
+        "text_EiUmKY",
+        "countdown_hCcMwa"
+      ],
+      "name": "Bundle Promo Page Annonce",
+      "settings": {
+        "sticky": true,
+        "showcountdownfirst": true,
+        "sec-bg": "#c800fa",
+        "padding_top": 11,
+        "padding_bottom": 11,
+        "padding_top_mob": 10,
+        "padding_bottom_mob": 10,
+        "countsec-bg": "#fbbf24",
+        "countpadding_top": 15,
+        "countpadding_bottom": 15,
+        "countpadding_top_mob": 14,
+        "countpadding_bottom_mob": 14
+      }
+    },
+    "announcement_bar_other_WMEXbT": {
+      "type": "announcement-bar-other",
+      "blocks": {
+        "text_mWRQcg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>FATHERS DAY SALES: UP TO 40% OFF</p>",
+            "url": "https://mybodyrestore.com/products/body-restore-steamers-b"
+          }
+        }
+      },
+      "block_order": [
+        "text_mWRQcg"
+      ],
+      "settings": {
+        "sec-bg": "#1e9965",
+        "sticky": true,
+        "text_width": 600,
+        "color": "#f8f9fa",
+        "font_size": 16,
+        "font_weight": 800,
+        "font_size_mob": 11,
+        "font_weight_mob": 800,
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "padding_top_mob": 10,
+        "padding_bottom_mob": 10
+      }
+    },
+    "announcement_bar_section_rGJ4pb": {
+      "type": "announcement-bar-section",
+      "blocks": {
+        "text_wRzBYR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>🏷️ BEST PRICE EVER + FREE GIFTS TODAY ONLY! 🎁</p>",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_wRzBYR"
+      ],
+      "disabled": true,
+      "settings": {
+        "sec-bg": "#7ac4ea",
+        "sticky": false,
+        "text_width": 800,
+        "color": "#ffffff",
+        "font_size": 16,
+        "font_weight": 800,
+        "font_size_mob": 11,
+        "font_weight_mob": 800,
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "padding_top_mob": 10,
+        "padding_bottom_mob": 10
+      }
+    },
+    "announcement_countdown_bar_UKWgAM": {
+      "type": "announcement-countdown-bar",
+      "blocks": {
+        "text_ePBf3B": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "color": "#f8f9fa",
+            "font_size": 16,
+            "font_weight": 600,
+            "font_size_mob": 12,
+            "font_weight_mob": 600
+          }
+        },
+        "badge_BNxGMw": {
+          "type": "badge",
+          "settings": {
+            "badge_text": "SAVE UP TO 40% OFF",
+            "color": "#f8f9fa",
+            "bg-color": "#58bbec",
+            "font_size": 16,
+            "font_weight": 600,
+            "font_size_mob": 12,
+            "font_weight_mob": 600
+          }
+        },
+        "countdown_FXhqJw": {
+          "type": "countdown",
+          "settings": {
+            "background": "#ffffff",
+            "color": "#265e7a",
+            "t_font_size": 14,
+            "t_font_size_mob": 12,
+            "t_font_weight": 600,
+            "font_size": 8,
+            "font_weight": 400
+          }
+        }
+      },
+      "block_order": [
+        "text_ePBf3B",
+        "badge_BNxGMw",
+        "countdown_FXhqJw"
+      ],
+      "settings": {
+        "sec-bg": "#fbbf24",
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "padding_top_mob": 10,
+        "padding_bottom_mob": 10
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [
+        ".header {margin-top: var( --announcement-bar-height, 0px ); /* Adjust 30px to match your announcement bar's height */}"
+      ],
+      "settings": {
+        "mobilelogo": "shopify://shop_images/Body_Restore_Logo_HorizontalStack__Black_2.svg",
+        "logo_position": "middle-center",
+        "menu": "dh-main-menu",
+        "menu_type_desktop": "drawer",
+        "sticky_header_type": "none",
+        "show_line_separator": true,
+        "color_scheme": "inverse",
+        "menu_color_scheme": "background-2",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 24,
+        "padding_bottom": 20
+      }
+    },
+    "replo_mike_8hkzpn": {
+      "type": "replo-mike",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement_bar_bundle_landing_page_763AwN",
+    "announcement_bar_other_WMEXbT",
+    "announcement_bar_section_rGJ4pb",
+    "announcement_countdown_bar_UKWgAM",
+    "header",
+    "replo_mike_8hkzpn"
+  ]
+}

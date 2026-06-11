@@ -1,0 +1,187 @@
+<div class="var-container">
+  <div style="display:none !important;">
+    {% render 'bundle-static-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+  </div>
+  {% if block.settings.enablecheckbox %}
+    {% if block.settings.freegiftendtime %}
+      <div class="order-text-container margin-bottom-{{ block.settings.freemarginbottom }} margin-bottom-mob-{{ block.settings.freemarginbottommob }}">
+        <div
+          class="order-text"
+          style="background-color:{{ block.settings.freebgcolor }};border:1px dashed {{ block.settings.freebordercolor }};"
+        >
+          <div class="dot">
+            <div class="ringring" style="border:1px solid {{ block.settings.freecolor }};"></div>
+            <div class="circle" style="background-color:{{ block.settings.freecolor }};"></div>
+          </div>
+          <div
+            class="text font-size-{{ block.settings.freefontsize }} font-size-mob-{{ block.settings.freefontsizemob }} font-weight-{{ block.settings.freefontweight }}"
+            style="color:{{ block.settings.freecolor }};"
+          >
+            {{ block.settings.freegiftendtime }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+  <div class="radio-button-container">
+    {% assign varcount = 0 %}
+    {%- for option in product.options_with_values -%}
+      {%- for value in option.values -%}
+        {%- assign onpackprice = product.variants | last -%}
+        {%- for variant in product.variants -%}
+          {% assign varcount = varcount | plus: 1 %}
+          {%- if value == variant.title -%}
+            {% for i in (1..4) %}
+              {% assign setting_variant = 'variant' | append: i %}
+              {% assign varianttitle = block.settings[setting_variant] %}
+
+              {% assign setting_varianttext = 'varianttext' | append: i %}
+              {% assign varianttext = block.settings[setting_varianttext] %}
+
+              {% assign setting_badge = 'badge' | append: i %}
+              {% assign badge = block.settings[setting_badge] %}
+
+              {% assign setting_color = 'color' | append: i %}
+              {% assign badgecolor = block.settings[setting_color] %}
+
+              {% assign setting_bgcolor = 'bgcolor' | append: i %}
+              {% assign badgebgcolor = block.settings[setting_bgcolor] %}
+
+              {% assign setting_packrange = 'packrange' | append: i %}
+              {% assign packrange = block.settings[setting_packrange] %}
+
+              {% assign setting_variantdiscount = 'variantdiscount' | append: i %}
+              {% assign variantdiscount = block.settings[setting_variantdiscount] %}
+
+              {% assign setting_popupvariantsaving = 'popupvariantsaving' | append: i %}
+              {% assign popupvariantsaving = block.settings[setting_popupvariantsaving] %}
+
+              {% if variant.title == varianttitle %}
+                <label
+                  for="{{ packrange }}pack"
+                  data-variant-count="pack{{ packrange }}"
+                  data-varposition="pack{{ i }}"
+                  data-varrange="{{ packrange }}"
+                  data-savinginfo="{{ popupvariantsaving }}"
+                  data-varprice="{{ popupvariantsaving }}"
+                  data-vardiscount="{{ variantdiscount }}"
+                >
+                  <input
+                    type="radio"
+                    id="{{ packrange }}pack"
+                    name="variant_static"
+                    class="variantstaticmaininput"
+                    value="{{ packrange }}pack"
+                    data-varposition="pack{{ i }}"
+                    data-value-count="{{ packrange }}"
+                    data-varname="{{ variant.title }}"
+                    data-varid="{{ variant.id }}"
+                    data-currbagprice="{{ variant.price }}"
+                    data-onebagprice="{{ onpackprice.price }}"
+                    data-image="{{ variant.featured_image | img_url:'master'}}"
+                    {% if varcount == 1 %}
+                      checked
+                    {% endif %}
+                    {{ varcount }}
+                    data-vardiscount="{{ variantdiscount }}"
+                  >
+                  <div class="tab-grid {% if varcount == 1 %}checked-label{% endif %}">
+                    {% if badge != blank %}
+                      <div
+                        class="badge"
+                        style="background-color:{{ badgebgcolor }};color:{{ badgecolor }};"
+                      >
+                        {{ badge }}
+                      </div>
+                    {% endif %}
+                    <div class="inner-container">
+                      <div class="radio-button"></div>
+                      <div class="tags-content">
+                        <div
+                          class="tag-name font-size-{{ block.settings.labelfontsize }} font-size-mob-{{ block.settings.labelfontsizemob }} font-weight-{{ block.settings.labelfontweight }}"
+                          style="color:{{ block.settings.labelcolor }};"
+                        >
+                          {{ varianttext }}
+                        </div>
+                        <span class="price-info-container">
+                          <span
+                            class="price original-custom-price font-size-{{ block.settings.pricefontsize }} font-size-mob-{{ block.settings.pricefontsizemob }} font-weight-{{ block.settings.pricefontsweight }}"
+                            style="color:{{ block.settings.pricecolor }};"
+                          >
+                            {{- variant.price | money -}}
+                          </span>
+                          {% assign pvarprice = variant.price %}
+                          {% assign totalcaps = 15 | times: packrange %}
+                          {% assign pvarprice = pvarprice | divided_by: totalcaps %}
+                          <span
+                            class="price-per-product font-size-{{ block.settings.pricefontsize }} font-size-mob-{{ block.settings.pricefontsizemob }} font-weight-500"
+                            style="color:{{ block.settings.pricecolor }};"
+                            >({{ pvarprice | money_without_currency }}/per steamer)</span
+                          >
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </label>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <div class="main-gift-product-container">
+    {% if block.settings.pinfosale != blank %}
+      <div class="products-title">
+        <div
+          class="text font-size-{{ block.settings.salefontsize }} font-size-mob-{{ block.settings.salefontsizemob }} font-weight-{{ block.settings.salefontweight }}"
+          style="color:{{ block.settings.salecolor }};"
+        >
+          {{ block.settings.pinfosale }}
+        </div>
+      </div>
+    {% endif %} 
+
+    {% render 'bundle-page-progressbar', block: block, product: product %}
+
+    {% comment %}{% render 'bundle-progressgrid', block: block %} {% endcomment %}
+
+    <div class="top-marker"></div>
+    <div class="flavour-btn-container buy-flavour-btn-container main-flavour-btn-container">
+      <div class="popupbutton button button--full-width button--primary">
+        <span class="btn-text font-size-{{ section.settings.bfontsize }} font-size-mob-{{ section.settings.bfontsizemob }} font-weight-{{ section.settings.bfontweight }}">
+          {{- section.settings.button -}}</span
+        ><span class="icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            role="img"
+            class="iconify iconify--heroicons"
+            width="100%"
+            height="100%"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 20 20"
+          >
+            <path fill="currentColor" fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" width="100%" height="100%"></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="bottom-marker">
+
+    {% if block.settings.heading or block.settings.content %}
+      <div class="description-content">
+        {% if block.settings.heading %}
+          <div class="heading">{{ block.settings.heading }}</div>
+        {% endif %}
+        {% if block.settings.content %}
+          <div class="content">
+            {{ block.settings.content }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>

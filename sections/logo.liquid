@@ -1,0 +1,223 @@
+<style>
+  #shopify-section-{{section.id}} .fullwidth{width:100% !important;max-width:100% !important;}
+  .logo--{{ section.id }} .heading {margin-top:0px;text-align:{{section.settings.align}};line-height:1.5; }
+  .logo--{{ section.id }} .gridcontainer {max-width:{{section.settings.width}}px;width:100%;margin:auto;}
+  .logo--{{ section.id }} .gridcontainer .inner-container {display:flex;align-items:center;justify-content:space-between;gap:20px;  flex-wrap: wrap;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .logo {height:{{ section.settings.logoheight }}px;padding: 0px 20px;width: fit-content; max-width: 25%;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .logo img{height:100%;}
+  @media screen and (max-width:768px) {
+  .logo--{{ section.id }} .heading {margin-top:0px;text-align:{{section.settings.alignmob}}; }
+  .logo--{{ section.id }} .gridcontainer .inner-container .logo {max-width:540px;}
+  .logo--{{ section.id }} .gridcontainer .inner-container {;justify-content:center;gap:20px;  }
+  .logo--{{ section.id }} .gridcontainer {max-width:{{section.settings.widthmob}}px;width:100%;margin:auto;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .logo {height:32px;padding: 0px 20px;}
+  }
+</style>
+<div class="logo--{{ section.id }} padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} padding-top-mob-{{ section.settings.mobile_padding_top }} padding-bottom-mob-{{ section.settings.mobile_padding_bottom }}"
+        style="background:{{ section.settings.background }};">
+  <div class="{% if section.settings.fullwidth %}fullwidth page-width{% else %}page-width{% endif %}"> 
+      <div class="main-container">
+        {% if section.settings.logo_title != blank %}
+            <h6
+              class="heading margin-bottom-{{ section.settings.space }} margin-bottom-mob-{{ section.settings.space_mob }} font-size-mob-{{ section.settings.mobile_size }} font-size-{{ section.settings.size }} font-weight-{{ section.settings.weight }}"
+              style="color:{{ section.settings.color }}; "
+            >
+              {{ section.settings.logo_title }}
+            </h6>
+        {% endif %}
+        <div class="gridcontainer">
+          <div class="inner-container">
+            {%- for block in section.blocks -%}
+              {% if block.settings.brand_logo_img != blank %}
+                <div class="logo">
+                  {% if block.settings.brand_logo_url != blank -%}
+                    <a href="{{ block.settings.brand_logo_url }}">
+                  {%- endif %}
+                  <img
+                    src="{{ block.settings.brand_logo_img | img_url : "master" }}"
+                    alt="Brand Logo {{ forloop.index }}"
+                  >
+                  {% if block.settings.brand_logo_url != blank %}</a>{% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div> 
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Logo",
+  "settings": [
+    {
+      "type":"color",
+      "id":"background",
+      "label":"Background"
+    },
+    {
+      "type":"checkbox",
+      "id":"fullwidth",
+      "label":"Enable Full Width"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "id": "align",
+      "default": "center",
+      "label":"Title Alignment"
+     },
+     {
+      "type": "select",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "id": "alignmob",
+      "default": "center",
+     "label":"Mobile Title Alignment"
+    },
+    {
+      "type": "text",
+      "id": "logo_title",
+      "label": "Title"
+    },
+    {
+      "type":"color",
+      "id":"color",
+      "label":"Color"
+    },
+    {
+      "type":"range",
+      "id":"size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "id":"mobile_size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Mobile Font Size"
+    },
+    {
+      "type":"range",
+      "id":"weight",
+      "step":100,
+      "min":100,
+      "max":900,
+      "default":500,
+      "label":"Font Weight"
+    },
+    {
+      "type":"range",
+      "id":"space",
+      "step":1,
+      "min":1,
+      "max":100,
+      "default":20,
+      "label":"Bottom Spacing"
+    },
+    {
+      "type":"range",
+      "id":"space_mob",
+      "step":1,
+      "min":1,
+      "max":100,
+      "default":20,
+      "label":"Mobile Bottom Spacing"
+    },
+    {
+      "type":"number",
+      "id":"width",
+      "label":"Logo section Width"
+    },
+    {
+      "type":"number",
+      "id":"widthmob",
+      "label":"Mobile Logo section Width"
+    },
+    {
+      "type":"number",
+      "id":"logoheight",
+      "label":"Logo Height",
+      "default":32
+    },
+    {
+      "type":"header",
+      "content":"Section Spacing"
+    },
+    {
+      "type":"number",
+      "id":"padding_top",
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"padding_bottom",
+      "label":"Padding Bottom"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_top",
+      "label":"Mobile Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_bottom",
+      "label":"Mobile Padding Bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand_logo",
+      "name": "Brand Logo Lits",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "brand_logo_img",
+          "label": "Logo",
+          "info":"Logo height Should be 40 in px"
+        },
+        {
+          "type": "url",
+          "id": "brand_logo_url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo"
+    }
+  ]
+}
+{% endschema %}

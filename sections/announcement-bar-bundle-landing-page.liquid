@@ -1,0 +1,563 @@
+{%- assign templates = settings.templatename | split: ',' -%}
+{%- assign match_found = false -%}
+{%- for t in templates -%}
+  {%- assign t = t | strip -%}
+  {%- if t == template.name or t == template.suffix -%}
+    {%- assign match_found = true -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{% if match_found == true %}
+
+{% style %}
+  {% if section.settings.sticky == true %}
+    #shopify-section-{{ section.id }} {position:sticky;top:0;z-index:99;}
+  {% endif %}
+  
+   #shopify-section-{{ section.id }} .announcement-bar-container{width: 100%;}
+   #shopify-section-{{ section.id }} .announcement_slider-main{width: 100%;margin:auto; display:flex;justify-content:center;}
+   #shopify-section-{{ section.id }} .announcement_slider{display:flex;justify-content:center; align-items:center;text-align:center;}
+   #shopify-section-{{ section.id }} .announcement_slider-main .swiper-button-disabled{opacity:0.5;}
+   #shopify-section-{{ section.id }} .announcement_slider-main .custom-button-next,
+   #shopify-section-{{ section.id }} .announcement_slider-main .custom-button-prev{position:unset;  display:flex;justify-content:center; align-items:center;margin-top:0;cursor:pointer;}
+   #shopify-section-{{ section.id }} .announcement_slider-main .nav_icon{width: 24px;height:24px;}
+   #shopify-section-{{ section.id }} .announcement_slider-main .swiper-slide{ display:flex;justify-content:center; }
+   #shopify-section-{{ section.id }} .announcement-text{display:flex;justify-content:center; align-items:center;text-align:center; text-decoration:none;}
+   #shopify-section-{{ section.id }} .announcement-text p{ margin: 0px;text-align:center;line-height:1.1;}
+   #shopify-section-{{ section.id }} .announcementbarcontainer{display:flex;flex-direction: column;}
+
+   #shopify-section-{{section.id}} .acb-container{display:flex;justify-content:center;align-items:center; gap:15px;flex-wrap:wrap;}
+   #shopify-section-{{section.id}} .acb-content p{margin:0;}
+   #shopify-section-{{section.id}} .acb-badge{display:flex;justify-content:center;align-items:center;padding:3px 9px;border-radius:4px;}
+  
+   @media screen and (max-width:768px){
+    #shopify-section-{{section.id}} .acb-container{display:flex;justify-content:center;align-items:center; gap:7px;flex-wrap:wrap;}
+    #shopify-section-{{section.id}} .acb-badge{display:flex;justify-content:center;align-items:center;padding:3px 4px;border-radius:4px;}
+   }
+  
+{% endstyle %}
+
+<custom-announcementbar> 
+<div id="announcementbarcontainer" class="announcementbarcontainer">
+<div
+  data-id="{{ section.id }}" data-section-height="{{ section.settings.section_height }}"
+  class="announcement-bar-container"
+>
+  {% assign anncount = 0 %}
+  {% capture announcementbar %}
+  {% for block in section.blocks %}
+    {% if block.type == 'text' %}
+      {% assign anncount = anncount | plus:1 %}
+      <div class="swiper-slide">
+        <{% if block.settings.url != blank %}a href="{{ block.settings.url }}"{% else %}div{% endif %}
+          class="announcement-text font-montserrat font-size-{{ block.settings.font_size }} font-size-mob-{{ block.settings.font_size_mob }} font-weight-{{ block.settings.font_weight }}"
+          style="color:{{ block.settings.color }}"
+        >
+          {{ block.settings.text }}
+        </{% if block.settings.url != blank %}a{% else %}div{% endif %}>
+      </div>
+    {% endif %}
+  {% endfor %}
+  {% endcapture %}
+
+    {% assign countcountdown = 0 %}
+    {% capture countdown %}
+    {% for block in section.blocks %}
+    {% case block.type %}        
+      {% when 'countdown' %}
+      {% assign countcountdown = countcountdown | plus:1 %}
+        {% style %}
+          .countdown-{{ block.id }}.announcement-bar-timer .countdown-today{display:flex;color: {{ block.settings.background }};gap:6px;font-size: 20px;font-weight: 700;line-height:1;align-items:center;}
+          .countdown-{{ block.id }}.announcement-bar-timer .countdown-today > div{gap:0;font-weight:{{ block.settings.t_font_weight }};line-height:1;min-height:32px;font-size:{{ block.settings.t_font_size }}px;min-width:32px;color:{{block.settings.color}};border-radius:4px;background:{{block.settings.background}};display:flex;align-items:center;justify-content:center;flex-direction:column;}
+          .countdown-{{ block.id }}.announcement-bar-timer .countdown-today > div span{line-height:1;display:block;font-size:{{ block.settings.font_size }}px;font-weight:{{ block.settings.font_weight }}; color:{{block.settings.label_color}};}
+          @media screen and (max-width:768px){
+          .countdown-{{ block.id }}.announcement-bar-timer .countdown-today{font-size: 14px;}
+          .countdown-{{ block.id }}.announcement-bar-timer .countdown-today > div{min-height:32px;font-size:{{ block.settings.t_font_size_mob }}px;min-width:26px; }
+          .countdown-{{ block.id }}.announcement-bar-timer .countdown-today > div span{font-size:{{ block.settings.font_size_mob }}px;}
+          .countdown-{{ block.id }}.announcement-bar-timer .countdown-today{gap:2px; }
+    
+          }
+        {% endstyle %}
+        {% if block.settings.badge_text != blank %}
+          <div
+            class="acb-badge  font-size-{{ block.settings.bfont_size }} font-size-mob-{{ block.settings.bfont_size_mob }} font-weight-{{ block.settings.bfont_weight }}"
+            style="color:{{ block.settings.bcolor }};background:{{ block.settings.bbg-color }};"
+          >
+            {{ block.settings.badge_text }}
+          </div>
+          <div class="announcement-bar-timer countdown-{{ block.id }}">
+            <div class="countdown-today"></div>
+          </div>
+        {% endif %}
+    {% endcase %}
+    {% endfor %}
+    {% endcapture %}
+
+  {% if section.settings.showcountdownfirst %}
+  {% if countcountdown > 0 %}
+    <div class="padding-top-{{ section.settings.countpadding_top }} mobile-padding-top-{{ section.settings.countpadding_top_mob }} padding-bottom-{{ section.settings.countpadding_bottom }} mobile-padding-bottom-{{ section.settings.countpadding_bottom_mob }}"
+    style="background:{{ section.settings.countsec-bg }}"
+    <div class="page-width">
+      <div class="acb-container">
+        {{ countdown }}
+      </div>
+    </div>  
+    </div>
+  {% endif %}
+    
+  {% if anncount > 0 %}
+    <div class="padding-top-{{ section.settings.padding_top }} mobile-padding-top-{{ section.settings.padding_top_mob }} padding-bottom-{{ section.settings.padding_bottom }} mobile-padding-bottom-{{ section.settings.padding_bottom_mob }}"
+      style="background:{{ section.settings.sec-bg }}">
+    <div class="page-width">
+    <div class="announcement_slider-main">
+        <div class="custom-button-prev">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            transform="matrix(-1, 0, 0, 1, 0, 0)"
+            class="nav_icon"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 7L15 12L10 17" stroke="{{ section.settings.color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+          </svg>
+        </div>
+      <div class="swiper announcement_slider  announcement_slider--{{ section.id }}">
+        <div class="swiper-wrapper">
+          {{ announcementbar }}
+        </div>
+      </div>
+        <div class="custom-button-next">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav_icon">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 7L15 12L10 17" stroke="{{ section.settings.color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+          </svg>
+        </div>
+    </div>
+   </div> 
+    </div>
+    {% endif %}
+
+  {% else %}
+
+          {% if anncount > 0 %}
+    <div class="padding-top-{{ section.settings.padding_top }} mobile-padding-top-{{ section.settings.padding_top_mob }} padding-bottom-{{ section.settings.padding_bottom }} mobile-padding-bottom-{{ section.settings.padding_bottom_mob }}"
+      style="background:{{ section.settings.sec-bg }}">
+    <div class="page-width">
+    <div class="announcement_slider-main">
+        <div class="custom-button-prev">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            transform="matrix(-1, 0, 0, 1, 0, 0)"
+            class="nav_icon"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 7L15 12L10 17" stroke="{{ section.settings.color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+          </svg>
+        </div>
+      <div class="swiper announcement_slider  announcement_slider--{{ section.id }}">
+        <div class="swiper-wrapper">
+          {{ announcementbar }}
+        </div>
+      </div>
+        <div class="custom-button-next">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav_icon">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 7L15 12L10 17" stroke="{{ section.settings.color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+          </svg>
+        </div>
+    </div>
+   </div> 
+    </div>
+    {% endif %}
+    
+    {% if countcountdown > 0 %}
+    <div class="padding-top-{{ section.settings.countpadding_top }} mobile-padding-top-{{ section.settings.countpadding_top_mob }} padding-bottom-{{ section.settings.countpadding_bottom }} mobile-padding-bottom-{{ section.settings.countpadding_bottom_mob }}"
+    style="background:{{ section.settings.countsec-bg }}"
+    <div class="page-width">
+      <div class="acb-container">
+        {{ countdown }}
+      </div>
+    </div>  
+    </div>
+  {% endif %}
+
+  {% endif %}
+</div>
+  </div>
+</custom-announcementbar>
+
+<script>
+    class CustomAnnouncementBar extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      const handleIntersection = (entries, observer) => {
+        if (!entries[0].isIntersecting) return;
+        observer.unobserve(this);
+
+          var section = document.querySelector('.announcement-bar-container')
+          var sectionId = section.getAttribute('data-id')
+          var height = section.getAttribute('data-section-height')
+        
+          var swiper = new Swiper(".announcement_slider--" + sectionId, {
+            slidePerView: 1,
+            spaceBetween: 20,
+            navigation: {
+              nextEl: ".custom-button-next",
+              prevEl: ".custom-button-prev",
+            },
+          });
+
+        function updateBundleCartPosition() {
+          var announcementheight = document.getElementById('announcementbarcontainer').clientHeight;
+      
+          $('.bundle-cart-popup').css({
+            top: announcementheight + 'px',
+            height: 'calc(100% - ' + announcementheight + 'px)'
+          });
+        }
+        
+        $(document).ready(function () {
+          updateBundleCartPosition();
+        });
+        
+        $(window).on('resize', function () {
+          updateBundleCartPosition();
+        });
+        
+      };
+
+      new IntersectionObserver(handleIntersection.bind(this), {
+        rootMargin: "0px 0px 400px 0px",
+      }).observe(this);
+    }
+  }
+  customElements.define("custom-announcementbar", CustomAnnouncementBar);
+
+</script> 
+
+          
+{% endif %}
+{% schema %}
+{
+  "name": "Landing Header(A & C)",
+  "settings": [
+    {
+      "type":"checkbox",
+      "id":"sticky",
+      "label":"Enable Sticky Bar"
+    }, 
+    {
+      "type":"checkbox",
+      "id":"showcountdownfirst",
+      "label":"Show Countdown First",
+    },
+    {
+      "type":"header",
+      "content":"Announcement Background CSS"
+    },
+    {
+      "type": "color",
+      "id": "sec-bg",
+      "label": "Background Color"
+    },
+    {
+      "type": "header",
+      "content": "Announcement Block Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Bottom Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Top Padding Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Bottom Padding Mobile"
+    },
+    {
+      "type":"header",
+      "content":"Countdown Background CSS"
+    },
+    {
+      "type": "color",
+      "id": "countsec-bg",
+      "label": "Background Color"
+    },
+    {
+      "type": "header",
+      "content": "Countdown Block Spacing"
+    },
+    {
+      "type": "range",
+      "id": "countpadding_top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "countpadding_bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Bottom Padding"
+    },
+    {
+      "type": "range",
+      "id": "countpadding_top_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Top Padding Mobile"
+    },
+    {
+      "type": "range",
+      "id": "countpadding_bottom_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":10,
+      "label": "Bottom Padding Mobile"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name":"Announcement Bar",
+      "settings": [
+        {
+          "type":"richtext",
+          "id": "text",
+          "label": "Add Text"
+        },
+        {
+          "type":"url",
+          "id": "url",
+          "label": "Add Url"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Text Color"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size"
+        },
+        {
+          "type": "range",
+          "id": "font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":12,
+          "label": "Font Size Mobile"
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":800,
+          "label": "Font weight"
+        },
+      ]
+    },
+    {
+      "type":"countdown",
+      "name":"Countdown Timer",
+      "limit":1,
+      "settings":[
+        {
+          "type":"header",
+          "content":"Badge Customization"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Add Text"
+        },
+        {
+          "type": "color",
+          "id": "bcolor",
+          "label": "Text Color"
+        },
+        {
+          "type": "color",
+          "id": "bbg-color",
+          "label": "Background Color"
+        },
+        {
+          "type": "range",
+          "id": "bfont_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size"
+        },
+        {
+          "type": "range",
+          "id": "bfont_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":600,
+          "label": "Font weight"
+        },
+        {
+          "type": "range",
+          "id": "bfont_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size Mobile"
+        },
+        {
+          "type":"header",
+          "content":"Countdown Customization"
+        },
+        {
+          "type":"color",
+          "id":"background",
+          "label":"Timer Background Color"
+        },
+        {
+          "type": "header",
+          "content": "Timer"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Text Color"
+        },
+        {
+          "type": "range",
+          "id": "t_font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size"
+        },
+        {
+          "type": "range",
+          "id": "t_font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":12,
+          "label": "Mobile Font Size"
+        },
+        {
+          "type": "range",
+          "id": "t_font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":600,
+          "label": "Font weight"
+        },
+        {
+          "type": "header",
+          "content": "Label"
+        },
+        {
+          "type": "color",
+          "id": "label_color",
+          "default":"#0c2331",
+          "label": "Text Color"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":8,
+          "label": "Font Size"
+        },
+        {
+          "type": "range",
+          "id": "font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":6,
+          "label": "Mobile Font Size"
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":600,
+          "label": "Font weight"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Promo Page Annonce",
+    }
+  ]
+}
+{% endschema %}

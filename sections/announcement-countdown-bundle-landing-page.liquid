@@ -1,0 +1,362 @@
+{% style %}
+    {% if section.settings.sticky == true %}
+  #shopify-section-{{ section.id }} {position:sticky;top:40px;z-index:99;}
+  {% endif %}
+
+  #shopify-section-{{section.id}} .acb-container{display:flex;justify-content:center;align-items:center; gap:15px;flex-wrap:wrap;}
+  #shopify-section-{{section.id}} .acb-content p{margin:0;}
+  #shopify-section-{{section.id}} .acb-badge{display:flex;justify-content:center;align-items:center;padding:3px 9px;border-radius:4px;}
+  @media screen and (max-width:768px){
+  #shopify-section-{{section.id}} .acb-container{display:flex;justify-content:center;align-items:center; gap:7px;flex-wrap:wrap;}
+  #shopify-section-{{section.id}} .acb-badge{display:flex;justify-content:center;align-items:center;padding:3px 4px;border-radius:4px;}
+
+  }
+{% endstyle %}
+
+{% if template.suffix == 'bundle-landing-page' %}
+  <div
+    data-section-height="{{ section.settings.section_height }}"
+    class="acb-main-container padding-top-{{ section.settings.padding_top }} mobile-padding-top-{{ section.settings.padding_top_mob }} padding-bottom-{{ section.settings.padding_bottom }} mobile-padding-bottom-{{ section.settings.padding_bottom_mob }}"
+    style="background:{{ section.settings.sec-bg }}"
+  >
+    <div class="page-width">
+      <div class="acb-container">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'text' %}
+              <div
+                class="acb-content  font-size-{{ block.settings.font_size }} font-size-mob-{{ block.settings.font_size_mob }} font-weight-{{ block.settings.font_weight }}"
+                style="color:{{ block.settings.color }};"
+              >
+                {{ block.settings.text }}
+              </div>
+            {% when 'badge' %}
+              <div
+                class="acb-badge  font-size-{{ block.settings.font_size }} font-size-mob-{{ block.settings.font_size_mob }} font-weight-{{ block.settings.font_weight }}"
+                style="color:{{ block.settings.color }};background:{{ block.settings.bg-color }};"
+              >
+                {{ block.settings.badge_text }}
+              </div>
+            {% when 'countdown' %}
+              {% style %}
+                .countdown-{{ block.id }}.announcement-bar-timer .countdown-today{display:flex;color: {{ block.settings.background }};gap:6px;font-size: 20px;font-weight: 700;line-height:1;align-items:center;}
+                .countdown-{{ block.id }}.announcement-bar-timer .countdown-today > div{gap:0;font-weight:{{ block.settings.t_font_weight }};line-height:1;min-height:32px;font-size:{{ block.settings.t_font_size }}px;min-width:32px;color:{{block.settings.color}};border-radius:4px;background:{{block.settings.background}};display:flex;align-items:center;justify-content:center;flex-direction:column;}
+                .countdown-{{ block.id }}.announcement-bar-timer .countdown-today > div span{line-height:1;display:block;font-size:{{ block.settings.font_size }}px;font-weight:{{ block.settings.font_weight }}; color:{{block.settings.label_color}};}
+                @media screen and (max-width:768px){
+                .countdown-{{ block.id }}.announcement-bar-timer .countdown-today{font-size: 14px;}
+                .countdown-{{ block.id }}.announcement-bar-timer .countdown-today > div{min-height:32px;font-size:{{ block.settings.t_font_size_mob }}px;min-width:26px; }
+                .countdown-{{ block.id }}.announcement-bar-timer .countdown-today > div span{font-size:{{ block.settings.font_size_mob }}px;}
+                .countdown-{{ block.id }}.announcement-bar-timer .countdown-today{gap:2px; }
+
+                }
+              {% endstyle %}
+
+              <div class="announcement-bar-timer countdown-{{ block.id }}">
+                <div class="countdown-today"></div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var sec = document.querySelector('.acb-main-container')
+
+    var secHeight = sec.getAttribute('data-section-height')
+
+    console.log(secHeight + "TEST Height")
+
+
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Bundle Promo Countdown",
+  "settings": [
+  {
+    "type": "checkbox",
+    "id": "sticky",
+    "label": "Sticky Header",
+    "default":true
+  },
+    {
+    "type": "color",
+    "id": "sec-bg",
+    "label": "Background Color"
+  },
+  {
+    "type": "header",
+    "content": "Section Spacing"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "default":10,
+    "label": "Top Padding"
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "default":10,
+    "label": "Bottom Padding"
+  },
+  {
+    "type": "range",
+    "id": "padding_top_mob",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "default":10,
+    "label": "Top Padding Mobile"
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom_mob",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "step": 1,
+    "default":10,
+    "label": "Bottom Padding Mobile"
+  },
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name":"Content",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Add Text"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Text Color"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size"
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":600,
+          "label": "Font weight"
+        },
+        {
+          "type": "range",
+          "id": "font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size Mobile"
+        },
+      ]
+    },
+    {
+      "type": "badge",
+      "name":"Badge",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Add Text"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Text Color"
+        },
+        {
+          "type": "color",
+          "id": "bg-color",
+          "label": "Background Color"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size"
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":600,
+          "label": "Font weight"
+        },
+        {
+          "type": "range",
+          "id": "font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size Mobile"
+        },
+      ]
+    },
+    {
+      "type":"countdown",
+      "name":"Countdown",
+      "limit":1,
+      "settings":[
+        {
+          "type":"color",
+          "id":"background",
+          "label":"Timer Background Color"
+        },
+        {
+          "type": "header",
+          "content": "Timer"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Text Color"
+        },
+        {
+          "type": "range",
+          "id": "t_font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size"
+        },
+        {
+          "type": "range",
+          "id": "t_font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":12,
+          "label": "Mobile Font Size"
+        },
+        {
+          "type": "range",
+          "id": "t_font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":600,
+          "label": "Font weight"
+        },
+        {
+          "type": "header",
+          "content": "Label"
+        },
+        {
+          "type": "color",
+          "id": "label_color",
+          "default":"#0c2331",
+          "label": "Text Color"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":8,
+          "label": "Font Size"
+        },
+        {
+          "type": "range",
+          "id": "font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":6,
+          "label": "Mobile Font Size"
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":600,
+          "label": "Font weight"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+       "name": "Bundle Promo Countdown",
+    }
+  ]
+}
+{% endschema %}
+<script>
+  function getStickyOffsetTop() {
+    let offsetTop = 0;
+
+    $('.announcement-bar-container').parents('.shopify-section').each(function () {
+      const $el = $(this);
+      const rect = this.getBoundingClientRect();
+      const style = window.getComputedStyle(this);
+
+      // If the element is at the top of the viewport and is sticky
+      if (Math.round(rect.top) === 0 && style.position === 'sticky') {
+        offsetTop += rect.height;
+      }
+    });
+
+    return offsetTop;
+  }
+
+  function updateStickyTop(selector) {
+    const offset = getStickyOffsetTop();
+    $(selector).css('top', offset + 'px');
+  }
+   updateStickyTop(' #shopify-section-{{ section.id }}');
+  // On page load
+  $(document).on('ready', function () {
+    updateStickyTop(' #shopify-section-{{ section.id }}');
+  });
+
+  // Optional: if other sticky elements appear on scroll
+  $(window).on('scroll', function () {
+    updateStickyTop(' #shopify-section-{{ section.id }}');
+  });
+</script>

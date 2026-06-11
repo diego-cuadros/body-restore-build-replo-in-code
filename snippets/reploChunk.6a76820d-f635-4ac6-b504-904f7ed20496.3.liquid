@@ -1,0 +1,162 @@
+{%- comment -%}replo-liquid-chunk-begin{%- endcomment -%}{{ product.title }}{%- comment -%}replo-liquid-chunk-end{%- endcomment -%}</p></span></div></div><div data-rid="a2ba87eb-30ab-4fd7-8fc3-9a7e351d501a" class="r-1ekuicm"><div data-rid="def8a43c-43bc-4c49-865d-e9dffee0c19d" class="r-z5caog alchemy-rte"><span style="width:100%">{%- comment -%}replo-liquid-chunk-begin{%- endcomment -%}{{ reploSelectedVariant.price  | money}}{%- comment -%}replo-liquid-chunk-end{%- endcomment -%}</span></div></div><div data-rid="d6dc05cf-0894-44c5-ac07-7393122c4d6d" class="r-170b9n2"><div data-rid="2df47b17-5344-4662-8021-8997e054993e" class="r-1yq9hdf alchemy-rte"><span style="width:100%">{%- comment -%}replo-liquid-chunk-begin{%- endcomment -%}{{ reploSelectedSellingPlanPrice  | money}}{%- comment -%}replo-liquid-chunk-end{%- endcomment -%}</span></div><div data-rid="9dccbabb-d562-4d34-a0ed-bbb498e8a946" class="r-dhc0wj alchemy-rte"><span style="width:100%">{%- comment -%}replo-liquid-chunk-begin{%- endcomment -%}{{ reploSelectedVariant.price  | money}}{%- comment -%}replo-liquid-chunk-end{%- endcomment -%}</span></div></div></div><button data-rid="1177d911-fbf9-40a4-9980-f796b10543e9" data-replo-add-product-variant-to-cart="" data-button="hover" tabindex="0" role="button" class="text r-5xxejp alchemy-rte"><div data-rid="eca2b769-39d6-4012-9cf4-fe597c451b76" class="r-ywg9aq alchemy-rte"><span style="width:100%"><p>Add to Cart</p></span></div></button><button data-rid="64f2225e-fb3c-4f99-975d-94378db25f73" data-replo-add-product-variant-to-cart="" data-button="hover" tabindex="0" role="button" class="text r-cnzdcr alchemy-rte"><div data-rid="d725a305-7671-4b2e-a6d3-d4472e217dcb" class="r-127gf96 alchemy-rte"><span style="width:100%"><p>Add to Cart</p></span></div></button></div></div>{%- comment -%}replo-liquid-chunk-begin{%- endcomment -%}<!-- -->{% assign product = reploOriginalProductRn5b2 %}<!-- -->{% assign reploSelectedVariant = reploOriginalProductVariantRn5b2 %}<!-- -->{% assign reploSortedSellingPlans = reploOriginalSPGRn5b2 %}<!-- -->{% assign reploSelectedSellingPlan = reploOriginalSSPRn5b2 %}<!-- -->{% assign reploSelectedSellingPlanPrice = reploOriginalSSPPriceRn5b2 %}<!-- -->{% assign reploCompareAtPriceDifferencePercentage = reploOriginalComparePricePercentRn5b2 %}<!-- -->{%- comment -%}replo-liquid-chunk-end{%- endcomment -%}</div><picture data-rid="a94eb2e5-fb15-4bd8-ad19-91941a715f63" class="r-1rur2qz"><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/65ebb7fe-0cfa-47be-8ca7-50865a687503?width=820" media="(max-width: 640px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/65ebb7fe-0cfa-47be-8ca7-50865a687503?width=1024" media="(min-width: 641px) and (max-width: 1024px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/65ebb7fe-0cfa-47be-8ca7-50865a687503?width=1800" media="(min-width: 1025px) and (max-width: 2400px)"/><img src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/65ebb7fe-0cfa-47be-8ca7-50865a687503" class="r-zdsj9r" loading="eager"/></picture></div></div><div data-rid="deced10b-ed9d-4551-b7b5-8dfae87f1429" class="r-4li95z"><script>
+(function () {
+  // Selling plan value → day count
+  const PLAN_DAYS = {
+    "747634784": "15",
+    "747667552": "30",
+    "747700320": "60"
+  };
+
+  function updateText(days) {
+    const el = document.querySelector("[data-estimated-time-text] p");
+    if (!el) return;
+    el.textContent = el.textContent.replace(/Every \d+ Days/i, "Every " + days + " Days");
+  }
+
+  // Strategy 1: native change/input event delegation (bubbles from any select)
+  document.addEventListener("change", function (e) {
+    if (!e.target.closest("[data-select-options]")) return;
+    const sel = e.target;
+    const match = sel.options[sel.selectedIndex]?.text.match(/\d+/);
+    if (match) updateText(match[0]);
+  });
+  document.addEventListener("input", function (e) {
+    if (!e.target.closest("[data-select-options]")) return;
+    const sel = e.target;
+    const match = sel.options[sel.selectedIndex]?.text.match(/\d+/);
+    if (match) updateText(match[0]);
+  });
+
+  // Strategy 2: watch the hidden selling_plan input attribute for Replo-driven updates
+  function watchSellingPlan() {
+    const input = document.querySelector("input[name='selling_plan']");
+    if (!input) return false;
+    new MutationObserver(function () {
+      const days = PLAN_DAYS[input.getAttribute("value")];
+      if (days) updateText(days);
+    }).observe(input, { attributes: true, attributeFilter: ["value"] });
+    return true;
+  }
+
+  // Strategy 3: poll the select value as a fallback (catches React-controlled updates)
+  let lastValue = null;
+  setInterval(function () {
+    const sel = document.querySelector("[data-select-options]");
+    if (!sel || sel.value === lastValue) return;
+    lastValue = sel.value;
+    const days = PLAN_DAYS[sel.value];
+    if (days) updateText(days);
+  }, 300);
+
+  // Wait for DOM if elements aren't ready yet
+  function init() {
+    const ready = !!document.querySelector("[data-select-options]");
+    if (ready) watchSellingPlan();
+    return ready;
+  }
+
+  if (!init()) {
+    const observer = new MutationObserver(function () {
+      if (init()) observer.disconnect();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+})();
+</script></div><div data-rid="0cd118dc-727a-4eea-8df2-5dd4e42fa565" class="r-1blt7r4"><style>
+[data-date="style"] div {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #0C2231;
+}
+[data-button="hover"]:hover {
+    background-color: #000 !important;
+}
+
+@media (max-width: 1025px) {
+[data-date="style"] div {
+    font-size: 12px;
+    line-height: 17px;
+}
+}
+
+[data-replo-carousel] {
+    border: none;
+
+}
+</style></div></div><div data-rid="e01c0e00-fff7-40e4-94ca-2d9dbe3657b7" class="r-1h4jz7c"><div data-rid="64d976cb-119a-4da0-b020-0c02a1a15a6c" class="r-18qx9p3" id="replo-carousel::R632:" role="region" aria-label="Carousel" data-replo-carousel="true"><div aria-live="polite" aria-atomic="true" class="replo-sr-only">Slide <!-- -->1<!-- --> of <!-- -->6</div><div data-rid="da3197ad-b8a2-40fe-91f2-84eef1fe3064" class="r-wpwf7n"><div data-rid="2cb608fb-3054-4e0a-8cea-888288033d4f" class="r-x3b2wm"><div data-rid="f383bfed-5793-49b4-9aca-2aa2c53b39dd" class="r-1ky5key alchemy-rte"><span style="width:100%"><h2>Over A Million&nbsp;<span style="color: rgb(30, 153, 101)">Showers Upgraded</span></h2></span></div><div data-rid="1e7c7683-b92c-4d90-8025-962496c9e6ba" data-letter-spacing="" class="r-11j4c7j alchemy-rte"><span style="width:100%"><p>Watch how our community turns their daily routine into a 5-minute spa escape.</p></span></div></div><div data-rid="7b7bf7d9-9687-4989-a43c-b4560dba9a7c" class="r-kxa6m4"><button type="button" data-replo-component-root="carousel" data-replo-part="nav-button" data-direction="previous" aria-label="Previous slide" data-rid="399b525d-23f1-454d-a865-2acb96679bd3" class="r-1pz8rkn r-1gwiukc"><div data-rid="f5d974d2-839e-4069-a740-b0b265ef4308" class="r-1j19bgw"><span style="display:contents"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left" style="fill: none;stroke: currentColor;width: var(--rsw, 100%);height: auto" role="presentation"><polyline points="15 18 9 12 15 6"></polyline></svg></span></div></button><button type="button" data-replo-component-root="carousel" data-replo-part="nav-button" data-direction="next" aria-label="Next slide" data-rid="acba3672-5904-41df-9376-f36f19d904d9" class="r-1swfs27"><div data-rid="de724540-94e1-433e-bc4f-f32cab67ae95" class="r-a64412"><span style="display:contents"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right" style="fill: none;stroke: currentColor;width: var(--rsw, 100%);height: auto" role="presentation"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div></button></div></div><div data-rid="8b686fd0-7ceb-4460-b88f-43afc0655802" class="r-1uyrvls"><div data-rid="2601b9e9-e3a2-4bfb-a16a-913912868f34" class="r-1sv3cij"><div data-replo-component-root="carousel" data-replo-part="slides" data-replo-root-id="replo-carousel:Rrm32:" data-orientation="horizontal" data-active-slide-position="start" role="region" aria-label="Carousel slides" dir="ltr" style="padding-left:0;padding-right:0;width:100%;height:100%;overflow:visible;position:relative" id="replo-carousel:Rrm32::track"><div data-replo-component-root="carousel" data-replo-part="slide-track" data-replo-root-id="replo-carousel:Rrm32:" data-orientation="horizontal" data-active-slide-position="start" style="--replo-carousel-slides-per-page:1;transform:translate3d(0px, 0px, 0px);display:flex;overflow:visible;backface-visibility:hidden;gap:var(--replo-gap, 0px);height:100%;margin:0;padding:0;transition-duration:0ms;transition-property:none"><div data-replo-component-root="carousel" data-replo-part="slide" data-replo-root-id="replo-carousel:Rrm32:" data-slide-index="0" data-slide-source-index="0" data-is-active="true" data-is-cloned="true" data-slide-id="replo-carousel:Rrm32::slide:0:0" id="replo-carousel:Rrm32::slide:0:0:R6rm32::clone:0" aria-hidden="true" tabindex="-1" role="group" aria-label="Slide 1" style="display:flex;height:100%;padding:0;margin:0;backface-visibility:hidden;flex-shrink:0;position:relative" data-component-id="071af7c7-8bef-481e-867e-fbfd9e89a24f" class="r-tcihgc"><div data-rid="071af7c7-8bef-481e-867e-fbfd9e89a24f" class="r-9xh2wa"><div data-rid="396b29da-cceb-4f76-8f05-d5a06b22376e" data-ucg="video" class="r-1y8586c"><div class="r-lnpyjx"><video src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/efa5dc06-935c-4370-b46e-4d509830dcae" style="width:100%;height:100%;object-fit:var(--rof, inherit);object-position:var(--rop, inherit)" preload="metadata"></video></div><div data-rid="9eb00486-acc5-448b-ac3b-cf5fce85affa" data-playbtn="wrapper" tabindex="0" role="button" class="r-6dpca2"><div data-rid="3d9303bc-662b-4986-8ba2-be68a133df0e" class="r-353wg0"><div data-rid="1ca77142-2597-4b56-85a9-8b902f55fadf" data-play="btn" tabindex="0" role="button" class="r-8cmd3b"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" role="presentation" aria-label="Play" style="width:var(--rsw, 100%);height:auto;max-height:100%" class="r-12hthl2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path></svg></div></div><div data-rid="83dcfd32-5d55-4b7c-84d6-ccd123aa224b" class="r-167tax1"></div></div></div></div></div><div data-replo-component-root="carousel" data-replo-part="slide" data-replo-root-id="replo-carousel:Rrm32:" data-slide-index="1" data-slide-source-index="1" data-is-cloned="true" data-is-target="true" data-slide-id="replo-carousel:Rrm32::slide:1:1" id="replo-carousel:Rrm32::slide:1:1:Rarm32::clone:1" aria-hidden="true" tabindex="-1" role="group" aria-label="Slide 2" style="display:flex;height:100%;padding:0;margin:0;backface-visibility:hidden;flex-shrink:0;position:relative" data-component-id="14dd41e6-f660-4670-9679-ef4498cc2a61" class="r-tcihgc"><div data-rid="14dd41e6-f660-4670-9679-ef4498cc2a61" class="r-1t16ttc"><div data-rid="2b4ccf22-cadd-413a-aa21-8df6113324ba" data-ucg="video" class="r-10arvwo"><div class="r-1rm84ui"><video src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/09628f7a-4e40-49b0-92bf-27cd7165c384" style="width:100%;height:100%;object-fit:var(--rof, inherit);object-position:var(--rop, inherit)" preload="metadata"></video></div><div data-rid="15ba80dc-8d1b-41e0-b494-52ef48a02759" data-playbtn="wrapper" tabindex="0" role="button" class="r-9nargz"><div data-rid="f104283e-fd59-41ff-b739-6f14153e5954" class="r-xfxr5t"><div data-rid="3fe83651-dacb-45a5-8755-46d35ecf4778" data-play="btn" tabindex="0" role="button" class="r-t7kb0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" role="presentation" aria-label="Play" style="width:var(--rsw, 100%);height:auto;max-height:100%" class="r-13c6d8p" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path></svg></div></div><div data-rid="132af069-5aa4-4fbf-9ec1-a1e82df1a22b" class="r-5stiu6"></div></div></div></div></div><div data-replo-component-root="carousel" data-replo-part="slide" data-replo-root-id="replo-carousel:Rrm32:" data-slide-index="2" data-slide-source-index="2" data-is-cloned="true" data-slide-id="replo-carousel:Rrm32::slide:2:2" id="replo-carousel:Rrm32::slide:2:2:Rerm32::clone:2" aria-hidden="true" tabindex="-1" role="group" aria-label="Slide 3" style="display:flex;height:100%;padding:0;margin:0;backface-visibility:hidden;flex-shrink:0;position:relative" data-component-id="a85ca3e4-14cf-42be-8edf-f15dfede65a5" class="r-tcihgc"><div data-rid="a85ca3e4-14cf-42be-8edf-f15dfede65a5" class="r-5gsp2q"><div data-rid="4b5de7e6-f2a6-42fc-ab27-a4be982cd6f0" data-ucg="video" class="r-1jh86vj"><div class="r-1yjrojq"><video src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/f7bef3ff-35f0-44cb-b878-8d40370a207a" style="width:100%;height:100%;object-fit:var(--rof, inherit);object-position:var(--rop, inherit)" preload="metadata"></video></div><div data-rid="0aca9a67-6bcc-404e-bb4c-cec6ef010509" data-playbtn="wrapper" tabindex="0" role="button" class="r-uaiozy"><div data-rid="561e9c8d-a5bd-4070-8410-bfd6c0027d63" class="r-1hml9d2"><div data-rid="ec6f2dce-9def-4854-b403-baa05e9095c7" data-play="btn" tabindex="0" role="button" class="r-8ypbtx"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" role="presentation" aria-label="Play" style="width:var(--rsw, 100%);height:auto;max-height:100%" class="r-1lqbq6d" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path></svg></div></div><div data-rid="c34a2784-0521-40a3-9614-aa9d30676a45" class="r-1n4xb3r"></div></div></div></div></div><div data-replo-component-root="carousel" data-replo-part="slide" data-replo-root-id="replo-carousel:Rrm32:" data-slide-index="3" data-slide-source-index="3" data-is-cloned="true" data-slide-id="replo-carousel:Rrm32::slide:3:3" id="replo-carousel:Rrm32::slide:3:3:Rirm32::clone:3" aria-hidden="true" tabindex="-1" role="group" aria-label="Slide 4" style="display:flex;height:100%;padding:0;margin:0;backface-visibility:hidden;flex-shrink:0;position:relative" data-component-id="d5281cd2-c662-4573-9d31-9f97dc191c20" class="r-tcihgc"><div data-rid="d5281cd2-c662-4573-9d31-9f97dc191c20" class="r-1evnjez"><div data-rid="dd851d83-eefb-4114-be85-7de94133513d" data-ucg="video" class="r-18xi1er"><div class="r-1m34cyg"><video src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/d9bf6f23-666e-4905-8e85-2b0f69ca4a13" style="width:100%;height:100%;object-fit:var(--rof, inherit);object-position:var(--rop, inherit)" preload="metadata"></video></div><div data-rid="62d7d348-421f-4292-84c1-6843d6541f25" data-playbtn="wrapper" tabindex="0" role="button" class="r-172dpta"><div data-rid="46331ad4-dfc0-49d8-92ad-cf28419267c9" class="r-1pgy8cw"><div data-rid="cdc744f2-35ea-453a-97a8-80aebf6c2f50" data-play="btn" tabindex="0" role="button" class="r-1piallc"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" role="presentation" aria-label="Play" style="width:var(--rsw, 100%);height:auto;max-height:100%" class="r-15y8c5w" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path></svg></div></div><div data-rid="59d3a6f6-9547-43bb-82f1-e2778d119264" class="r-1aar21s"></div></div></div></div></div><div data-replo-component-root="carousel" data-replo-part="slide" data-replo-root-id="replo-carousel:Rrm32:" data-slide-index="4" data-slide-source-index="4" data-is-cloned="true" data-slide-id="replo-carousel:Rrm32::slide:4:4" id="replo-carousel:Rrm32::slide:4:4:Rmrm32::clone:4" aria-hidden="true" tabindex="-1" role="group" aria-label="Slide 5" style="display:flex;height:100%;padding:0;margin:0;backface-visibility:hidden;flex-shrink:0;position:relative" data-component-id="38f0972b-5c01-460a-8b39-8f8eed35d846" class="r-tcihgc"><div data-rid="38f0972b-5c01-460a-8b39-8f8eed35d846" class="r-1cpumoq"><div data-rid="e6a124c8-f5c0-4d68-b05c-17eb8e9fdacc" data-ucg="video" class="r-17f1fyl"><div class="r-1lkaj39"><video src="https://cdn.shopify.com/videos/c/o/v/9b7fa67c5f1b4e4c81beedf28121663d.mp4" style="width:100%;height:100%;object-fit:var(--rof, inherit);object-position:var(--rop, inherit)" preload="metadata"></video></div><div data-rid="1e6822b3-9d70-46f7-ae40-aff76b811391" data-playbtn="wrapper" tabindex="0" role="button" class="r-1gztpax"><div data-rid="a287f62a-d515-476c-86cb-58d0a4f99399" class="r-g8waco"><div data-rid="9f0610d9-d5aa-4a50-bae0-60290dccb8c6" data-play="btn" tabindex="0" role="button" class="r-yu6c9l"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" role="presentation" aria-label="Play" style="width:var(--rsw, 100%);height:auto;max-height:100%" class="r-g8fvo9" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path></svg></div></div><div data-rid="b85d354e-2725-4767-920e-12c315b06024" class="r-1i3fmf9"></div></div></div></div></div><div data-replo-component-root="carousel" data-replo-part="slide" data-replo-root-id="replo-carousel:Rrm32:" data-slide-index="5" data-slide-source-index="5" data-is-cloned="true" data-slide-id="replo-carousel:Rrm32::slide:5:5" id="replo-carousel:Rrm32::slide:5:5:Rqrm32::clone:5" aria-hidden="true" tabindex="-1" role="group" aria-label="Slide 6" style="display:flex;height:100%;padding:0;margin:0;backface-visibility:hidden;flex-shrink:0;position:relative" data-component-id="cc619ec0-c114-48c3-ab14-64a441e6038a" class="r-tcihgc"><div data-rid="cc619ec0-c114-48c3-ab14-64a441e6038a" class="r-1eal6pm"><div data-rid="d13b79da-91d2-4b54-8a9c-8f3974f3ac70" data-ucg="video" class="r-1a22sdc"><div class="r-1nura2u"><video src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/dc63fa7c-4b11-47a2-97f7-7fd80a4839ae" style="width:100%;height:100%;object-fit:var(--rof, inherit);object-position:var(--rop, inherit)" preload="metadata"></video></div><div data-rid="4e6ec752-e718-426e-a906-66790474adcc" data-playbtn="wrapper" tabindex="0" role="button" class="r-dhi76l"><div data-rid="42838c18-dd91-48a5-90e2-507da395c7de" class="r-rakflt"><div data-rid="b83e3e96-6a13-4991-89d6-f03808338017" data-play="btn" tabindex="0" role="button" class="r-1h8yrle"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" role="presentation" aria-label="Play" style="width:var(--rsw, 100%);height:auto;max-height:100%" class="r-1c6shay" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"></path></svg></div></div><div data-rid="bbaca4aa-6030-46f6-9e55-b18417370fc4" class="r-qeewel"></div></div></div></div></div></div></div></div></div><div data-rid="019c7584-91d0-466c-9924-293230aacd74" class="r-1l31zge"><button type="button" data-replo-component-root="carousel" data-replo-part="nav-button" data-direction="previous" aria-label="Previous slide" data-rid="09bfbfd0-7e95-4d67-ada1-ec62f9552dfc" class="r-tmb5e0 r-jvgait"><div data-rid="8771ec3f-66fd-4e6e-adde-cf32ef3dd4d7" class="r-1f80swp"><span style="display:contents"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left" style="fill: none;stroke: currentColor;width: var(--rsw, 100%);height: auto" role="presentation"><polyline points="15 18 9 12 15 6"></polyline></svg></span></div></button><button type="button" data-replo-component-root="carousel" data-replo-part="nav-button" data-direction="next" aria-label="Next slide" data-rid="6684fcd6-f4c4-4239-a72f-e327c6aa92ab" class="r-sn0u8e"><div data-rid="77336f31-6c87-4c3b-ad39-4015b668e84c" class="r-w8xvix"><span style="display:contents"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right" style="fill: none;stroke: currentColor;width: var(--rsw, 100%);height: auto" role="presentation"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div></button></div></div><picture data-rid="98b119c8-f8b6-460e-a2a8-1b9996a3daa1" class="r-cp8tyi"><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/76d19e8b-84c7-421a-86b4-62c46fdf15db?width=820" media="(max-width: 640px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/8076b971-eb70-4a99-b77a-43890ff6f67d?width=1024" media="(min-width: 641px) and (max-width: 1024px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/8076b971-eb70-4a99-b77a-43890ff6f67d?width=1800" media="(min-width: 1025px) and (max-width: 2400px)"/><img src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/8076b971-eb70-4a99-b77a-43890ff6f67d" class="r-2zminv" loading="eager"/></picture></div><div data-rid="79f0322c-f20a-4ccf-8c83-d80d4374bfa2" data-alchemy-url-hashmark="review" tabindex="-1" id="review" data-alchemy-url-hashmark-ignore="true" class="r-ja74jt"><div data-rid="9c8c9628-0d37-4640-9a11-c2a300516425" class="r-1hazkfz"><div data-rid="4274e3ed-a6ff-4f5d-8dd0-bdb0043e8510" class="r-1603pgm"><div data-rid="7048037a-28da-43ac-bc4e-b9b596db00cc" class="r-1gormhu alchemy-rte"><span style="width:100%"><h2>Over A Million People Have&nbsp;<span style="color: rgb(255, 174, 33)">Upgraded Their Shower</span></h2></span></div><div data-rid="4cbe65cb-a532-4d13-a2b7-275084f6a843" class="r-7foon0 alchemy-rte"><span style="width:100%"><h2>Over A Million People Have&nbsp;<span style="color: #FFAE21FF">Upgraded Their Shower</span></h2></span></div><div data-rid="13f63c38-12d6-4b57-a3a1-e7e44f8a3edc" class="r-rxa1g1 alchemy-rte"><span style="width:100%"><p>Don't take our word for it. Here's what real customers say every single day.</p></span></div></div><div data-rid="50de183f-65dd-425b-b191-ec077af13cc3" class="r-1xr5vkn" data-alchemy-prerendered-component-id="50de183f-65dd-425b-b191-ec077af13cc3">{%- comment -%}replo-liquid-chunk-begin{%- endcomment -%}<div style="width:100%;height:100%" data-alchemy-prerendered-placeholder="true">
+    {% if product %}
+      {% assign reploExistingProduct = product %}
+    {% endif %}
+
+    {% assign product = all_products['eucalyptus-shower-steamers'] %} 
+    <div
+      data-oke-widget data-oke-reviews-widget
+      data-oke-reviews-product-id="shopify-{{ product.id }}">
+        {{ product.metafields.okendo.ReviewsWidgetSnippet }}
+    </div>
+
+    {% if reploExistingProduct %}
+      {% assign product = reploExistingProduct %} 
+    {% endif %}
+  </div>{%- comment -%}replo-liquid-chunk-end{%- endcomment -%}</div></div></div><div data-rid="91242be9-ee87-463c-b369-50984bee58d1" class="r-173c2x"><picture data-rid="84a6d679-9d7c-4326-9b13-e45654e58ce9" class="r-saqm77"><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/0152255b-b821-4dd2-86cd-84743a525843?width=820" media="(max-width: 640px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/b9d7dc09-f48a-429f-9b5a-eb2f33cc73de?width=1024" media="(min-width: 641px) and (max-width: 1024px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/b9d7dc09-f48a-429f-9b5a-eb2f33cc73de?width=1800" media="(min-width: 1025px) and (max-width: 2400px)"/><img src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/b9d7dc09-f48a-429f-9b5a-eb2f33cc73de" class="r-lvueru" loading="eager"/></picture></div><div data-rid="0b12a467-5ebf-4f46-8bc4-8f956f070b4c" class="r-17mu1rx"><div data-rid="967f47ee-f371-49d5-b53c-401fb7519897" class="r-ulslm4"><div class="r-v0odxq" data-rid="1"><div data-rid="a1db130e-583e-45bb-bba5-d7b53635f721" class="r-kjoq24"><div data-rid="9f3ea386-099d-4850-b4ec-a6a58dbfd58e" class="r-15q89d6"><picture data-rid="0f283bac-3270-4cb5-85b0-032242aaa59c" class="r-l770ch"><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/334346a4-2c85-4e26-b5c8-5041bdc06226?width=820" media="(max-width: 640px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/68c99037-319b-4674-b439-48b164028465?width=1024" media="(min-width: 641px) and (max-width: 1024px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/68c99037-319b-4674-b439-48b164028465?width=1800" media="(min-width: 1025px) and (max-width: 2400px)"/><img src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/68c99037-319b-4674-b439-48b164028465" class="r-cl5rfs" loading="eager"/></picture><picture data-rid="13a920a9-309a-474f-8bf3-0faf51f5e3b5" class="r-1f36g5g"><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/a0f3b10c-b80b-4fb1-8dd1-0505d8a13bc3?width=142" media="(max-width: 640px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/a0f3b10c-b80b-4fb1-8dd1-0505d8a13bc3?width=222" media="(min-width: 641px) and (max-width: 1024px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/a0f3b10c-b80b-4fb1-8dd1-0505d8a13bc3?width=222" media="(min-width: 1025px) and (max-width: 2400px)"/><img src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/a0f3b10c-b80b-4fb1-8dd1-0505d8a13bc3" alt="A cartoon of a happy, walking pill giving a peace sign and a thumbs up." class="r-dsecml" loading="eager"/></picture></div><div data-rid="da5388ac-ea81-47a1-899e-c6ba20c8a5c0" class="r-1hgssbp"><div data-rid="ccb596dc-ed61-4de2-81af-b806ba0ae54d" class="r-1vd1h3j"><div data-rid="de3269e7-9591-465c-be6e-50f304eb85c0" class="r-139ew0y"><div data-rid="abee65e5-673c-4a77-b8a3-66e98b1f3a26" class="r-1lgp5rw alchemy-rte"><span style="width:100%"><p>Aromatherapy Showers Could Make You More Relaxed</p></span></div><div data-rid="daf5df84-66ca-46f5-8931-e29fe6cf5636" class="r-7shtkb alchemy-rte"><span style="width:100%"><p>Reduce your stress and anxiety with aromatherapy.</p></span></div></div><div data-rid="f7b227a4-01bd-4821-9757-a3e286313f3c" class="r-n3zt9z"><button data-rid="acb9b13d-d382-4bbf-ae88-e803a4835094" tabindex="0" role="link" class="text r-zk3aeq alchemy-rte"><div data-rid="eb13bca7-fc91-4dfe-b138-422e777e7abe" class="r-2iqdzf alchemy-rte"><span style="width:100%"><p>SHOP NOW</p></span></div></button><div data-rid="a254d4d0-927f-436c-93ab-818e17ea3f6d" class="r-rwtxjn"><picture data-rid="1ecaa421-10d4-4569-ad88-e8732b42afb3" class="r-o8d860"><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/984b2b69-cbb1-4757-905f-55edcc14c2da?width=32" media="(max-width: 640px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/984b2b69-cbb1-4757-905f-55edcc14c2da?width=32" media="(min-width: 641px) and (max-width: 1024px)"/><source srcSet="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/984b2b69-cbb1-4757-905f-55edcc14c2da?width=32" media="(min-width: 1025px) and (max-width: 2400px)"/><img src="https://assets.replocdn.com/projects/34ae5ee7-7771-4d32-b6a0-7984780e4362/984b2b69-cbb1-4757-905f-55edcc14c2da" class="r-9letu2" loading="eager"/></picture><div data-rid="4ddf3cf3-13bd-46c4-98df-bd472c39f1bd" class="r-z2fo44 alchemy-rte"><span style="width:100%"><p>30-Day Money-Back Guarantee</p></span></div></div></div></div></div></div></div></div></div><div data-rid="2cb83f72-9c75-4c15-a57e-88b1c1bfd5a8" class="r-hjk5vo"><script>
+   function initCustomVideos() {
+    document.querySelectorAll('div[data-ucg="video"]').forEach((videoBox) => {
+ 
+        // Duplicate events avoid
+        if (videoBox.dataset.videoInitialized) return;
+        videoBox.dataset.videoInitialized = "true";
+ 
+        const playWrapper = videoBox.querySelector('div[data-playbtn="wrapper"]');
+        const video = videoBox.querySelector('video');
+ 
+        if (!playWrapper || !video) return;
+ 
+        // Play button click
+        playWrapper.addEventListener('click', (e) => {
+            e.stopPropagation();
+ 
+            playWrapper.style.display = 'none';
+ 
+            video.play();
+        });
+ 
+        // Video click => toggle play/pause
+        video.addEventListener('click', () => {
+ 
+            if (video.paused) {
+                video.play();
+                playWrapper.style.display = 'none';
+            } else {
+                video.pause();
+                playWrapper.style.display = 'flex';
+            }
+ 
+        });
+ 
+        // Video end
+        video.addEventListener('ended', () => {
+            playWrapper.style.display = 'flex';
+        });
+    });
+}
+ 
+// Initial run
+initCustomVideos();
+ 
+// Replo dynamic content observer
+const observer = new MutationObserver(() => {
+    initCustomVideos();
+});
+ 
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script></div></div></div><style>@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900;950&family=Raleway:wght@100;200;300;400;500;600;700;800;900;950)</style></div>
+{%- comment -%}replo-liquid-chunk-begin{%- endcomment -%}
+  <script type="application/json" id="replo-deps-products">
+    [{"id":"4640033636448","handle": "eucalyptus-shower-steamers","data":{{ all_products['eucalyptus-shower-steamers'] | json }}},{"id":"4772706910304","handle": "calm-bedtime-shower-steamers-lavender","data":{{ all_products['calm-bedtime-shower-steamers-lavender'] | json }}},{"id":"4695508189280","handle": "citrus-aromatherapy-shower-steamers","data":{{ all_products['citrus-aromatherapy-shower-steamers'] | json }}},{"id":"6643583713376","handle": "essence-tea-tree-shower-steamers","data":{{ all_products['essence-tea-tree-shower-steamers'] | json }}},{"id":"6643584106592","handle": "amore-rose-shower-steamers","data":{{ all_products['amore-rose-shower-steamers'] | json }}},{"id":"6644845510752","handle": "collectors-edition-box-shower-steamers","data":{{ all_products['collectors-edition-box-shower-steamers'] | json }}}]
+  </script>
+  {%- comment -%}replo-liquid-chunk-end{%- endcomment -%}{%- comment -%}replo-liquid-chunk-begin{%- endcomment -%}<script type="application/json" id="replo-deps-shopify-store">{ "shop": { "moneyFormat": {{ shop.money_format | json }}, "moneyWithCurrencyFormat": {{ shop.money_with_currency_format | json }} } }</script>{%- comment -%}replo-liquid-chunk-end{%- endcomment -%}

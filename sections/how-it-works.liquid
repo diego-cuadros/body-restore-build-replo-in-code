@@ -1,0 +1,268 @@
+{{ 'how-it-works.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding.page-width {
+    max-width: 118.4rem;
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+ #shopify-section-{{section.id}} .step-grid {display:grid;grid-template-columns:repeat({{section.settings.grid-mob}} , 1fr);}
+ #shopify-section-{{section.id}} .step-grid .step__item  {width:100%;}
+ #shopify-section-{{section.id}} .step-grid .step__item .step-wrapper {height:100%;}
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+ #shopify-section-{{section.id}} .step-grid {grid-template-columns:repeat({{section.settings.grid}} , 1fr);}
+  }
+{%- endstyle -%}
+
+<div class="how_it_work_sec color-{{ section.settings.color_scheme }} gradient isolate" {% if section.settings.work_bg_color != blank %} style="background: {{ section.settings.work_bg_color }};"{% endif %}>
+  <div class="page-width{% if section.settings.heading == blank %} no-heading{% endif %} section-{{ section.id }}-padding">
+    <div class="how-it-works__title title-wrapper title-wrapper--no-top-margin text-center">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="how-it-works-wrapper-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <div class="how-it-works__description  rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ section.settings.description -}}
+        </div>
+      {%- endif -%}
+    </div>
+    {% if section.settings.sub_title_work != blank %}
+    <div class="how_it_sub">
+      <h4>{{ section.settings.sub_title_work }}</h4>
+      {% if section.settings.sub_description_work != blank %}
+      {{ section.settings.sub_description_work }}
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="step-grid grid grid--1-col grid--2-col-tablet">
+      {% for block in section.blocks %}
+        {% liquid
+          assign poster = block.settings.image
+          if block.settings.use_video and block.settings.video != blank
+            assign poster = block.settings.video.preview_image
+          endif 
+        %}
+        <div class="step__item grid__item {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% if settings.animations_reveal_on_scroll %}data-cascade style="--animation-order: {{ forloop.index }};"{% endif %} {{ block.shopify_attributes }}>
+          <div class="step-wrapper" style="--background-color: {{ block.settings.background }};--title-color: {{ block.settings.title_color }};--text-color: {{ block.settings.text_color }};">
+            {%- if block.settings.use_video and block.settings.video != blank -%}
+              <div class="step-media media gradient color-{{ section.settings.color_scheme }} global-media-settings" style="padding-bottom: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;">
+                {{ block.settings.video | video_tag: image_size: '1100x', autoplay: true, loop: true, controls: false, muted: true }}
+              </div>
+            {%- elsif block.settings.image != blank -%}
+              <div class="step-media media gradient color-{{ section.settings.color_scheme }} global-media-settings" style="padding-bottom: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;">
+                {{ poster | image_url: width: 3840 | image_tag:
+                  loading: 'lazy',
+                  sizes: '100vw',
+                  widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                  alt: poster.alt
+              }}
+              </div>
+            {%- else -%}
+              <div class="step-media placeholder gradient color-{{ section.settings.color_scheme }}">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.title != blank or block.settings.content != blank -%}
+              <div class="step-content">
+                {% if block.settings.title != blank %}
+                  <h3 class="step-title inline-richtext">
+                    {{ block.settings.title }}
+                  </h3>
+                {%- endif -%}
+                {%- if block.settings.content != blank -%}
+                  <div class="step-text  rte">
+                    {{ block.settings.content -}}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "How it works",
+    "tag": "section",
+    "class": "section how-it-works",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "color",
+        "id": "work_bg_color",
+        "label": "Background Color"
+      },
+        {
+          "type":"range",
+          "id":"grid",
+          "min":1,
+          "max":4,
+          "default":2,
+          "label":"Grid Count"
+        },
+        {
+          "type":"range",
+          "id":"grid-mob",
+          "min":1,
+          "max":3,
+          "default":1,
+          "label":"Mobile Grid Count"
+        },
+      {
+        "type": "inline_richtext",
+        "id": "heading",
+        "default": "How it works",
+        "label": "Heading"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+          {
+            "value": "h2",
+            "label": "t:sections.all.heading_size.options__1.label"
+          },
+          {
+            "value": "h1",
+            "label": "t:sections.all.heading_size.options__2.label"
+          },
+          {
+            "value": "h0",
+            "label": "t:sections.all.heading_size.options__3.label"
+          }
+        ],
+        "default": "h1",
+        "label": "t:sections.all.heading_size.label"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "sub_title_work",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "sub_description_work",
+        "label": "Sub Description"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "info": "t:sections.all.colors.has_cards_info",
+        "default": "background-1"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "steps",
+        "name": "Staps",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "checkbox",
+            "id": "use_video",
+            "label": "Use Video"
+          },
+          {
+            "type": "inline_richtext",
+            "id": "title",
+            "default": "Step 1",
+            "label": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+          },
+          {
+            "type": "header",
+            "content": "Card Colors"
+          },
+          {
+            "type": "color",
+            "id": "background",
+            "label": "Background color",
+            "default": "#FFF6DA"
+          },
+          {
+            "type": "color",
+            "id": "title_color",
+            "label": "Title color",
+            "default": "#0C2331"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#64748B"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 2,
+    "presets": [
+      {
+        "name": "How it works",
+        "blocks": [
+          {
+            "type": "steps"
+          },
+          {
+            "type": "steps"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,62 @@
+<div class="var-container">
+  {% render 'free-gift-info', block: block %}
+  <div class="products-grid">
+    {% assign product_list = product.metafields.custom.offer_ladder_products.value %}
+    {% if product_list %}
+      {% assign product_gift = product_list | parse_json %}
+      {% assign count = 0 %}
+      {% for product in product_gift %}
+        {% assign count = count | plus: 1 %}
+        {% render 'product-lists', product: product, block: block, count: count %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="main-gift-product-container">
+    {% if block.settings.pinfosale != blank %}
+      <div class="products-title">
+        <div class="text">{{ block.settings.pinfosale }}</div>
+      </div>
+    {% endif %}
+    {% if block.settings.freeproductdesign == 'progressbar' %}
+      {% render 'bundle-progressbar', block: block %}
+    {% elsif block.settings.freeproductdesign == 'grid' %}
+      {% render 'bundle-progressgrid', block: block %}
+    {% endif %}
+    <hr>
+    <div class="save-order-text">
+      <div class="save-container">You're saving <span class="totaldiscount">50%</span></div>
+      <div class="product-count">
+        <div class="icon">
+          {% render 'load-icon' %}
+        </div>
+        <div class="text">GIFTS UNLOCKED:<span class="total-count-product">0</span>/6</div>
+      </div>
+    </div>
+    <div class="error-msgs" style="display:none;"></div>
+    <div
+      class="flavour-btn-container flavour-atc-btn-container inactive"
+      data-bpid="{{ product.selected_or_first_available_variant.id }}"
+    >
+      <div class="button button--full-width button--primary">
+        <div class="load-more__spinner">&nbsp;</div>
+        <div class="button-flavour-info">
+          <span class="btn-text">Proceed to Checkout</span
+          ><span class="icon">
+            {% render 'right-arrow' %}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    {% if block.settings.productverinfo %}
+      <div class="icon-with-text">
+        <div class="icon">
+          {% render 'verify-icon' %}
+        </div>
+        <div class="content">
+          {{ block.settings.productverinfo }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

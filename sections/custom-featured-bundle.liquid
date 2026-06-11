@@ -1,0 +1,1264 @@
+{% style %}
+  #shopify-section-{{section.id}} strong {font-weight:800 !important;}
+  #shopify-section-{{section.id}} .fullwidth{width:100% !important;max-width:100% !important;}
+  #shopify-section-{{section.id}} .main-container {border:1px dashed #000000;padding:2px;background-color:{{section.settings.content-bg-color}};position:relative;}
+  #shopify-section-{{section.id}} .main-container .badge-container {position:absolute;top:0;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:center;z-index:1; transform:translateY(-50%);}
+  #shopify-section-{{section.id}} .main-container .badge-container .badge-item { padding:8px 16px;border-radius:10px;}
+  #shopify-section-{{section.id}} .main-container .badge-container .badge-item > * {margin:0px;}
+  #shopify-section-{{section.id}} .page-width{max-width:{{section.settings.width}}px;width:100%;}
+  #shopify-section-{{section.id}} {margin-top:{{section.settings.margintop}}px;background:{{ section.settings.background }};}
+  #shopify-section-{{section.id}} .bright-video-wrapper{display:grid;border-radius:4px;overflow:hidden;}
+  #shopify-section-{{section.id}} .bright-video-wrapper.media_first{grid-template-areas:'media content';grid-template-columns:1fr 1fr;}
+  #shopify-section-{{section.id}} .bright-video-wrapper.content_first{grid-template-areas:'content media';grid-template-columns:1fr 1fr;}
+  #shopify-section-{{section.id}} .page-width .bright-video-wrapper { gap:0px;}
+  #shopify-section-{{section.id}} .page-width em { color:{{ section.settings.em-color }} !important;font-style:normal;}
+  #shopify-section-{{section.id}} .bright-video-container{position:relative;padding-top:100%;height:100%;grid-area:media;top:0px;}
+  #shopify-section-{{section.id}} .bright-video-container video{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover;object-position:center;}
+  #shopify-section-{{section.id}} .bright-video-container img{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover;object-position:center;}
+  #shopify-section-{{section.id}} .banner_inner_detail {width:100%;}
+  #shopify-section-{{section.id}} .banner_inner_detail .button-landing-banner{cursor:pointer;width:100%;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:4px; line-height: 1;}
+  #shopify-section-{{section.id}} .banner_inner_detail .button-landing-banner svg {width:24px;}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content {width:100%;display:flex;flex-direction:column;align-items:{{section.settings.align}};justify-content:center;text-align:{{section.settings.align}}; gap:0px;}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content h2 {line-height:1.15;}
+  #shopify-section-{{section.id}} .bright-video-content .heading{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .heading p{margin:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .content{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .content p{margin:0px;line-height:1.4;}
+  #shopify-section-{{section.id}} .speaker-button{position: absolute;top: auto;bottom:20px;left:20px;right: auto;}
+  #shopify-section-{{section.id}} .speaker-btn-icons{display:flex;gap:20px;}
+  #shopify-section-{{section.id}} .videobtns{cursor:pointer;display: flex;align-items: center;width: 24px;height: 24px;}
+  #shopify-section-{{section.id}} .star-link {text-decoration:none;}
+  #shopify-section-{{section.id}} .star-link .star-container{display:flex;flex-direction:row;align-items:center;justify-content:start; gap:10px;line-height:1.2;}
+  #shopify-section-{{section.id}} .star-link .star-container .stars {display:flex;flex-direction:row;align-items:center;justify-content:start;gap:4px;}
+  #shopify-section-{{section.id}} .star-link .star-container .stars svg{width:16px ;height:16px ;}
+  #shopify-section-{{section.id}} .desktop-view {display:block;}
+  #shopify-section-{{section.id}} .mobile-view {display:none;}
+  #shopify-section-{{section.id}} .gift-box {display:flex;width:100%;gap:8px;text-align:center;justify-content:center;align-items:center;}
+  #shopify-section-{{section.id}} .gift-box .inner-box {display:flex;gap:5px;text-align:center;justify-content:center;align-items:center;}
+  #shopify-section-{{section.id}} .gift-box img {width:12px;min-width:12px;}
+  #shopify-section-{{section.id}} .gift-box .line {width:100%;height:1px;background-color:#ededed;display:inline-block;}
+  #shopify-section-{{section.id}} .gift-box .text {width: max-content; max-width: 100%;line-height:1.2;}
+  #shopify-section-{{section.id}} .text-with-bg {width:100%;}
+  #shopify-section-{{section.id}} .text-with-bg .inner-container{display:flex;flex-direction:row;align-items:center;justify-content:center;padding:16px 10px;border-radius:3px;width:100%;}
+  #shopify-section-{{section.id}} .text-with-bg .inner-container .ver-line {display:block;width:1px;height:18px;background-color:#000000;margin:0px 10px;}
+  #shopify-section-{{section.id}} .countdown-block {width:100%;}
+  #shopify-section-{{section.id}} .countdown-block .inner-container{display:flex;flex-direction:row;align-items:center;justify-content:center;width:100%;gap:4px;}
+  #shopify-section-{{section.id}} .sticky-main-container {width:100%; position: fixed; bottom: 0; left: 0; right: 0; z-index: 5;}
+  #shopify-section-{{section.id}} .sticky-main-container .inner-container {display:flex;flex-direction:column;gap:2px;width:100%;padding:20px 20px 10px;background-color:#ffffff;align-items: center;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
+  #shopify-section-{{section.id}} .sticky-main-container .inner-container .text-container {display:flex;flex-direction:row;gap:2px;align-items:center;}
+  #shopify-section-{{section.id}} .sticky-main-container .inner-container .text-container dotlottie-player {width:34px;height:34px;}
+  #shopify-section-{{section.id}} .sticky-main-container .inner-container .button-landing-banner {width:100%;padding-left:20px;padding-right:20px;}
+  #shopify-section-{{section.id}} .sticky-main-container .arrow-animation {display:none;}
+  #shopify-section-{{section.id}} .sticky-main-container .inner-container .button-landing-banner:hover {background-color:#FFFFFF;}
+  #shopify-section-{{section.id}} .sticky-main-container.active {display:none;}
+  .countdown-today{display:flex;}
+  .countdown-today > div span{display:none;}
+  @media screen and (min-width:769px){
+  #shopify-section-{{section.id}} .sticky-main-container .arrow-animation {display:block;}
+  #shopify-section-{{section.id}} .sticky-main-container {width:fit-content; position: fixed; bottom: 20px; left: auto; right: 20px; z-index: 5;}
+  #shopify-section-{{section.id}} .sticky-main-container .inner-container {padding:0px;background-color:transparent;border-radius:1000px;}
+  #shopify-section-{{section.id}} .sticky-main-container .inner-container .text-container {display:none;}
+  #shopify-section-{{section.id}} .sticky-main-container .inner-container .button-landing-banner { padding:17px; line-height: 1.5;min-width:100px;width:100px;height:100px;min-height:100px;border-radius:1000px;}
+  #shopify-section-{{section.id}} .sticky-main-container .inner-container .button-landing-banner svg {display:none;}
+
+  }
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'content' %}
+        .block--{{ block.id }} {text-align:{{block.settings.align}};}
+      {% when 'sticky-button' %}
+        .block--{{ block.id }} {margin-bottom:0px !important;}
+        .block--{{ block.id }} .button-landing-banner {color:{{ block.settings.color }};background-color:{{ block.settings.bg-color }};border-color:{{block.settings.bg-color}};}
+        .block--{{ block.id }} .button-landing-banner:hover {color:{{ block.settings.bg-color }};background-color:#ffffff;border-color:{{block.settings.bg-color}};}
+      {% when 'button' %}
+        .block--{{ block.id }} a {color:{{ block.settings.color }};background-color:{{ block.settings.bg-color }};border-color:{{block.settings.bg-color}};}
+        .block--{{ block.id }} a:hover {color:{{ block.settings.bg-color }};background-color:#ffffff;border-color:{{block.settings.bg-color}};}
+    {% endcase %}
+  {% endfor %}
+  @media screen and (max-width:1200px){
+
+   {% if section.settings.fullwidth %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:20px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% else %}
+  {% if section.settings.content_position == 'image-first' %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:20px 0px 20px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% else %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:20px 30px 20px 0px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% endif %}
+  {% endif %}
+  }
+  @media screen and (max-width:990px){
+    #shopify-section-{{section.id}} .bright-video-wrapper{display:grid;/*min-height:calc(100dvh - 135px);max-height:calc(100dvh - 135px);*/height:100%;}
+  }
+  @media screen and (max-width:768px){
+  #shopify-section-{{section.id}} .main-container {padding:0px; }
+  #shopify-section-{{section.id}} .bright-video-container{position:relative;padding-top:100%;grid-area:media;top:0px; width: 100%;/*  height: 90vh; max-width: 100vh;*/}
+  #shopify-section-{{section.id}} .page-width .bright-video-wrapper { gap:0px;}
+  #shopify-section-{{section.id}} {margin-top:{{section.settings.margintopmob}}px;}
+  #shopify-section-{{section.id}} .bright-video-content .heading{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .content{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-wrapper{display:flex;flex-direction:column;}
+  #shopify-section-{{section.id}} .bright-video-container{ top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content-container{padding:20px 16px 16px;}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content  {display:flex;flex-direction:column;align-items:{{section.settings.alignmob}};justify-content:center;text-align:{{section.settings.alignmob}}; }
+  #shopify-section-{{section.id}} .bright-video-container .custom-controls{position:absolute;z-index:9;bottom:20px;left:20px;}
+  #shopify-section-{{section.id}} .star-link .star-container .stars {display:flex;flex-direction:row;align-items:center;justify-content:start;gap:2px;}
+  #shopify-section-{{section.id}} .star-link .star-container{display:flex;flex-direction:row;align-items:center;justify-content:start; gap:6px;margin-bottom:5px;}
+  #shopify-section-{{section.id}} .star-link .star-container .stars svg{width:14px !important;height:14px !important;}
+  #shopify-section-{{section.id}} .desktop-view {display:none;}
+  #shopify-section-{{section.id}} .mobile-view {display:block;}
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'content' %}
+        .block--{{ block.id }} {text-align:{{block.settings.alignmob}};}
+    {% endcase %}
+  {% endfor %}
+  }
+{% endstyle %}
+
+{% if section.settings.image != blank or section.settings.video_url != blank %}
+  <landing-banner data-sectionid="{{ section.id }}">
+    <div
+      id="{{ section.settings.uniqueid }}"
+      class="{% if section.settings.fullwidth %}fullwidth {% else %}page-width{% endif %}"
+    >
+      <div
+        class="padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} padding-top-mob-{{ section.settings.mobile_padding_top }} padding-bottom-mob-{{ section.settings.mobile_padding_bottom }}"
+        style="width:100%;"
+      >
+        <div class="main-container">
+          <div class="badge-container">
+            <div
+              class="badge-item font-size-mob-{{ section.settings.mobile_size }} font-size-{{ section.settings.size }} font-weight-{{ section.settings.weight }}"
+              style="color:{{ section.settings.color }};background-color:{{ section.settings.badge-bg-color }};"
+            >
+              {{ section.settings.text }}
+            </div>
+          </div>
+          <div
+            class="bright-video-wrapper {{ section.settings.content_position }}"
+          >
+            <div class="bright-video-container">
+              {% if section.settings.media_type == 'image' %}
+                <img
+                  src="{{ section.settings.image | img_url : 'master' }}"
+                  {% if section.settings.imagemob != blank %}
+                    class="desktop-view"
+                  {% endif %}
+                >
+                {% if section.settings.imagemob != blank %}
+                  <img src="{{ section.settings.imagemob | img_url : 'master' }}" class="mobile-view">
+                {% endif %}
+              {% else %}
+                <video
+                  class="myVideo {% if section.settings.video_urlmob != blank %} desktop-view {% endif %}"
+                  preload="metadata"
+                  loop
+                  playsinline
+                  muted
+                  autoplay
+                >
+                  <source src="{{ section.settings.video_url.sources[1].url }}#t=0.001">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/quicktime">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/mp4">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/ogg">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/webm">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/3gp">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/mov">
+                </video>
+                {% if section.settings.video_urlmob != blank %}
+                  <video
+                    class="myVideo mobile-view"
+                    preload="metadata"
+                    loop
+                    playsinline
+                    muted
+                    autoplay
+                  >
+                    <source src="{{ section.settings.video_urlmob.sources[1].url }}#t=0.001">
+                    <source src="{{ section.settings.video_urlmob.sources[1].url }}" type="video/quicktime">
+                    <source src="{{ section.settings.video_urlmob.sources[1].url }}" type="video/mp4">
+                    <source src="{{ section.settings.video_urlmob.sources[1].url }}" type="video/ogg">
+                    <source src="{{ section.settings.video_urlmob.sources[1].url }}" type="video/webm">
+                    <source src="{{ section.settings.video_urlmob.sources[1].url }}" type="video/3gp">
+                    <source src="{{ section.settings.video_urlmob.sources[1].url }}" type="video/mov">
+                  </video>
+                {% endif %}
+              {% endif %}
+            </div>
+            <div class="bright-video-content-container ">
+              <div class="bright-video-content">
+                {% for block in section.blocks %}
+                  {% case block.type %}
+                    {% when 'heading' %}
+                      <h2
+                        class="h2  heading margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }} font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                        style="color:{{ block.settings.color }};"
+                      >
+                        {{ block.settings.heading }}
+                      </h2>
+                    {% when 'star' %}
+                      <a
+                        href="{{ block.settings.link }}"
+                        class="star-link margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}"
+                      >
+                        <div class="star-container">
+                          <div class="stars">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="21"
+                              height="21"
+                              viewbox="0 0 21 21"
+                              fill="none"
+                            >
+                              <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ block.settings.svgcolor }}"></path>
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="21"
+                              height="21"
+                              viewbox="0 0 21 21"
+                              fill="none"
+                            >
+                              <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ block.settings.svgcolor }}"></path>
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="21"
+                              height="21"
+                              viewbox="0 0 21 21"
+                              fill="none"
+                            >
+                              <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ block.settings.svgcolor }}"></path>
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="21"
+                              height="21"
+                              viewbox="0 0 21 21"
+                              fill="none"
+                            >
+                              <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ block.settings.svgcolor }}"></path>
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="21"
+                              height="21"
+                              viewbox="0 0 21 21"
+                              fill="none"
+                            >
+                              <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ block.settings.svgcolor }}"></path>
+                            </svg>
+                          </div>
+                          <div
+                            class="text font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                            style="color:{{ block.settings.color }};"
+                          >
+                            {{ block.settings.text }}
+                          </div>
+                        </div>
+                      </a>
+                    {% when 'content' %}
+                      <div
+                        class="content block--{{ block.id }} margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }} font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                        style="color:{{ block.settings.color }};max-width:{{ block.settings.width }}px;width:100%;"
+                      >
+                        {{ block.settings.content }}
+                      </div>
+                    {% when 'text-with-background' %}
+                      <div class="text-with-bg block--{{ block.id }} margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}">
+                        <div
+                          class="inner-container"
+                          style="background-color:{{ block.settings.bg-color }};border:1px dashed {{ block.settings.border-color }};"
+                        >
+                          <div
+                            class="content text1 font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                            style="color:{{ block.settings.color }};"
+                          >
+                            {{ block.settings.text1 }}
+                          </div>
+                          <div class="ver-line"></div>
+                          <div
+                            class="content text2 font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                            style="color:{{ block.settings.color }};"
+                          >
+                            {{ block.settings.text2 }}
+                          </div>
+                        </div>
+                      </div>
+                    {% when 'countdown' %}
+                      <div class="countdown-block block--{{ block.id }} margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}">
+                        <div class="inner-container">
+                          <div
+                            class="content text font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                            style="color:{{ block.settings.color }};"
+                          >
+                            {{ block.settings.text }}
+                          </div>
+                          {% if block.settings['show-timer'] == true %}
+                            <div
+                              class="count-timer text2 font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                              style="color:{{ block.settings.count-color }};"
+                            >
+                              <div class="countdown-today"></div>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% when 'gift-text' %}
+                      <div class="gift-box block--{{ block.id }} margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }} ">
+                        <span class="line"></span>
+                        <div class="inner-box">
+                          <img src="{{ block.settings.image | img_url : 'master' }}">
+                          <div
+                            class="text font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                            style="color:{{ block.settings.color }};"
+                          >
+                            {{ block.settings.text }}
+                          </div>
+                        </div>
+                        <span class="line"></span>
+                      </div>
+                    {% when 'sticky-button' %}
+                      <div class="sticky-main-container">
+                        <dotlottie-player
+                          class="arrow-animation"
+                          src="https://lottie.host/015e609c-ca08-46c9-acd1-390b18fa619c/uMviM62swO.lottie"
+                          background="transparent"
+                          speed="1"
+                          style="width: 100px; height: 70px"
+                          loop
+                          autoplay
+                        ></dotlottie-player>
+                        <div class="inner-container">
+                          {% if block.settings.button != blank %}
+                            <div class="banner_inner_detail block--{{ block.id }} margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}">
+                              <a
+                                href="{{ block.settings.url }}"
+                                class=" button-landing-banner font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                              >
+                                {{ block.settings.button }}
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                                  aria-hidden="true"
+                                  role="img"
+                                  class="iconify iconify--heroicons"
+                                  width="100%"
+                                  height="100%"
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path fill="currentColor" fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" width="100%" height="100%"></path>
+                                </svg>
+                              </a>
+                            </div>
+                          {% endif %}
+                          <div class="text-container">
+                            <dotlottie-player
+                              src="https://lottie.host/1b95ae62-10dc-4cc6-8384-04bcd00afcaf/1nnH3vDpnu.lottie"
+                              background="transparent"
+                              speed="1"
+                              style="width: 40px; height: 40px"
+                              loop
+                              autoplay
+                            ></dotlottie-player>
+                            <div
+                              class="text font-size-mob-{{ block.settings.tmobile_size }} font-size-{{ block.settings.tsize }} font-weight-{{ block.settings.tweight }}"
+                              style="color:{{ block.settings.tcolor }};"
+                            >
+                              {{ block.settings.text }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {% when 'button' %}
+                      {% if block.settings.button != blank %}
+                        <div
+                          class="banner_inner_detail button-sticky-js block--{{ block.id }} margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}"
+                        >
+                          <a
+                            href="{{ block.settings.url }}"
+                            class=" button-landing-banner font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                          >
+                            {{ block.settings.button }}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              aria-hidden="true"
+                              role="img"
+                              class="iconify iconify--heroicons"
+                              width="100%"
+                              height="100%"
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 20 20"
+                            >
+                              <path fill="currentColor" fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" width="100%" height="100%"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      {% endif %}
+                  {% endcase %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </landing-banner>
+{% endif %}
+{% schema %}
+{
+  "name": "Custom Featured Bundle",
+  "settings": [
+    {
+      "type":"text",
+      "id":"uniqueid",
+      "label":"Unique ID"
+    },
+    {
+      "type":"color",
+      "id":"background",
+      "label":"Background"
+    },
+    {
+      "type":"color",
+      "id":"content-bg-color",
+      "label":"Content Background Color"
+    },
+    {
+      "type":"color",
+      "id":"em-color",
+      "label":"Italic Color"
+    },
+    {
+      "type":"number",
+      "id":"width",
+      "label":"Section Custom Width",
+      "default":868
+    },
+    {
+      "type":"select",
+      "id":"content_position",
+      "options":[
+        {
+          "value":"media_first",
+          "label":"Media First"
+        },
+        {
+          "value":"content_first",
+          "label":"Content First"
+        }
+      ],
+      "default":"media_first",
+      "label":"Position"
+    },
+    {
+      "type":"select",
+      "id":"media_type",
+      "options":[
+        {
+          "value":"video",
+          "label":"Video"
+        },
+        {
+          "value":"image",
+          "label":"Image"
+        }
+      ],
+      "default":"image",
+      "label":"Media Type"
+    },
+    {
+      "type":"image_picker",
+      "id":"image",
+      "label":"Image",
+      "info":"Please upload 1000 x 1000 px size image"
+    },
+    {
+      "type":"image_picker",
+      "id":"imagemob",
+      "label":"Mobile Image",
+      "info":"Please upload 760 x 570 px size image"
+    },
+    {
+      "type": "video",
+      "label": "Video",
+      "id": "video_url",
+      "info":"Please upload 1000 x 1000 px size video, please upload video in .mp4 type."
+    },
+    {
+      "type": "video",
+      "label": "Mobile Video",
+      "id": "video_urlmob",
+      "info":"Please upload 760 x 570 px size video, please upload video in .mp4 type."
+    },
+     {
+        "type": "select",
+        "options": [
+          {
+            "value": "start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "Right"
+          }
+        ],
+        "id": "align",
+        "default": "center",
+       "label":"Content Alignment"
+      },
+     {
+        "type": "select",
+        "options": [
+          {
+            "value": "start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "Right"
+          }
+        ],
+        "id": "alignmob",
+        "default": "center",
+       "label":"Mobile Content Alignment"
+      },
+    {
+      "type":"header",
+      "content":"Badge Customization"
+    },
+    {
+      "type":"richtext",
+      "id":"text",
+      "label":"Text"
+    },
+    {
+      "type":"color",
+      "id":"badge-bg-color",
+      "label":"Badge Background Color"
+    },
+    {
+      "type":"color",
+      "id":"color",
+      "label":"Color"
+    },
+    {
+      "type":"range",
+      "id":"size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "id":"mobile_size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Mobile Font Size"
+    },
+    {
+      "type":"range",
+      "id":"weight",
+      "step":100,
+      "min":100,
+      "max":900,
+      "default":500,
+      "label":"Font Weight"
+    },
+    {
+      "type":"header",
+      "content":"Section Spacing"
+    },
+    {
+      "type":"number",
+      "id":"padding_top",
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"padding_bottom",
+      "label":"Padding Bottom"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_top",
+      "label":"Mobile Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_bottom",
+      "label":"Mobile Padding Bottom"
+    },
+    {
+      "type":"header",
+      "content":"Margin Top Customization"
+    },
+    {
+      "type":"number",
+      "id":"margintop",
+      "label":"Margin Top"
+    },
+    {
+      "type":"number",
+      "id":"margintopmob",
+      "label":"Mobile Margin Top"
+    }
+  ],
+  "blocks":[
+    {
+      "type":"heading",
+      "name":"Heading",
+      "settings":[
+        {
+          "type":"richtext",
+          "id":"heading",
+          "label":"Heading"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"content",
+      "name":"Content",
+      "settings":[
+        {
+          "type":"number",
+          "id":"width",
+          "label":"Width"
+        },
+        {
+          "type": "select",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "end",
+              "label": "Right"
+            }
+          ],
+          "id": "align",
+          "default": "start",
+         "label":"Content Alignment"
+        },
+        {
+          "type": "select",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "end",
+              "label": "Right"
+            }
+          ],
+          "id": "alignmob",
+          "default": "center",
+         "label":"Mobile Content Alignment"
+        },
+        {
+          "type":"richtext",
+          "id":"content",
+          "label":"Content"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"gift-text",
+      "name":"Gift Text",
+      "settings":[
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Gift Image"
+        },
+        {
+          "type":"text",
+          "id":"text",
+          "label":"Text"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"button",
+      "name":"Button",
+      "limit":1,
+      "settings":[
+        {
+          "type":"color",
+          "id":"bg-color",
+          "label":"background Color"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"text",
+          "id":"button",
+          "label":"Button Label"
+        },
+        {
+          "type":"url",
+          "id":"url",
+          "label":"Button Link"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"sticky-button",
+      "name":"Sticky Button",
+      "limit":1,
+      "settings":[
+        {
+          "type":"color",
+          "id":"bg-color",
+          "label":"background Color"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"text",
+          "id":"button",
+          "label":"Button Label"
+        },
+        {
+          "type":"url",
+          "id":"url",
+          "label":"Button Link"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"header",
+          "content":"text Customization"
+        },
+        {
+          "type":"text",
+          "id":"text",
+          "label":"Text"
+        },
+        {
+          "type":"color",
+          "id":"tcolor",
+          "label":"Text Color"
+        },
+        {
+          "type":"range",
+          "id":"tsize",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Text Font Size"
+        },
+        {
+          "type":"range",
+          "id":"tmobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Text Font Size"
+        },
+        {
+          "type":"range",
+          "id":"tweight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Text Font Weight"
+        },
+      ]
+    },
+    {
+      "type":"text-with-background",
+      "name":"Text With Background",
+      "limit":1,
+      "settings":[
+        {
+          "type":"color",
+          "id":"bg-color",
+          "label":"Background Color",
+        },
+        {
+          "type":"color",
+          "id":"border-color",
+          "label":"border Color",
+        },
+        {
+          "type":"richtext",
+          "id":"text1",
+          "label":"Text 1"
+        },
+        {
+          "type":"richtext",
+          "id":"text2",
+          "label":"Text 2"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"countdown",
+      "name":"Countdown Timer",
+      "limit":1,
+      "settings":[
+        {
+          "type":"richtext",
+          "id":"text",
+          "label":"Text"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"header",
+          "content":"Timer Customization"
+        },
+        {
+          "type":"checkbox",
+          "id":"show-timer",
+          "label":"Show Countdown Timer",
+          "default":true
+        },
+        {
+          "type":"color",
+          "id":"count-color",
+          "label":"Countdown Timer Color"
+        },
+        {
+          "type":"header",
+          "content":"Spacing Customization"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"star",
+      "name":"Star",
+      "settings":[
+        {
+          "type":"color",
+          "id":"svgcolor",
+          "label":"Svg Color",
+          "default":"#FFC107"
+        },
+        {
+          "type":"text",
+          "id":"text",
+          "label":"Text"
+        },
+        {
+          "type":"url",
+          "id":"link",
+          "label":"Link"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":0,
+          "max":100,
+          "default":0,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+    "name": "Custom Featured Bundle"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  $(document).ready(function () {
+      function addClassOnVisible() {
+          $(".button-sticky-js").each(function () {
+              let elementTop = $(this).offset().top;
+              let elementBottom = elementTop + $(this).outerHeight();
+              let viewportTop = $(window).scrollTop();
+              let viewportBottom = viewportTop + $(window).height();
+
+              if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                  $('.sticky-main-container').addClass("active");
+              } else {
+                  $('.sticky-main-container').removeClass("active");
+              }
+          });
+      }
+
+      $(window).on("scroll resize", addClassOnVisible);
+      addClassOnVisible(); // Run on page load
+  });
+</script>

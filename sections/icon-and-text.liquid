@@ -1,0 +1,268 @@
+{% style %}
+    #shopify-section-{{section.id}} .custom_icontext_container{width:100%;}
+    #shopify-section-{{section.id}} .custom_icontext_slider {width:100%;}
+    #shopify-section-{{section.id}} .custom_icontext_slider .swiper-pagination{width:100%;display:flex;justify-content:center;align-items:center;    position: unset; margin-top: 30px;}
+    #shopify-section-{{section.id}} .custom_icontext_slider .swiper-pagination.swiper-pagination-lock{position:absolute;}
+
+    #shopify-section-{{section.id}} .custom_icontext_slider .swiper-pagination-bullet {background:{{section.settings.pagination_color}};opacity:1;}
+    #shopify-section-{{section.id}} .custom_icontext_slider .swiper-pagination-bullet.swiper-pagination-bullet-active {background:{{section.settings.pagination_color_acitve}};}
+
+    #shopify-section-{{section.id}} .custom-icontext-grid{width:100%;display:grid;grid-template-columns: repeat({{section.settings.columns}}, 1fr); column-gap:60px;row-gap:40px;justify-content:center;  }
+    #shopify-section-{{section.id}} .custom-icontext{width:100%;display:flex; flex-direction:column;gap:7px;}
+    #shopify-section-{{section.id}} .custom_icon_box{width:100%;;display:flex;justify-content:center;}
+    #shopify-section-{{section.id}} .custom_icon{width:100%; {% if  section.settings.image_height > 0 %} height:{{section.settings.image_height}}px; {% else %} height:100%; {% endif %} object-fit:contain;object-position:center center;}
+
+    #shopify-section-{{section.id}} .cusotm_text_box{width:100%; text-align:center;}
+    #shopify-section-{{section.id}} .custom_info_text{width:100%;color:{{ section.settings.text_color}};line-height:1.5;letter-spacing:0; }
+    #shopify-section-{{section.id}} .custom_info_text p{margin:0%;}
+
+  @media screen and (max-width:990px){
+      #shopify-section-{{section.id}} .custom-icontext-grid{grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); column-gap:40px; row-gap:40px;  }
+  }
+  @media screen and (max-width:768px){
+      #shopify-section-{{section.id}} .custom_icon{ {% if section.settings.image_height_mob > 0 %} height:{{section.settings.image_height_mob}}px; {% else %} height:100%; {% endif %} }
+  }
+{% endstyle %}
+
+{% capture grid %}
+      <div class="custom-icontext-grid">
+      {% for block in section.blocks %}
+        <div class="custom-icontext">
+          <div class="custom_icon_box">
+            <img
+              class="custom_icon"
+              src="{{ block.settings.image | img_url:"master"}}"
+            >
+          </div>
+          <div class="cusotm_text_box">
+            {% if block.settings.content != 'blank' %}
+              <div class="custom_info_text font-size-{{ section.settings.font_size }} font-size-mob-{{ section.settings.font_size_mob }} font-weight-{{ section.settings.font_weight }}">
+                {{ block.settings.content }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+{% endcapture %}
+
+{% capture slider %} 
+<div class="swiper custom_icontext_slider custom_icontext_slider-{{ section.id }}">
+  <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+      <div class="swiper-slide">
+        <div class="custom-icontext">
+          <div class="custom_icon_box">
+            <img
+              class="custom_icon"
+              src="{{ block.settings.image | img_url:"master"}}"
+            >
+          </div>
+          <div class="cusotm_text_box">           
+            {% if block.settings.content != 'blank' %}
+              <div class="custom_info_text font-size-{{ section.settings.font_size }} font-size-mob-{{ section.settings.font_size_mob }} font-weight-{{ section.settings.font_weight }}">
+                {{ block.settings.content }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+{% endcapture %}
+
+<custom-icontext
+  data-sectionid="{{ section.id }}"
+  data-perview="{{section.settings.columns}}"
+>
+  <div
+    class="custom_icontext_container padding  padding-top-{{ section.settings.sec_top_padding }} padding-top-mob-{{ section.settings.sec_top_padding_mob }} padding-bottom-{{ section.settings.sec_bottom_padding }} padding-bottom-mob-{{ section.settings.sec_bottom_padding_mob }}"
+    style="background:{{ section.settings.sec_bg }};"
+  >
+    <div
+      class="page-width"
+      style="{% if section.settings.max_width > 0 %} max-width: {{section.settings.max_width}}px;{% endif %}"
+    >
+      {% if section.settings.section_style == 'grid' %}
+        {{ grid }}
+      {% else %}
+        {{ slider }}
+      {% endif %}
+    </div>
+  </div>
+</custom-icontext>
+
+{% schema %}
+{
+  "name": "Custom Icon And Text",
+  "settings": [
+    {
+      "type": "color",
+      "id": "sec_bg",
+      "label": "Section Background"
+    },
+    {
+      "type": "select",
+      "id": "section_style",
+      "default":"grid",
+      "options": [
+        {
+          "label": "grid",
+          "value": "grid"
+        },
+        {
+          "label": "slider",
+          "value": "slider"
+        }
+      ],
+      "label": "Section Type"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "options": [
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        },
+      ],
+      "default":"3",
+      "label":"Grid Columns"
+    },
+    {
+      "type": "number",
+      "id": "max_width",
+      "default":1218,
+      "label": "Section Width"
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "number",
+      "id": "image_height",
+      "default":52,
+      "label": "Icons Height"
+    },
+    {
+      "type": "number",
+      "id": "image_height_mob",
+      "default":52,
+      "label": "Mobile Icons Height"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "default":"#0C2331",
+      "label": "Text Color"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":14,
+      "label": "Font Size",
+    },
+    {
+      "type": "range",
+      "id": "font_size_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":14,
+      "label": "Mobile Font Size",
+    },
+    {
+      "type": "range",
+      "id": "font_weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default":600,
+      "label": "Font Weight",
+    },
+    {
+      "type":"header",
+      "content":"Slider Bullet"
+    },
+    {
+      "type": "color",
+      "id": "pagination_color",
+      "default":"#c6c7c8",
+      "label": "Bullet Color"
+    },
+    {
+      "type": "color",
+      "id": "pagination_color_acitve",
+      "default":"#7ac4ea",
+      "label": "Active Bullet Color"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "number",
+      "id": "sec_top_padding",
+      "label": "Top Spacing",
+    },
+    {
+      "type": "number",
+      "id": "sec_bottom_padding",
+      "label": "Bottom Spacing",
+    },
+    {
+      "type": "number",
+      "id": "sec_top_padding_mob",
+      "label": "Mobile Top Spacing",
+    },
+    {
+      "type": "number",
+      "id": "sec_bottom_padding_mob",
+      "label": "Mobile Bottom Spacing",
+    },
+  ],
+  "blocks": [
+      {
+        "type": "block",
+        "name":"Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Icon"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Add Content"
+          },
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name":"Custom Icon And Text"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1056 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "n_productheader_MxxXbF": {
+      "type": "n_productheader",
+      "name": "Product Header",
+      "settings": {
+        "saletext": "🎁 EARLY BLACK FRIDAY VIP ACCESS 🎁 ends in",
+        "bartext": "⏰ Limited Time: Save Up To 40% Off",
+        "logo": "shopify://shop_images/Group_28401.svg"
+      }
+    },
+    "main": {
+      "type": "main-product-bundlelanding",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "okendo_star_rating_kd6L6E": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "okendo_star_rating_kd6L6E",
+        "vendor",
+        "description"
+      ],
+      "settings": {
+        "glic1": "shopify://shop_images/Group_1171275741.svg",
+        "gltxt1": "Soothing essential Oils",
+        "glic2": "shopify://shop_images/Fabric_1.svg",
+        "gltxt2": "Breathable Fabric",
+        "glic3": "shopify://shop_images/Group.svg",
+        "gltxt3": "Warm For Up to 30 mins",
+        "rvstar": "shopify://shop_images/Container.svg",
+        "rvstarcnt": "(587)",
+        "speciality": "<ul><li>Aromatherapy</li><li>Wellness</li><li>Calm</li></ul>",
+        "aficon1": "shopify://shop_images/fi_3129282.svg",
+        "afttxt1": "30-Day Happiness Guarantee",
+        "aficon2": "shopify://shop_images/fi_685388.svg",
+        "afttxt2": "Free Shipping",
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "buttons": true,
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 16,
+        "padding_bottom": 40
+      }
+    },
+    "n_reviewlogoslider_DGDbqr": {
+      "type": "n_reviewlogoslider",
+      "blocks": {
+        "scroller_zYaCqR": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_23.png"
+          }
+        },
+        "scroller_TWJKjp": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_24.png"
+          }
+        },
+        "scroller_9ALVxR": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_26.png"
+          }
+        },
+        "scroller_nprxMk": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_29.png"
+          }
+        },
+        "scroller_47tpgN": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_32_538b9617-b628-434c-8d15-bd4abfa2af1d.png"
+          }
+        },
+        "scroller_VbLGA3": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_25.png"
+          }
+        },
+        "scroller_4FXb7N": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_28.png"
+          }
+        },
+        "scroller_3bpYEy": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_30_0a6b8a52-a712-477a-894a-b3da16e89f8d.png"
+          }
+        },
+        "scroller_CmMD6K": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_24.png"
+          }
+        },
+        "scroller_4nJqfX": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_26.png"
+          }
+        },
+        "scroller_xPAtBz": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_29.png"
+          }
+        },
+        "scroller_eGjXVa": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_32_538b9617-b628-434c-8d15-bd4abfa2af1d.png"
+          }
+        },
+        "scroller_b64Ezn": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_25.png"
+          }
+        },
+        "scroller_D6FD94": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_28.png"
+          }
+        }
+      },
+      "block_order": [
+        "scroller_zYaCqR",
+        "scroller_TWJKjp",
+        "scroller_9ALVxR",
+        "scroller_nprxMk",
+        "scroller_47tpgN",
+        "scroller_VbLGA3",
+        "scroller_4FXb7N",
+        "scroller_3bpYEy",
+        "scroller_CmMD6K",
+        "scroller_4nJqfX",
+        "scroller_xPAtBz",
+        "scroller_eGjXVa",
+        "scroller_b64Ezn",
+        "scroller_D6FD94"
+      ],
+      "name": "Review Logo Slider",
+      "settings": {
+        "star": "shopify://shop_images/Frame_1707479733.svg",
+        "title": "BEST SELLER",
+        "desc1": "100,000+Masks Delivered",
+        "desc2": "& AS SEEN ON"
+      }
+    },
+    "n_peoplelove_FVzTea": {
+      "type": "n_peoplelove",
+      "blocks": {
+        "block_ULUcER": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_101_5351c80d-658c-4e94-ad12-017ebbe9a711.png",
+            "title": "Pure Aromatherapy Relief",
+            "des": "Infused with premium essential oils, fills your shower with calming or energizing scents, helping melt stress, boost focus, or ease you into sleep."
+          }
+        },
+        "block_TXaUgG": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_99_15251e1e-43ec-48db-bb04-3acfe8a4a6ac.png",
+            "title": "Your On-The-Go Spa",
+            "des": "Perfect for any time, any place. Throw a couple in your bag and and nap easy on the plane or wherever you need a break."
+          }
+        },
+        "block_Pk33rW": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_99_1.png",
+            "title": "Screen-Time Rescue",
+            "des": "In just 20 minutes, get relief from 8 hours of screen torture. Clinically proven for real, measurable results."
+          }
+        }
+      },
+      "block_order": [
+        "block_ULUcER",
+        "block_TXaUgG",
+        "block_Pk33rW"
+      ],
+      "name": "People Love",
+      "settings": {
+        "banner": "shopify://shop_images/Group_1171275705.jpg",
+        "title": "<p>Why People Love <strong>Body Restore</strong></p>",
+        "subtitle": "<p>Finally, spa-like aromatherapy <strong>without the $200</strong> price tag or scheduling a spa day.</p>"
+      }
+    },
+    "n_steps_BRPAwR": {
+      "type": "n_steps",
+      "blocks": {
+        "block_MAYKRz": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ADA4279_4_2.png",
+            "title": "Open a single-use mask",
+            "number": "1"
+          }
+        },
+        "block_P9CQVh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ADA4279_4_1.png",
+            "title": "Unfold & place gently on eyes",
+            "number": "2"
+          }
+        },
+        "block_zzXgVc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ADA4282_1.png",
+            "title": "Feel the warmth & steam releases",
+            "number": "3"
+          }
+        }
+      },
+      "block_order": [
+        "block_MAYKRz",
+        "block_P9CQVh",
+        "block_zzXgVc"
+      ],
+      "name": "Simple Steps",
+      "settings": {
+        "title": "<p>Spa-Like in Just <strong>3 Simple Steps</strong></p>"
+      }
+    },
+    "n_reason_kBTUAB": {
+      "type": "n_reason",
+      "blocks": {
+        "block_mnnxBy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479895.svg",
+            "title": "Premium Aromatherapy",
+            "des": "Premium essential oils that relax, energize, or help you sleep better."
+          }
+        },
+        "block_JRgDUN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479898.svg",
+            "title": "Portable To Everywhere",
+            "des": "Compact pouches for gym, travel, or home."
+          }
+        },
+        "block_CeL6cH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479896.svg",
+            "title": "Self-Heating Steam",
+            "des": "Just open and get instant, therapeutic heat with natural botanicals."
+          }
+        },
+        "block_CCAeCR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479899.svg",
+            "title": "Eco-Conscious For You",
+            "des": "Made in the USA with clean, eco-friendly ingredients."
+          }
+        },
+        "block_aEMNXp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479897.svg",
+            "title": "Fast Result in Mins",
+            "des": "Spa-like results in just minutes of relaxation."
+          }
+        },
+        "block_LM6QPx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479900.svg",
+            "title": "Trusted by Happy Customers",
+            "des": "Hundreds of verified 5-star reviews and testimonials."
+          }
+        }
+      },
+      "block_order": [
+        "block_mnnxBy",
+        "block_JRgDUN",
+        "block_CeL6cH",
+        "block_CCAeCR",
+        "block_aEMNXp",
+        "block_LM6QPx"
+      ],
+      "name": "Reason",
+      "settings": {
+        "subtitle": "6 Reasons",
+        "title": "<p>You’ll Love To Shower With <strong>Body Restore</strong></p>",
+        "bg": "shopify://shop_images/Mask_group.webp"
+      }
+    },
+    "n_ingredient_tab_phR6Yk": {
+      "type": "n_ingredient_tab",
+      "blocks": {
+        "grid_mprTp7": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/Steam-Eye-Mask-bagmockup__2_-removebg-preview_1.png",
+            "tab-label": "UNSCENTED",
+            "circlecolor": "#9dc3c2",
+            "tabcontentbg": "#99d2fb",
+            "image1": "shopify://shop_images/Asset_13_bf8a4679-e3ec-44af-be38-b3f4e8f5b040.png",
+            "image2": "shopify://shop_images/Asset_10.png",
+            "text": "<p>Materials:<br/>Non-woven fabric, needle-punched cotton, iron powder, water, activated carbon.</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#99d2fb"
+          }
+        },
+        "grid_JTmNAj": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/Steam-Eye-Mask-bagmockup-removebg-preview_1.png",
+            "tab-label": "SERENE",
+            "circlecolor": "#f0be7a",
+            "tabcontentbg": "#cba951",
+            "image1": "shopify://shop_images/Asset_5.png",
+            "image2": "shopify://shop_images/Asset_6.png",
+            "text": "<p>Materials:<br/>Non-woven fabric, needle-punched cotton, iron powder, water, activated carbon.</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#cba951"
+          }
+        },
+        "grid_MyeMrd": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/Steam-Eye-Mask-bagmockup__5_-removebg-preview_2.png",
+            "tab-label": "Floral",
+            "circlecolor": "#d0c2df",
+            "tabcontentbg": "#dfddb5",
+            "image1": "shopify://shop_images/Asset_4.png",
+            "image2": "shopify://shop_images/Asset_7.png",
+            "text": "<p>Materials:<br/>Non-woven fabric, needle-punched cotton, iron powder, water, activated carbon.</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#dfddb5"
+          }
+        },
+        "grid_bmepqr": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/Steam-Eye-Mask-bagmockup__1_-removebg-preview_2.png",
+            "tab-label": "CALM",
+            "circlecolor": "#cdd89f",
+            "tabcontentbg": "#dbcaef",
+            "image1": "shopify://shop_images/Asset_2.png",
+            "image2": "shopify://shop_images/Asset_9.png",
+            "text": "<p>Materials:<br/>Non-woven fabric, needle-punched cotton, iron powder, water, activated carbon.</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#dbcaef"
+          }
+        },
+        "grid_YB9eXP": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/Steam-Eye-Mask-bagmockup__4_-removebg-preview_3.png",
+            "tab-label": "ZEN",
+            "circlecolor": "#dda4b6",
+            "tabcontentbg": "#bbdcb5",
+            "image1": "shopify://shop_images/Asset_3.png",
+            "image2": "shopify://shop_images/Asset_8.png",
+            "text": "<p>Materials:<br/>Non-woven fabric, needle-punched cotton, iron powder, water, activated carbon.</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#bbdcb5"
+          }
+        }
+      },
+      "block_order": [
+        "grid_mprTp7",
+        "grid_JTmNAj",
+        "grid_MyeMrd",
+        "grid_bmepqr",
+        "grid_YB9eXP"
+      ],
+      "name": "New Ingredient List Tab",
+      "settings": {
+        "heading": "<p>Ingredients List <strong>Call Out!</strong></p>",
+        "tabtfontsize": 16,
+        "tabtfontsizemob": 14,
+        "tabtfontweight": 400,
+        "tabtcolor": "#0c2331",
+        "bgcolor": "#fff9eb",
+        "gridmaxwidth": 890,
+        "tabcfontsize": 15,
+        "tabcfontsizemob": 14,
+        "tabcfontweight": 400,
+        "padding_top": 50,
+        "padding_bottom": 86,
+        "padding_top_mob": 40,
+        "padding_bottom_mob": 60
+      }
+    },
+    "n_video_text_review_tDxCaj": {
+      "type": "n_video_text_review",
+      "blocks": {
+        "video_XthwWT": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_3619b4be-2a30-4d4e-92a3-8ff93c251cef.webm"
+          }
+        },
+        "video_F4a3kU": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/br_review_video.mp4"
+          }
+        },
+        "video_ngQPER": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_6644f2ea-36b2-4cbc-a54b-2c734255553e.webm"
+          }
+        },
+        "video_qQDM7D": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_aa299af8-a4b0-446d-8ce8-2cb155c0da02.webm"
+          }
+        },
+        "video_qABPjR": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_11b2d8cc-fc0d-4333-ac3a-2b4cb6b8aef3.webm"
+          }
+        },
+        "video_f6bpUp": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_c6a0bafa-1c48-4211-a0dc-7c91a2380d8f.webm"
+          }
+        },
+        "video_UVEqgk": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/br_review_video2.mp4"
+          }
+        },
+        "video_fJELUi": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_e00f21c8-c6eb-46be-abb0-6826cbb309e8.webm"
+          }
+        },
+        "video_eGqCwq": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/br_review_video3.mp4"
+          }
+        },
+        "video_Dwkkwn": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_6fc95753-a259-4139-91af-594f20df6046.webm"
+          }
+        },
+        "video_bpxzU4": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/br_review_video4.mp4"
+          }
+        },
+        "video_XhGcq9": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_2d65123f-d4e1-4692-a02f-3a76ab55bad1.webm"
+          }
+        },
+        "video_xxiEGP": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_axawellness-UGC (1)_9ada888f-ef8a-4285-af3d-39c1c7e42f14.mp4"
+          }
+        },
+        "video_QaCgGL": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Hook 1.mov"
+          }
+        },
+        "video_N77jNq": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/BH0016_C5H1 (1).mp4"
+          }
+        },
+        "video_nyFjj3": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_jaimebeauty81-UGC.mp4"
+          }
+        },
+        "video_z4kbr4": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/halliemakk_e5092443-7f71-49ae-81fd-cafb2d155078.mp4"
+          }
+        },
+        "video_ipVqyh": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_kimscart-UGC.mp4"
+          }
+        },
+        "video_k4WCFb": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/samthefit_34217a2e-403b-4bd7-bc3c-89c784c092da.mp4"
+          }
+        },
+        "video_4jDBKy": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/zarinaunfiltered_dc2a80a8-dff3-43ef-be40-e82d453788f2.mp4"
+          }
+        },
+        "video_fG6PtE": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/cambickley_f3157af2-cee3-4f29-9251-509c473d7182.mp4"
+          }
+        },
+        "video_jLFwVg": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/valeria_15eac605-4781-43ce-9bfe-3fefa62793c4.mp4"
+          }
+        },
+        "video_Armijz": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/alynicolehosehinasmr_21887ba0-8b89-4c07-a7e2-a38cfb89ae57.mp4"
+          }
+        },
+        "video_R7DNLj": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/Steam Eye Mask_LIsticle Video (compressed).mp4"
+          }
+        },
+        "video_3LzLaw": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_curlsbeautybylara-UGC.mp4"
+          }
+        },
+        "video_zfNwXK": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_christinehouryofficial-UGC.mp4"
+          }
+        },
+        "video_jDHfgq": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_sparkleshinedecor-UGC.mp4"
+          }
+        },
+        "video_BzGJgc": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_darinabilaa-UGC.mp4"
+          }
+        },
+        "video_Twb4Vt": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_beautybybre-UGC.mp4"
+          }
+        },
+        "video_tJjnwR": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_glambyannieaan-UGC.mp4"
+          }
+        },
+        "video_t6y93T": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_nallelymaravilla-UGC.mp4"
+          }
+        },
+        "video_CQBmEf": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_janad-UGC.mp4"
+          }
+        },
+        "video_xfK3WA": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_tapintoglam-UGC (1).mp4"
+          }
+        },
+        "video_hiUUNF": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/thatgalmuna.mp4"
+          }
+        },
+        "video_XTQrfD": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_darinabilaa-UGC.mp4"
+          }
+        },
+        "video_rpgXHd": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/skincarewithmorgan.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_XthwWT",
+        "video_F4a3kU",
+        "video_ngQPER",
+        "video_qQDM7D",
+        "video_qABPjR",
+        "video_f6bpUp",
+        "video_UVEqgk",
+        "video_fJELUi",
+        "video_eGqCwq",
+        "video_Dwkkwn",
+        "video_bpxzU4",
+        "video_XhGcq9",
+        "video_xxiEGP",
+        "video_QaCgGL",
+        "video_N77jNq",
+        "video_nyFjj3",
+        "video_z4kbr4",
+        "video_ipVqyh",
+        "video_k4WCFb",
+        "video_4jDBKy",
+        "video_fG6PtE",
+        "video_jLFwVg",
+        "video_Armijz",
+        "video_R7DNLj",
+        "video_3LzLaw",
+        "video_zfNwXK",
+        "video_jDHfgq",
+        "video_BzGJgc",
+        "video_Twb4Vt",
+        "video_tJjnwR",
+        "video_t6y93T",
+        "video_CQBmEf",
+        "video_xfK3WA",
+        "video_hiUUNF",
+        "video_XTQrfD",
+        "video_rpgXHd"
+      ],
+      "name": "New Review Video Tabs",
+      "settings": {
+        "bg-color": "",
+        "width": 800,
+        "textalignment": "center",
+        "tab1": "Video Reviews",
+        "tab2": "Written Reviews",
+        "tab_color": "rgba(0,0,0,0)",
+        "tab_text_color": "#000000",
+        "active_tab_color": "#fff9eb",
+        "active_tab_text_color": "#000000",
+        "tabfont-size": 16,
+        "tabfont-size-mob": 14,
+        "tabfont-weight": 500,
+        "video-height": 172,
+        "count": 6,
+        "count-mob": 3,
+        "title": "<p>Melting Stress and Improving Mood for <strong>Thousands</strong></p>",
+        "color": "#0c2331",
+        "font-size": 40,
+        "font-size-mob": 34,
+        "font-weight": 700,
+        "space": 10,
+        "space_mob": 16,
+        "content": "<p>and Counting!</p>",
+        "tccolor": "#0c2331",
+        "tcfont-size": 16,
+        "tcfont-size-mob": 16,
+        "tcfont-weight": 400,
+        "tcspace": 24,
+        "tcspace_mob": 30,
+        "top": -20,
+        "right": 1,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 60
+      }
+    },
+    "n_faq_M7hUjR": {
+      "type": "n_faq",
+      "blocks": {
+        "faq_grid_yDNGke": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What makes Body Restore different?",
+            "faq_title_desc": "<p>Body Restore Steam Eye Masks are made with natural essential oils 🍃 and clean ingredients, ensuring a pure and safe aromatherapy experience. Each mask is made with high quality materials, delivering a strong and refreshing natural scent that enhances your self-care routine.</p>"
+          }
+        },
+        "faq_grid_CH8WaX": {
+          "type": "faq_grid",
+          "disabled": true,
+          "settings": {
+            "faq_title_sub": "What are the best practices in using these steam eye masks?",
+            "faq_title_desc": "<p>Body Restore Steam Eye Masks are made with natural essential oils 🍃 and clean ingredients, ensuring a pure and safe aromatherapy experience. Each mask is made with high quality materials, delivering a strong and refreshing natural scent that enhances your self-care routine.</p>"
+          }
+        },
+        "faq_grid_3DmQEY": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "When is the best time to use a steam eye mask?",
+            "faq_title_desc": "<p>These masks can be used anytime you need relaxation — whether before bed, during travel, after screen time, or while meditating. Many people use them nightly to help unwind and fall asleep faster.</p>"
+          }
+        },
+        "faq_grid_9GiRCz": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Do I need a microwave or battery to heat the mask?",
+            "faq_title_desc": "<p>No — the mask is completely self-heating. Once opened, it naturally warms up on its own using gentle steam technology, so you can enjoy soothing relief anywhere without extra equipment.</p>"
+          }
+        },
+        "faq_grid_CHjBzd": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Do these steam eye masks have a shelf life?",
+            "faq_title_desc": "<p>Our steam eye masks are individually foil wrapped to ensure maximum shelf life. We recommend using the steam masks within a year for the best experience.</p>"
+          }
+        },
+        "faq_grid_cYE6rt": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does each steam eye mask last?",
+            "faq_title_desc": "<p>Each steam eye mask can last up to 30 minutes of soothing warmth to relax, relieve eye strain, and melt away stress.</p>"
+          }
+        },
+        "faq_grid_UGQ46n": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Are they safe to use during the pregnancy?",
+            "faq_title_desc": "<p>Aromatherapy is generally safe for pregnant women. However, please do consult a doctor before use to confirm.</p>"
+          }
+        },
+        "faq_grid_rTPU7t": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does shipping take?",
+            "faq_title_desc": "<p>Shipping generally takes 3-5 business days.</p>"
+          }
+        },
+        "faq_grid_MAFcKb": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What is the return policy?",
+            "faq_title_desc": "<p>We strive our best to ensure the best customer experience. We're so confident you'll love our products that we offer a 30 day 100% money back guarantee!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_grid_yDNGke",
+        "faq_grid_CH8WaX",
+        "faq_grid_3DmQEY",
+        "faq_grid_9GiRCz",
+        "faq_grid_CHjBzd",
+        "faq_grid_cYE6rt",
+        "faq_grid_UGQ46n",
+        "faq_grid_rTPU7t",
+        "faq_grid_MAFcKb"
+      ],
+      "name": "New Faq",
+      "settings": {
+        "enablesvg": false,
+        "faq_bg": "",
+        "topspacing": 150,
+        "topspacingmob": 20,
+        "showbordertop": false,
+        "showborderbottom": false,
+        "faq_title": "<p>Frequently Asked <strong>Questions</strong></p>",
+        "tfontsize": 44,
+        "tfontsizemob": 34,
+        "tfontweight": 700,
+        "textalignment": "center",
+        "faq_title_color": "#0c2331",
+        "tpaddingbottom": 0,
+        "tpaddingbottommob": 48,
+        "ftfontsize": 18,
+        "ftfontsizemob": 16,
+        "ftfontweight": 700,
+        "ftcolor": "#000000",
+        "fcfontsize": 16,
+        "fcfontsizemob": 14,
+        "fccfontweight": 400,
+        "fccolor": "#000000",
+        "spaddingtop": 0,
+        "spaddingbottom": 0,
+        "spaddingtopmob": 0,
+        "spaddingbottommob": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "accent-1",
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "n_save_4neDj3": {
+      "type": "n_save",
+      "blocks": {
+        "scroller_7abniX": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_bzPgQN": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_BFpVdf": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_aTGcRz": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_YJKAa4": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_wXQGhW": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_RhBMmT": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_x4fwAH": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_fJBd3y": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_XB7nr9": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_MCRfzC": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_3qb4kN": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_AaiaRP": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_rVrq7N": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_yAmkEp": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_Fcd7k9": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_AxQdeE": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_wtjUJp": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_MkwXVg": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_LbeY3i": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        }
+      },
+      "block_order": [
+        "scroller_7abniX",
+        "scroller_bzPgQN",
+        "scroller_BFpVdf",
+        "scroller_aTGcRz",
+        "scroller_YJKAa4",
+        "scroller_wXQGhW",
+        "scroller_RhBMmT",
+        "scroller_x4fwAH",
+        "scroller_fJBd3y",
+        "scroller_XB7nr9",
+        "scroller_MCRfzC",
+        "scroller_3qb4kN",
+        "scroller_AaiaRP",
+        "scroller_rVrq7N",
+        "scroller_yAmkEp",
+        "scroller_Fcd7k9",
+        "scroller_AxQdeE",
+        "scroller_wtjUJp",
+        "scroller_MkwXVg",
+        "scroller_LbeY3i"
+      ],
+      "name": "Save Section",
+      "settings": {
+        "rvwimg": "shopify://shop_images/Frame_1707479828_7e329826-b92f-471a-be9f-4d923b229023.png",
+        "mainimg": "shopify://shop_images/Group_1171275699.webp",
+        "title": "<p>BUNDLE STEAM EYE MASKS</p>",
+        "des": "<p>The more you bundle, the more you save</p>",
+        "btnurl": "#",
+        "btntext": "Build your bundle",
+        "aicon1": "shopify://shop_images/fi_3129282.svg",
+        "atext1": "30-Day Happiness Guarantee",
+        "aicon2": "shopify://shop_images/fi_685388.svg",
+        "atext2": "Free Shipping"
+      }
+    }
+  },
+  "order": [
+    "n_productheader_MxxXbF",
+    "main",
+    "n_reviewlogoslider_DGDbqr",
+    "n_peoplelove_FVzTea",
+    "n_steps_BRPAwR",
+    "n_reason_kBTUAB",
+    "n_ingredient_tab_phR6Yk",
+    "n_video_text_review_tDxCaj",
+    "n_faq_M7hUjR",
+    "related-products",
+    "n_save_4neDj3"
+  ]
+}

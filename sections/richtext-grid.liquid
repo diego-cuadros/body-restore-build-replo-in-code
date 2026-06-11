@@ -1,0 +1,590 @@
+<style>
+  .richtext--{{ section.id }} .page-width{max-width:{{section.settings.width}}px;width:100%;}
+  .richtext--{{ section.id }} .page-width p {margin:0px;}
+  .richtext--{{ section.id }} .page-width .line {display:block;height:2px;}
+  .richtext--{{ section.id }} .container{display:flex;flex-direction:column;align-items:{{section.settings.align}};justify-content:{{section.settings.align}};text-align:{{section.settings.align}};padding:0px;}
+  .richtext--{{ section.id }} .grid-container {display:grid;grid-template-columns:repeat({{section.settings.grid-count}} , 1fr);gap:40px;width:100%;}
+  .richtext--{{ section.id }} .grid-container .grid-item {max-width:{{section.settings.grid-width}}px;width:100%;display:flex;flex-direction:row;position:relative; padding: 0px;margin: 0px auto;} 
+  .richtext--{{ section.id }} .grid-container .grid-item .inner-container{width:100%;display:flex;flex-direction:column;gap:0px;align-items:center;text-align:center;}
+  .richtext--{{ section.id }} .grid-container .grid-item .inner-container .image {height:{{ section.settings.imageheight }}px;margin-bottom:10px;padding:5px;}
+  .richtext--{{ section.id }} .grid-container .grid-item .inner-container .image img{width:100%;height:100%;object-fit:contain;}
+  .richtext--{{ section.id }} .heading * {font-size:inherit;color:inherit;font-weight:inherit;margin:0px;}
+  .richtext--{{ section.id }} .content * {font-size:inherit;color:inherit;font-weight:inherit;margin:0px;}
+  .richtext--{{ section.id }} .grid-container .grid-item .title {margin-top:0px;letter-spacing}
+  .richtext--{{ section.id }} .grid-container .grid-item .title p {margin-top:8px;}
+  .richtext--{{ section.id }} .grid-container .grid-item .title p:first-child {margin-top:0px;}
+
+  @media screen and (max-width:768px) {
+  .richtext--{{ section.id }} .container{display:flex;flex-direction:column;align-items:{{section.settings.alignmob}};justify-content:{{section.settings.alignmob}};text-align:{{section.settings.alignmob}};}
+  .richtext--{{ section.id }} .grid-container {display:grid;grid-template-columns:repeat(2 , 1fr);gap:16px;}
+  .richtext--{{ section.id }} .grid-container .grid-item { flex-direction:column;position:relative; padding: 16px 0px 0px; }
+  .richtext--{{ section.id }} .grid-container .grid-item:first-child,
+  .richtext--{{ section.id }} .grid-container .grid-item:nth-child(2) {  padding:0px 0px; } 
+
+  }
+</style>
+
+<section
+  class="richtext--{{ section.id }} padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} padding-top-mob-{{ section.settings.mobile_padding_top }} padding-bottom-mob-{{ section.settings.mobile_padding_bottom }}"
+  style="background:{{ section.settings.bg-color }};"
+>
+  <div class="page-width">
+    <div class="container">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'heading' %}
+            <div
+              class="h2 heading margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }} font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+              style="color:{{ block.settings.color }};max-width:{{ block.settings.width }}px;width:100%;"
+            >
+              {{ block.settings.heading }}
+            </div>
+          {% when 'content' %}
+            <div
+              class="content margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }} font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+              style="color:{{ block.settings.color }};max-width:{{ block.settings.width }}px;width:100%;"
+            >
+              {{ block.settings.content }}
+            </div>
+          {% when 'line' %}
+            <div
+              class="line margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}"
+              style="background-color:{{ block.settings.color }};max-width:{{ block.settings.width }}px;width:100%;"
+            ></div>
+          {% when 'button' %}
+            {% if block.settings.button != blank %}
+              <div class="banner_inner_detail margin-bottom-{{ block.settings.space }} margin-bottom-mob-{{ block.settings.space_mob }}">
+                <a
+                  href="{{ block.settings.button_link }}"
+                  class="brightangel-button btn brightangel-{{ block.settings.button_type }}-button  font-size-mob-{{ block.settings.mobile_size }} font-size-{{ block.settings.size }} font-weight-{{ block.settings.weight }}"
+                  style="color:{{ block.settings.color }};"
+                >
+                  {{ block.settings.button }}
+                </a>
+              </div>
+            {% endif %}
+        {% endcase %}
+      {% endfor %}
+      <div class="grid-container">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'grid' %}
+              <div class="grid-item">
+                <div class="inner-container">
+                  {% if block.settings.image != blank %}
+                    <div class="image">
+                      <img src="{{ block.settings.image | img_url : 'master' }}">
+                    </div>
+                  {% endif %}
+                  {% if block.settings.title != blank %}
+                    <div
+                      class="title margin-bottom-{{ section.settings.space }} margin-bottom-mob-{{ section.settings.space_mob }} font-size-mob-{{ section.settings.mobile_size }} font-size-{{ section.settings.size }} font-weight-{{ section.settings.weight }}"
+                      style="color:{{ section.settings.color }};"
+                    >
+                      {{ block.settings.title }}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.text != blank %}
+                    <div
+                      class="text margin-bottom-{{ section.settings.tspace }} margin-bottom-mob-{{ section.settings.tspace_mob }} font-size-mob-{{ section.settings.tmobile_size }} font-size-{{ section.settings.tsize }} font-weight-{{ section.settings.tweight }}"
+                      style="color:{{ section.settings.tcolor }};"
+                    >
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Richtext Grid",
+  "settings": [
+    {
+      "type":"color",
+      "id":"bg-color",
+      "label":"Background Color"
+    },
+    {
+      "type":"number",
+      "id":"width",
+      "label":"Section Width"
+    },
+     {
+        "type": "select",
+        "options": [
+          {
+            "value": "start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "Right"
+          }
+        ],
+        "id": "align",
+        "default": "center",
+       "label":"Content Alignment"
+      },
+     {
+        "type": "select",
+        "options": [
+          {
+            "value": "start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "Right"
+          }
+        ],
+        "id": "alignmob",
+        "default": "center",
+       "label":"Mobile Content Alignment"
+      },
+      {
+        "type":"header",
+        "content":"grid customization"
+      },
+        {
+          "type":"range",
+          "id":"grid-count",
+          "min":2,
+          "max":5,
+          "default":4,
+          "label":"Grid Count"
+        },
+      {
+        "type":"number",
+        "id":"grid-width",
+        "label":"Grid Width",
+        "default":250
+      },
+      {
+        "type":"range",
+        "id":"imageheight",
+        "min":0,
+        "max":150,
+        "step":5,
+        "default":60,
+        "label":"Image height"
+      },
+      {
+        "type":"header",
+        "content":"grid title customization"
+      },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        },
+      {
+        "type":"header",
+        "content":"grid Text customization"
+      },
+        {
+          "type":"color",
+          "id":"tcolor",
+          "label":"Text Color"
+        },
+        {
+          "type":"range",
+          "id":"tsize",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Text Font Size"
+        },
+        {
+          "type":"range",
+          "id":"tmobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Text Font Size"
+        },
+        {
+          "type":"range",
+          "id":"tweight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Text Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"tspace",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"tspace_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        },
+    {
+      "type": "header",
+      "content": "Spacing Customization"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "mobile Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Padding bottom",
+      "default": 0
+    }
+  ],
+  "blocks":[
+    {
+      "type":"heading",
+      "name":"Heading",
+      "settings":[
+        {
+          "type":"number",
+          "id":"width",
+          "label":"Width"
+        },
+        {
+          "type":"richtext",
+          "id":"heading",
+          "label":"Heading"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"content",
+      "name":"Content",
+      "settings":[
+        {
+          "type":"number",
+          "id":"width",
+          "label":"Width"
+        },
+        {
+          "type":"richtext",
+          "id":"content",
+          "label":"Content"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"line",
+      "name":"Line",
+      "settings":[
+        {
+          "type":"number",
+          "id":"width",
+          "label":"Width"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"button",
+      "name":"Button",
+      "settings":[ 
+        {
+          "type":"text",
+          "id":"button",
+          "label":"Button Label"
+        },
+        {
+          "type":"url",
+          "id":"button_link",
+          "label":"Button Link"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color"
+        },
+        {
+          "type":"range",
+          "id":"size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Font Size"
+        },
+        {
+          "type":"range",
+          "id":"mobile_size",
+          "min":0,
+          "max":100,
+          "default":28,
+          "label":"Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id":"weight",
+          "step":100,
+          "min":100,
+          "max":900,
+          "default":500,
+          "label":"Font Weight"
+        },
+        {
+          "type":"range",
+          "id":"space",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Bottom Spacing"
+        },
+        {
+          "type":"range",
+          "id":"space_mob",
+          "step":1,
+          "min":1,
+          "max":100,
+          "default":20,
+          "label":"Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type":"grid",
+      "name":"Grid",
+      "settings":[
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Image",
+          "info":"Image height should be 60 in px"
+        },
+        {
+          "type":"richtext",
+          "id":"title",
+          "label":"Title"
+        },
+        {
+          "type":"richtext",
+          "id":"text",
+          "label":"Text"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"Richtext Grid"
+    }
+  ]
+}
+{% endschema %}

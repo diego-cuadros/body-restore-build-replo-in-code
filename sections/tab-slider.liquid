@@ -1,0 +1,353 @@
+<style>
+  #shopify-section-{{section.id}} .fullwidth{width:100% !important;max-width:100% !important;}
+  .logo--{{ section.id }} .heading {margin-top:0px;text-align:{{section.settings.align}};line-height:1.5; }
+  .logo--{{ section.id }} .gridcontainer .inner-container {display:flex;flex-direction:column;gap:60px;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content  {width:fit-content;margin:auto;padding-top:15px;max-width:100%;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content .swiper-slide {width:fit-content;cursor:pointer;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content .swiper-slide .mainslide-container{transition: all .2s ease-in-out;max-width:180px;width:180px;border:1px solid #f1eee4;border-radius:20px;background-color:{{section.settings.tabbgcolor}}; }
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content .swiper-slide .inner-image {padding:28px;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content .swiper-slide .inner-image .image{width:100%;height:100%;display:flex;opacity:0.2; filter: grayscale(1);}
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content .swiper-slide .inner-image .image img{width:100%;height:100%;object-fit:contain;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content .swiper-slide-thumb-active .inner-image .image{opacity:1;filter: none;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content .swiper-slide:hover .mainslide-container{transform: translateY(-12px);transition: all .2s ease-in-out;} 
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content .swiper-slide:hover .mainslide-container .inner-image .image{opacity:1;filter: none;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .tab-slider .swiper-slide {opacity:0 !important; background:{{ section.settings.background }};height:auto;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .tab-slider .swiper-slide-visible {opacity:1 !important;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .tab-slider .inner-content {margin:auto;max-width:{{section.settings.contentwidth}}px;width:100%;text-align:center;line-height:1.5;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .tab-slider .inner-content p{margin:0px;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .tab-slider {width:100%;}
+  @media screen and (max-width:768px) {
+  .logo--{{ section.id }} .heading {margin-top:0px;text-align:{{section.settings.alignmob}}; }
+  .logo--{{ section.id }} .gridcontainer .inner-container {display:flex;flex-direction:column;gap:40px;}
+  .logo--{{ section.id }} .gridcontainer .inner-container .custom-tab-wrapper .tab-content .swiper-slide:hover .mainslide-container{transform: translateY(0px);transition: all .2s ease-in-out;} 
+  }
+</style>
+<tab-slider data-sectionid="{{ section.id }}">
+  <div
+    class="logo--{{ section.id }} padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} padding-top-mob-{{ section.settings.mobile_padding_top }} padding-bottom-mob-{{ section.settings.mobile_padding_bottom }}"
+    style="background:{{ section.settings.background }};"
+  >
+    <div class="{% if section.settings.fullwidth %}fullwidth page-width{% else %}page-width{% endif %}">
+      <div class="main-container">
+        {% if section.settings.logo_title != blank %}
+          <h6
+            class=" h2 heading margin-bottom-{{ section.settings.space }} margin-bottom-mob-{{ section.settings.space_mob }} font-size-mob-{{ section.settings.mobile_size }} font-size-{{ section.settings.size }} font-weight-{{ section.settings.weight }}"
+            style="color:{{ section.settings.color }}; "
+          >
+            {{ section.settings.logo_title }}
+          </h6>
+        {% endif %}
+        <div class="gridcontainer">
+          <div class="inner-container">
+            <div  thumbsSlider="" class="custom-tab-wrapper">
+              <div class="tab-content swiper tab-content-{{ section.id }}">
+                <div class="swiper-wrapper">
+                  {%- for block in section.blocks -%}
+                    <div class="swiper-slide">
+                      <div class="mainslide-container">
+                      <div class="inner-image">
+                        <div class="image">
+                          <img src=" {{ block.settings.logo | img_url:'1000x'}} " width="" height="">
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="tab-slider tab-slider-{{ section.id }} swiper">
+              <div class="swiper-wrapper">
+                {%- for block in section.blocks -%}
+                  <div class="swiper-slide">
+                    <div class="inner-content">
+                      <div
+                        class="content margin-bottom-{{ section.settings.cspace }} margin-bottom-mob-{{ section.settings.cspace_mob }} font-size-mob-{{ section.settings.cmobile_size }} font-size-{{ section.settings.csize }} font-weight-{{ section.settings.cweight }}"
+                        style="color:{{ section.settings.ccolor }}; "
+                      >
+                        {{ block.settings.content }}
+                      </div>
+                      <div
+                        class="author  font-size-mob-{{ section.settings.amobile_size }} font-size-{{ section.settings.asize }} font-weight-{{ section.settings.aweight }}"
+                        style="color:{{ section.settings.acolor }}; "
+                      >
+                        {{ block.settings.author }}
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</tab-slider>
+
+{% schema %}
+{
+  "name": "Tab Slider",
+  "settings": [
+    {
+      "type":"color",
+      "id":"background",
+      "label":"Background",
+      "default":"#f9f9f6"
+    },
+    {
+      "type":"checkbox",
+      "id":"fullwidth",
+      "label":"Enable Full Width"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "id": "align",
+      "default": "center",
+      "label":"Title Alignment"
+     },
+     {
+      "type": "select",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "id": "alignmob",
+      "default": "center",
+     "label":"Mobile Title Alignment"
+    },
+    {
+      "type": "text",
+      "id": "logo_title",
+      "label": "Title"
+    },
+    {
+      "type":"color",
+      "id":"color",
+      "label":"Color"
+    },
+    {
+      "type":"range",
+      "id":"size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "id":"mobile_size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Mobile Font Size"
+    },
+    {
+      "type":"range",
+      "id":"weight",
+      "step":100,
+      "min":100,
+      "max":900,
+      "default":500,
+      "label":"Font Weight"
+    },
+    {
+      "type":"range",
+      "id":"space",
+      "step":1,
+      "min":1,
+      "max":100,
+      "default":20,
+      "label":"Bottom Spacing"
+    },
+    {
+      "type":"range",
+      "id":"space_mob",
+      "step":1,
+      "min":1,
+      "max":100,
+      "default":20,
+      "label":"Mobile Bottom Spacing"
+    },
+    {
+      "type":"header",
+      "content":"Tab customization"
+    },
+    {
+      "type":"color",
+      "id":"tabbgcolor",
+      "label":"Tab Background Color",
+      "default":"#ffffff"
+    },
+    {
+      "type":"number",
+      "id":"contentwidth",
+      "label":"Content Width",
+      "default":800
+    },
+    {
+      "type":"header",
+      "content":"Content Customization"
+    },
+    {
+      "type":"color",
+      "id":"ccolor",
+      "label":"Content Color"
+    },
+    {
+      "type":"range",
+      "id":"csize",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Content Font Size"
+    },
+    {
+      "type":"range",
+      "id":"cmobile_size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Mobile Content Font Size"
+    },
+    {
+      "type":"range",
+      "id":"cweight",
+      "step":100,
+      "min":100,
+      "max":900,
+      "default":500,
+      "label":"Content Font Weight"
+    },
+    {
+      "type":"range",
+      "id":"cspace",
+      "step":1,
+      "min":1,
+      "max":100,
+      "default":20,
+      "label":"Bottom Content Spacing"
+    },
+    {
+      "type":"range",
+      "id":"cspace_mob",
+      "step":1,
+      "min":1,
+      "max":100,
+      "default":20,
+      "label":"Mobile Content Bottom Spacing"
+    },
+    {
+      "type":"header",
+      "content":"Author Customization"
+    },
+    {
+      "type":"color",
+      "id":"acolor",
+      "label":"Author Color"
+    },
+    {
+      "type":"range",
+      "id":"asize",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Author Font Size"
+    },
+    {
+      "type":"range",
+      "id":"amobile_size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Mobile Author Font Size"
+    },
+    {
+      "type":"range",
+      "id":"aweight",
+      "step":100,
+      "min":100,
+      "max":900,
+      "default":500,
+      "label":"Author Font Weight"
+    },
+    {
+      "type":"header",
+      "content":"Section Spacing"
+    },
+    {
+      "type":"number",
+      "id":"padding_top",
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"padding_bottom",
+      "label":"Padding Bottom"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_top",
+      "label":"Mobile Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_bottom",
+      "label":"Mobile Padding Bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo",
+          "info":"Logo Size Should be 125 x 70 in px"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tab Slider"
+    }
+  ]
+}
+{% endschema %}

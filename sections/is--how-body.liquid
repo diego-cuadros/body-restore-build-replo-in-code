@@ -1,0 +1,98 @@
+<div class="how_body_sec">
+  <div class="container">
+    {% if section.settings.body_title != blank %}
+      <div class="body_title_row">
+        <div class="def_title body_title">
+          <h2>{{ section.settings.body_title }}</h2>
+          {% if section.settings.body_title_desc != blank %}<p>{{ section.settings.body_title_desc }}</p>{% endif %}
+        </div>
+        {% if section.settings.body_title_sub != blank %}
+          <div class="def_title_sub body_title_sub">
+            <h2>{{ section.settings.body_title_sub }}</h2>
+            {% if section.settings.body_title_desc_sub != blank %}<p>{{ section.settings.body_title_desc_sub }}</p>{% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    <div class="body_block">
+      {%- for block in section.blocks -%}
+        <div class="body_block_col">
+          <div class="body_block_col_inner">
+            <div class="body_block_img">
+              <img src="{{ block.settings.body_img | image_url : "master" }}" alt="Body Image {{ forloop.index }}" />
+            </div>
+            <div class="body_content">
+              <h5>{{ block.settings.block_body_title }}</h5>
+              <p>{{ block.settings.block_body_desc }}</p>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "How Body",
+    "settings": [
+      {
+        "type": "text",
+        "id": "body_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "body_title_desc",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "body_title_sub",
+        "label": "Sub Title"
+      },
+      {
+        "type": "textarea",
+        "id": "body_title_desc_sub",
+        "label": "Sub Description"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "type": "how_body",
+        "name": "How Body List",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "body_img",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "block_body_title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "block_body_desc",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "How Body"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

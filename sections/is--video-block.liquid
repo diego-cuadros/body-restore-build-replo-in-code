@@ -1,0 +1,125 @@
+{%- if section.settings.solve_title != blank and section.blocks.size > 0 -%}
+  <div class="solve_sec" {% if section.settings.solve_bg_color != blank %} style="background-color: {{ section.settings.solve_bg_color }};"{% endif %}>
+    <div class="container">
+      {%- if section.settings.solve_title != blank -%}
+        <div class="def_title">
+          <h2>{{ section.settings.solve_title }}</h2>
+        </div>
+      {%- endif -%}
+      {%- if section.blocks.size > 0 -%}
+        <div class="solve_grid">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.solvesub__title != blank or block.settings.solvesub__desc != blank or block.settings.solvesub__btn != blank or block.settings.solvesub__video != blank -%}
+              <div class="solve_item" {% if block.settings.solve_bg_color_inside != blank %} style="background-color: {{ block.settings.solve_bg_color_inside }};"{% endif %} {{ block.shopify_attributes }}>
+                <div class="solve_item_inside">
+                  <div class="solve_col solve_col_left">
+                    <div class="solve_content">
+                      {% if block.settings.solvesub__title != blank %}
+                        <h4>{{ block.settings.solvesub__title | replace: 'p>', 'span>' }}</h4>
+                      {% endif %}
+                      {% if block.settings.solvesub__desc != blank %}
+                        <div>{{ block.settings.solvesub__desc }}</div>
+                      {% endif %}
+                      {% if block.settings.solvesub__btn != blank %}
+                        <a class="def_btn video_btn_{{ block.id }}" aria-label="{{ block.settings.solvesub__btn | strip_html }}" style="background-color:{{block.settings.button_color_bg}};color:{{block.settings.button_color_text}}" href="{{ block.settings.solvesub__btn_url }}">{{ block.settings.solvesub__btn | replace: 'p>', 'span>' }}</a>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="solve_col solve_col_right">
+                    <div class="solve_video media" style="padding-bottom: {{ 1.15 | divided_by: block.settings.solvesub__video.aspect_ratio | times: 100 }}%;">
+                      {% if block.settings.solvesub__image !=blank %}
+                        {{ block.settings.solvesub__image | image_url: width: 3840 | image_tag: loading: 'lazy', sizes: '100vw', widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: "video_img" }}
+                      {% else %}
+                        {% if block.settings.solvesub__video != blank %}
+                          {% comment %}
+                            <video src="{{block.settings.solvesub__video.sources[1].url}}" loop muted playsinline autoplay></video>
+                          {% endcomment %}
+                          {{ block.settings.solvesub__video | video_tag: image_size: '1100x', autoplay: true, loop: true, controls: false, muted: true }}
+                        {% endif %}
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+{% schema %}
+  {
+    "name": "Video Block",
+    "settings": [
+      {
+        "type": "color",
+        "id": "solve_bg_color",
+        "label": "Backgroun Color"
+      },
+      {
+        "type": "text",
+        "id": "solve_title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+          "type": "video_block_grid",
+          "name": "Video Block Grid",
+          "settings": [
+            {
+              "type": "color",
+              "id": "button_color_bg",
+              "label": "Button Background"
+            },
+            {
+              "type": "color",
+              "id": "button_color_text",
+              "label": "Button Text Color"
+            },
+            {
+              "type": "color",
+              "id": "solve_bg_color_inside",
+              "label": "Backgroun Color"
+            },
+            {
+              "type": "image_picker",
+              "id": "solvesub__image",
+              "label": "Image"
+            },
+            {
+              "type": "video",
+              "id": "solvesub__video",
+              "label": "Video"
+            },
+            {
+              "type": "richtext",
+              "id": "solvesub__title",
+              "label": "Sub Title"
+            },
+            {
+              "type": "richtext",
+              "id": "solvesub__desc",
+              "label": "Sub Description"
+            },
+            {
+              "type": "richtext",
+              "id": "solvesub__btn",
+              "label": "Button Text"
+            },
+            {
+              "type": "url",
+              "id": "solvesub__btn_url",
+              "label": "Button URL"
+            }
+          ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video Block"
+      }
+    ]
+  }
+{% endschema %}

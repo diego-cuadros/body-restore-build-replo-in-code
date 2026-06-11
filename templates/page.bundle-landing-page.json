@@ -1,0 +1,1234 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "bundle-landing-page-product",
+      "blocks": {
+        "okendo_star_rating_JnBzL9": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "eucalyptus-shower-steamers"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "fontsize": 36,
+            "fontsizemob": 24,
+            "fontweight": 700,
+            "color": "#0c2331",
+            "marginbottom": 6,
+            "marginbottommob": 6
+          }
+        },
+        "text_XMcMfE": {
+          "type": "text",
+          "settings": {
+            "text": "STEAM AWAY THE STRESS",
+            "fontfamily": "montserrat",
+            "fontsize": 18,
+            "fontsizemob": 16,
+            "fontweight": 700,
+            "color": "#0c2331",
+            "marginbottom": 15,
+            "marginbottommob": 12
+          }
+        },
+        "text_7UPXUB": {
+          "type": "text",
+          "settings": {
+            "text": "Turn Your Shower Into a Spa in Minutes",
+            "fontfamily": "roboto",
+            "fontsize": 16,
+            "fontsizemob": 14,
+            "fontweight": 400,
+            "color": "#0c2331",
+            "marginbottom": 14,
+            "marginbottommob": 14
+          }
+        },
+        "content_VwgTEi": {
+          "type": "content",
+          "settings": {
+            "image": "shopify://shop_images/winking_1_1.gif",
+            "text": "1 Steamer = Instant Stress Relief",
+            "fontsize": 16,
+            "fontsizemob": 14,
+            "fontweight": 700,
+            "color": "#000000",
+            "bgcolor": "#fff9eb",
+            "bordercolor": "#fcb800",
+            "marginbottom": 15,
+            "marginbottommob": 14
+          }
+        },
+        "text_QrdD7F": {
+          "type": "text",
+          "settings": {
+            "text": "90% of customers felt more human again.",
+            "fontfamily": "roboto",
+            "fontsize": 17,
+            "fontsizemob": 15,
+            "fontweight": 500,
+            "color": "#848484",
+            "marginbottom": 28,
+            "marginbottommob": 24
+          }
+        },
+        "static_variant_b69ta4": {
+          "type": "static-variant",
+          "settings": {
+            "picker_type": "button",
+            "enablecheckbox": false,
+            "freegiftendtime": "<p>Order by $currentdata for guaranteed <strong>FREE Gifts</strong></p>",
+            "freefontsize": 14,
+            "freefontsizemob": 12,
+            "freefontweight": 500,
+            "freecolor": "#065252",
+            "freebgcolor": "#ebf0e7",
+            "freebordercolor": "#065252",
+            "freemarginbottom": 15,
+            "freemarginbottommob": 15,
+            "variant1": "2 Bags",
+            "packrange1": 2,
+            "varianttext1": "2 Bags",
+            "variantdiscount1": 10,
+            "badge1": "",
+            "color1": "#f8f9fa",
+            "bgcolor1": "#df3d3d",
+            "popupvariantsaving1": "You're saving 10% + Free Shipping",
+            "variant2": "4 Bags",
+            "packrange2": 4,
+            "varianttext2": "4 Bags",
+            "variantdiscount2": 25,
+            "badge2": "",
+            "color2": "#f8f9fa",
+            "bgcolor2": "#58bbec",
+            "popupvariantsaving2": "You're saving 25% + Free Shipping",
+            "variant3": "6 Bags",
+            "packrange3": 6,
+            "varianttext3": "6 Bags",
+            "variantdiscount3": 33,
+            "badge3": "BEST SELLER",
+            "color3": "#ffffff",
+            "bgcolor3": "#fb2368",
+            "popupvariantsaving3": "You're saving 33% + Free Shipping",
+            "variant4": "8 Bags",
+            "packrange4": 8,
+            "varianttext4": "8 Bags",
+            "variantdiscount4": 40,
+            "badge4": "BEST DEAL",
+            "color4": "#0c2331",
+            "bgcolor4": "#fcb800",
+            "popupvariantsaving4": "You're saving 40% + Free Shipping",
+            "labelfontsize": 16,
+            "labelfontsizemob": 16,
+            "labelfontsweight": 700,
+            "labelcolor": "#000000",
+            "pricefontsize": 12,
+            "pricefontsizemob": 10,
+            "pricefontsweight": 700,
+            "pricelcolor": "#0c2331",
+            "variantboxbgcolor": "#ffffff",
+            "variantboxbordercolor": "#e9e9e9",
+            "variantboxactivebgcolor": "#fff5e3",
+            "variantboxactivebordercolor": "#2a2552",
+            "pinfosale": "<p>LIMITED TIME: BUY MORE, SAVE MORE</p>",
+            "salefontsize": 16,
+            "salefontsizemob": 14,
+            "salefontweight": 700,
+            "salecolor": "#000000",
+            "boximage": "shopify://shop_images/67920404e80bab06fbf97642_shoppingbag.svg",
+            "boxpriceinfo": "YOU'RE SHOPPING THE BEST PRICE EVER",
+            "boxpricefontsize": 14,
+            "boxpricefontsizemob": 12,
+            "boxpricefontweight": 700,
+            "boxpricecolor": "#065252",
+            "boxpricebgcolor": "#ebf0e7",
+            "boxpricebordercolor": "#065252",
+            "boxpricemarginbottom": 15,
+            "boxpricemarginbottommob": 15,
+            "stockinfo": "shopify://shop_images/Group_11.svg",
+            "stockinfoinfo": "Selling fast. Stock guaranteed to last until",
+            "stockinfofontsize": 14,
+            "stockinfofontsizemob": 12,
+            "stockinfofontweight": 600,
+            "stockinfocolor": "#c7202e",
+            "stockinfomarginbottom": 15,
+            "stockinfomarginbottommob": 15,
+            "popupinfotext": "",
+            "popupfontsize": 18,
+            "popupfontsizemob": 16,
+            "popupfontweight": 600,
+            "popupcolor": "#0c2331",
+            "popupproduct": "",
+            "ppfontsize": 16,
+            "ppfontsizemob": 14,
+            "ppfontweight": 500,
+            "ppcolor": "#000000",
+            "productstockselltitle": "",
+            "psfontsize": 14,
+            "psfontsizemob": 13,
+            "psfontweight": 500,
+            "pscolor": "#000000",
+            "restockinfo": "",
+            "rtfontsize": 14,
+            "rtfontsizemob": 12,
+            "rtfontweight": 500,
+            "rtcolor": "#000000",
+            "rcfontsize": 15,
+            "rcfontsizemob": 13,
+            "rcfontweight": 500,
+            "rccolor": "#000000",
+            "selloutinfo": "",
+            "stfontsize": 14,
+            "stfontsizemob": 12,
+            "stfontweight": 500,
+            "stcolor": "#000000",
+            "scfontsize": 15,
+            "scfontsizemob": 13,
+            "scfontweight": 600,
+            "sccolor": "#000000",
+            "boxcolor": "#f4f4f4",
+            "separatebordercolor": "#000000",
+            "productlowfontsize": 13,
+            "productlowfontsizemob": 12,
+            "productlowfontweight": 600,
+            "lowtextcolor": "#000000",
+            "productlowcolor": "#c8202f",
+            "savinginfofontsize": 13,
+            "savinginfofontsizemob": 12,
+            "savinginfofontweight": 600,
+            "savinginfocolor": "#c7202e",
+            "image": "shopify://shop_images/sleep_11231a26-2e7c-48d2-835d-218f5c8a027e.png",
+            "productverinfo": "<p>Try it risk-free for 30 days. If you're not totally in love with the product, we will refund you 100%. <strong>No questions asked! </strong></p>",
+            "vfontsize": 14,
+            "vfontsizemob": 14,
+            "vfontweight": 500,
+            "vcolor": "#000000",
+            "vbgcolor": "#ebf0e7",
+            "vbordercolor": "#0c2331"
+          }
+        },
+        "image_aw7EAg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_1000011730.png",
+            "space": 19,
+            "space_mob": 20
+          }
+        }
+      },
+      "block_order": [
+        "okendo_star_rating_JnBzL9",
+        "title",
+        "text_XMcMfE",
+        "text_7UPXUB",
+        "content_VwgTEi",
+        "text_QrdD7F",
+        "static_variant_b69ta4",
+        "image_aw7EAg"
+      ],
+      "settings": {
+        "buttoncolor": "#fbbf24",
+        "product": "shower-steamer-bundle",
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "media_position": "left",
+        "enablesticky": true,
+        "button": "Select Scents",
+        "bfontsize": 16,
+        "bfontsizemob": 16,
+        "bfontweight": 700,
+        "bbgcolor": "#fbbf24",
+        "bcolor": "#ffffff",
+        "hoverbbgcolor": "#e5eeee",
+        "hoverbcolor": "#0c2331",
+        "cbutton": "Proceed to Checkout",
+        "cfontsize": 16,
+        "cfontsizemob": 16,
+        "cfontweight": 700,
+        "cbgcolor": "#0c2331",
+        "ccolor": "#ffffff",
+        "hovercbgcolor": "#e5eeee",
+        "hoverccolor": "#0c2331",
+        "paddingtop": 10,
+        "paddingbottom": 10,
+        "paddingtopmob": 0,
+        "paddingbottommob": 0
+      }
+    },
+    "icon_and_text_fVcbiQ": {
+      "type": "icon-and-text",
+      "blocks": {
+        "block_wEF9gw": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/br_gma.png",
+            "content": "<p>\"No more boring showers with body</p><p>restore shower steamers.\"</p>"
+          }
+        },
+        "block_QYhgey": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/br_rs.png",
+            "content": "<p>\"Who needs the spa when you can get that same relaxing feeling at home?\"</p>"
+          }
+        },
+        "block_9dtTTr": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/br_buzz.png",
+            "content": "<p>One reviewer says, \"it's like visiting the spa before bed\"....I'll take 50 bags.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_wEF9gw",
+        "block_QYhgey",
+        "block_9dtTTr"
+      ],
+      "name": "Custom Icon And Text",
+      "settings": {
+        "sec_bg": "",
+        "section_style": "slider",
+        "columns": "3",
+        "max_width": 1218,
+        "image_height": 52,
+        "image_height_mob": 60,
+        "text_color": "#0c2331",
+        "font_size": 14,
+        "font_size_mob": 14,
+        "font_weight": 600,
+        "pagination_color": "#c6c7c8",
+        "pagination_color_acitve": "#0c2331",
+        "sec_top_padding": 60,
+        "sec_bottom_padding": 94,
+        "sec_top_padding_mob": 60,
+        "sec_bottom_padding_mob": 60
+      }
+    },
+    "how_to_use_nzkPHp": {
+      "type": "how-to-use",
+      "blocks": {
+        "block_We9Da9": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Step_1.gif",
+            "title": "<p>Unwrap your tablet</p>",
+            "url": "shopify://products/eucalyptus-shower-steamers",
+            "color": "#ffffff",
+            "bgcolor": "#00bcae"
+          }
+        },
+        "block_txpWVN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Step_2.gif",
+            "title": "<p>Place it on the shower floor </p>",
+            "url": "shopify://products/copy-of-lavender-shower-bombs-15-pack-retail",
+            "color": "#ffffff",
+            "bgcolor": "#ff8f01"
+          }
+        },
+        "block_4cPWhp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Step_3.gif",
+            "title": "<p>Turn on hot water to activate the steam</p>",
+            "url": "shopify://products/copy-of-eucalyptus-mint-shower-bombs-15-pack-retail",
+            "color": "#ffffff",
+            "bgcolor": "#ab78b1"
+          }
+        },
+        "block_WCjfDD": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Step_4.gif",
+            "title": "<p>Enjoy your moment of peace</p>",
+            "url": "shopify://products/amore-rose-shower-steamers",
+            "color": "#ffffff",
+            "bgcolor": "#fb2368"
+          }
+        }
+      },
+      "block_order": [
+        "block_We9Da9",
+        "block_txpWVN",
+        "block_4cPWhp",
+        "block_WCjfDD"
+      ],
+      "settings": {
+        "section-heading": "How to Use",
+        "tfontsize": 40,
+        "tfontsizemob": 34,
+        "tfontweight": 700,
+        "ttextalignment": "center",
+        "tcolor": "#0c2331",
+        "tpaddingbottom": 24,
+        "tpaddingbottommob": 18,
+        "gridperrow": 4,
+        "gridperrowmob": 2,
+        "btfontsize": 16,
+        "btfontsizemob": 14,
+        "btfontweight": 600,
+        "spaddingtop": 0,
+        "spaddingbottom": 81,
+        "spaddingtopmob": 0,
+        "spaddingbottommob": 60
+      }
+    },
+    "custom_media_with_content_HcjCad": {
+      "type": "custom-media-with-content",
+      "blocks": {
+        "heading_D4qaqF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Turn Your Shower Into a Spa — In Seconds",
+            "text_color": "#0c2331",
+            "font_size": 32,
+            "font_size_mob": 20,
+            "font_weight": 700,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10
+          }
+        },
+        "content_XbBAwk": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Shower steamers make luxury self-care effortless. Each one infuses your shower with real essential oils for instant aromatherapy. No tub needed. No cleanup. Just place it, steam it, breathe it in. The easiest upgrade to your daily routine.</p>",
+            "text_color": "#0c2331",
+            "font_size": 16,
+            "font_size_mob": 16,
+            "font_weight": 400,
+            "margin_bottom": 20,
+            "margin_bottom_mob": 20
+          }
+        },
+        "review_wLyhaq": {
+          "type": "review",
+          "settings": {
+            "review_box_bg": "#e2edec",
+            "review_box_border_color": "#00bcae",
+            "img": "shopify://shop_images/BR_image_1.png",
+            "review_text": "<p>Iʼve used these in different homes over the holidays and they transformed each bathroom into a little oasis. You donʼt need a fancy tubor setup. Just hot water and a few minutes. Really nice upgrade to my usual shower.</p>",
+            "text_color": "#000000",
+            "font_size": 14,
+            "font_size_mob": 14,
+            "font_weight": 600,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10,
+            "regards": "– Laurenthe Writer",
+            "r_color": "#000000",
+            "r_font_size": 14,
+            "r_font_size_mob": 14,
+            "r_font_weight": 900
+          }
+        }
+      },
+      "block_order": [
+        "heading_D4qaqF",
+        "content_XbBAwk",
+        "review_wLyhaq"
+      ],
+      "name": "Custom Image and Content",
+      "settings": {
+        "sec_bg": "rgba(0,0,0,0)",
+        "max_width": 1218,
+        "image_position": "0",
+        "main_image": "shopify://shop_images/1200px_x_628px_Close_up_of_Rowan_Smelling_Shower_steamer_1.png",
+        "logo_img": "shopify://shop_images/spa.png",
+        "logo_image_size": 180,
+        "verticaly_align": 30,
+        "horizontal_align": 60,
+        "logo_img_mob": "shopify://shop_images/spa.png",
+        "logo_image_size_mob": 150,
+        "verticaly_align_mob": 18,
+        "horizontal_align_mob": 0,
+        "sec_top_padding": 0,
+        "sec_bottom_padding": 60,
+        "sec_top_padding_mob": 0,
+        "sec_bottom_padding_mob": 50
+      }
+    },
+    "custom_media_with_content_3cf86F": {
+      "type": "custom-media-with-content",
+      "blocks": {
+        "heading_8YxGJU": {
+          "type": "heading",
+          "settings": {
+            "heading": "You can finally give gifts people actually use",
+            "text_color": "#0c2331",
+            "font_size": 32,
+            "font_size_mob": 20,
+            "font_weight": 700,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10
+          }
+        },
+        "content_GbMxND": {
+          "type": "content",
+          "settings": {
+            "content": "<p>When candles feel too basic and gift cards feel too impersonal, body restore shower steamers are the perfect solution. They’re luxurious, practical, and unexpected—the kind of gift people love discovering and actually use. From Mother’s Day to birthdays to thank-you gifts, it’s an easy win. And with bundle builder savings, custom gifting gets even better.</p>",
+            "text_color": "#0c2331",
+            "font_size": 16,
+            "font_size_mob": 16,
+            "font_weight": 400,
+            "margin_bottom": 20,
+            "margin_bottom_mob": 20
+          }
+        },
+        "review_aFfbWC": {
+          "type": "review",
+          "settings": {
+            "review_box_bg": "#f6f0e2",
+            "review_box_border_color": "#ff8f02",
+            "img": "shopify://shop_images/Enerzie.png",
+            "review_text": "<p>“Makes a perfect gift. I was gifted these, from someone who knew I was going through a rough time. It was exactly what I didn’t know I needed. Now I gift them to others, it’s a small gesture, but it means a lot when someone is stressed or struggling.”</p>",
+            "text_color": "#000000",
+            "font_size": 14,
+            "font_size_mob": 14,
+            "font_weight": 600,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10,
+            "regards": "– Mrs. McCool",
+            "r_color": "#000000",
+            "r_font_size": 14,
+            "r_font_size_mob": 14,
+            "r_font_weight": 900
+          }
+        }
+      },
+      "block_order": [
+        "heading_8YxGJU",
+        "content_GbMxND",
+        "review_aFfbWC"
+      ],
+      "name": "Custom Image and Content",
+      "settings": {
+        "sec_bg": "rgba(0,0,0,0)",
+        "max_width": 1218,
+        "image_position": "2",
+        "main_image": "shopify://shop_images/br_image2.png",
+        "logo_img": "shopify://shop_images/peace.png",
+        "logo_image_size": 200,
+        "verticaly_align": 30,
+        "horizontal_align": 50,
+        "logo_img_mob": "shopify://shop_images/peace.png",
+        "logo_image_size_mob": 150,
+        "verticaly_align_mob": 24,
+        "horizontal_align_mob": 0,
+        "sec_top_padding": 0,
+        "sec_bottom_padding": 60,
+        "sec_top_padding_mob": 0,
+        "sec_bottom_padding_mob": 50
+      }
+    },
+    "custom_media_with_content_CCKx88": {
+      "type": "custom-media-with-content",
+      "blocks": {
+        "heading_hmdFdT": {
+          "type": "heading",
+          "settings": {
+            "heading": "De-Stress in 10 Minutes or Less",
+            "text_color": "#0c2331",
+            "font_size": 32,
+            "font_size_mob": 20,
+            "font_weight": 700,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10
+          }
+        },
+        "content_PhzFiV": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Stress relief shouldn’t require an hour-long bath or a spa appointment. With Relief (Eucalyptus Mint), body restore delivers tension relief, clear breathing, and instant calm in the time it takes to shower. It's real self-care for real life.</p>",
+            "text_color": "#0c2331",
+            "font_size": 16,
+            "font_size_mob": 16,
+            "font_weight": 400,
+            "margin_bottom": 20,
+            "margin_bottom_mob": 20
+          }
+        },
+        "review_9Jjych": {
+          "type": "review",
+          "settings": {
+            "review_box_bg": "#e8e6ed",
+            "review_box_border_color": "#aa78b1",
+            "img": "shopify://shop_images/calm_757a87d5-e932-4547-855d-f9ce6a9221cd.png",
+            "review_text": "<p>“My friend recommended these shower tablets to help with stress and anxiety. I didn’t realize how badly I needed something like this. I’m a caregiver for my mom and often don’t have time to decompress. These gave me 5 minutes of peace.”</p>",
+            "text_color": "#000000",
+            "font_size": 14,
+            "font_size_mob": 14,
+            "font_weight": 600,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10,
+            "regards": "– Ben Z.",
+            "r_color": "#000000",
+            "r_font_size": 14,
+            "r_font_size_mob": 14,
+            "r_font_weight": 900
+          }
+        }
+      },
+      "block_order": [
+        "heading_hmdFdT",
+        "content_PhzFiV",
+        "review_9Jjych"
+      ],
+      "name": "Custom Image and Content",
+      "settings": {
+        "sec_bg": "rgba(0,0,0,0)",
+        "max_width": 1218,
+        "image_position": "0",
+        "main_image": "shopify://shop_images/br_image3.png",
+        "logo_img": "shopify://shop_images/exhausted.png",
+        "logo_image_size": 180,
+        "verticaly_align": 70,
+        "horizontal_align": 90,
+        "logo_img_mob": "shopify://shop_images/exhausted.png",
+        "logo_image_size_mob": 100,
+        "verticaly_align_mob": 30,
+        "horizontal_align_mob": 30,
+        "sec_top_padding": 0,
+        "sec_bottom_padding": 60,
+        "sec_top_padding_mob": 0,
+        "sec_bottom_padding_mob": 50
+      }
+    },
+    "custom_media_with_content_FezRHW": {
+      "type": "custom-media-with-content",
+      "blocks": {
+        "heading_X74qWr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Daily Luxury That Won’t Break the Bank",
+            "text_color": "#0c2331",
+            "font_size": 32,
+            "font_size_mob": 20,
+            "font_weight": 700,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10
+          }
+        },
+        "content_GADbHd": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Spa days are amazing, but pricey. body restore gives you that same essential oil bliss for less than $2 a shower. Build your custom bundle and save up to 50%. Real self-care, no splurge required.</p>",
+            "text_color": "#0c2331",
+            "font_size": 16,
+            "font_size_mob": 16,
+            "font_weight": 400,
+            "margin_bottom": 20,
+            "margin_bottom_mob": 20
+          }
+        },
+        "review_M3jG36": {
+          "type": "review",
+          "settings": {
+            "review_box_bg": "#f6f0e2",
+            "review_box_border_color": "#ff8f02",
+            "img": "shopify://shop_images/Enerzie.png",
+            "review_text": "<p>“The scent makes my whole bathroom feel like a high-end spa. Honestly, for the price, I didn’t expect this level of quality. I’ve been gifting them to friends too, they all say it’s a little luxury they can actually use.”</p>",
+            "text_color": "#000000",
+            "font_size": 14,
+            "font_size_mob": 14,
+            "font_weight": 600,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10,
+            "regards": "– EG",
+            "r_color": "#000000",
+            "r_font_size": 14,
+            "r_font_size_mob": 14,
+            "r_font_weight": 900
+          }
+        }
+      },
+      "block_order": [
+        "heading_X74qWr",
+        "content_GADbHd",
+        "review_M3jG36"
+      ],
+      "name": "Custom Image and Content",
+      "settings": {
+        "sec_bg": "rgba(0,0,0,0)",
+        "max_width": 1218,
+        "image_position": "2",
+        "main_image": "shopify://shop_images/br_image4.png",
+        "logo_img": "shopify://shop_images/dance.png",
+        "logo_image_size": 180,
+        "verticaly_align": 65,
+        "horizontal_align": 57,
+        "logo_img_mob": "shopify://shop_images/dance.png",
+        "logo_image_size_mob": 100,
+        "verticaly_align_mob": 20,
+        "horizontal_align_mob": 10,
+        "sec_top_padding": 0,
+        "sec_bottom_padding": 60,
+        "sec_top_padding_mob": 0,
+        "sec_bottom_padding_mob": 60
+      }
+    },
+    "custom_media_with_content_37eKUc": {
+      "type": "custom-media-with-content",
+      "blocks": {
+        "heading_UA3pDi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Breathe In Nature, Not Synthetics",
+            "text_color": "#0c2331",
+            "font_size": 32,
+            "font_size_mob": 20,
+            "font_weight": 700,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10
+          }
+        },
+        "content_pAD7Jq": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Forget the chemical perfume clouds. Body Restore uses only real essential oils — no synthetics, no shortcuts. That’s why Energize smells like fresh citrus and Calm feels like lavender fields. It’s 100% clean aromatherapy that actually works.</p>",
+            "text_color": "#0c2331",
+            "font_size": 16,
+            "font_size_mob": 16,
+            "font_weight": 400,
+            "margin_bottom": 20,
+            "margin_bottom_mob": 20
+          }
+        },
+        "review_YPEbJm": {
+          "type": "review",
+          "settings": {
+            "review_box_bg": "#e2edec",
+            "review_box_border_color": "#00bcae",
+            "img": "shopify://shop_images/BR_image_1.png",
+            "review_text": "<p>“These tablets worked surprisingly well. The scent is real, not fake or overpowering. It’s exactly what I needed after long days. Pure essential oil experience in your shower.”</p>",
+            "text_color": "#000000",
+            "font_size": 14,
+            "font_size_mob": 14,
+            "font_weight": 600,
+            "margin_bottom": 10,
+            "margin_bottom_mob": 10,
+            "regards": "– Laurenthe Writer",
+            "r_color": "#000000",
+            "r_font_size": 14,
+            "r_font_size_mob": 14,
+            "r_font_weight": 900
+          }
+        }
+      },
+      "block_order": [
+        "heading_UA3pDi",
+        "content_pAD7Jq",
+        "review_YPEbJm"
+      ],
+      "name": "Custom Image and Content",
+      "settings": {
+        "sec_bg": "rgba(0,0,0,0)",
+        "max_width": 1218,
+        "image_position": "0",
+        "main_image": "shopify://shop_images/br_image5.png",
+        "logo_img": "shopify://shop_images/relief_f077cc7b-b851-4e4a-baab-07e4596af5cf.png",
+        "logo_image_size": 180,
+        "verticaly_align": 55,
+        "horizontal_align": 80,
+        "logo_img_mob": "shopify://shop_images/relief_14420ccb-56ea-4b94-b681-401ac6c66d47.png",
+        "logo_image_size_mob": 140,
+        "verticaly_align_mob": 35,
+        "horizontal_align_mob": 35,
+        "sec_top_padding": 0,
+        "sec_bottom_padding": 109,
+        "sec_top_padding_mob": 0,
+        "sec_bottom_padding_mob": 60
+      }
+    },
+    "product_key_features_t8jLQg": {
+      "type": "product-key-features",
+      "blocks": {
+        "title_yrN8p4": {
+          "type": "title",
+          "settings": {
+            "title": "Real Self-Care for Real Life",
+            "color": "#0c2331",
+            "font_size": 40,
+            "mobile_font_size": 30,
+            "font_weight": 700,
+            "padding_bottom": 4,
+            "mobile_padding_bottom": 10
+          }
+        },
+        "content_EWRcmj": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Delivers tension relief, clear breathing, and instant calm in the time it takes to shower.</p>",
+            "color": "#0c2331",
+            "font_size": 16,
+            "mobile_font_size": 14,
+            "font_weight": 400,
+            "padding_bottom": 60,
+            "mobile_padding_bottom": 40
+          }
+        },
+        "key_item_YLFjN3": {
+          "type": "key_item",
+          "settings": {
+            "position": "left",
+            "title": "Incredibly convenient",
+            "bgcolor": "#dda4b6",
+            "color": "#ffffff",
+            "content": "<p>Just place it, steam it, breathe it. It's the easiest way to upgrade your daily routine.</p>",
+            "dashed_height": 200,
+            "dashed_position": 34,
+            "enabletop": "bottom",
+            "circle_bg": "#ceff64"
+          }
+        },
+        "key_item_3XBtLQ": {
+          "type": "key_item",
+          "settings": {
+            "position": "left",
+            "title": "Natural Ingredients",
+            "bgcolor": "#72c0b6",
+            "color": "#ffffff",
+            "content": "<p>Harsh chemicals don't belong in your shower-or down your drain. We use clean, skin-safe ingredients that dissolve completely, leaving nothing behind but calming scents.</p>",
+            "dashed_height": 100,
+            "dashed_position": 34,
+            "enabletop": "top",
+            "circle_bg": "#ceff64"
+          }
+        },
+        "key_item_cXbY48": {
+          "type": "key_item",
+          "settings": {
+            "position": "right",
+            "title": "Ultra-versatile",
+            "bgcolor": "#ecc12e",
+            "color": "#ffffff",
+            "content": "<p>Our steamers are small, portable, and travel-friendly. Toss a few in your bag, and take your personal spa on the go.</p>",
+            "dashed_height": 200,
+            "dashed_position": 25,
+            "enabletop": "bottom",
+            "circle_bg": "#ceff64"
+          }
+        },
+        "key_item_gydjXC": {
+          "type": "key_item",
+          "settings": {
+            "position": "right",
+            "title": "Ultra-affordable",
+            "bgcolor": "#f0be7a",
+            "color": "#ffffff",
+            "content": "<p>Body restore shower steamers cost dramatically less than a trip to the spa!</p>",
+            "dashed_height": 167,
+            "dashed_position": 25,
+            "enabletop": "top",
+            "circle_bg": "#ceff64"
+          }
+        }
+      },
+      "block_order": [
+        "title_yrN8p4",
+        "content_EWRcmj",
+        "key_item_YLFjN3",
+        "key_item_3XBtLQ",
+        "key_item_cXbY48",
+        "key_item_gydjXC"
+      ],
+      "name": "Product Key Features",
+      "settings": {
+        "background": "#b0dce2",
+        "alignment": "center",
+        "image": "shopify://shop_images/square_ratio_image.png",
+        "title_box_width": 238,
+        "font_size": 20,
+        "mobile_font_size": 16,
+        "font_weight": 500,
+        "c_color": "#0c2331",
+        "c_font_size": 16,
+        "mobile_c_font_size": 14,
+        "c_font_weight": 500,
+        "padding_top": 75,
+        "padding_bottom": 70,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "ingredients_list_tab_6i4tRq": {
+      "type": "ingredients-list-tab",
+      "blocks": {
+        "heading_ALk6TK": {
+          "type": "heading",
+          "settings": {
+            "sectionheading": "Ingredients List Call Out",
+            "text_box_align": "middle-center",
+            "text_box_align_mob": "mobile_middle-center",
+            "color": "#0c2331",
+            "font_size": 40,
+            "font_size_mob": 34,
+            "font_weight": 700,
+            "margin_bottom": 33,
+            "margin_bottom_mob": 30
+          }
+        },
+        "grid_mprTp7": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/dfa2853a1c8e84f3054f0e3e6b6185dbd4f1bd3b.png",
+            "tab-label": "EUCALYPTUS",
+            "circlecolor": "#9dc3c2",
+            "tabcontentbg": "#72c0b6",
+            "image1": "shopify://shop_images/dfa2853a1c8e84f3054f0e3e6b6185dbd4f1bd3b.png",
+            "image2": "shopify://shop_images/slider-img-3.jpg",
+            "text": "<p>Sodium Bicarbonate, Sodium Sulfate, Citric Acid, Sodium Carbonate, Zea Mays (Corn) Starch, Menthol, Eucalyptus Globulus Oil, PEG-150, PEG-8</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#214e47"
+          }
+        },
+        "grid_JTmNAj": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/5065d4962add33dcbc23740d711fbf2aac99c6ac.png",
+            "tab-label": "CITURS",
+            "circlecolor": "#f0be7a",
+            "tabcontentbg": "#eb9e2d",
+            "image1": "shopify://shop_images/5065d4962add33dcbc23740d711fbf2aac99c6ac.png",
+            "image2": "shopify://shop_images/slider-img-4.jpg",
+            "text": "<p>Sodium Bicarbonate, Sodium Sulfate, Citric Acid, Sodium Carbonate, Zea Mays (Corn) Starch, Citrus Limon Peel Oil, Menthol, PEG 150, PEG 8, Citrus Sinensis Peel Oil, Citrus Paradisi Peel Oil</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#c96f2c"
+          }
+        },
+        "grid_MyeMrd": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/93efcca8ff04afd8f095771981ff85c3e0fe554f.png",
+            "tab-label": "LAVENDER",
+            "circlecolor": "#d0c2df",
+            "tabcontentbg": "#cbb1d5",
+            "image1": "shopify://shop_images/93efcca8ff04afd8f095771981ff85c3e0fe554f.png",
+            "image2": "shopify://shop_images/FY0A3130.jpg",
+            "text": "<p>Sodium Bicarbonate, Sodium Sulfate, Citric Acid, Sodium Carbonate, Zea Mays (Corn) Starch, Lavandula Officinalis Flower Oil, Menthol, PEG 150, PEG</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#5e446b"
+          }
+        },
+        "grid_bmepqr": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/554d70cffcda1cee8c7cd6287601eb3fa133d3fd.png",
+            "tab-label": "TEA TREE",
+            "circlecolor": "#cdd89f",
+            "tabcontentbg": "#b1d078",
+            "image1": "shopify://shop_images/554d70cffcda1cee8c7cd6287601eb3fa133d3fd.png",
+            "image2": "shopify://shop_images/slider-img-1.jpg",
+            "text": "<p>Sodium Bicarbonate, Sodium Sulfate, Citric Acid, Sodium Carbonate, Zea Mays (Corn) Starch, Melaleuca alternifolia leaf oil, Menthol, PEG 150, PEG 8</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#566f4a"
+          }
+        },
+        "grid_YB9eXP": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/e5c79071422ec1f110ed825848e3f818e98f26fa.png",
+            "tab-label": "FLORAL ROSE",
+            "circlecolor": "#dda4b6",
+            "tabcontentbg": "#dd4376",
+            "image1": "shopify://shop_images/e5c79071422ec1f110ed825848e3f818e98f26fa.png",
+            "image2": "shopify://shop_images/slider-img-2.jpg",
+            "text": "<p>Sodium Bicarbonate, Sodium Sulfate, Citric Acid, Sodium Carbonate, Zea Mays (Corn) Starch, Fragrance, Rosa Damascena Flower Oil, Menthol, PEG 150, PEG 8</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#873447"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ALk6TK",
+        "grid_mprTp7",
+        "grid_JTmNAj",
+        "grid_MyeMrd",
+        "grid_bmepqr",
+        "grid_YB9eXP"
+      ],
+      "name": "Ingredient List Tab",
+      "settings": {
+        "tabtfontsize": 16,
+        "tabtfontsizemob": 14,
+        "tabtfontweight": 700,
+        "tabtcolor": "#0c2331",
+        "bgcolor": "#fff9eb",
+        "gridmaxwidth": 890,
+        "tabcfontsize": 15,
+        "tabcfontsizemob": 14,
+        "tabcfontweight": 400,
+        "padding_top": 50,
+        "padding_bottom": 86,
+        "padding_top_mob": 40,
+        "padding_bottom_mob": 60
+      }
+    },
+    "custom_review_video_tabs_rXh7yL": {
+      "type": "custom-review-video-tabs",
+      "blocks": {
+        "video_XthwWT": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_3619b4be-2a30-4d4e-92a3-8ff93c251cef.webm"
+          }
+        },
+        "video_F4a3kU": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/br_review_video.mp4"
+          }
+        },
+        "video_ngQPER": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_6644f2ea-36b2-4cbc-a54b-2c734255553e.webm"
+          }
+        },
+        "video_qQDM7D": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_aa299af8-a4b0-446d-8ce8-2cb155c0da02.webm"
+          }
+        },
+        "video_qABPjR": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_11b2d8cc-fc0d-4333-ac3a-2b4cb6b8aef3.webm"
+          }
+        },
+        "video_f6bpUp": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_c6a0bafa-1c48-4211-a0dc-7c91a2380d8f.webm"
+          }
+        },
+        "video_UVEqgk": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/br_review_video2.mp4"
+          }
+        },
+        "video_fJELUi": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_e00f21c8-c6eb-46be-abb0-6826cbb309e8.webm"
+          }
+        },
+        "video_eGqCwq": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/br_review_video3.mp4"
+          }
+        },
+        "video_Dwkkwn": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_6fc95753-a259-4139-91af-594f20df6046.webm"
+          }
+        },
+        "video_bpxzU4": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/br_review_video4.mp4"
+          }
+        },
+        "video_XhGcq9": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/tolstoy_2d65123f-d4e1-4692-a02f-3a76ab55bad1.webm"
+          }
+        }
+      },
+      "block_order": [
+        "video_XthwWT",
+        "video_F4a3kU",
+        "video_ngQPER",
+        "video_qQDM7D",
+        "video_qABPjR",
+        "video_f6bpUp",
+        "video_UVEqgk",
+        "video_fJELUi",
+        "video_eGqCwq",
+        "video_Dwkkwn",
+        "video_bpxzU4",
+        "video_XhGcq9"
+      ],
+      "name": "Custom Review Video Tabs",
+      "settings": {
+        "bg-color": "",
+        "width": 800,
+        "textalignment": "center",
+        "tab1": "Video Reviews",
+        "tab2": "Written Reviews",
+        "tab_color": "rgba(0,0,0,0)",
+        "tab_text_color": "#000000",
+        "active_tab_color": "#fff9eb",
+        "active_tab_text_color": "#000000",
+        "tabfont-size": 16,
+        "tabfont-size-mob": 14,
+        "tabfont-weight": 500,
+        "video-height": 172,
+        "count": 6,
+        "count-mob": 3,
+        "title": "Raving Reviews From body restore",
+        "color": "#0c2331",
+        "font-size": 40,
+        "font-size-mob": 34,
+        "font-weight": 700,
+        "space": 10,
+        "space_mob": 16,
+        "content": "<p>Join the Buzz: See What Our Community Is Saying!</p>",
+        "tccolor": "#0c2331",
+        "tcfont-size": 16,
+        "tcfont-size-mob": 16,
+        "tcfont-weight": 400,
+        "tcspace": 24,
+        "tcspace_mob": 30,
+        "image": "shopify://shop_images/winking_1_1.gif",
+        "top": -20,
+        "right": 1,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 60
+      }
+    },
+    "landing_faq_mghkzi": {
+      "type": "landing-faq",
+      "blocks": {
+        "faq_grid_DEe9Qc": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What makes Body Restore different?",
+            "faq_title_desc": "<p>Body Restore Shower Steamers are proudly made in the USA with natural essential oils 🍃 and clean ingredients, ensuring a pure and safe aromatherapy experience. Each steamer comes in high-quality packaging, delivering a strong and refreshing natural scent that enhances your self-care routine.</p>"
+          }
+        },
+        "faq_grid_cipayF": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What are the best practices in using these shower tablets?",
+            "faq_title_desc": "<p>We recommend to use one tablet per shower or two tablets to double the strength if needed. Use in hot shower and make sure it’s not submerged in water but rather placed under the shower stream of hot water.</p>"
+          }
+        },
+        "faq_grid_MVFMNw": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Will these tablet make floor slippery and create stains/draing clogs",
+            "faq_title_desc": "<p>These shower tablets will not make the floor slippery and unlike other branded shower tablets with petals, it will dissolve smoothly to create a no mess no drain clog experience.</p>"
+          }
+        },
+        "faq_grid_aEGH8i": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Can these shower tablets be used as a bath bombs?",
+            "faq_title_desc": "<p>We do not recommend these used as bath bombs. These tablets work best when not submerged in water, making it perfect for the shower experience. However, you can place the shower tablet on the side of the bath tub and it will activate the aromatherapy with a sprinkle of water contact.</p>"
+          }
+        },
+        "faq_grid_XK8nqV": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Do these showe tablets have a shelf life?",
+            "faq_title_desc": "<p>These shower tablets are individually foil wrapped to ensure maximum shell life. We recommend using the shower steamers within a year for the best experience.</p>"
+          }
+        },
+        "faq_grid_GwTC4m": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does each shower tabet last?",
+            "faq_title_desc": "<p>Each tablet duration can vary for each person as shower water pressure can play a role in the longevity of each tablet. It can range from 5 minutes to 15 minutes.</p>"
+          }
+        },
+        "faq_grid_hLY69R": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Are the shower steamers safe to use during the pregnancy?",
+            "faq_title_desc": "<p>Aromatherapy is generally safe for pregnant women. However, please do consult a doctor before use to confirm.</p>"
+          }
+        },
+        "faq_grid_GTJWCi": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does shipping take?",
+            "faq_title_desc": "<p>Shipping generally takes 3-5 business days.</p>"
+          }
+        },
+        "faq_grid_rqPKGq": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What is the return policy?",
+            "faq_title_desc": "<p>We strive our best to ensure the best customer experience. We're so confident you'll love our products that we offer a 30 day 100% money back guarantee!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_grid_DEe9Qc",
+        "faq_grid_cipayF",
+        "faq_grid_MVFMNw",
+        "faq_grid_aEGH8i",
+        "faq_grid_XK8nqV",
+        "faq_grid_GwTC4m",
+        "faq_grid_hLY69R",
+        "faq_grid_GTJWCi",
+        "faq_grid_rqPKGq"
+      ],
+      "settings": {
+        "faq_bg": "#ffffff",
+        "bordercolor": "#eeeeee",
+        "showbordertop": false,
+        "showborderbottom": false,
+        "faq_title": "Frequently Asked Qustions",
+        "tfontsize": 40,
+        "tfontsizemob": 34,
+        "tfontweight": 700,
+        "textalignment": "center",
+        "faq_title_color": "#0c2331",
+        "tpaddingbottom": 50,
+        "tpaddingbottommob": 50,
+        "ftfontsize": 22,
+        "ftfontsizemob": 18,
+        "ftfontweight": 700,
+        "ftcolor": "#0c2331",
+        "fcfontsize": 16,
+        "fcfontsizemob": 14,
+        "fccfontweight": 400,
+        "fccolor": "#102332",
+        "fbgcolor": "#ffffff",
+        "fbtncolor": "#fff9eb",
+        "fbordercolor": "rgba(0,0,0,0)",
+        "afbgcolor": "#fff9eb",
+        "afbtncolor": "#ffffff",
+        "abordercolor": "#000000",
+        "spaddingtop": 0,
+        "spaddingbottom": 70,
+        "spaddingtopmob": 0,
+        "spaddingbottommob": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "icon_and_text_fVcbiQ",
+    "how_to_use_nzkPHp",
+    "custom_media_with_content_HcjCad",
+    "custom_media_with_content_3cf86F",
+    "custom_media_with_content_CCKx88",
+    "custom_media_with_content_FezRHW",
+    "custom_media_with_content_37eKUc",
+    "product_key_features_t8jLQg",
+    "ingredients_list_tab_6i4tRq",
+    "custom_review_video_tabs_rXh7yL",
+    "landing_faq_mghkzi"
+  ]
+}

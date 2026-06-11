@@ -1,0 +1,750 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "featured_product_landing_UaHtKm": {
+      "type": "featured-product-landing",
+      "blocks": {
+        "title_FTphXa": {
+          "type": "title",
+          "settings": {
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 22,
+            "weight": 900
+          }
+        },
+        "rating_684gac": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price_g4VgQi": {
+          "type": "price",
+          "settings": {}
+        },
+        "text_CM8xAk": {
+          "type": "text",
+          "settings": {
+            "text": "Grab our best-selling shower steamers in eucalyptus & mint, lavender, and citrus with our Buy 3 Get 3 FREE bundle! (15 tablets per bag)",
+            "text_style": "body"
+          }
+        },
+        "description_pVe3EA": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker_Upk4dc": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector_CdM6Qb": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons_3tFEfR": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "btntext": "ADD TO CART",
+            "showoff": false
+          }
+        },
+        "gif_grid_8n9TBN": {
+          "type": "gif-grid",
+          "settings": {
+            "media": "image",
+            "bordercolor": "#827e6d",
+            "borderradius": 25,
+            "color": "#0c2331",
+            "size": 14,
+            "mobile_size": 11,
+            "weight": 600,
+            "space": 12,
+            "space_mob": 12,
+            "image1": "shopify://shop_images/copy_0D9EBFEF-B4D6-4909-B4D8-CBD259B134DC.gif",
+            "video1": "https://cdn.shopify.com/s/files/1/0220/5935/2160/files/copy_0D9EBFEF-B4D6-4909-B4D8-CBD259B134DC.gif?v=1718917520",
+            "text1": "<p>Place in shower</p>",
+            "image2": "shopify://shop_images/copy_37E69465-A6AC-4CFC-95AF-C6458B6E833E.gif",
+            "video2": "https://cdn.shopify.com/s/files/1/0220/5935/2160/files/copy_37E69465-A6AC-4CFC-95AF-C6458B6E833E.gif?v=1718917521",
+            "text2": "<p>Use hot water</p>",
+            "image3": "shopify://shop_images/copy_EF76F92F-185B-4674-872E-0B0EC4A0DFA5.gif",
+            "video3": "https://cdn.shopify.com/s/files/1/0220/5935/2160/files/copy_EF76F92F-185B-4674-872E-0B0EC4A0DFA5.gif?v=1718917661",
+            "text3": "<p>Enjoy the steam</p>"
+          }
+        },
+        "line_KB9h3F": {
+          "type": "line",
+          "settings": {}
+        },
+        "icon_with_text_M9H3Tg": {
+          "type": "icon-with-text",
+          "disabled": true,
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/img36541.png",
+            "heading_1": "Free Shipping On Orders $49+",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/Group_28384_e65a00c7-957c-40e0-86be-f2280246713d.svg",
+            "heading_2": "Free 30 Day Scent Exchange",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/Frame_a8d793e8-f75c-4888-bc0a-0d04e3393935.svg",
+            "heading_3": "100% Money-Back Guarantee"
+          }
+        },
+        "collapsible_tab_9mc8WQ": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Products Ingredients",
+            "icon": "none",
+            "content": "<p>{{ block.settings.page.metafields.custom.ingredients.value }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_QtXVKY": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Free Shipping & Returns",
+            "icon": "none",
+            "content": "<p>We proudly offer a <strong>30-day money-back guarantee</strong> if you are not fully satisfied with your product for any reason. </p><p>If 30 days have gone by since your purchase, unfortunately we cannot offer you a refund or exchange. <br/><br/>However, email us at help@mybodyrestore.com and we would love to make things right for you!</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_FTphXa",
+        "rating_684gac",
+        "price_g4VgQi",
+        "text_CM8xAk",
+        "description_pVe3EA",
+        "variant_picker_Upk4dc",
+        "quantity_selector_CdM6Qb",
+        "buy_buttons_3tFEfR",
+        "gif_grid_8n9TBN",
+        "line_KB9h3F",
+        "icon_with_text_M9H3Tg",
+        "collapsible_tab_9mc8WQ",
+        "collapsible_tab_QtXVKY"
+      ],
+      "settings": {
+        "product": "buy-3-get-3-free",
+        "align": "center",
+        "title": "",
+        "color": "#0c2331",
+        "size": 32,
+        "mobile_size": 28,
+        "weight": 800,
+        "space": 50,
+        "space_mob": 30,
+        "color_scheme": "background-1",
+        "hide_variants": false,
+        "testimonial": true,
+        "btntext": "ADD TO CART",
+        "showoff": false,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mobile_padding_top": 35,
+        "mobile_padding_bottom": 35
+      }
+    },
+    "landing_banner_NGqVQa": {
+      "type": "landing-banner",
+      "blocks": {
+        "star_cP8RtK": {
+          "type": "star",
+          "settings": {
+            "svgcolor": "#ffc107",
+            "text": "Trusted by 800,000+ customers",
+            "link": "shopify://collections/all",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 14,
+            "weight": 600,
+            "space": 5,
+            "space_mob": 5
+          }
+        },
+        "heading_HTeNbt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Clear Your Mind and Sinuses",
+            "color": "#0c2331",
+            "size": 38,
+            "mobile_size": 20,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 15
+          }
+        },
+        "content_wHmDTg": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "center",
+            "content": "<p>Experience the rejuvenating power of essential oils, without any cheap perfumes or chemicals.</p>",
+            "color": "#64748b",
+            "size": 18,
+            "mobile_size": 14,
+            "weight": 500,
+            "space": 20,
+            "space_mob": 20
+          }
+        },
+        "button_9669AV": {
+          "type": "button",
+          "settings": {
+            "button": "Shop Now",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 500,
+            "space": 20,
+            "space_mob": 20
+          }
+        },
+        "content_jE6zDP": {
+          "type": "content",
+          "settings": {
+            "width": 500,
+            "align": "start",
+            "alignmob": "center",
+            "content": "<p>Try it Risk-Free: 30 Day Money Back Guarantee! </p>",
+            "color": "#64748b",
+            "size": 16,
+            "mobile_size": 14,
+            "weight": 600,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "star_cP8RtK",
+        "heading_HTeNbt",
+        "content_wHmDTg",
+        "button_9669AV",
+        "content_jE6zDP"
+      ],
+      "disabled": true,
+      "settings": {
+        "background": "",
+        "fullwidth": true,
+        "content_position": "content_first",
+        "media_type": "video",
+        "image": "shopify://shop_images/partner-with-us.jpg",
+        "imagemob": "shopify://shop_images/partner-with-us.jpg",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/21e7700804f64362b41476693bfc8042.mp4",
+        "video_urlmob": "https://cdn.shopify.com/videos/c/o/v/21e7700804f64362b41476693bfc8042.mp4",
+        "align": "start",
+        "alignmob": "center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
+        "margintop": 0,
+        "margintopmob": 0
+      }
+    },
+    "landing_banner_NdgGqVQa": {
+      "type": "landing-banner-new",
+      "disabled": true,
+      "settings": {
+        "background": "",
+        "fullwidth": true,
+        "content_position": "content_first",
+        "media_type": "video",
+        "image": "shopify://shop_images/partner-with-us.jpg",
+        "imagemob": "shopify://shop_images/partner-with-us.jpg",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/21e7700804f64362b41476693bfc8042.mp4",
+        "video_urlmob": "https://cdn.shopify.com/videos/c/o/v/21e7700804f64362b41476693bfc8042.mp4",
+        "align": "start",
+        "alignmob": "center",
+        "svgcolor": "#ffc107",
+        "review_text": "Trusted by 800,000+ customers",
+        "banner_title": "Clear Your Mind and Sinuses",
+        "sub_title": "Experience the rejuvenating power of essential oils, without any cheap perfumes or chemicals.",
+        "banner_btn": "Shop Now",
+        "text": "Try it Risk-Free: 30 Day Money Back Guarantee!",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0,
+        "margintop": 0,
+        "margintopmob": 0
+      }
+    },
+    "logo_UkKe9i": {
+      "type": "logo",
+      "blocks": {
+        "brand_logo_hQ6Fj6": {
+          "type": "brand_logo",
+          "settings": {
+            "brand_logo_img": "shopify://shop_images/people-magazine-logo.webp",
+            "brand_logo_url": ""
+          }
+        },
+        "brand_logo_YbATTQ": {
+          "type": "brand_logo",
+          "settings": {
+            "brand_logo_img": "shopify://shop_images/brand-byrdie.svg",
+            "brand_logo_url": ""
+          }
+        },
+        "brand_logo_rViteG": {
+          "type": "brand_logo",
+          "settings": {
+            "brand_logo_img": "shopify://shop_images/ELLE_Magazine_Logo.svg",
+            "brand_logo_url": ""
+          }
+        },
+        "brand_logo_wcQCyM": {
+          "type": "brand_logo",
+          "settings": {
+            "brand_logo_img": "shopify://shop_images/buzzf.svg",
+            "brand_logo_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_logo_hQ6Fj6",
+        "brand_logo_YbATTQ",
+        "brand_logo_rViteG",
+        "brand_logo_wcQCyM"
+      ],
+      "settings": {
+        "background": "#fbeae2",
+        "fullwidth": false,
+        "align": "center",
+        "alignmob": "center",
+        "logo_title": "AS SEEN IN",
+        "color": "#0c2331",
+        "size": 32,
+        "mobile_size": 24,
+        "weight": 700,
+        "space": 50,
+        "space_mob": 40,
+        "width": 1000,
+        "widthmob": 400,
+        "logoheight": 40,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 60
+      }
+    },
+    "richtext_GV3wMi": {
+      "type": "richtext",
+      "blocks": {
+        "heading_EAMMKW": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Why Body Restore?</p>",
+            "color": "#0c2331",
+            "size": 32,
+            "mobile_size": 24,
+            "weight": 700,
+            "space": 30,
+            "space_mob": 20
+          }
+        },
+        "content_jYrYef": {
+          "type": "content",
+          "settings": {
+            "width": 1000,
+            "content": "<p>Body Restore Shower Steamers are proudly made in the<strong> USA</strong> with <strong>natural essential oils</strong> 🍃 and clean ingredients, ensuring a <strong>pure and safe </strong>aromatherapy experience. </p>",
+            "color": "#0c2331",
+            "size": 18,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 1,
+            "space_mob": 1
+          }
+        }
+      },
+      "block_order": [
+        "heading_EAMMKW",
+        "content_jYrYef"
+      ],
+      "settings": {
+        "bg-color": "#f5f2f7",
+        "svgcolor": "#e8e7ec",
+        "lemon": "shopify://shop_images/eucalyptus-08.svg",
+        "align": "center",
+        "alignmob": "center",
+        "padding_top": 80,
+        "padding_bottom": 100,
+        "mobile_padding_top": 60,
+        "mobile_padding_bottom": 60
+      }
+    },
+    "171862904958399004": {
+      "type": "apps",
+      "blocks": {
+        "tolstoy_shoppable_video_ugc_carousel_block_8zygx3": {
+          "type": "shopify://apps/tolstoy-shoppable-video-quiz/blocks/carousel-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "disabled": true,
+          "settings": {
+            "publishId": "1lw5yw604kdcy"
+          }
+        }
+      },
+      "block_order": [
+        "tolstoy_shoppable_video_ugc_carousel_block_8zygx3"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "aae3cf97-c228-4d8c-955f-bd3990bc0606": {
+      "type": "how-it-works",
+      "blocks": {
+        "template--14471204208736__aae3cf97-c228-4d8c-955f-bd3990bc0606-steps-1": {
+          "type": "steps",
+          "settings": {
+            "image": "shopify://shop_images/e7edef4f74f74390661b4ee6343141ca.gif",
+            "use_video": false,
+            "title": "Step 1",
+            "content": "<p>Place one tablet on the shower floor.</p>",
+            "background": "#355070",
+            "title_color": "#ffffff",
+            "text_color": "#ffffff"
+          }
+        },
+        "template--14471204208736__aae3cf97-c228-4d8c-955f-bd3990bc0606-steps-2": {
+          "type": "steps",
+          "settings": {
+            "image": "shopify://shop_images/ec41856c92ee545ee9b7d281164a2e3c.gif",
+            "use_video": false,
+            "title": "Step 2",
+            "content": "<p>Turn on the warm water and enjoy!</p>",
+            "background": "#355070",
+            "title_color": "#ffffff",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--14471204208736__aae3cf97-c228-4d8c-955f-bd3990bc0606-steps-1",
+        "template--14471204208736__aae3cf97-c228-4d8c-955f-bd3990bc0606-steps-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "work_bg_color": "#ffffff",
+        "grid": 2,
+        "grid-mob": 2,
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "sub_title_work": "How Shower Steamers Works",
+        "sub_description_work": "<p>Enjoy the ultimate at home spa experience as easy as 1, 2, 3</p>",
+        "color_scheme": "",
+        "padding_top": 88,
+        "padding_bottom": 36
+      }
+    },
+    "richtext_grid_BNGJgn": {
+      "type": "richtext-grid",
+      "blocks": {
+        "heading_kC6Qwa": {
+          "type": "heading",
+          "settings": {
+            "width": 800,
+            "heading": "<h2>#1 Best Selling Shower Steamers</h2>",
+            "color": "#0c2331",
+            "size": 42,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 50,
+            "space_mob": 40
+          }
+        },
+        "grid_G7TK6P": {
+          "type": "grid",
+          "settings": {
+            "title": "<p>👃</p><p>Breathe Easy</p>",
+            "text": "<p>Say Goodbye to Congestion</p>"
+          }
+        },
+        "grid_yCUbYX": {
+          "type": "grid",
+          "settings": {
+            "title": "<p>❌</p><p>No Chemicals</p>",
+            "text": "<p>Only Clean Ingredients</p>"
+          }
+        },
+        "grid_mw3CBe": {
+          "type": "grid",
+          "settings": {
+            "title": "<p>🌱</p><p>Natural</p>",
+            "text": "<p>We Use 100% Essential Oil</p>"
+          }
+        },
+        "grid_Ba9xM4": {
+          "type": "grid",
+          "settings": {
+            "title": "<p>📦</p><p>Giftable</p>",
+            "text": "<p>High Quality Packaging</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kC6Qwa",
+        "grid_G7TK6P",
+        "grid_yCUbYX",
+        "grid_mw3CBe",
+        "grid_Ba9xM4"
+      ],
+      "settings": {
+        "bg-color": "#ffffff",
+        "align": "center",
+        "alignmob": "center",
+        "grid-count": 4,
+        "grid-width": 250,
+        "imageheight": 60,
+        "color": "#0c2331",
+        "size": 20,
+        "mobile_size": 18,
+        "weight": 700,
+        "space": 10,
+        "space_mob": 8,
+        "tcolor": "#0c2331",
+        "tsize": 16,
+        "tmobile_size": 14,
+        "tweight": 500,
+        "tspace": 1,
+        "tspace_mob": 1,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "tab_slider_8yXAmi": {
+      "type": "tab-slider",
+      "blocks": {
+        "tab_iw8TLE": {
+          "type": "tab",
+          "settings": {
+            "logo": "shopify://shop_images/1661170009-untitled-design-6.png",
+            "content": "<p>\"Wild makes a mundane moment that little bit more satisfying\"</p>",
+            "author": "VOGUE"
+          }
+        },
+        "tab_E4xB3L": {
+          "type": "tab",
+          "settings": {
+            "logo": "shopify://shop_images/1661155905-glamour-resized.png",
+            "content": "<p>\"Best subscription box for natural deodorant\"</p>",
+            "author": "GLAMOUR"
+          }
+        },
+        "tab_pGQK6c": {
+          "type": "tab",
+          "settings": {
+            "logo": "shopify://shop_images/1661156162-untitled-design-5.png",
+            "content": "<p>\"Obsessed with the gorgeous scents\"</p>",
+            "author": "GOOD HOUSEKEEPING"
+          }
+        },
+        "tab_Ckj8bh": {
+          "type": "tab",
+          "settings": {
+            "logo": "shopify://shop_images/1685543261-the_times_logo-1.png",
+            "content": "<p>\"Proved that natural deos do work just as well as antiperspirant\"</p>",
+            "author": "THE TIMES"
+          }
+        },
+        "tab_tbi8kp": {
+          "type": "tab",
+          "settings": {
+            "logo": "shopify://shop_images/1685542906-gq_logo.png",
+            "content": "<p>\"A next-level deodorant that is kind to your skin & the planet\"</p>",
+            "author": "GQ"
+          }
+        }
+      },
+      "block_order": [
+        "tab_iw8TLE",
+        "tab_E4xB3L",
+        "tab_pGQK6c",
+        "tab_Ckj8bh",
+        "tab_tbi8kp"
+      ],
+      "disabled": true,
+      "settings": {
+        "background": "#f9f9f6",
+        "fullwidth": false,
+        "align": "center",
+        "alignmob": "center",
+        "logo_title": "Some Wild reviews 📣",
+        "color": "#0c2331",
+        "size": 32,
+        "mobile_size": 28,
+        "weight": 700,
+        "space": 50,
+        "space_mob": 40,
+        "tabbgcolor": "#ffffff",
+        "contentwidth": 640,
+        "ccolor": "#0c2331",
+        "csize": 28,
+        "cmobile_size": 20,
+        "cweight": 700,
+        "cspace": 10,
+        "cspace_mob": 10,
+        "acolor": "#0c2331",
+        "asize": 14,
+        "amobile_size": 14,
+        "aweight": 500,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "rich_text_TNfeKh": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3RpTwY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Daily Relief From Stress One Shower At A time",
+            "heading_size": "h1"
+          }
+        },
+        "text_picHAG": {
+          "type": "text",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_3RpTwY",
+        "text_picHAG"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100%;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 32
+      }
+    },
+    "f02c4a1f-2226-4b3d-9b81-4e727bcddb6f": {
+      "type": "is--faq",
+      "blocks": {
+        "8e9c1144-9eba-4f1f-abc5-eec895351353": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What makes Body Restore different?",
+            "faq_title_desc": "<p>Body Restore Shower Steamers are proudly made in the <strong>USA</strong> with <strong>natural essential oils</strong> 🍃 and clean ingredients, ensuring a <strong>pure</strong> and <strong>safe</strong> aromatherapy experience. Each steamer comes in high-quality packaging, delivering a strong and refreshing natural scent that enhances your self-care routine.</p>"
+          }
+        },
+        "1b15e7eb-124b-4c66-be91-b98c214f8177": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What are the best practices in using these shower tablets?",
+            "faq_title_desc": "<p>We recommend to use one tablet per shower or two tablets to double the strength if needed. Use in hot shower and make sure it’s not submerged in water but rather placed under the shower stream of hot water.</p>"
+          }
+        },
+        "bd476701-0ded-470a-b248-abfe9cbe6027": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Will these tablet make floor slippery, create stains and drain clogs?",
+            "faq_title_desc": "<p>These shower tablets will not make the floor slippery and unlike other brands with petals, it will dissolve smoothly to create a no mess no drain clog experience.</p>"
+          }
+        },
+        "afd95972-952f-4b3f-a3d3-c65c0d00bb9a": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Can these shower tablets be used as a bath bombs?",
+            "faq_title_desc": "<p>We do not recommend these used as bath bombs. These tablets work best when not submerged in water, making it perfect for the shower experience. However, you can place the shower tablet on the side of the bath tub and it will activate the aromatherapy with a sprinkle of water contact.</p>"
+          }
+        },
+        "0be56bbe-5f86-4e90-884d-c45fce628822": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Do these shower tablets have a shelf life?",
+            "faq_title_desc": "<p>These shower tablets are individually foil wrapped to ensure maximum shell life. We recommend using the shower steamers within a year for the best experience.</p>"
+          }
+        },
+        "b49ed300-c881-4ba2-b3d7-ebc676681979": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does each shower tabet last?",
+            "faq_title_desc": "<p>Each tablet duration can vary for each person as shower water pressure can play a role in the longevity of each tablet. It can range from 5 minutes to 10 minutes.</p>"
+          }
+        },
+        "8fa9d9a1-f1fe-4279-83bf-5c4969aaea71": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Are the shower steamers safe to use during the pregnancy?",
+            "faq_title_desc": "<p>Aromatherapy is generally safe for pregnant women. However, please do consult a doctor before use to confirm.</p>"
+          }
+        },
+        "bba26c10-8a96-43e2-ac59-c7aa7c9d6c33": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does shipping take?",
+            "faq_title_desc": "<p>Shipping generally takes 3-5 business days. </p>"
+          }
+        },
+        "b4665ce2-b10e-4759-acb6-90f958eb36eb": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What is the return or guarantee policy?",
+            "faq_title_desc": "<p>We strive our best to ensure the best customer experience. We're so confident you'll love our products that we offer a 30 day 100% money back guarantee! </p>"
+          }
+        }
+      },
+      "block_order": [
+        "8e9c1144-9eba-4f1f-abc5-eec895351353",
+        "1b15e7eb-124b-4c66-be91-b98c214f8177",
+        "bd476701-0ded-470a-b248-abfe9cbe6027",
+        "afd95972-952f-4b3f-a3d3-c65c0d00bb9a",
+        "0be56bbe-5f86-4e90-884d-c45fce628822",
+        "b49ed300-c881-4ba2-b3d7-ebc676681979",
+        "8fa9d9a1-f1fe-4279-83bf-5c4969aaea71",
+        "bba26c10-8a96-43e2-ac59-c7aa7c9d6c33",
+        "b4665ce2-b10e-4759-acb6-90f958eb36eb"
+      ],
+      "settings": {
+        "faq_bg": "#265e7a",
+        "faq_title": "FAQ",
+        "faq_title_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "featured_product_landing_UaHtKm",
+    "landing_banner_NGqVQa",
+    "landing_banner_NdgGqVQa",
+    "logo_UkKe9i",
+    "richtext_GV3wMi",
+    "171862904958399004",
+    "aae3cf97-c228-4d8c-955f-bd3990bc0606",
+    "richtext_grid_BNGJgn",
+    "tab_slider_8yXAmi",
+    "rich_text_TNfeKh",
+    "f02c4a1f-2226-4b3d-9b81-4e727bcddb6f"
+  ]
+}

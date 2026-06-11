@@ -1,0 +1,80 @@
+<section class="partner_sec aa">
+  <div class="partner_container">
+    <div class="row">
+      <div class="col-6">
+        <div class="partner_img_wrapper">
+          <img src="{{ section.settings.partner_img | img_url: 'master' }}">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="info_list_main_wrapper">
+          <h2 class="info_list_title">{{ section.settings.partner_title }}</h2>
+          <div class="info_list_main">
+            <ul>
+              {% for block in section.blocks %}
+                {% if block.settings.partner_sub_title != blank %}
+                  <li>
+                    <div class="list_info_icon">
+                      <img src="{{ block.settings.partner_sub_img | img_url: 'master' }}">
+                    </div>
+                    <div class="list_info_wrapper">
+                      <h6>{{ block.settings.partner_sub_title }}</h6>
+                      <p>{{ block.settings.partner_sub_content }}</p>
+                    </div>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Partner us",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "partner_img",
+      "label": "Partner Image"
+    },
+    {
+      "type": "text",
+      "id": "partner_title",
+      "label": "Partner Title"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "Unique",
+        "name": "Unique",
+        "limit": 3,
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "partner_sub_img",
+                "label": "Partner Image"
+            },
+            {
+                "type": "text",
+                "id": "partner_sub_title",
+                "label": "Partner Title"
+            },
+            {
+                "type": "textarea",
+                "id": "partner_sub_content",
+                "label": "Partner Content"
+            }
+        ]
+      }
+    ],
+  "presets": [
+    {
+      "name": "Partner us"
+    }
+  ]
+}
+{% endschema %}

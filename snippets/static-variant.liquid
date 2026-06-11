@@ -1,0 +1,200 @@
+
+<div class="var-container">
+  <div style="display:none !important;">
+    {% render 'static-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+  </div>
+
+  {% render 'free-gift-text', block: block %}
+  <div class="radio-button-container">
+    {%- for option in product.options_with_values -%}
+      {%- for value in option.values -%}
+        {%- assign onpackprice = product.variants | last -%}
+        {%- for variant in product.variants -%}
+          {%- if value == variant.title -%}
+            {% if variant.title == '6 Bags' %}
+              <label for="6pack" data-variant-count="pack6">
+                <input
+                  type="radio"
+                  id="6pack"
+                  name="variant_static"
+                  class="variantstaticmaininput"
+                  value="6pack"
+                  data-value-count="6"
+                  data-varname="{{ variant.title }}"
+                  data-varid="{{ variant.id }}"
+                  checked
+                  data-currbagprice="{{ variant.price }}"
+                  data-onebagprice="{{ onpackprice.price }}"
+                  data-image="{{ variant.featured_image | img_url:'master'}}"
+                >
+                <div class="tab-grid checked-label">
+                  {% if block.settings.sixbadge %}
+                    <div class="badge">{{ block.settings.sixbadge }}</div>
+                  {% endif %}
+                  <div class="inner-container">
+                    <div class="radio-button"></div>
+                    <div class="tags-content">
+                      <div class="tag-name">{{ variant.title }}</div>
+                      <span class="price-info-container">
+                        <span class="price compare-custom-price">
+                          <s>{{ 14999 | money }}</s>
+                        </span>
+                        <span class="price original-custom-price">{{ 7499 | money }}</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            {% elsif variant.title == '3 Bags' %}
+              <label for="3pack" data-variant-count="pack3">
+                <input
+                  type="radio"
+                  id="3pack"
+                  name="variant_static"
+                  class="variantstaticmaininput"
+                  value="3pack"
+                  data-varname="{{ variant.title }}"
+                  data-varid="{{ variant.id }}"
+                  data-value-count="3"
+                  data-currbagprice="{{ variant.price }}"
+                  data-onebagprice="{{ onpackprice.price }}"
+                  data-image="{{ variant.featured_image | img_url:'master'}}"
+                >
+                <div class="tab-grid">
+                  {% if block.settings.threebadge %}
+                    <div class="badge">{{ block.settings.threebadge }}</div>
+                  {% endif %}
+                  <div class="inner-container">
+                    <div class="radio-button"></div>
+                    <div class="tags-content">
+                      <div class="tag-name">{{ variant.title }}</div>
+                      <span class="price-info-container">
+                        <span class="price compare-custom-price">
+                          <s>{{ 7499 | money }}</s>
+                        </span>
+                        <span class="price original-custom-price">{{ 4999 | money }}</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            {% elsif variant.title == '2 Bags' %}
+              <label for="2pack" data-variant-count="pack2">
+                <input
+                  type="radio"
+                  id="2pack"
+                  name="variant_static"
+                  class="variantstaticmaininput"
+                  value="2pack"
+                  data-varname="{{ variant.title }}"
+                  data-varid="{{ variant.id }}"
+                  data-value-count="2"
+                  data-currbagprice="{{ variant.price }}"
+                  data-onebagprice="{{ onpackprice.price }}"
+                  data-image="{{ variant.featured_image | img_url:'master'}}"
+                >
+                <div class="tab-grid">
+                  {% if block.settings.twobadge %}
+                    <div class="badge">{{ block.settings.twobadge }}</div>
+                  {% endif %}
+                  <div class="inner-container">
+                    <div class="radio-button"></div>
+                    <div class="tags-content">
+                      <div class="tag-name">{{ variant.title }}</div>
+                      <span class="price-info-container">
+                        <span class="price compare-custom-price">
+                          <s>{{ 4999 | money }}</s>
+                        </span>
+                        <span class="price original-custom-price">{{ 3999 | money }}</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            {% elsif variant.title == '1 Bag' %}
+              <label for="1pack" data-variant-count="pack1">
+                <input
+                  type="radio"
+                  id="1pack"
+                  name="variant_static"
+                  class="variantstaticmaininput"
+                  value="1pack"
+                  data-varname="{{ variant.title }}"
+                  data-varid="{{ variant.id }}"
+                  data-value-count="1"
+                  data-currbagprice="{{ variant.price }}"
+                  data-onebagprice="{{ onpackprice.price }}"
+                  data-image="{{ variant.featured_image | img_url:'master'}}"
+                >
+                <div class="tab-grid">
+                  {% if block.settings.onebadge %}
+                    <div class="badge">{{ block.settings.onebadge }}</div>
+                  {% endif %}
+                  <div class="inner-container">
+                    <div class="radio-button"></div>
+                    <div class="tags-content">
+                      <div class="tag-name">{{ variant.title }}</div>
+                      <span class="price-info-container">
+                        <span class="price original-custom-price">{{ 2499 | money }}</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </label>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <div class="main-gift-product-container">
+    {% if block.settings.pinfosale != blank %}
+      <div class="products-title">
+        <div class="text">{{ block.settings.pinfosale }}</div>
+      </div>
+    {% endif %}
+    {% if block.settings.freeproductdesign == 'progressbar' %}
+      {% render 'bundle-progressbar', block: block %}
+    {% elsif block.settings.freeproductdesign == 'grid' %}
+      {% render 'bundle-progressgrid', block: block %}
+    {% endif %}
+    <hr {{ block.shopify_attributes }}>
+    {% if block.settings.pinfosave %}
+      <div class="save-order-text">{{ block.settings.pinfosave }}</div>
+    {% endif %}
+    <div class="flavour-btn-container">
+      <div class="popupbutton button button--full-width button--primary">
+        <span class="btn-text">{{ block.settings.buttontext }}</span
+        ><span class="icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            role="img"
+            class="iconify iconify--heroicons"
+            width="100%"
+            height="100%"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 20 20"
+          >
+            <path fill="currentColor" fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" width="100%" height="100%"></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+
+    {% if block.settings.heading or block.settings.content %}
+      <div class="description-content">
+        {% if block.settings.heading %}
+          <div class="heading">{{ block.settings.heading }}</div>
+        {% endif %}
+        {% if block.settings.content %}
+          <div class="content">
+            {{ block.settings.content }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>

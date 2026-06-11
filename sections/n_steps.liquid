@@ -1,0 +1,57 @@
+<div class="mbr_smpstp">
+    <div class="mbr_main">
+        <h2>{{ section.settings.title }}</h2>
+        <div class="mbr_smpstp_ul">
+            {% for block in section.blocks %}
+                <div class="mbr_smpstp_li">
+                    <img src="{{ block.settings.image | img_url: '1000x' }}" alt=""/ width="auto" height="auto">
+                    <div class="mbr_smpstp_lidv">
+                        <p>{{ block.settings.number }}</p>
+                        <h5>{{ block.settings.title }}</h5>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>     
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Simple Steps",
+    "settings": [
+      {
+       "type": "richtext",
+       "id": "title",
+       "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+           "type": "text",
+           "id": "title",
+           "label": "Title"
+        },
+        {
+           "type": "text",
+           "id": "number",
+           "label": "Number"
+        }
+      ]
+    }
+    ],
+    "presets": [
+      {
+        "name": "Simple Steps"
+      }
+    ]
+  }
+{% endschema %}

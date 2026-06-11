@@ -1,0 +1,156 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "replo_influencer_header_CK9mPi": {
+      "type": "replo-influencer-header",
+      "settings": {}
+    },
+    "replo_ashley_mary_KFPgBr": {
+      "type": "replo-ashley-mary",
+      "settings": {}
+    },
+    "replo_influencer_top_sec_6JWaiU": {
+      "type": "replo-influencer-top-sec",
+      "settings": {}
+    },
+    "custom_replo_product_h4mRP9": {
+      "type": "custom-replo-product",
+      "blocks": {
+        "text_8rJhgV": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_JjDMWf": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "text_UAM8Qb": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.metafields.custom.subtitle.value }}",
+            "text_style": "body"
+          }
+        },
+        "rating_kXPxQp": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price_ntaWC3": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_EHjbFG": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector_A7ifyV": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_wBgpDp": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "icon_with_text_f3HYBR": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "none",
+            "image_1": "shopify://shop_images/Group_28361_957a3f71-9909-43eb-a1c3-2435e64befae.svg",
+            "heading_1": "<strong>Free Shipping On Orders $49+</strong>",
+            "icon_2": "none",
+            "image_2": "shopify://shop_images/Group_28384_e65a00c7-957c-40e0-86be-f2280246713d.svg",
+            "heading_2": "<strong>Free 30 Day Scent Exchange</strong>",
+            "icon_3": "none",
+            "image_3": "shopify://shop_images/Frame_a8d793e8-f75c-4888-bc0a-0d04e3393935.svg",
+            "heading_3": "<strong>100% Happiness Guarantee</strong>"
+          }
+        },
+        "collapsible_tab_DTafeC": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Products Ingredients",
+            "icon": "none",
+            "content": "<p>{{ block.settings.page.metafields.custom.ingredients.value }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_LNf999": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Free Shipping & Returns",
+            "icon": "none",
+            "content": "<p>We proudly offer a <strong>30-day money-back guarantee</strong> if you are not fully satisfied with your product for any reason. </p><p>If 30 days have gone by since your purchase, unfortunately we cannot offer you a refund or exchange. <br/><br/>However, email us at help@mybodyrestore.com and we would love to make things right for you!</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_8rJhgV",
+        "title_JjDMWf",
+        "text_UAM8Qb",
+        "rating_kXPxQp",
+        "price_ntaWC3",
+        "variant_picker_EHjbFG",
+        "quantity_selector_A7ifyV",
+        "buy_buttons_wBgpDp",
+        "icon_with_text_f3HYBR",
+        "collapsible_tab_DTafeC",
+        "collapsible_tab_LNf999"
+      ],
+      "settings": {
+        "product": "buy-1-get-1-gift-box",
+        "color_scheme": "",
+        "secondary_background": false,
+        "gallery_layout": "stacked",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "replo_influencer_bottom_sec_PeGTJ4": {
+      "type": "replo-influencer-bottom-sec",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "replo_influencer_header_CK9mPi",
+    "replo_ashley_mary_KFPgBr",
+    "replo_influencer_top_sec_6JWaiU",
+    "custom_replo_product_h4mRP9",
+    "replo_influencer_bottom_sec_PeGTJ4"
+  ]
+}

@@ -1,0 +1,514 @@
+{% style %}
+  #shopify-section-{{section.id}} .cmt_container{width:100%;overflow: hidden;}
+  #shopify-section-{{section.id}} .cmt_inner{width:100%; display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; {% if section.settings.max_width > 0 %} max-width: {{section.settings.max_width}}px;{% endif %} }
+  #shopify-section-{{section.id}} .cmt_media_box{width:100%; order:{{section.settings.image_position}};display:flex;align-items:center;justify-content:center;}
+  #shopify-section-{{section.id}} .cmt_image_box{width:100%;height:100%;position:relative;min-height:435px;}
+  #shopify-section-{{section.id}} .cmt_image{width:100%;height:100%;position:relative;overflow:hidden;border-radius:8px;}
+  #shopify-section-{{section.id}} .cmt_image img{width:100%;height:100%;object-fit:cover;object-position:center center;}
+  #shopify-section-{{section.id}} .cmt_logo_img_box{width: {{ section.settings.logo_image_size }}px;position: absolute; bottom: -{{ section.settings.verticaly_align }}px; {% if section.settings.image_position != "2" %}left: -{{ section.settings.horizontal_align }}px; {%else%} right: -{{ section.settings.horizontal_align }}px;{% endif %} }
+  #shopify-section-{{section.id}} .cmt_logo_img_box img{width:100%;height:auto;object-fit:contain;}
+
+  #shopify-section-{{section.id}} .cmt_logo_img.mobile{display:none;}
+
+
+  #shopify-section-{{section.id}} .cmt_content_box{width:100%; display:flex;justify-content:center;align-items:center;}
+  #shopify-section-{{section.id}} .cmt_content_inner{width:100%;display:flex;flex-direction:column;height:100%;}
+  #shopify-section-{{section.id}} .cmt_heading{text-transform:uppercase;letter-spacing:-1px;line-height:1.4;}
+  #shopify-section-{{section.id}} .cmt_text{font-family:"Roboto"; line-height:1.5;letter-spacing:0px;}
+  #shopify-section-{{section.id}} .cmt_text p{font-family:"Roboto";margin:0px !important; letter-spacing:0px;}
+
+  #shopify-section-{{section.id}} .cmt_review_box{width:100%;padding:26px; border-radius:4px;margin-top:auto;}
+  #shopify-section-{{section.id}} .cmt_review_inner{width:100%;display:grid; grid-template-columns:80px 1fr;gap:20px;align-items:center;}
+  #shopify-section-{{section.id}} .cmt_review_item{width:100%;display:flex;flex-direction:column;align-items:center;gap:4px;}
+  #shopify-section-{{section.id}} .cmt_review_item_img{width:100%;display:flex;justify-content:center;align-items:center;}
+  #shopify-section-{{section.id}} .cmt_review_item_img img{width:100%;height:auto;object-fit:contain;}
+  #shopify-section-{{section.id}} .cmt_rating_stars{width:100%;display:flex;justify-content:center;align-items:center;}
+  #shopify-section-{{section.id}} .cmt_review_content_box{width:100%;}
+  #shopify-section-{{section.id}} .cmt_review_content{width:100%;}
+  #shopify-section-{{section.id}} .cmt_review_content p{margin:0;line-height:1.3;letter-spacing:0px;}
+  #shopify-section-{{section.id}} .cmt_review_content_bottom{width:100%;display:flex; justify-content:space-between;align-items:center; column-gap:15px;row-gap:10px;flex-wrap:wrap;}
+  #shopify-section-{{section.id}} .cmt_review_content_bottom_text{width:fit-content;text-transform:capitalize; letter-spacing:0.32px;line-height:1.2;}
+  #shopify-section-{{section.id}} .cmt_verified{width:fit-content;display:flex;justify-content:center;align-items:center;gap:4px;font-size:12px;line-height:16.8px;letter-spacing:0.6px;font-weight:600;color:#426640;}
+
+
+  @media screen and (max-width:990px){
+  #shopify-section-{{section.id}} .cmt_inner{grid-template-columns: 1fr; gap:30px; }
+  #shopify-section-{{section.id}} .cmt_image_box{width:100%;height:unset;position:relative;min-height:unset;}
+  #shopify-section-{{section.id}} .cmt_image{aspect-ratio:4/3;}
+  #shopify-section-{{section.id}} .cmt_media_box{order:0;}
+  }
+  @media screen and (max-width:749px){
+  #shopify-section-{{section.id}} .cmt_logo_img.mobile{display:block;}
+  #shopify-section-{{section.id}} .cmt_logo_img.desktop{display:none;}
+  #shopify-section-{{section.id}} .cmt_logo_img_box{width:  {{ section.settings.logo_image_size_mob }}px; bottom: -{{ section.settings.verticaly_align_mob }}px; {% if section.settings.image_position != "2" %}left: -{{ section.settings.horizontal_align_mob }}px; {%else%} right: -{{ section.settings.horizontal_align_mob }}px;{% endif %} }
+  #shopify-section-{{section.id}} .cmt_review_box{width:100%;padding:20px 15px;}
+  #shopify-section-{{section.id}} .cmt_review_inner{ grid-template-columns:60px 1fr;gap:15px;}
+
+  }
+{% endstyle %}
+
+<div
+  class="cmt_container padding-top-{{ section.settings.sec_top_padding }} padding-top-mob-{{ section.settings.sec_top_padding_mob }} padding-bottom-{{ section.settings.sec_bottom_padding }} padding-bottom-mob-{{ section.settings.sec_bottom_padding_mob }}"
+  style="background:{{ section.settings.sec_bg }};"
+>
+  <div class="cmt_inner page-width">
+    <div class="cmt_media_box">
+      <div class="cmt_image_box">
+        <div class="cmt_image">
+          <img src="{{ section.settings.main_image | img_url:"master" }}" class="main_img">
+        </div>
+        {% if section.settings.logo_img != blank %}
+          <div class="cmt_logo_img_box">
+            <img src="{{ section.settings.logo_img | img_url:"master" }}" class="cmt_logo_img desktop">
+            <img src="{{ section.settings.logo_img_mob | img_url:"master" }}" class="cmt_logo_img mobile">
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="cmt_content_box">
+      <div class="cmt_content_inner">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'heading' %}
+              <div
+                class="cmt_heading font-size-{{ block.settings.font_size }} font-size-mob-{{ block.settings.font_size_mob }} font-weight-{{ block.settings.font_weight }} margin-bottom-{{ block.settings.margin_bottom }} margin-bottom-mob-{{ block.settings.margin_bottom_mob }}"
+                style="color:{{ block.settings.text_color }}"
+              >
+                {{ block.settings.heading }}
+              </div>
+            {% when 'content' %}
+              <div
+                class="cmt_text font-size-{{ block.settings.font_size }} font-size-mob-{{ block.settings.font_size_mob }} font-weight-{{ block.settings.font_weight }} margin-bottom-{{ block.settings.margin_bottom }} margin-bottom-mob-{{ block.settings.margin_bottom_mob }}"
+                style="color:{{ block.settings.text_color }}"
+              >
+                {{ block.settings.content }}
+              </div>
+            {% when 'review' %}
+              <div
+                class="cmt_review_box"
+                style="background:{{ block.settings.review_box_bg }}; border: 2px solid {{ block.settings.review_box_border_color }};"
+              >
+                <div class="cmt_review_inner">
+                  <div class="cmt_review_item">
+                    <div class="cmt_review_item_img">
+                      <img src="{{ block.settings.img | img_url:"master"}}">
+                    </div>
+                    <div class="cmt_rating_stars">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="76" height="14" viewBox="0 0 76 14" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.66271 11.4569C7.44522 11.3426 7.18541 11.3426 6.96792 11.4569L4.24866 12.8863C3.70086 13.1741 3.06068 12.7089 3.16533 12.099L3.68458 9.07218C3.72613 8.82999 3.64581 8.58277 3.46979 8.41123L1.27031 6.26774C0.827059 5.83578 1.0716 5.08306 1.68409 4.99408L4.72398 4.55245C4.96717 4.51713 5.1774 4.3644 5.28617 4.14404L6.64577 1.3898C6.91969 0.83491 7.71091 0.83491 7.98485 1.3898L9.34449 4.14404C9.45323 4.3644 9.66351 4.51713 9.90665 4.55245L12.9466 4.99408C13.559 5.08306 13.8036 5.83578 13.3603 6.26774L11.1609 8.41123C10.9848 8.58277 10.9045 8.82999 10.9461 9.07218L11.4653 12.099C11.57 12.7089 10.9298 13.1741 10.382 12.8863L7.66271 11.4569Z" fill="#FCB800" stroke="black" stroke-width="0.892783"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1467 11.4569C22.9293 11.3426 22.6694 11.3426 22.4519 11.4569L19.7327 12.8863C19.1849 13.1741 18.5447 12.7089 18.6494 12.099L19.1686 9.07218C19.2102 8.82999 19.1298 8.58277 18.9538 8.41123L16.7543 6.26774C16.3111 5.83578 16.5556 5.08306 17.1682 4.99408L20.2079 4.55245C20.4512 4.51713 20.6614 4.3644 20.7702 4.14404L22.1298 1.3898C22.4037 0.83491 23.195 0.83491 23.4689 1.3898L24.8285 4.14404C24.9372 4.3644 25.1475 4.51713 25.3907 4.55245L28.4306 4.99408C29.043 5.08306 29.2875 5.83578 28.8444 6.26774L26.6448 8.41123C26.4688 8.58277 26.3885 8.82999 26.4301 9.07218L26.9493 12.099C27.054 12.7089 26.4137 13.1741 25.866 12.8863L23.1467 11.4569Z" fill="#FCB800" stroke="black" stroke-width="0.892783"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M38.6307 11.4569C38.4132 11.3426 38.1534 11.3426 37.936 11.4569L35.2166 12.8863C34.6688 13.1741 34.0286 12.7089 34.1332 12.099L34.6526 9.07218C34.6941 8.82999 34.6137 8.58277 34.4377 8.41123L32.2383 6.26774C31.7951 5.83578 32.0396 5.08306 32.652 4.99408L35.692 4.55245C35.9351 4.51713 36.1454 4.3644 36.2541 4.14404L37.6138 1.3898C37.8876 0.83491 38.6789 0.83491 38.9528 1.3898L40.3124 4.14404C40.4212 4.3644 40.6314 4.51713 40.8746 4.55245L43.9145 4.99408C44.527 5.08306 44.7716 5.83578 44.3283 6.26774L42.1288 8.41123C41.9528 8.58277 41.8725 8.82999 41.914 9.07218L42.4333 12.099C42.5379 12.7089 41.8978 13.1741 41.3499 12.8863L38.6307 11.4569Z" fill="#FCB800" stroke="black" stroke-width="0.892783"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M54.1148 11.4569C53.8972 11.3426 53.6375 11.3426 53.42 11.4569L50.7007 12.8863C50.1529 13.1741 49.5128 12.7089 49.6174 12.099L50.1367 9.07218C50.1782 8.82999 50.0979 8.58277 49.9219 8.41123L47.7224 6.26774C47.2792 5.83578 47.5237 5.08306 48.1362 4.99408L51.1761 4.55245C51.4193 4.51713 51.6295 4.3644 51.7382 4.14404L53.0978 1.3898C53.3718 0.83491 54.163 0.83491 54.437 1.3898L55.7965 4.14404C55.9053 4.3644 56.1155 4.51713 56.3587 4.55245L59.3987 4.99408C60.0111 5.08306 60.2557 5.83578 59.8124 6.26774L57.6129 8.41123C57.437 8.58277 57.3566 8.82999 57.3982 9.07218L57.9174 12.099C58.022 12.7089 57.3819 13.1741 56.8341 12.8863L54.1148 11.4569Z" fill="#FCB800" stroke="black" stroke-width="0.892783"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M69.5988 11.4569C69.3813 11.3426 69.1214 11.3426 68.904 11.4569L66.1847 12.8863C65.637 13.1741 64.9968 12.7089 65.1014 12.099L65.6207 9.07218C65.6622 8.82999 65.5819 8.58277 65.4059 8.41123L63.2064 6.26774C62.7632 5.83578 63.0077 5.08306 63.6202 4.99408L66.6601 4.55245C66.9033 4.51713 67.1135 4.3644 67.2222 4.14404L68.5818 1.3898C68.8558 0.83491 69.647 0.83491 69.921 1.3898L71.2805 4.14404C71.3893 4.3644 71.5995 4.51713 71.8428 4.55245L74.8827 4.99408C75.4951 5.08306 75.7396 5.83578 75.2964 6.26774L73.0969 8.41123C72.9209 8.58277 72.8406 8.82999 72.8822 9.07218L73.4013 12.099C73.506 12.7089 72.8659 13.1741 72.3181 12.8863L69.5988 11.4569Z" fill="#FCB800" stroke="black" stroke-width="0.892783"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="cmt_review_content_box">
+                    <div
+                      class="cmt_review_content font-size-{{ block.settings.font_size }} font-size-mob-{{ block.settings.font_size_mob }} font-weight-{{ block.settings.font_weight }} margin-bottom-{{ block.settings.margin_bottom }} margin-bottom-mob-{{ block.settings.margin_bottom_mob }}"
+                      style="color:{{ block.settings.text_color }};"
+                    >
+                      {{ block.settings.review_text }}
+                    </div>
+                    <div class="cmt_review_content_bottom">
+                      <div
+                        class="cmt_review_content_bottom_text font-size-{{ block.settings.r_font_size }} font-size-mob-{{ block.settings.r_font_size_mob }} font-weight-{{ block.settings.r_font_weight }}"
+                        style="color:{{ block.settings.r_color }}"
+                      >
+                        {{ block.settings.regards }}
+                      </div>
+                      <div class="cmt_verified">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                          <path d="M10.7751 0L8.5 1.46028L6.22184 0L4.98014 2.40336L2.27713 2.27713L2.40336 4.97911L0 6.22184L1.46028 8.5L0 10.7751L2.40336 12.0178L2.27713 14.7198L4.97911 14.5936L6.22081 16.9969L8.49795 15.5366L10.7751 16.999L12.0178 14.5956L14.7198 14.7218L14.5946 12.0199L16.999 10.7751L15.5397 8.5L17 6.22287L14.5966 4.98117L14.7218 2.27919L12.0199 2.40438L10.7751 0Z" fill="#426640"/>
+                          <path d="M7.12976 11.6671L4.60941 9.14882C4.53685 9.07609 4.49609 8.97755 4.49609 8.87482C4.49609 8.77209 4.53685 8.67355 4.60941 8.60083L5.1574 8.05284C5.23013 7.98027 5.32866 7.93951 5.4314 7.93951C5.53413 7.93951 5.63267 7.98027 5.70539 8.05284L7.40375 9.75017L11.0406 6.11332C11.1133 6.04075 11.2119 6 11.3146 6C11.4173 6 11.5159 6.04075 11.5886 6.11332L12.1366 6.66131C12.2091 6.73403 12.2499 6.83257 12.2499 6.93531C12.2499 7.03804 12.2091 7.13658 12.1366 7.2093L7.67672 11.6671C7.60404 11.7394 7.50572 11.7799 7.40324 11.7799C7.30076 11.7799 7.20244 11.7394 7.12976 11.6671Z" fill="white"/>
+                        </svg>
+                        Verified Buyer
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Image and Content",
+  "settings": [
+    {
+      "type": "color",
+      "id": "sec_bg",
+      "label": "Section Background"
+    },
+    {
+      "type": "number",
+      "id": "max_width",
+      "default":1218,
+      "label": "Section Width"
+    },
+    {
+      "type": "header",
+      "content": "Media Box"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "options": [
+        {
+          "value": "0",
+          "label": "Left",
+        },
+        {
+          "value": "2",
+          "label": "Right",
+        },
+      ],
+      "default":"0",
+      "label": "Media Position"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_img",
+      "label": "Small Image",
+    },
+    {
+      "type": "number",
+      "id": "logo_image_size",
+      "default":200,
+      "label":"Small Image width"
+    },
+    {
+      "type": "range",
+      "id": "verticaly_align",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":50,
+      "label": "Set Position Vertically"
+    },
+    {
+      "type": "range",
+      "id": "horizontal_align",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":50,
+      "label": "Set Position Horizontal"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_img_mob",
+      "label": "Mobile Small Image",
+    },
+    {
+      "type": "number",
+      "id": "logo_image_size_mob",
+      "default":150,
+      "label":"Mobile Small Image width"
+    },
+    {
+      "type": "range",
+      "id": "verticaly_align_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":20,
+      "label": "Set Position Vertically"
+    },
+    {
+      "type": "range",
+      "id": "horizontal_align_mob",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default":20,
+      "label": "Set Position Horizontal"
+    },
+    {
+      "type": "header",
+      "content": "Section Spacing"
+    },
+    {
+      "type": "number",
+      "id": "sec_top_padding",
+      "label": "Top Spacing",
+    },
+    {
+      "type": "number",
+      "id": "sec_bottom_padding",
+      "label": "Bottom Spacing",
+    },
+    {
+      "type": "number",
+      "id": "sec_top_padding_mob",
+      "label": "Mobile Top Spacing",
+    },
+    {
+      "type": "number",
+      "id": "sec_bottom_padding_mob",
+      "label": "Mobile Bottom Spacing",
+    },
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name":"Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id":"heading",
+          "label": "Add Text",
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "default":"#0C2331",
+          "label": "Text Color"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":32,
+          "label": "Font Size",
+        },
+        {
+          "type": "range",
+          "id": "font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":20,
+          "label": "Mobile Font Size",
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":700,
+          "label": "Font Weight",
+        },
+        {
+          "type": "number",
+          "id": "margin_bottom",
+          "default": 10,
+          "label": "Bottom Spacing"
+        },
+        {
+          "type": "number",
+          "id": "margin_bottom_mob",
+          "default": 10,
+          "label": "Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name":"Content",
+      "settings": [
+        {
+          "type": "richtext",
+          "id":"content",
+          "label": "Add Text",
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "default":"#0C2331",
+          "label": "Text Color"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Font Size",
+        },
+        {
+          "type": "range",
+          "id": "font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":16,
+          "label": "Mobile Font Size",
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":400,
+          "label": "Font Weight",
+        },
+        {
+          "type": "number",
+          "id": "margin_bottom",
+          "default": 0,
+          "label": "Bottom Spacing"
+        },
+        {
+          "type": "number",
+          "id": "margin_bottom_mob",
+          "default": 0,
+          "label": "Mobile Bottom Spacing"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name":"Review Block",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "color",
+          "id": "review_box_bg",
+          "default":"#E2EDEC",
+          "label": "Background Color"
+        },
+        {
+          "type": "color",
+          "id": "review_box_border_color",
+          "default":"#00BCAE",
+          "label": "Border Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Item Image"
+        },
+        {
+          "type": "header",
+          "content": "Review Content"
+        },
+        {
+          "type": "richtext",
+          "id": "review_text",
+          "label": "Add Text"
+        },
+               {
+          "type": "color",
+          "id": "text_color",
+        "default":"#000000",
+          "label": "Text Color"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":14,
+          "label": "Font Size",
+        },
+        {
+          "type": "range",
+          "id": "font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":14,
+          "label": "Mobile Font Size",
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":600,
+          "label": "Font Weight",
+        },
+        {
+          "type": "number",
+          "id": "margin_bottom",
+          "default": 10,
+          "label": "Bottom Spacing"
+        },
+        {
+          "type": "number",
+          "id": "margin_bottom_mob",
+          "default": 10,
+          "label": "Mobile Bottom Spacing"
+        },
+        {
+          "type": "header",
+          "content": "Review Regards"
+        },
+        {
+          "type": "text",
+          "id": "regards",
+          "label": "Add Text"
+        },
+               {
+          "type": "color",
+          "id": "r_color",
+          "default":"#000000",
+          "label": "Text Color"
+        },
+        {
+          "type": "range",
+          "id": "r_font_size",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":14,
+          "label": "Font Size",
+        },
+        {
+          "type": "range",
+          "id": "r_font_size_mob",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default":14,
+          "label": "Mobile Font Size",
+        },
+        {
+          "type": "range",
+          "id": "r_font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":900,
+          "label": "Font Weight",
+        },
+      ]
+
+    }
+  ],
+  "presets": [
+    {
+       "name": "Custom Image and Content",
+    }
+  ]
+}
+{% endschema %}

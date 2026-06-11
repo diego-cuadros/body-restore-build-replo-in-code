@@ -1,0 +1,62 @@
+{% style %}
+  .buttons-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:20px;flex-wrap:wrap;width:100%;justify-content:center;}
+  .buttons-wrapper.seperator{display:grid;grid-template-columns:1fr 1px 1fr;gap:20px;flex-wrap:wrap;width:100%;justify-content:center;}
+  .buttons-wrapper.seperator > .seperator{height:100%;width:1px;background:#000;}
+  @media screen and (max-width:768px){
+  .buttons-wrapper.single{display:grid;grid-template-columns:100%;gap:0px;flex-wrap:wrap;width:100%;justify-content:center;}
+  .buttons-wrapper.single.seperator > .seperator{display:none;}
+  .buttons-wrapper.double{display:grid;grid-template-columns:1fr 1fr;gap:0px;flex-wrap:wrap;width:100%;justify-content:center;}
+  .buttons-wrapper.double.seperator {display:grid;grid-template-columns:1fr 1px 1fr;gap:20px;flex-wrap:wrap;width:100%;justify-content:center;}
+  }
+{% endstyle %}
+
+
+
+<div class="buttons-wrapper {{ block.settings.options }} {% if block.settings.seperator %} seperator {% endif %}">
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+  {
+    "name": "Container",
+    "settings": [
+      {
+        "type":"checkbox",
+        "id":"seperator",
+        "label":"Seperator"
+      },
+      {
+        "type":"select",
+        "id":"options",
+        "options":[
+          {
+            "value":"single",
+            "label":"Single"
+          },
+          {
+            "value":"double",
+            "label":"Double"
+          }
+        ],
+        "default":"single",
+        "label":"Items In Mobile"
+      }
+    ],
+    "blocks": [
+      {
+        "type":"button"
+      },
+      {
+        "type":"icon_with_content"
+      },
+      {
+        "type":"seperator"
+      }
+    ],
+    "presets": [
+      {
+        "name":"Container"
+      }
+    ]
+  }
+{% endschema %}

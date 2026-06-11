@@ -1,0 +1,438 @@
+{% if template.suffix != 'bundle-pack' %}
+  <div id="custom-addtocart-sticky" class="sticky-addtocart__popup">
+    <div class="product_item product_col">
+      <div class="main_image_product">
+        <img
+          src="{{ product.featured_image.src | img_url: '600x600', scale: 2 }}"
+          alt="{{ product.title | escape }}"
+          class="img"
+        >
+      </div>
+      <div class="product_info_box">
+        <div class="sticky-product__title">
+          <h1 class="product__title" {{ block.shopify_attributes }}>
+            {{ product.title | escape }}
+          </h1>
+          {%- if product.metafields.reviews.rating.value != blank -%}
+            <div class="product-rating">
+              {% liquid
+                assign rating_decimal = 0
+                assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+                if decimal >= 0.3 and decimal <= 0.7
+                  assign rating_decimal = 0.5
+                elsif decimal > 0.7
+                  assign rating_decimal = 1
+                endif
+              %}
+              <div
+                class="rating"
+                role="img"
+                aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
+              >
+                <span
+                  aria-hidden="true"
+                  class="rating-star"
+                  style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
+                >
+                  {% for i in (1..5) %}
+                    <svg
+                      class="icon icon-rating-star"
+                      width="26"
+                      height="24"
+                      viewBox="0 0 26 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M11.9718 0.708465C12.4382 -0.0665188 13.5618 -0.0665184 14.0282 0.708466L17.3461 6.22172C17.5136 6.50013 17.7869 6.6987 18.1035 6.77201L24.3722 8.22386C25.2534 8.42794 25.6006 9.49651 25.0077 10.1796L20.7895 15.0388C20.5765 15.2842 20.4721 15.6054 20.5002 15.9292L21.0566 22.3397C21.1348 23.2408 20.2258 23.9012 19.393 23.5484L13.4681 21.0383C13.1689 20.9116 12.8311 20.9116 12.5319 21.0383L6.60702 23.5484C5.77418 23.9012 4.86521 23.2408 4.94341 22.3397L5.49976 15.9292C5.52786 15.6054 5.42347 15.2842 5.21045 15.0388L0.992333 10.1796C0.399403 9.4965 0.746601 8.42794 1.62778 8.22386L7.89649 6.77201C8.21305 6.6987 8.48635 6.50013 8.6539 6.22172L11.9718 0.708465Z" fill="currentColor"></path>
+                    </svg>
+                  {% endfor %}
+                </span>
+              </div>
+              <p class="rating-text caption">
+                <span aria-hidden="true">
+                  {{- product.metafields.reviews.rating.value }} /
+                  {{ product.metafields.reviews.rating.value.scale_max -}}
+                </span>
+              </p>
+              <p class="rating-count caption">
+                <span aria-hidden="true"
+                  >({{ product.metafields.reviews.rating_count }}
+                  {% if product.metafields.reviews.rating_count > 1 %}Reviews{% else %}Review{% endif %})</span
+                >
+                <span class="visually-hidden">
+                  {{- product.metafields.reviews.rating_count }}
+                  {{ 'accessibility.total_reviews' | t -}}
+                </span>
+              </p>
+            </div>
+          {%- endif -%}
+        </div>
+        <div class="sticky-product__price">
+          <div class="price_outer">
+            <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+              {%- render 'price',
+                product: product,
+                use_variant: true,
+                show_badges: true,
+                price_class: 'price--large'
+              -%}
+            </div>
+            {% comment %}
+              {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                <div class="product__tax caption rte">
+                  {%- if shop.taxes_included -%}
+                    {{ 'products.product.include_taxes' | t }}
+                  {%- endif -%}
+                  {%- if shop.shipping_policy.body != blank -%}
+                    {{ 'products.product.shipping_policy_html' | t shop.shipping_policy.url }}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            {% endcomment %}
+            <div {{ block.shopify_attributes }}>
+              {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                {{ form | payment_terms }}
+              {%- endform -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="variant_quantity product_col">
+      <div class="sticky-product__quantity newqty_selector_btn">
+        <div
+          class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+          {{ block.shopify_attributes }}
+        >
+          <quantity-input class="quantity">
+            <button class="quantity__button no-js-hidden" name="minus" type="button">
+              <span class="visually-hidden">
+                {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                focusable="false"
+                class="icon icon-minus"
+                fill="none"
+                viewBox="0 0 10 2"
+              >
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z" fill="#0C2331">
+                </path>
+              </svg>
+            </button>
+            <input
+              class="quantity__input"
+              type="number"
+              name="quantity"
+              id="Quantity-{{ section.id }}"
+              min="1"
+              value="1"
+              form="{{ product_form_id }}"
+            >
+            <button class="quantity__button no-js-hidden" name="plus" type="button">
+              <span class="visually-hidden">
+                {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                focusable="false"
+                class="icon icon-plus"
+                fill="none"
+                viewBox="0 0 10 10"
+              >
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="#0C2331">
+                </path>
+              </svg>
+            </button>
+          </quantity-input>
+        </div>
+      </div>
+      {% if product.variants.size > 1 %}
+        <select name="id" class="sticky-product__variants">
+          {%- for option in product.options_with_values -%}
+            {%- for value in option.values -%}
+              <option
+                value="{{ value | escape }}"
+                data-value="{{ value }}"
+                data-option="{{ option.name }}"
+                {% if option.selected_value == value %}
+                  selected="selected"
+                {% endif %}
+              >
+                {{ value }}
+              </option>
+            {%- endfor -%}
+          {%- endfor -%}
+        </select>
+      {% endif %}
+      <div class="product-form__noscript-wrapper-{{ section.id }} hidden">
+        <select name="id" id="Variants-{{ product.id }}" class="select__select">
+          {%- for variant in product.variants -%}
+            <option
+              data_varid="{{ variant.id }}"
+              {% if variant == product.selected_or_first_available_variant %}
+                selected="selected"
+              {% endif %}
+            >
+              {{- variant.title -}}
+            </option>
+          {%- endfor -%}
+        </select>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="custom-add-to-cart product-form__submit"
+      onclick="document.querySelector('.product__info-wrapper .product-form__submit').click()"
+    >
+      {%- if product.selected_or_first_available_variant.available -%}
+        {{ 'products.product.add_to_cart' | t }}
+      {%- else -%}
+        {{ 'products.product.sold_out' | t }}
+      {%- endif -%}
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="27" viewBox="0 0 22 27" fill="none" class="cart_icon">
+        <path d="M20.9632 7.80571C20.9135 6.84574 20.1281 5.95795 19.1754 5.95795H16.5621V8.81324C16.5621 9.78556 15.7812 10.5747 14.8188 10.5747C13.8565 10.5747 13.0754 9.78565 13.0754 8.81324V5.95795H7.84551V8.81324C7.84551 9.78556 7.06454 10.5747 6.10215 10.5747C5.13984 10.5747 4.35878 9.78565 4.35878 8.81324L4.35887 5.95795H2.62076C1.66974 5.95795 0.886116 6.84572 0.834663 7.80571L0.00223845 24.1301C-0.0221751 24.6251 0.153891 25.2011 0.492115 25.5604C0.830345 25.9197 1.29843 26.2148 1.7874 26.2148H20.0088C20.4995 26.2148 20.9684 25.9532 21.3058 25.5939C21.6431 25.2346 21.8201 24.6542 21.7957 24.1592L20.9632 7.80571ZM10.6216 19.4271C10.6216 19.4271 6.98062 17.7933 6.98062 14.8137C6.98062 13.7559 7.82958 12.8973 8.87732 12.8973C9.66007 12.8973 10.3321 13.3773 10.6215 14.0616C10.9109 13.3773 11.5821 12.8973 12.3657 12.8973C13.4126 12.8973 14.2624 13.756 14.2624 14.8137C14.2624 17.7933 10.6215 19.4271 10.6215 19.4271H10.6216Z" fill="white"></path>
+        <path d="M6.12519 9.79743C6.60927 9.79743 7.00063 9.39906 7.00063 8.90611L7.00055 5.15647C7.00055 3.29634 8.6761 1.78273 10.5023 1.78273C12.3302 1.78273 14.004 3.29528 14.004 5.15536V8.90589C14.004 9.39875 14.3953 9.79721 14.8795 9.79721C15.3636 9.79721 15.7549 9.39884 15.7549 8.90589L15.755 5.15536C15.755 2.31307 13.2942 0 10.5025 0C7.71084 0 5.25 2.31285 5.25 5.15625V8.90589C5.25 9.39875 5.64128 9.79712 6.12545 9.79712L6.12519 9.79743Z" fill="white"></path>
+        <circle cx="11" cy="15.6117" r="5" fill="white"></circle>
+      </svg>
+    </button>
+  </div>
+
+  <style>
+     #custom-addtocart-sticky.fixed-sticky-cart {
+       transform: translateY(0);
+       opacity: 1;
+       pointer-events: auto;
+     }
+
+     #custom-addtocart-sticky{
+       transition: .15s all ease-in-out;
+       transform: translateY(-100%);
+       position: fixed;
+       top: auto;
+       right: 0;
+       bottom: 0;
+       left: 0;
+       z-index: 11;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       background-color: #fff;
+       width: 100%;
+       border-bottom: 1px solid transparent;
+       box-shadow: 0 -5px 8px rgba(200, 200, 200, 0.3);
+       opacity: 0;
+       pointer-events: none;
+     }
+     .main_image_product img.img {
+         width: 100px;
+         height: 100px;
+         margin-right: 30px;
+     }
+
+     .sticky-product__title {}
+
+     .sticky-product__title .product__title {
+         font-size: 22px;
+         line-height: 34px;
+         margin-bottom: 0;
+     }
+
+     #custom-addtocart-sticky .price__container {margin: 0 30px;}
+
+     .main_image_product {
+         line-height: 0;
+     }
+     .item_product, .right_part_add {
+         display: flex;
+         align-items: center;
+     }
+     button.custom-add-to-cart {
+       margin: 0 33px;
+       padding: 14px 18px 10px;
+       border-radius: 12px;
+       background-color: #0c2331;
+       cursor: pointer;
+    }
+    .price_outer .no-js-hidden, .price.price--large.price--show-badge {
+       display: inline-block;
+       vertical-align: text-top;
+     }
+      .sticky-product__price {
+        margin-left: 15px;
+      }
+    .product-form__input.product-form__quantity {
+        margin-bottom: 0;
+    }
+    .product_col,
+    .product_info_box{
+        display: flex;
+        align-items: center;
+    }
+    select.sticky-product__variants {
+        padding: 12px;
+        position: relative;
+        width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
+        display: flex;
+        border-radius: var(--inputs-radius);
+        margin-left: 18px;
+        padding: 13px 9px;
+        background-image: linear-gradient(45deg, transparent 50%, #0c2331 50%), linear-gradient(135deg, #0c2331 50%, transparent 50%), linear-gradient(to right, #fff, #fff);
+        background-position: calc(100% - 21px) calc(16px + 2px), calc(100% - 15px) calc(16px + 2px), calc(100% - 21px) 0.5em;
+        background-size: 6px 7px, 6px 7px, 1px 2.5em;
+        background-repeat: no-repeat;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+    }
+    @media screen and (max-width: 990px){
+      /* .main_image_product {display: none;} */
+      #custom-addtocart-sticky {padding: 15px 20px;}
+      #custom-addtocart-sticky button.custom-add-to-cart {margin-right: 0;margin-left: 15px;}
+    }
+    .custom-add-to-cart svg.cart_icon {display: none;}
+    @media screen and (max-width: 890px){
+      /* .sticky-product__price{display: none;} */
+      .custom-add-to-cart svg.cart_icon {display: block;}
+    }
+    @media screen and (max-width: 767px){
+      .sticky-addtocart__popup .variant_quantity.product_col{display: none !important;}
+       #custom-addtocart-sticky button.custom-add-to-cart {width: 60px;height: 60px;border-radius: 50%;border: none;line-height: 60px;}
+      .sticky-product__title .product__title {margin-top: 0;}
+        .product_info_box {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+      }
+      .custom-addtocart-sticky .main_image_product img.img {
+          width: 46px;
+          height: 64px;
+          object-fit: cover;
+      }
+      #custom-addtocart-sticky .price__container,
+      .sticky-product__price{
+        margin: 0;
+    }
+      .main_image_product img.img {
+          width: 40px;
+          height: 40px;
+      }
+
+    .product_col{
+      margin-bottom:15px;
+    }
+    .sticky-addtocart__popup .price-item.price-item--regular {
+      font-size: 20px !important;
+      line-height: normal !important;
+    }
+
+    .sticky-addtocart__popup  .unitpriceblock {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    }
+
+
+
+    /* @media screen and (max-width: 575px){
+      #custom-addtocart-sticky {padding: 10px 15px;flex-direction: column;}
+      button.custom-add-to-cart {margin: 0 33px;padding: 16px 13px 11px;border-radius: 12px;font-size: 12px;}
+    } */
+  </style>
+
+  <script>
+    $(document).ready(function () {
+      $(document).on('change', '.sticky-product__quantity .quantity__input', function () {
+          var qtyval = parseInt($(this).val());
+          updateProductInfoQuantity(qtyval);
+      });
+      $(document).on('change', '.product__info-wrapper .quantity__input', function () {
+          var qtyval = parseInt($(this).val());
+          updateStickyQuantity(qtyval);
+      });
+      function updateProductInfoQuantity(qtyval) {
+          $('.product__info-wrapper .quantity__input').val(qtyval);
+      }
+      function updateStickyQuantity(qtyval) {
+          $('.sticky-product__quantity .quantity__input').val(qtyval);
+      }
+    });
+  </script>
+  <script>
+     function stickyACTFunction(stickyACT) {
+       var ev = $(".product__info-container").offset().top;
+       if (stickyACT.matches) {
+          $(window).scroll(function () {
+             if ($(window).scrollTop() >= ev) {
+                $('#custom-addtocart-sticky').addClass('fixed-sticky-cart');
+             } else {
+                $('#custom-addtocart-sticky').removeClass('fixed-sticky-cart');
+             }
+          });
+       } else {
+          $(window).scroll(function () {
+             if ($(window).scrollTop() >= ev) {
+                $('#custom-addtocart-sticky').addClass('fixed-sticky-cart');
+             } else {
+                $('#custom-addtocart-sticky').removeClass('fixed-sticky-cart');
+             }
+          });
+       }
+    }
+    var stickyACT = window.matchMedia("(max-width: 700px)");
+    stickyACTFunction(stickyACT);
+    stickyACT.addListener(stickyACTFunction);
+     $(document).on('click', '.sticky-product__variants', function () {
+          var variant_img = '';
+          var taskArray = $(this).val()
+         console.log("123",$(this).val())
+          $(this).parents('.variant_quantity').find('.select__select option').each(function (e) {
+              var variant_val = $(this).text();
+              if (variant_val == taskArray) {
+                  variant_img = $(this).attr("data_varid");
+                  $(".custom-add-to-cart").attr("data-variant", variant_img);
+              }
+          });
+      });
+     $(document).on('click', '.custom-add-to-cart', function (event) {
+      event.preventDefault();
+      var variantId = $('.custom-add-to-cart').attr("data-variant"); // Use the correct selector for the variant dropdown
+      var quantity = parseInt($('.sticky-product__quantity .quantity__input').val());
+
+      console.log('Selected Variant: ', variantId);
+      console.log('Selected Quantity: ', quantity);
+
+      if (variantId && quantity > 0) {
+          var data = {
+              id: variantId,
+              quantity: quantity
+          };
+
+          $.ajax({
+              type: 'POST',
+              url: '/cart/add.js',
+              data: data,
+              dataType: 'json',
+              success: function (data) {
+                  // Update cart count
+                  jQuery.getJSON('/cart.js', function (cart) {
+                      $(".cart-count-bubble,#cart-icon-bubble").find("span").text(cart.item_count);
+                  });
+                  console.log('Product added to the cart!');
+                  load_cart();
+              },
+              error: function (XMLHttpRequest, textStatus) {
+                  console.error('Error adding product to cart:', textStatus);
+              }
+          });
+      } else {
+          console.error('Invalid variant or quantity');
+      }
+    });
+  </script>
+{% endif %}

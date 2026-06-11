@@ -1,0 +1,126 @@
+{{ 'breadcrumbs.css' | asset_url | stylesheet_tag }}
+
+{% capture divider %}
+  <li class="breadcrumbs__item">
+    <svg width="5" height="9" viewBox="0 0 5 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path opacity="0.5" d="M1 1.5L3.29289 3.79289C3.68342 4.18342 3.68342 4.81658 3.29289 5.20711L1 7.5" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </li>
+{% endcapture %}
+
+{%- assign templates = settings.templatename | split: ',' -%}
+{%- assign match_found = false -%}
+{%- for t in templates -%}
+  {%- assign t = t | strip -%}
+  {%- if t == template.name or t == template.suffix -%}
+    {%- assign match_found = true -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{% if match_found == true %}
+{% else %}
+  {%- unless template == 'index'
+    or template == 'cart'
+    or template == 'list-collections'
+    or template == '404'
+    or template.suffix == 'listicle'
+  -%}
+    {%- assign t = template | split: '.' | first -%}
+    <div class="color-{{ section.settings.color_scheme }} gradient">
+      <nav class="breadcrumbs page-width" role="navigation" aria-label="breadcrumbs">
+        <ol class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="/">Home</a>
+          </li>
+          {%- case t -%}
+            {%- when 'page' -%}
+              {{ divider }}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+              </li>
+            {%- when 'product' -%}
+              {%- if collection.url -%}
+                {{ divider }}
+                <li class="breadcrumbs__item">
+                  {{ collection.title | link_to: collection.url }}
+                </li>
+              {%- endif -%}
+              {{ divider }}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
+              </li>
+            {%- when 'collection' and collection.handle -%}
+              {%- if current_tags -%}
+                {{ divider }}
+                <li class="breadcrumbs__item">
+                  {{ collection.title | link_to: collection.url }}
+                </li>
+                {{ divider }}
+                <li class="breadcrumbs__item">
+                  {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+"}}{%- endcapture -%}
+                  <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">
+                    {{- current_tags | join: ' + ' -}}
+                  </a>
+                </li>
+              {%- else -%}
+                {{ divider }}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">
+                    {{- collection.title -}}
+                  </a>
+                </li>
+              {%- endif -%}
+            {%- when 'blog' -%}
+              {%- if current_tags -%}
+                {{ divider }}
+                <li class="breadcrumbs__item">
+                  {{ blog.title | link_to: blog.url }}
+                </li>
+                {{ divider }}
+                <li class="breadcrumbs__item">
+                  {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                  <a class="breadcrumbs__link" href="{{ tag_url }}" aria-current="page">
+                    {{- current_tags | join: ' + ' -}}
+                  </a>
+                </li>
+              {%- else -%}
+                {{ divider }}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="{{ blog.url }}" aria-current="page">{{ blog.title }}</a>
+                </li>
+              {%- endif -%}
+            {%- when 'article' -%}
+              {{ divider }}
+              <li class="breadcrumbs__item">
+                {{ blog.title | link_to: blog.url }}
+              </li>
+              {{ divider }}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
+              </li>
+            {%- else -%}
+              {{ divider }}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+              </li>
+          {%- endcase -%}
+        </ol>
+      </nav>
+    </div>
+  {%- endunless -%}
+{% endif %}
+{% schema %}
+{
+  "name": "Breadcrumbs",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "accent-1"
+    }
+  ]
+}
+{% endschema %}

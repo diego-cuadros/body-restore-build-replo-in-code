@@ -1,0 +1,39 @@
+{% style %}
+ #shopify-block-{{ block.id }} .image-wrapper{display:flex;margin-bottom:{{ block.settings.space }};max-width:{{ block.settings.width }}px;}
+  @media screen and (max-width:768px){
+ #shopify-block-{{ block.id }} .image-wrapper{display:flex;margin-bottom:{{ block.settings.mobile_space }};max-width:{{ block.settings.mobile-width }}px;}
+  }
+  
+{% endstyle %}
+
+
+<div class="image-wrapper" >
+  <img src="{{ block.settings.image | img_url:'master' }}" width="100%" >
+</div>
+{% schema %}
+  {
+    "name": "Image",
+    "settings": [
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"image"
+      },
+      {
+        "type":"number",
+        "id":"width",
+        "label":"Width"
+      },
+      {
+        "type":"number",
+        "id":"mobile-width",
+        "label":"Mobile Width"
+      }
+    ],
+    "presets": [
+      {
+        "name":"image"
+      }
+    ]
+  }
+{% endschema %}

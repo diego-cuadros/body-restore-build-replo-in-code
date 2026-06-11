@@ -1,0 +1,68 @@
+<div class="mbr_reason" style="background-image: url('{{ section.settings.bg | img_url: '2000x' }}')">
+    <div class="mbr_main">
+        <h5>{{ section.settings.subtitle }}</h5>
+        <h2>{{ section.settings.title }}</h2>
+        <div class="mbr_reason_ul">
+            {% for block in section.blocks %}
+                <div class="mbr_reason_li">
+                    <img src="{{ block.settings.image | img_url: '1000x' }}" alt=""/ width="auto" height="auto">
+                    <div class="mbr_reason_lidv">
+                        <h3>{{ block.settings.title }}</h3>
+                        <p>{{ block.settings.des }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>     
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Reason",
+    "settings": [
+      {
+       "type": "text",
+       "id": "subtitle",
+       "label": "Sub Title"
+      },
+      {
+       "type": "richtext",
+       "id": "title",
+       "label": "Title"
+      },
+        {
+          "type": "image_picker",
+          "id": "bg",
+          "label": "Background Image"
+        }
+    ],
+    "blocks": [
+      {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+           "type": "text",
+           "id": "title",
+           "label": "Title"
+        },
+        {
+           "type": "text",
+           "id": "des",
+           "label": "Description"
+        }
+      ]
+    }
+    ],
+    "presets": [
+      {
+        "name": "Reason"
+      }
+    ]
+  }
+{% endschema %}

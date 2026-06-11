@@ -1,0 +1,33 @@
+<div class="icon-with-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+  <div class="icon-wrapper" style="display:flex;">
+    <img src="{{ block.settings.image | img_url:'master' }}">
+  </div>
+  <div class="icon-content">
+    {{ block.settings.content }}
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Icon With Content",
+    "settings": [
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"icon"
+      },
+      {
+        "type":"richtext",
+        "id":"content",
+        "label":"Content"
+      }
+    ],
+    "presets": [
+      {
+        "name":"Icon With Content"
+      }
+    ]
+  }
+{% endschema %}

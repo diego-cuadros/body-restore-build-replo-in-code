@@ -1,0 +1,68 @@
+<div class="gift-product-container pack4">
+  <div class="featured-gift-container block--1">
+    <div class="image-container">
+      {% if block.settings.bagbadge1 != blank %}
+        <div class="progress-badge-text">{{ block.settings.bagbadge1 }}</div>
+      {% endif %}
+      <div class="image">
+        <img src="{{ block.settings.freeimage1 | img_url : 'master' }}">
+      </div>
+      <div class="lock-container">
+        <div class="lock">
+          {% render 'lock-svg' %}
+        </div>
+        <div class="text">1 Bag</div>
+      </div>
+    </div>
+    <div class="name">{{ block.settings.freetext1 }}</div>
+  </div>
+  <div class="featured-gift-container block--2">
+    <div class="image-container">
+      {% if block.settings.bagbadge2 != blank %}
+        <div class="progress-badge-text">{{ block.settings.bagbadge2 }}</div>
+      {% endif %}
+      <div class="image">
+        <img src="{{ block.settings.freeimage2 | img_url : 'master' }}">
+      </div>
+      <div class="lock-container">
+        <div class="lock">
+          {% render 'lock-svg' %}
+        </div>
+        <div class="text">2 Bags</div>
+      </div>
+    </div>
+    <div class="name">{{ block.settings.freetext2 }}</div>
+  </div>
+  <div class="featured-gift-container block--3">
+    <div class="image-container">
+      {% if block.settings.bagbadge3 != blank %}
+        <div class="progress-badge-text">{{ block.settings.bagbadge3 }}</div>
+      {% endif %}
+      <div class="image">
+        <img src="{{ block.settings.freeimage3 | img_url : 'master' }}">
+      </div>
+      <div class="lock-container">
+        <div class="lock"></div>
+        <div class="text">3 Bags</div>
+      </div>
+    </div>
+    <div class="name">{{ block.settings.freetext3 }}</div>
+  </div>
+  <div class="featured-gift-container block--6">
+    <div class="image-container">
+      {% if block.settings.bagbadge6 != blank %}
+        <div class="progress-badge-text">{{ block.settings.bagbadge6 }}</div>
+      {% endif %}
+      <div class="image">
+        <img src="{{ block.settings.freeimage6 | img_url : 'master' }}">
+      </div>
+      <div class="lock-container">
+        <div class="lock">
+          {% render 'lock-svg' %}
+        </div>
+        <div class="text">6 Bags</div>
+      </div>
+    </div>
+    <div class="name">{{ block.settings.freetext6 }}</div>
+  </div>
+</div>

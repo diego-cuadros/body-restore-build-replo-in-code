@@ -1,0 +1,50 @@
+<div class="product__column-sticky">
+  <div class="bundle-custom-product-media-container">
+    <div class="bundle-custom-product-media-main">
+      <product-custom-slider style="opacity:0;" class="custom-main-product-slider">
+        <div class="product__media-gallery">
+          <div class="main-slider main-product-slider swiper">
+            <div class="swiper-wrapper">
+              {% for media in product.metafields.custom.product_images.value %}
+                <div class="swiper-slide" data-media-id="{{ media.id }}" data-index="{{ forloop.index0 }}">
+                  <div
+                    id="pr-img-{{ forloop.index }}"
+                    class="pr-swiper-image"
+                  >
+                    <img
+                      class="pr-img"
+                      src="{{ media | img_url:'master' }}"
+                      data-class="LazyLoad"
+                      width="100%"
+                      height="100%"
+                    >
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div>
+
+            <div class="swiper-button-next swiper-buttons">{% render 'arrow-left' %}</div>
+            <div class="swiper-button-prev swiper-buttons">{% render 'arrow-right' %}</div>
+          </div>
+
+          <div class="custom-thumbnail-slider">
+            <div class="thumb-slider thumb-product-slider swiper">
+              <div class="swiper-wrapper">
+                {% for media in product.metafields.custom.product_images.value %}
+                  <div data-index="{{ forloop.index0 }}" class="swiper-slide" data-media-id="{{ media.id }}">
+                    <img
+                      class="thumb-img"
+                      src="{{ media | img_url:'master' }}"
+                      height="100%"
+                      width="100%"
+                    >
+                  </div>
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+        </div>
+      </product-custom-slider>
+    </div>
+  </div>
+</div>

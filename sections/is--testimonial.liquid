@@ -1,0 +1,292 @@
+{% liquid 
+    assign pt = section.settings.pt | prepend: 'pt-'
+    assign pb = section.settings.pb | prepend: 'pb-'
+    assign mt = section.settings.mt | prepend: 'mt-'
+    assign mb = section.settings.mb | prepend: 'mb-'
+%}
+{% comment %}
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const initSplide = () => {
+            const mainSplide = new Splide('#testimonials-{{ section.id }} .splide-main', {
+                type: 'loop',
+                arrows: true,
+                pagination: false,
+                rewind: true,
+                perMove: 1,
+                autoplay: true,
+                interval: 3000
+            })
+        
+            const thumbsSplide = new Splide('#testimonials-{{ section.id }} .splide-thumbs', {
+                arrows: false,
+                pagination: false,
+                rewind: true,
+                perMove: 1,
+                isNavigation: true,
+                autoWidth: true,
+                autoHeight: true,
+                mediaQuery: 'min',
+            })
+        
+            mainSplide.sync(thumbsSplide)
+            mainSplide.mount()
+            thumbsSplide.mount()
+        }
+        initSplide()
+
+        document.addEventListener('shopify:section:load', (e) => {
+            if (event.detail.sectionId === '{{ section.id }}') {
+                initSplide()
+            }
+        })
+    })
+</script>
+{% endcomment %}
+
+<section 
+    id="testimonials-{{ section.id }}" 
+    class="testimonials_new_sec testimonials {{ pt }} {{ pb }} {{ mt }} {{ mb }}"
+    style="background-color: {{ section.settings.bg_color }};">
+    <div class="container">
+        {% unless section.settings.title == blank %}
+            <h2 class="title mb-7 fm-body fw-bold text-center {{ section.settings.title_size }}">
+                {{ section.settings.title }}
+            </h2>
+        {% endunless %}
+        <div class="splide splide-main mb-10">
+            <div class="splide__track">
+                <div class="splide__list test_row">
+                    {% for block in section.blocks %}
+                        <div class="splide__slide">
+                            {% unless block.settings.description == blank %}
+                                <div 
+                                    class="description rte mb-0  text-center mx-auto lh-sm {{ block.settings.description_size }}"
+                                    style="max-width: {{ section.settings.max_width }}px">
+                                    {{ block.settings.description }}
+                                </div>
+                            {% endunless %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="splide splide-thumbs">
+            <div class="splide__track">
+                <div class="splide__list test_row_list d-flex align-items-center justify-content-center">
+                    {% for block in section.blocks %}
+                        <div class="splide__slide p-4 p-lg-8">
+                            {% unless block.settings.image == blank %}
+                              {{ block.settings.image | image_url: width: 200 | image_tag: loading: 'lazy', sizes: '100vw', widths: '200', alt: block.settings.title }}
+                            {% endunless %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+  $('.testimonials_new_sec .splide__list.test_row').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    adaptiveHeight: true,
+    fade: true,
+    focusOnSelect: true,
+    prevArrow:'<button type="button" class="slick-prev pull-left" aria-label="Previous"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg></button>',
+    nextArrow:'<button type="button" class="slick-next pull-right" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg></button>',
+    responsive: [
+        {
+        breakpoint: 1199,
+        settings: {
+        }
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          arrows: false,
+          asNavFor: '.test_row_list',
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          arrows: false,
+        }
+      }
+    ]
+  });
+  $('.testimonials_new_sec .splide__list.test_row_list').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    arrows: false,
+    focusOnSelect: false,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1199,
+        settings: {
+        }
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3,
+          dots: true,
+          arrows: false,
+          asNavFor: '.test_row'
+        }
+      },
+      {
+      breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          dots: true,
+        }
+      }
+    ]
+  });
+  
+  $('.testimonials_new_sec .splide__list.test_row_list .slick-slide').on('click', function (event) {
+    $('.testimonials_new_sec .splide__list.test_row').slick('slickGoTo', $(this).data('slickIndex'));
+  });
+
+  $('.testimonials_new_sec .splide__list.test_row').on('afterChange', function(event,slick,i){
+    $('.testimonials_new_sec .splide__list.test_row_list .slick-slide').siblings().removeClass('slick-current');
+    $('.testimonials_new_sec .splide__list.test_row_list .slick-slide').eq(i).addClass('slick-current');    				 
+  });
+  
+  // remember document ready on this
+  $('.testimonials_new_sec .splide__list.test_row_list .slick-slide').eq(0).addClass('slick-current');	
+</script>
+
+{% schema %}
+{
+    "name": "Testimonials",
+    "settings": [
+        {
+            "type": "header",
+            "content": "General"
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background color",
+            "default": "#FAF4FC"
+        },
+        {
+            "type": "text",
+            "id": "max_width",
+            "label": "Max-width (px)",
+            "default": "700"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "The Press Is Buzzing"
+        },
+        {
+            "type": "select",
+            "id": "title_size",
+            "label": "Title size",
+            "default": "h6",
+            "options": [
+                { "group": "Heading", "value": "h1", "label": "H1" },
+                { "group": "Heading", "value": "h2", "label": "H2" },
+                { "group": "Heading", "value": "h3", "label": "H3" },
+                { "group": "Heading", "value": "h4", "label": "H4" },
+                { "group": "Heading", "value": "h5", "label": "H5" },
+                { "group": "Heading", "value": "h6", "label": "H6" }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "Spacing"
+        },
+        {
+            "type": "range",
+            "id": "pt",
+            "label": "Padding top",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "pb",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mt",
+            "label": "Margin top",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        },
+        {
+            "type": "range",
+            "id": "mb",
+            "label": "Margin bottom",
+            "min": 0,
+            "max": 20,
+            "step": 1,
+            "default": 0
+        }
+    ],
+    "blocks": [
+        {
+            "type": "item",
+            "name": "Item",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Icon Image"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Brand name",
+                    "info": "The brand name for the SVG image above. Used for accessibility purposes"
+                },
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description",
+                    "default": "<p>Testimonial text goes here</p>"
+                },
+                {
+                    "type": "select",
+                    "id": "description_size",
+                    "label": "Description size",
+                    "default": "fs-1",
+                    "options": [
+                        { "value": "fs-1", "label": "fs-1" },
+                        { "value": "fs-2", "label": "fs-2" },
+                        { "value": "fs-3", "label": "fs-3" },
+                        { "value": "fs-4", "label": "fs-4" },
+                        { "value": "fs-5", "label": "fs-5" },
+                        { "value": "fs-6", "label": "fs-6" }
+                    ]
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Testimonials",
+            "category": "General"
+        }
+    ]
+}
+{% endschema %}

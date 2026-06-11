@@ -1,0 +1,343 @@
+<div
+  class="mbr_faq faq_sec"
+  {% if section.settings.faq_bg != blank %}
+    style="background-color: {{ section.settings.faq_bg }};"
+  {% endif %}
+>
+  {% if section.settings.enablesvg %}
+    <div class="faq_svg_shape">
+      <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 78" width="1920" height="78">
+        <title>pattern-svg</title>
+        <style>
+        	.s0 { fill: {{ section.settings.faq_bg }} }
+        </style>
+        <path id="Layer" class="s0" d="m1920 100c-264 8.3-1652.8 14.7-1920 0-267.2-14.7 211.5-80.7 317-88 105.5-7.3 210.2 44.7 316 44 105.8-0.7 211.7-47.7 319-48 107.3-0.3 219.7 39 325 46 105.3 7 199.8-11.7 307-4 107.2 7.7 600 41.7 336 50-264 8.3-1652.8 14.7-1920 0"/>
+      </svg>
+    </div>
+  {% endif %}
+  <div class="container">
+    {% if section.settings.faq_title != blank %}
+      <div class="def_title padding-bottom-{{ section.settings.tpaddingbottom }} padding-bottom-mob-{{ section.settings.tpaddingbottommob }}">
+        <h2
+          class="font-size-{{ section.settings.tfontsize }} font-size-mob-{{ section.settings.tfontsizemob }} font-weight-{{ section.settings.tfontweight }}"
+          style="color: {{ section.settings.faq_title_color }};text-align:{{ section.settings.textalignment }};"
+        >
+          {{ section.settings.faq_title }}
+        </h2>
+      </div>
+    {% endif %}
+    <div class="accordion_row accordion {% if section.settings.showbordertop == false %}hide-border-top{% endif %} {% if section.settings.showborderbottom == false %}hide-border-bottom{% endif %}">
+      {% for block in section.blocks %}
+        <div class="at-item">
+          {% if block.settings.faq_title_sub != blank %}
+            <div class="at-title">
+              <h5
+                class="font-size-{{ section.settings.ftfontsize }} font-size-mob-{{ section.settings.ftfontsizemob }} font-weight-{{ section.settings.ftfontweight }}"
+                style="color:{{ section.settings.ftcolor }};"
+              >
+                {{ block.settings.faq_title_sub }}
+              </h5>
+              <div class="at_title_icon">
+                <svg
+                  class="close_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="42"
+                  height="42"
+                  viewBox="0 0 42 42"
+                  fill="none"
+                >
+                  <rect width="41.5" height="41.5" rx="8" fill="#F7F7FF"/>
+                  <path d="M20.75 11.6C20.1149 11.6 19.6 12.1149 19.6 12.75V28.75C19.6 29.3851 20.1149 29.9 20.75 29.9C21.3851 29.9 21.9 29.3851 21.9 28.75V12.75C21.9 12.1149 21.3851 11.6 20.75 11.6Z" fill="#6F6C90" stroke="#6F6C90" stroke-width="0.3" stroke-linecap="round"/>
+                  <path d="M12.75 19.6C12.1149 19.6 11.6 20.1149 11.6 20.75C11.6 21.3851 12.1149 21.9 12.75 21.9H28.75C29.3851 21.9 29.9 21.3851 29.9 20.75C29.9 20.1149 29.3851 19.6 28.75 19.6H12.75Z" fill="#6F6C90" stroke="#6F6C90" stroke-width="0.3" stroke-linecap="round"/>
+                </svg>
+                <svg
+                  class="open_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="42"
+                  height="42"
+                  viewBox="0 0 42 42"
+                  fill="none"
+                >
+                  <rect width="41.5" height="41.5" rx="8" fill="#0C2331"/>
+                  <path d="M12.75 19.6C12.1149 19.6 11.6 20.1149 11.6 20.75C11.6 21.3851 12.1149 21.9 12.75 21.9H28.75C29.3851 21.9 29.9 21.3851 29.9 20.75C29.9 20.1149 29.3851 19.6 28.75 19.6H12.75Z" fill="white" stroke="white" stroke-width="0.3" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          {% endif %}
+          {% if block.settings.faq_title_desc != blank %}
+            <div
+              class="at-tab font-size-{{ section.settings.fcfontsize }} font-size-mob-{{ section.settings.fcfontsizemob }} font-weight-{{ section.settings.fccfontweight }}"
+              style="display:block;color:{{ section.settings.fccolor }};"
+            >
+              {{ block.settings.faq_title_desc }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $(".faq_sec .at-tab").hide();
+    $(".accordion_row.accordion .at-item:first-child .at-title").addClass("active");
+    $(".accordion_row.accordion .at-item:first-child .at-tab").show();
+    $(".at-title").click(function () {
+      $(this).toggleClass("active").next(".at-tab").slideToggle().parent().siblings().find(".at-tab").slideUp().prev().removeClass("active");
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "New Faq",
+  "settings": [
+    {
+      "type":"header",
+      "content":"Section BG"
+    },
+    {
+      "type":"checkbox",
+      "id":"enablesvg",
+      "label":"Enable Background Styling",
+      "default":true
+    },
+    {
+      "type": "color",
+      "id": "faq_bg",
+      "label": "Background Color"
+    },
+    {
+      "type":"number",
+      "id":"topspacing",
+      "default":150,
+      "label":"Top Spacing Desktop"
+    },
+    {
+      "type":"number",
+      "id":"topspacingmob",
+      "default":20,
+      "label":"Top Spacing Mobile"
+    },
+    {
+      "type":"header",
+      "content":"Border Customization"
+    },
+    {
+      "type":"checkbox",
+      "default":true,
+      "id": "showbordertop",
+      "label":"Enable Border Top"
+    },
+    {
+      "type":"checkbox",
+      "default":true,
+      "id": "showborderbottom",
+      "label":"Enable Border Bottom"
+    },
+    {
+      "type":"header",
+      "content":"Section Title"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_title",
+      "label": "Title"
+    },
+    {
+      "type":"range",
+      "id":"tfontsize",
+      "label":"Font Size",
+      "default":36,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"tfontsizemob",
+      "label":"Font Size Mobile",
+      "default":36,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"tfontweight",
+      "label":"Font Weight",
+      "default":700,
+      "min":100,
+      "max":900,
+      "step":100
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "id": "textalignment",
+      "default": "center",
+      "label":"Title Alignment"
+    },
+    {
+      "type": "color",
+      "id": "faq_title_color",
+      "label": "Title Color"
+    },
+    {
+      "type":"number",
+      "id":"tpaddingbottom",
+      "default":50,
+      "label":"Bottom Spacing Desktop"
+    },
+    {
+      "type":"number",
+      "id":"tpaddingbottommob",
+      "default":50,
+      "label":"Bottom Spacing Mobile"
+    },
+    {
+      "type":"header",
+      "content":"FAQ Title Customization"
+    },
+    {
+      "type":"range",
+      "id":"ftfontsize",
+      "label":"Font Size",
+      "default":22,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"ftfontsizemob",
+      "label":"Font Size Mobile",
+      "default":20,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"ftfontweight",
+      "label":"Font Weight",
+      "default":700,
+      "min":100,
+      "max":900,
+      "step":100
+    },
+    {
+      "type": "color",
+      "id": "ftcolor",
+      "default":"#0c2331",
+      "label": "Color"
+    },
+    {
+      "type":"header",
+      "content":"FAQ Description Customization"
+    },
+    {
+      "type":"range",
+      "id":"fcfontsize",
+      "label":"Font Size",
+      "default":18,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"fcfontsizemob",
+      "label":"Font Size Mobile",
+      "default":16,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"fccfontweight",
+      "label":"Font Weight",
+      "default":500,
+      "min":100,
+      "max":900,
+      "step":100
+    },
+    {
+      "type": "color",
+      "id": "fccolor",
+      "default":"#102332",
+      "label": "Color"
+    },
+    {
+      "type":"header",
+      "content":"Desktop Spacing"
+    },
+    {
+      "type":"number",
+      "id":"spaddingtop",
+      "default":80,
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"spaddingbottom",
+      "default":80,
+      "label":"Padding Bottom"
+    },
+    {
+      "type":"header",
+      "content":"Mobile Spacing"
+    },
+    {
+      "type":"number",
+      "id":"spaddingtopmob",
+      "default":44,
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"spaddingbottommob",
+      "default":44,
+      "label":"Padding Bottom"
+    }
+  ],
+  "blocks": [
+    {
+        "type": "faq_grid",
+        "name": "FAQ Item",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "faq_title_sub",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "faq_title_desc",
+            "label": "Description"
+          }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Faq"
+    }
+  ]
+}
+{% endschema %}

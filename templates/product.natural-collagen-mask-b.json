@@ -1,0 +1,787 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "n_productheader_MxxXbF": {
+      "type": "n_productheader",
+      "name": "Product Header",
+      "settings": {
+        "saletext": "🎁 EARLY BLACK FRIDAY VIP ACCESS 🎁 ends in",
+        "bartext": "⏰ Limited Time: Save Up To 40% Off",
+        "logo": "shopify://shop_images/Group_28401.svg"
+      }
+    },
+    "main": {
+      "type": "main-product-bundlelanding",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "okendo_star_rating_kd6L6E": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
+          "settings": {
+            "product": ""
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "okendo_star_rating_kd6L6E",
+        "vendor",
+        "description"
+      ],
+      "settings": {
+        "glic1": "shopify://shop_images/Group_1171275741_6d766534-2832-47b9-bc1f-3669c43c4cb7.svg",
+        "gltxt1": "100% Natural Ingredients",
+        "glic2": "shopify://shop_images/Frame_2227e2e9-a25f-48fb-876f-11f637bca5cd.svg",
+        "gltxt2": "Made with Coconut Water",
+        "glic3": "shopify://shop_images/Vector_6bb1ccbc-06aa-43d2-b24d-c8395dea0ba3.svg",
+        "gltxt3": "Moisturizes  & Repairs",
+        "rvstar": "shopify://shop_images/Container.svg",
+        "rvstarcnt": "(130)",
+        "speciality": "<ul><li>Radiance</li><li>Hydration</li><li>Repair</li></ul>",
+        "aficon1": "shopify://shop_images/fi_3129282.svg",
+        "afttxt1": "30-Day Happiness Guarantee",
+        "aficon2": "shopify://shop_images/fi_685388.svg",
+        "afttxt2": "Free Shipping",
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "buttons": true,
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 16,
+        "padding_bottom": 40
+      }
+    },
+    "n_reviewlogoslider_DGDbqr": {
+      "type": "n_reviewlogoslider",
+      "blocks": {
+        "scroller_zYaCqR": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_23.png"
+          }
+        },
+        "scroller_TWJKjp": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_24.png"
+          }
+        },
+        "scroller_9ALVxR": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_26.png"
+          }
+        },
+        "scroller_nprxMk": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_29.png"
+          }
+        },
+        "scroller_47tpgN": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_32_538b9617-b628-434c-8d15-bd4abfa2af1d.png"
+          }
+        },
+        "scroller_VbLGA3": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_25.png"
+          }
+        },
+        "scroller_4FXb7N": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_28.png"
+          }
+        },
+        "scroller_3bpYEy": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_30_0a6b8a52-a712-477a-894a-b3da16e89f8d.png"
+          }
+        },
+        "scroller_CmMD6K": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_24.png"
+          }
+        },
+        "scroller_4nJqfX": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_26.png"
+          }
+        },
+        "scroller_xPAtBz": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_29.png"
+          }
+        },
+        "scroller_eGjXVa": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_32_538b9617-b628-434c-8d15-bd4abfa2af1d.png"
+          }
+        },
+        "scroller_b64Ezn": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_25.png"
+          }
+        },
+        "scroller_D6FD94": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_28.png"
+          }
+        }
+      },
+      "block_order": [
+        "scroller_zYaCqR",
+        "scroller_TWJKjp",
+        "scroller_9ALVxR",
+        "scroller_nprxMk",
+        "scroller_47tpgN",
+        "scroller_VbLGA3",
+        "scroller_4FXb7N",
+        "scroller_3bpYEy",
+        "scroller_CmMD6K",
+        "scroller_4nJqfX",
+        "scroller_xPAtBz",
+        "scroller_eGjXVa",
+        "scroller_b64Ezn",
+        "scroller_D6FD94"
+      ],
+      "name": "Review Logo Slider",
+      "settings": {
+        "star": "shopify://shop_images/Frame_1707479733.svg",
+        "title": "BEST SELLER",
+        "desc1": "30,000,000+ Capsules Delivered",
+        "desc2": "& AS SEEN ON"
+      }
+    },
+    "n_peoplelove_FVzTea": {
+      "type": "n_peoplelove",
+      "blocks": {
+        "block_ULUcER": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_102.png",
+            "title": "100% Natural Ingredients",
+            "des": "Bio-cellulose wraps your skin perfectly to enhance absorption, lock in moisture, and keep your complexion hydrated for hours."
+          }
+        },
+        "block_TXaUgG": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_100_a6e1b452-d148-4b1c-88fa-fbcfbe137308.png",
+            "title": "5-in-1 Treatment",
+            "des": "Each sheet delivers multi-benefit care, deeply hydrating, brightening dull skin, repairing damage, and firming for a more lifted look."
+          }
+        },
+        "block_Pk33rW": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_100_1.png",
+            "title": "Noticeable & Real Results",
+            "des": "Powered by medical-grade bio-cellulose and pure active ingredients for visibly smoother, healthier, more radiant skin."
+          }
+        }
+      },
+      "block_order": [
+        "block_ULUcER",
+        "block_TXaUgG",
+        "block_Pk33rW"
+      ],
+      "name": "People Love",
+      "settings": {
+        "banner": "shopify://shop_images/New_Project.webp",
+        "title": "<p>Why People Love <strong>Body Restore</strong></p>",
+        "subtitle": "<p>Noticeable and lasting results <strong>without spending $200 </strong>on a Korean facial.</p>"
+      }
+    },
+    "n_steps_BRPAwR": {
+      "type": "n_steps",
+      "blocks": {
+        "block_MAYKRz": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/New_Project_2.webp",
+            "title": "Cleanse your face and unfold the bio-cellulose mask.",
+            "number": "1"
+          }
+        },
+        "block_P9CQVh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/New_Project_1.webp",
+            "title": "Apply and let it work while you follow your routine",
+            "number": "2"
+          }
+        },
+        "block_zzXgVc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/New_Project_da3bee96-ebea-46bd-aa27-4dd1acfe293a.webp",
+            "title": "Peel off to reveal instantly brighter, dewier skin.",
+            "number": "3"
+          }
+        }
+      },
+      "block_order": [
+        "block_MAYKRz",
+        "block_P9CQVh",
+        "block_zzXgVc"
+      ],
+      "name": "Simple Steps",
+      "settings": {
+        "title": "<p>Spa-Like in Just <strong>3 Simple Steps</strong></p>"
+      }
+    },
+    "n_reason_kBTUAB": {
+      "type": "n_reason",
+      "blocks": {
+        "block_mnnxBy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479895.svg",
+            "title": "Get the Glass-Skin Look",
+            "des": "Premium and effective ingredients for actual results."
+          }
+        },
+        "block_JRgDUN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479898.svg",
+            "title": "Portable To Everywhere",
+            "des": "Compact pouches for gym, travel, or home."
+          }
+        },
+        "block_CeL6cH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479897_b7f03e70-9118-4d57-a4a6-27378ae91505.svg",
+            "title": "Made in Korea",
+            "des": "See the instant results of Korean facial traditions without the high price-tag."
+          }
+        },
+        "block_CCAeCR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479899.svg",
+            "title": "Eco-Conscious For You",
+            "des": "Made with natural, clean, eco-friendly ingredients."
+          }
+        },
+        "block_aEMNXp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479897.svg",
+            "title": "Fast Result in Mins",
+            "des": "Spa-like results in just minutes of relaxation."
+          }
+        },
+        "block_LM6QPx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479900.svg",
+            "title": "Trusted by Happy Customers",
+            "des": "Hundreds of verified 5-star reviews and testimonials."
+          }
+        }
+      },
+      "block_order": [
+        "block_mnnxBy",
+        "block_JRgDUN",
+        "block_CeL6cH",
+        "block_CCAeCR",
+        "block_aEMNXp",
+        "block_LM6QPx"
+      ],
+      "name": "Reason",
+      "settings": {
+        "subtitle": "6 Reasons",
+        "title": "<p>You’ll Love To Shower With <strong>Body Restore</strong></p>",
+        "bg": "shopify://shop_images/Mask_group_4f262c6b-d24f-4bd6-82e8-9f21c2ae2df4.webp"
+      }
+    },
+    "n_ingredient_tab_phR6Yk": {
+      "type": "n_ingredient_tab",
+      "blocks": {
+        "grid_mprTp7": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/pouchmockup_hydrate_720_2_aedcaf48-e2a6-4d9c-9cf2-a02271fc11cf.png",
+            "tab-label": "HYDRATE",
+            "circlecolor": "#6cb8b9",
+            "tabcontentbg": "#6cb8b9",
+            "image1": "shopify://shop_images/Asset_10_64eea51e-5b6f-4ac0-9ca7-ba80adcf1e76.png",
+            "image2": "shopify://shop_images/Asset_7_8869670b-8327-4096-8997-d68707297cc2.png",
+            "text": "<p>Water Butylene Glycol Glycerin Sodium Hyaluronate Aloe Barbadensis Leaf Extract Chamomilla Recutita (Matricaria) Flower Extract Centella Asiatica Extract Citrus Grandis (Grapefruit) Seed Extract Bambusa Vulgaris Leaf/Stem Extract Pinus Densiflora Leaf Extract Cucumis Sativus (Cucumber) Fruit Extract Camellia Sinensis Leaf Extract Lavandula Angustifolia (Lavender) Extract Houttuynia Cordata Extract Portulaca Oleracea Extract Calendula Officinalis Flower Extract Panthenol Allantoin Adenosine Dipotassium Glycyrrhizate Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer Caprylyl Glycol Ethylhexylglycerin 1,2-Hexanediol Polysorbate 60 Fragrance Limonene (Allergen) Linalool (Allergen)</p>",
+            "tabcontenttextcolor": "#000000",
+            "tabcontentsbg": "#add4d3"
+          }
+        },
+        "grid_JTmNAj": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/pouchmockup_antiaging__1__720_4.png",
+            "tab-label": "ANTI-AGING",
+            "circlecolor": "#c47985",
+            "tabcontentbg": "#c47985",
+            "image1": "shopify://shop_images/Asset_11_4dd341d1-7bb5-4fc8-9fd8-2f839c8eaebe.png",
+            "image2": "shopify://shop_images/Asset_8_50d7eec8-e590-4d4b-9e5d-366da274cd2e.png",
+            "text": "<p>Water Butylene Glycol Glycerin Hyaluronic Acid Centella Asiatica Extract Malus Domestica Fruit Extract Salicornia Herbacea Extract Chamomilla Recutita (Matricaria) Flower Extract Citrus Grandis (Grapefruit) Seed Extract Bambusa Textilis Stem Extract Pinus Palustris Leaf Extract Citrullus Lanatus (Watermelon) Fruit Extract Betula Alba Bud Extract Corylus Avellana (Hazelnut) Bud Extract Olea Europaea (Olive) Bud Extract Juglans Regia (Walnut) Leaf Extract Arnica Montana Flower Extract Gentiana Lutea Root Extract Achillea Millefolium Extract Artemisia Absinthium Extract Buddleja Davidii Extract Thymus Vulgaris (Thyme) Flower/Leaf Extract Adenosine Propanediol Ethylhexylglycerin Caprylyl Glycol 1,2-Hexanediol Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer Fragrance Limonene (Allergen) Linalool (Allergen)</p>",
+            "tabcontenttextcolor": "#000000",
+            "tabcontentsbg": "#d8c1c2"
+          }
+        },
+        "grid_MyeMrd": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/pouchmockup_brighten_720_2_433deff2-eb24-4bca-95a5-a7a4591cc917.png",
+            "tab-label": "BRIGHTEN",
+            "circlecolor": "#e1bb8e",
+            "tabcontentbg": "#e1bb8e",
+            "image1": "shopify://shop_images/Asset_9_7ab48aa1-7596-4d2e-8a91-cb6951a5a90c.png",
+            "image2": "shopify://shop_images/Asset_6_113196ff-2f5f-4df8-bab8-500106fed643.png",
+            "text": "<p>Water Butylene Glycol Glycerin Niacinamide Citrus Junos Fruit Extract Hippophae Rhamnoides Extract Chamomilla Recutita (Matricaria) Flower Extract Camellia Sinensis Leaf Extract Portulaca Oleracea Extract Scutellaria Baicalensis Root Extract Glycyrrhiza Glabra (Licorice) Root Extract Artemisia Princeps Leaf Extract Sophora Angustifolia Root Extract Morus Alba Bark Extract Pancratium Maritimum Extract Adenosine Allantoin Dipotassium Glycyrrhizate Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer Caprylyl Glycol Ethylhexylglycerin 1,2-Hexanediol Polysorbate 60 Fragrance Citral (Allergen) Limonene (Allergen)</p>",
+            "tabcontenttextcolor": "#000000",
+            "tabcontentsbg": "#efd8bc"
+          }
+        }
+      },
+      "block_order": [
+        "grid_mprTp7",
+        "grid_JTmNAj",
+        "grid_MyeMrd"
+      ],
+      "name": "New Ingredient List Tab",
+      "settings": {
+        "heading": "<p>Ingredients List <strong>Call Out!</strong></p>",
+        "tabtfontsize": 16,
+        "tabtfontsizemob": 14,
+        "tabtfontweight": 400,
+        "tabtcolor": "#0c2331",
+        "bgcolor": "#fff9eb",
+        "gridmaxwidth": 890,
+        "tabcfontsize": 15,
+        "tabcfontsizemob": 14,
+        "tabcfontweight": 400,
+        "padding_top": 50,
+        "padding_bottom": 86,
+        "padding_top_mob": 40,
+        "padding_bottom_mob": 60
+      }
+    },
+    "n_video_text_review_tDxCaj": {
+      "type": "n_video_text_review",
+      "blocks": {
+        "video_XthwWT": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_STORY_millianeire-UGC.mp4"
+          }
+        },
+        "video_F4a3kU": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_STORY_reviewbykathyn-UGC.mp4"
+          }
+        },
+        "video_ngQPER": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_mayloboxx-UGC.mp4"
+          }
+        },
+        "video_qQDM7D": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_alipaolinetti-UGC.mp4"
+          }
+        },
+        "video_qABPjR": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_millianeire-UGC.mp4"
+          }
+        },
+        "video_f6bpUp": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_kalanrush-UGC.mp4"
+          }
+        },
+        "video_UVEqgk": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_STORY_winwithamy-UGC.mp4"
+          }
+        },
+        "video_fJELUi": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_annclarissebell-UGC.mp4"
+          }
+        },
+        "video_eGqCwq": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/TIKTOK_VIDEO_kikkkaprobeauty-UGC.mp4"
+          }
+        },
+        "video_Dwkkwn": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/INSTAGRAM_REELS_komalkariaofficial-UGC.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_XthwWT",
+        "video_F4a3kU",
+        "video_ngQPER",
+        "video_qQDM7D",
+        "video_qABPjR",
+        "video_f6bpUp",
+        "video_UVEqgk",
+        "video_fJELUi",
+        "video_eGqCwq",
+        "video_Dwkkwn"
+      ],
+      "name": "New Review Video Tabs",
+      "settings": {
+        "bg-color": "",
+        "width": 800,
+        "textalignment": "center",
+        "tab1": "Video Reviews",
+        "tab2": "Written Reviews",
+        "tab_color": "rgba(0,0,0,0)",
+        "tab_text_color": "#000000",
+        "active_tab_color": "#fff9eb",
+        "active_tab_text_color": "#000000",
+        "tabfont-size": 16,
+        "tabfont-size-mob": 14,
+        "tabfont-weight": 500,
+        "video-height": 172,
+        "count": 6,
+        "count-mob": 3,
+        "title": "<p>Delivering Real Results and Radiant Skin for <strong>Thousands</strong></p>",
+        "color": "#0c2331",
+        "font-size": 40,
+        "font-size-mob": 34,
+        "font-weight": 700,
+        "space": 10,
+        "space_mob": 16,
+        "content": "<p>and Counting!</p>",
+        "tccolor": "#0c2331",
+        "tcfont-size": 16,
+        "tcfont-size-mob": 16,
+        "tcfont-weight": 400,
+        "tcspace": 24,
+        "tcspace_mob": 30,
+        "top": -20,
+        "right": 1,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 60
+      }
+    },
+    "n_faq_M7hUjR": {
+      "type": "n_faq",
+      "blocks": {
+        "faq_grid_yDNGke": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What is bio-cellulose, and how is it different from regular sheet masks?",
+            "faq_title_desc": "<p>Bio-cellulose is a plant-based, ultra-fine fiber derived from fermented coconut water (or sometimes other natural sources). It forms a second-skin layer that adheres more closely and delivers actives deeper than cotton or paper masks. In your case, this mask uses medical-grade bio-cellulose to boost ingredient absorption, reduce slip, and lock in moisture.</p>"
+          }
+        },
+        "faq_grid_zG4Q9R": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long should I leave the mask on for optimal results?",
+            "faq_title_desc": "<p>The recommended wear time is 3 hours (or up to 8 hours, depending on skin type and comfort). However, if you don’t have that long, you’ll still see benefits in 30–45 minutes — hydration, plumping, and glow. (Users report good results even with shorter wear times.)</p>"
+          }
+        },
+        "faq_grid_CH8WaX": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How often can I safely use the mask?",
+            "faq_title_desc": "<p>You can use it 2–3 times a week as a treatment mask. For more intensive care (e.g. before special events or when skin looks dull), it’s safe to use more frequently for short stints, as the ingredients are clean and non-irritating. Always check how your skin reacts and reduce frequency if any irritation occurs.</p>"
+          }
+        },
+        "faq_grid_aMxt4j": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Is this mask suitable for sensitive or reactive skin?",
+            "faq_title_desc": "<p>Yes — the formula is designed to be gentle, with clean, pronounceable ingredients (like hyaluronic acid, niacinamide, aloe, ceramide precursors). The bio-cellulose material also reduces friction or tugging on skin. Still, if you have known sensitivities (particularly to niacinamide, peptides, etc.), test on a small area first.</p>"
+          }
+        },
+        "faq_grid_9YQRgp": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What results can I realistically expect, and when will I see them?",
+            "faq_title_desc": "<p>You may notice immediate improvements like better hydration, skin plumpness, and glow right after removing the mask. Over repeated use (a few weeks), you should see more even tone, smaller-looking pores, firmer texture, and that “glass skin” effect (a luminous, translucent finish).</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_grid_yDNGke",
+        "faq_grid_zG4Q9R",
+        "faq_grid_CH8WaX",
+        "faq_grid_aMxt4j",
+        "faq_grid_9YQRgp"
+      ],
+      "name": "New Faq",
+      "settings": {
+        "enablesvg": false,
+        "faq_bg": "",
+        "topspacing": 150,
+        "topspacingmob": 20,
+        "showbordertop": false,
+        "showborderbottom": false,
+        "faq_title": "<p>Frequently Asked <strong>Questions</strong></p>",
+        "tfontsize": 44,
+        "tfontsizemob": 34,
+        "tfontweight": 700,
+        "textalignment": "center",
+        "faq_title_color": "#0c2331",
+        "tpaddingbottom": 0,
+        "tpaddingbottommob": 48,
+        "ftfontsize": 18,
+        "ftfontsizemob": 16,
+        "ftfontweight": 700,
+        "ftcolor": "#000000",
+        "fcfontsize": 16,
+        "fcfontsizemob": 14,
+        "fccfontweight": 400,
+        "fccolor": "#000000",
+        "spaddingtop": 0,
+        "spaddingbottom": 0,
+        "spaddingtopmob": 0,
+        "spaddingbottommob": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "accent-1",
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "n_save_4neDj3": {
+      "type": "n_save",
+      "blocks": {
+        "scroller_7abniX": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_Rc99iV": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_BFpVdf": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_WDQaWr": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_YJKAa4": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_WBqFQF": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_RhBMmT": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_pLCHLg": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_fJBd3y": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_gAMGQ9": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_MCRfzC": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_hQMbFy": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_AaiaRP": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_HdF7KB": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_yAmkEp": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_bmxicg": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_AxQdeE": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_bJVHaV": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_MkwXVg": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_eg9mkr": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        }
+      },
+      "block_order": [
+        "scroller_7abniX",
+        "scroller_Rc99iV",
+        "scroller_BFpVdf",
+        "scroller_WDQaWr",
+        "scroller_YJKAa4",
+        "scroller_WBqFQF",
+        "scroller_RhBMmT",
+        "scroller_pLCHLg",
+        "scroller_fJBd3y",
+        "scroller_gAMGQ9",
+        "scroller_MCRfzC",
+        "scroller_hQMbFy",
+        "scroller_AaiaRP",
+        "scroller_HdF7KB",
+        "scroller_yAmkEp",
+        "scroller_bmxicg",
+        "scroller_AxQdeE",
+        "scroller_bJVHaV",
+        "scroller_MkwXVg",
+        "scroller_eg9mkr"
+      ],
+      "name": "Save Section",
+      "settings": {
+        "rvwimg": "shopify://shop_images/Frame_1707479828_1.webp",
+        "mainimg": "shopify://shop_images/image_529.png",
+        "title": "<p>BUNDLE NATURAL COLLAGEN MASKS</p>",
+        "des": "<p>The more you bundle, the more your skin glows.</p>",
+        "btnurl": "#",
+        "btntext": "Build your bundle",
+        "aicon1": "shopify://shop_images/fi_3129282.svg",
+        "atext1": "30-Day Happiness Guarantee",
+        "aicon2": "shopify://shop_images/fi_685388.svg",
+        "atext2": "Free Shipping"
+      }
+    }
+  },
+  "order": [
+    "n_productheader_MxxXbF",
+    "main",
+    "n_reviewlogoslider_DGDbqr",
+    "n_peoplelove_FVzTea",
+    "n_steps_BRPAwR",
+    "n_reason_kBTUAB",
+    "n_ingredient_tab_phR6Yk",
+    "n_video_text_review_tDxCaj",
+    "n_faq_M7hUjR",
+    "related-products",
+    "n_save_4neDj3"
+  ]
+}

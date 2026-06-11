@@ -1,0 +1,40 @@
+<div class="mbr_rdhdr_top">
+  <p>{{ section.settings.saletext }}</p>
+  <div class="announcement-bar-timer countdown-{{ block.id }}">
+    <div class="countdown-today"></div>
+</div>
+</div>
+<div class="mbr_rdhdr_md">
+  <p>{{ section.settings.bartext }}</p>
+</div>
+<div class="mbr_rdhdr_btm">
+  <img src="{{ section.settings.logo | img_url: '1000x' }}" alt="" width="auto" height="auto">
+</div>
+
+{% schema %}
+  {
+    "name": "Product Header",
+    "settings": [
+      {
+       "type": "text",
+       "id": "saletext",
+       "label": "Sale Text"
+      },
+      {
+       "type": "text",
+       "id": "bartext",
+       "label": "Bar Text"
+      },
+      {
+       "type": "image_picker",
+       "id": "logo",
+       "label": "Logo"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Header"
+      }
+    ]
+  }
+{% endschema %}

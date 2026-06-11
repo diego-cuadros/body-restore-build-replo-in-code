@@ -1,0 +1,112 @@
+<div class="featured-gift-container block--{{ count }}">
+  <input
+    type="checkbox"
+    id="product-bundle-product-{{ product.id }}"
+    value="{{ product.value }}"
+    class="product-bundle-product-checkbox"
+    data-varid="{{ product.selected_or_first_available_variant.id }}"
+    data-pname="{{ product.title }}"
+    data-img="{{ product.featured_image }}"
+    data-price="{{ product.price }}"
+    hidden
+    {% if count == 1 %}
+      checked
+    {% endif %}
+  >
+
+  <div class="featured-product-container">
+    {% if product.metafields.custom.product_badge %}
+      <div class="badge-price">
+        <span>{{ product.metafields.custom.product_badge }}</span>
+      </div>
+    {% endif %}
+    <div class="image-container">
+      <div class="image">
+        <img src="{{ product.featured_image | img_url: 'master' }}">
+      </div>
+    </div>
+    <div class="title-container">
+      <div class="name">{{ product.title }}</div>
+      {% if product.variants.first.inventory_quantity <= 800 %}
+        <div class="low-stock">
+          <span class="text">Low Stock -</span>
+          <span class="stock-count">{{ product.variants.first.inventory_quantity }}</span><span>left</span>
+        </div>
+      {% endif %}
+    </div>
+    <div class="featured-btn-container">
+      {% if product.variants.first.inventory_quantity <= 800 %}
+        <div class="tag-badge"><p>LIMITED RELEASE</p></div>
+      {% else %}
+        {% if product.metafields.custom.product_badge %}
+          <div class="tag-badge">
+            <p>{{ product.metafields.custom.product_badge }}</p>
+          </div>
+        {% endif %}
+      {% endif %}
+      <div class="btn-container">
+        <label
+          class="custom-bundle-products-details"
+          for="product-bundle-product-{{ product.id }}"
+        >
+          <div
+            class="button button--full-width button--primary addbuttonclick"
+            {% if count == 1 %}
+              style="display:none;"
+            {% endif %}
+          >
+            <span>ADD</span>
+            <span class="icon">
+              {% render 'plus-arrow' %}
+            </span>
+          </div>
+        </label>
+        <div
+          class="quantity-container"
+          {% if count == 1 %}
+            style="display:block;"
+          {% endif %}
+        >
+          <quantity-input-bundle
+            class="quantity"
+            data-url="{{ product.url }}"
+            data-section="{{ section.id }}"
+          >
+            <button
+              class="quantity__button quantity__button-minus no-js-hidden"
+              name="minus"
+              type="button"
+            >
+              <span class="visually-hidden">
+                {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+              </span>
+              {% render 'icon-minus' %}
+            </button>
+            <input
+              class="quantity__input"
+              type="number"
+              name="quantity"
+              id="Quantity-{{ section.id }}"
+              data-cart-quantity="{{ cart_qty }}"
+              data-min="0"
+              min="0"
+              {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+              {% endif %}
+              step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+              value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+              form="{{ product_form_id }}"
+            >
+            <button class="quantity__button quantity__button-plus no-js-hidden" name="plus" type="button">
+              <span class="visually-hidden">
+                {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+              </span>
+              {% render 'icon-plus' %}
+            </button>
+          </quantity-input-bundle>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

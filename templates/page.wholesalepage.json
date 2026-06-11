@@ -1,0 +1,199 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "replo_top_section_for_v2_8GrCLL": {
+      "type": "replo-top-section-for-v2",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_replo_product_h4mRP9": {
+      "type": "custom-replo-product",
+      "blocks": {
+        "text_8rJhgV": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_JjDMWf": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "rating_kXPxQp": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price_ntaWC3": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_EHjbFG": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector_A7ifyV": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_wBgpDp": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "icon_with_text_f3HYBR": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "none",
+            "image_1": "shopify://shop_images/Group_28361_957a3f71-9909-43eb-a1c3-2435e64befae.svg",
+            "heading_1": "<strong>Free Shipping On Orders $49+</strong>",
+            "icon_2": "none",
+            "image_2": "shopify://shop_images/Group_28384_e65a00c7-957c-40e0-86be-f2280246713d.svg",
+            "heading_2": "<strong>Free 30 Day Scent Exchange</strong>",
+            "icon_3": "none",
+            "image_3": "shopify://shop_images/Frame_a8d793e8-f75c-4888-bc0a-0d04e3393935.svg",
+            "heading_3": "<strong>100% Happiness Guarantee</strong>"
+          }
+        },
+        "collapsible_tab_DTafeC": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Products Ingredients",
+            "icon": "none",
+            "content": "<p>{{ block.settings.page.metafields.custom.ingredients.value }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_LNf999": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Free Shipping & Returns",
+            "icon": "none",
+            "content": "<p>We proudly offer a <strong>30-day money-back guarantee</strong> if you are not fully satisfied with your product for any reason. </p><p>If 30 days have gone by since your purchase, unfortunately we cannot offer you a refund or exchange. <br/><br/>However, email us at help@mybodyrestore.com and we would love to make things right for you!</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_8rJhgV",
+        "title_JjDMWf",
+        "rating_kXPxQp",
+        "price_ntaWC3",
+        "variant_picker_EHjbFG",
+        "quantity_selector_A7ifyV",
+        "buy_buttons_wBgpDp",
+        "icon_with_text_f3HYBR",
+        "collapsible_tab_DTafeC",
+        "collapsible_tab_LNf999"
+      ],
+      "disabled": true,
+      "settings": {
+        "product": "buy-1-get-1-gift-box",
+        "color_scheme": "",
+        "secondary_background": false,
+        "gallery_layout": "stacked",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "replo_bottom_section_CAzHFD": {
+      "type": "replo-bottom-section",
+      "disabled": true,
+      "settings": {}
+    },
+    "wholesale_9Le4YN": {
+      "type": "Wholesale",
+      "settings": {
+        "hero_title": "Wholesale Opportunities with Body Restore Shower Steamers",
+        "hero_img": "shopify://shop_images/FY0A3111.jpg"
+      }
+    },
+    "partner_with_us_7zWp37": {
+      "type": "partner-with-us",
+      "blocks": {
+        "unique_gQ4gtF": {
+          "type": "Unique",
+          "settings": {
+            "partner_sub_img": "shopify://shop_images/like-Icon.png",
+            "partner_sub_title": "A Unique Addition to Your Lineup:",
+            "partner_sub_content": "Stand out in the health and wellness market with our innovative Shower Steamers."
+          }
+        },
+        "unique_rgpwi7": {
+          "type": "Unique",
+          "settings": {
+            "partner_sub_img": "shopify://shop_images/success-Icon.png",
+            "partner_sub_title": "A Unique Addition to Your Lineup:",
+            "partner_sub_content": "Stand out in the health and wellness market with our innovative Shower Steamers."
+          }
+        },
+        "unique_xzaxw7": {
+          "type": "Unique",
+          "settings": {
+            "partner_sub_img": "shopify://shop_images/eco-conscious-icon.png",
+            "partner_sub_title": "A Unique Addition to Your Lineup:",
+            "partner_sub_content": "Stand out in the health and wellness market with our innovative Shower Steamers."
+          }
+        }
+      },
+      "block_order": [
+        "unique_gQ4gtF",
+        "unique_rgpwi7",
+        "unique_xzaxw7"
+      ],
+      "settings": {
+        "partner_img": "shopify://shop_images/Untitled_design_1_0165e459-9def-4c7f-87d1-f77fd5f1276b.png",
+        "partner_title": "Why Partner with Us?"
+      }
+    },
+    "grow_together_Y7Nf4Y": {
+      "type": "grow-together",
+      "settings": {
+        "grow_title": "Let’s Grow Together!",
+        "grow_content": "Let's embark on this journey together and witness the transformative power of Body Restore Shower Steamers in          enhancing our customers' well-being.",
+        "grow_img": "<svg width=\"22\" height=\"18\" viewbox=\"0 0 22 18\" xmlns=\"http://www.w3.org/2000/svg\">\n            <path d=\"M4.45272 0.809326C2.28312 0.809326 0.585004 1.35759 0.28527 3.44291C0.18927 4.11065 0.400458 4.76772 0.885791 5.24239C1.12686 5.47812 1.3818 5.75865 1.71886 6.04239C2.56473 6.75598 3.64313 7.55811 4.6522 8.27597C7.42873 10.2493 9.62073 11.476 10.9189 11.476C12.217 11.476 14.409 10.2493 17.1855 8.27597C18.1957 7.55811 19.2741 6.75492 20.1189 6.04239C20.4559 5.75865 20.7109 5.47919 20.9519 5.24239C21.4373 4.76772 21.6485 4.11065 21.5525 3.44291C21.2527 1.35759 19.5546 0.809326 17.385 0.809326H4.45272ZM0.252197 7.37572V13.6093C0.252197 15.9656 2.1626 17.876 4.51886 17.876H17.3189C19.6751 17.876 21.5855 15.9656 21.5855 13.6093V7.37572C20.7109 8.20665 19.7338 9.06425 18.3525 10.0424C15.3274 12.1842 12.6106 13.6093 10.9189 13.6093C9.22713 13.6093 6.51034 12.1842 3.48527 10.0424C2.10287 9.06425 1.12686 8.20665 0.252197 7.37572Z\"></path>\n          </svg>",
+        "grow_btn_link": "https://mybodyrestore.com/pages/contact-us",
+        "grow_btn_text": "EMAIL US"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "replo_top_section_for_v2_8GrCLL",
+    "custom_replo_product_h4mRP9",
+    "replo_bottom_section_CAzHFD",
+    "wholesale_9Le4YN",
+    "partner_with_us_7zWp37",
+    "grow_together_Y7Nf4Y"
+  ]
+}

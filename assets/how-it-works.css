@@ -1,0 +1,44 @@
+.how-it-works__title .how-it-works-wrapper-title {
+  margin: 0 0 0.5rem;
+  text-align: center;
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight-bold);
+}
+
+.how-it-works__title .how-it-works__description {
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight-medium);
+  text-align: center;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.step-media {
+  border-radius: 8px;
+}
+.step-wrapper {
+  padding: 1.8rem 1.8rem 2.4rem;
+  background: var(--background-color);
+  border-radius: 8px;
+}
+.step-content .step-title {
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight-bold);
+  font-size: 24px;
+  line-height: 26px;
+  text-align: center;
+  color: var(--title-color);
+  margin: 2.4rem 0 0.8rem;
+}
+.step-content .step-text {
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight-medium);
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--text-color);
+}

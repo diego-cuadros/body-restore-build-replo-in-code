@@ -1,0 +1,883 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner_landing_Em8LaE": {
+      "type": "Banner-landing",
+      "blocks": {
+        "image_xfMFXK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_05b04800-08a7-4a8d-9f02-d5acddcbb8d3.svg",
+            "width": 315,
+            "mobile-width": 220
+          },
+          "blocks": {}
+        },
+        "heading_hPJLpK": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>UP TO 38% OFF<br/>SITEWIDE</p>",
+            "color": "",
+            "font_size": 56,
+            "font_weight": 800,
+            "mobile_color": "",
+            "mobile_font_size": 40,
+            "margin_bottom": 26,
+            "margin_margin_bottom": 10
+          },
+          "blocks": {}
+        },
+        "content_ED3GE9": {
+          "type": "content",
+          "settings": {
+            "content": "<p>Create Cafe-quality Coffee at Home</p>",
+            "color": "",
+            "font_size": 18,
+            "font_weight": 400,
+            "mobile_color": "",
+            "mobile_font_size": 16,
+            "margin_bottom": 32,
+            "margin_margin_bottom": 10
+          },
+          "blocks": {}
+        },
+        "button_container_eq3BEY": {
+          "type": "button-container",
+          "settings": {
+            "seperator": false,
+            "options": "single"
+          },
+          "blocks": {
+            "button_Twznf3": {
+              "type": "button",
+              "settings": {
+                "button": "Shop-Concentrates",
+                "link": "",
+                "font_size": 16,
+                "font_weight": 700,
+                "bg_color": "#ffcf63",
+                "color": "#000000",
+                "hbg_color": "",
+                "hcolor": "",
+                "mobile_font_size": 16,
+                "mobile_bg_color": "#ffcf63",
+                "mobile_color": "#000000",
+                "mobile_hbg_color": "",
+                "mobile_hcolor": "",
+                "margin_bottom": 20,
+                "margin_margin_bottom": 10
+              },
+              "blocks": {}
+            },
+            "button_jdHhUp": {
+              "type": "button",
+              "settings": {
+                "button": "Shop Protein Coffee",
+                "link": "",
+                "font_size": 16,
+                "font_weight": 700,
+                "bg_color": "#3e358c",
+                "color": "#ffffff",
+                "hbg_color": "",
+                "hcolor": "",
+                "mobile_font_size": 16,
+                "mobile_bg_color": "#3e358c",
+                "mobile_color": "#ffffff",
+                "mobile_hbg_color": "",
+                "mobile_hcolor": "",
+                "margin_bottom": 20,
+                "margin_margin_bottom": 10
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "button_Twznf3",
+            "button_jdHhUp"
+          ]
+        },
+        "button_container_dThrwh": {
+          "type": "button-container",
+          "settings": {
+            "seperator": true,
+            "options": "double"
+          },
+          "blocks": {
+            "icon_with_content_KDecDm": {
+              "type": "icon_with_content",
+              "settings": {
+                "image": "shopify://shop_images/Frameglass.svg",
+                "content": "<p><strong>100+ Million </strong>Tasty<br/>Coffees Made</p>"
+              },
+              "blocks": {}
+            },
+            "seperator_Bey3hh": {
+              "type": "seperator",
+              "settings": {},
+              "blocks": {}
+            },
+            "icon_with_content_NMkrye": {
+              "type": "icon_with_content",
+              "settings": {
+                "image": "shopify://shop_images/Framethumbs.svg",
+                "content": "<p><strong>30-Day </strong>Money-Back<br/>Guarantee</p>"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "icon_with_content_KDecDm",
+            "seperator_Bey3hh",
+            "icon_with_content_NMkrye"
+          ]
+        }
+      },
+      "block_order": [
+        "image_xfMFXK",
+        "heading_hPJLpK",
+        "content_ED3GE9",
+        "button_container_eq3BEY",
+        "button_container_dThrwh"
+      ],
+      "disabled": true,
+      "settings": {
+        "bg-color": "#f4efe7",
+        "content-width": 600,
+        "image": "shopify://shop_images/spring-desktop_kbqek0.jpg",
+        "image_mob": "shopify://shop_images/spring-mobile_1_i6cyip.jpg",
+        "opacity": 0,
+        "opacity-mob": 20,
+        "image_height": "small",
+        "mobile_image_height": "mobile_x-large",
+        "position": "center",
+        "mobile_position": "overlay",
+        "imageheight": 56,
+        "content_alignment": "middle-left",
+        "mobile_content_alignment": "mobile_bottom-left"
+      }
+    },
+    "richtext_GV3wMi": {
+      "type": "richtext",
+      "blocks": {
+        "title_yjRwTE": {
+          "type": "title",
+          "settings": {
+            "heading": "10 Reasons New Moms Say These Shower Steamers Are Their Postpartum Lifesaver",
+            "color": "#0c2331",
+            "size": 44,
+            "mobile_size": 32,
+            "weight": 700,
+            "space": 20,
+            "space_mob": 20
+          }
+        },
+        "author_profile_JC3Vfm": {
+          "type": "author-profile",
+          "settings": {
+            "image": "shopify://shop_images/Written-By-Headshot.jpg",
+            "text": "<p>By <strong>Jenna S.<br/></strong>Last Updated July 21, 2025</p>",
+            "color": "#0c2331",
+            "size": 13,
+            "mobile_size": 12,
+            "weight": 500,
+            "space": 20,
+            "space_mob": 20
+          }
+        },
+        "content_jYrYef": {
+          "type": "content",
+          "settings": {
+            "width": 1000,
+            "content": "<p><strong>Summary: </strong>Being a new mom is beautiful but exhausting. Sleepless nights, constant feedings, and zero time for yourself. That’s why thousands of moms are turning to Body Restore Shower Steamers for a <strong>10-minute reset</strong>. With 100M+ sold, they’re the go-to stress relief for postpartum chaos.</p>",
+            "color": "#0c2331",
+            "size": 18,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 1,
+            "space_mob": 1
+          }
+        },
+        "line_w7hAMg": {
+          "type": "line",
+          "settings": {
+            "width": 768,
+            "color": "#f1f1f1",
+            "space": 1,
+            "space_mob": 1
+          }
+        }
+      },
+      "block_order": [
+        "title_yjRwTE",
+        "author_profile_JC3Vfm",
+        "content_jYrYef",
+        "line_w7hAMg"
+      ],
+      "settings": {
+        "bg-color": "#ffffff",
+        "svgcolor": "rgba(0,0,0,0)",
+        "width": 868,
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    },
+    "media_with_content_ls_UCMBfb": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_WRHh3D": {
+          "type": "heading",
+          "settings": {
+            "heading": "1. Turn Your Shower Into the Only Peaceful Part of Your Day",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_9mmyrg": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>You might not have time for long baths, but a shower steamer can turn even a 5-minute shower into a calming escape. </p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_WRHh3D",
+        "content_9mmyrg"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/image_84.png",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "media_with_content_ls_rbqEG4": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_WVH9yT": {
+          "type": "heading",
+          "settings": {
+            "heading": "2. You can melt away stress without changing your schedule",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_PEmtBt": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>The soothing scents of lavender or eucalyptus activates your parasympathetic nervous system, which helps <strong>lower cortisol levels</strong> and shifts your body out of “stress mode” into a state of calm.</p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_WVH9yT",
+        "content_PEmtBt"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/Step_3.gif",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "media_with_content_ls_LqMzWp": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_wzHzpm": {
+          "type": "heading",
+          "settings": {
+            "heading": "3. Say Goodbye to the Postpartum Blues—Without a Pill",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_Aaiyhw": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>The soothing scent of eucalyptus or lavender helps you decompress, even when the baby’s crying and the laundry’s piling up. <strong>Aromatherapy</strong> is a gentle way to boost your spirits—no meds, just steam and scent doing their magic.</p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_wzHzpm",
+        "content_Aaiyhw"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/1200px_x_628px_Close_up_of_Rowan_Smelling_Shower_steamer_1.png",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "media_with_content_ls_QYmerf": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_6m4fXM": {
+          "type": "heading",
+          "settings": {
+            "heading": "4. You Can Fall Asleep Easier",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_aF4Nix": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>Lavender shower steamers help you sleep easier by calming your nervous system, lowering cortisol levels, and signaling to your brain that it’s time to wind down, all through the power of soothing aromatherapy in your nightly shower.</p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_6m4fXM",
+        "content_aF4Nix"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/sleep_11231a26-2e7c-48d2-835d-218f5c8a027e.png",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "media_with_content_ls_Q9CUjf": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_9N9abx": {
+          "type": "heading",
+          "settings": {
+            "heading": "5. You Can Boost Your Energy Naturally",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_HhNVgt": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>Citrus scents like orange and lemon naturally boost your energy by stimulating the brain’s alertness center, reducing fatigue, and triggering feel-good neurotransmitters that help you feel more awake, focused, and refreshed.</p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_9N9abx",
+        "content_HhNVgt"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/Step_4.gif",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "media_with_content_ls_nWXPrR": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_YgETKV": {
+          "type": "heading",
+          "settings": {
+            "heading": "6. You Can Breathe Better, Instantly",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_7MEQgq": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>Eucalyptus and mint work together to open up your airways by relaxing nasal passages and thinning mucus, so you can breathe easier, relieve congestion, and feel instantly refreshed with every inhale.</p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_YgETKV",
+        "content_7MEQgq"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/Holding_shower_puck_2.heic",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "media_with_content_ls_qmAaYx": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_9A8gHE": {
+          "type": "heading",
+          "settings": {
+            "heading": "7. You Can Enjoy the Benefits of Essential Oils—Without the Mess",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_JADtqF": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>Shower steamers are the easiest self-care ritual. Just place one on the shower floor and let the steam do the work. No soaking, no waiting, no cleanup. Just instant relief, even on your busiest days.</p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_9A8gHE",
+        "content_JADtqF"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/Step_2.gif",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "media_with_content_ls_GaQwkX": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_JUcMDe": {
+          "type": "heading",
+          "settings": {
+            "heading": "8. You Can Gift Relief to a Friend Who Gets It",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_Yn6Vfz": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>Body restore steamers are small, portable, and travel-friendly. Toss a few in your bag, and every hotel shower, Airbnb stay, or weekend getaway becomes your personal spa. <strong>Self-care, anywhere.</strong></p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_JUcMDe",
+        "content_Yn6Vfz"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/br_image2.png",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "media_with_content_ls_F4VfQA": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_ydyMbJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "9. You can relax knowing every steamer is skin-safe and drain-friendly",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_LRagjg": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>Harsh chemicals don’t belong in your shower—or down your drain.<br/>Body restore uses <strong>clean, skin-safe ingredients</strong> that dissolve completely, leaving nothing behind but calming scents.<br/>Good for your body, your pipes, and your planet.</p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_ydyMbJ",
+        "content_LRagjg"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/image_83.png",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "media_with_content_ls_JYBQ7x": {
+      "type": "media-with-content-ls",
+      "blocks": {
+        "heading_FJhV78": {
+          "type": "heading",
+          "settings": {
+            "heading": "10. It comes with a 100% Money Back Guarantee",
+            "color": "#0c2331",
+            "size": 28,
+            "mobile_size": 28,
+            "weight": 700,
+            "space": 15,
+            "space_mob": 20
+          }
+        },
+        "content_FCn4nL": {
+          "type": "content",
+          "settings": {
+            "align": "start",
+            "alignmob": "start",
+            "content": "<p>Body Restore is the self-care upgrade moms are raving about, with <strong>over 100 million </strong>showers transformed and thousands of glowing reviews. Not satisfied? We’ll refund you—no questions asked.</p>",
+            "color": "#0c2331",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "heading_FJhV78",
+        "content_FCn4nL"
+      ],
+      "settings": {
+        "background": "#ffffff",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/dance.png",
+        "align": "start",
+        "alignmob": "start",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 20
+      }
+    },
+    "custom_featured_bundle_9NeKh3": {
+      "type": "custom-featured-bundle",
+      "blocks": {
+        "gift_text_hwaxfD": {
+          "type": "gift-text",
+          "settings": {
+            "image": "shopify://shop_images/6724fdda94d57f82bf0c2f9a_bf-gift-icon.svg",
+            "text": "FREE SHIPPING WITH YOUR ORDER",
+            "color": "#0c2331",
+            "size": 12,
+            "mobile_size": 12,
+            "weight": 700,
+            "space": 10,
+            "space_mob": 10
+          }
+        },
+        "heading_fgH6pt": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p><em>UP TO 40% OFF</em> FOR A LIMITED TIME ONLY!</p>",
+            "color": "#0c2331",
+            "size": 26,
+            "mobile_size": 26,
+            "weight": 900,
+            "space": 10,
+            "space_mob": 10
+          }
+        },
+        "content_RCiW9p": {
+          "type": "content",
+          "settings": {
+            "align": "center",
+            "alignmob": "center",
+            "content": "<p>This limited-time deal is in high demand and stock keeps selling out.</p>",
+            "color": "#0c2331",
+            "size": 12,
+            "mobile_size": 12,
+            "weight": 500,
+            "space": 15,
+            "space_mob": 15
+          }
+        },
+        "button_rYENFp": {
+          "type": "button",
+          "settings": {
+            "bg-color": "#fbbf24",
+            "color": "#ffffff",
+            "button": "GET 40% OFF",
+            "url": "shopify://pages/bundle-summer-sales",
+            "size": 16,
+            "mobile_size": 16,
+            "weight": 500,
+            "space": 8,
+            "space_mob": 8
+          }
+        },
+        "countdown_gDmrWJ": {
+          "type": "countdown",
+          "settings": {
+            "text": "<p>DEAL ENDING IN:</p>",
+            "color": "#0c2331",
+            "size": 12,
+            "mobile_size": 12,
+            "weight": 800,
+            "show-timer": true,
+            "count-color": "#ff0000",
+            "space": 10,
+            "space_mob": 10
+          }
+        },
+        "text_with_background_EtRjAk": {
+          "type": "text-with-background",
+          "settings": {
+            "bg-color": "#fff6ee",
+            "border-color": "#ffedd7",
+            "text1": "<p>Sell-Out Risk:<em><strong>High</strong></em></p>",
+            "text2": "<p><strong>FREE </strong>shipping</p>",
+            "color": "#0c2331",
+            "size": 10,
+            "mobile_size": 10,
+            "weight": 600,
+            "space": 10,
+            "space_mob": 10
+          }
+        },
+        "content_3iYNNC": {
+          "type": "content",
+          "settings": {
+            "align": "center",
+            "alignmob": "center",
+            "content": "<p>Try it today with a 30-Day Money Back Guarantee!</p>",
+            "color": "#0c2331",
+            "size": 12,
+            "mobile_size": 12,
+            "weight": 500,
+            "space": 0,
+            "space_mob": 0
+          }
+        },
+        "sticky_button_DCqrQ8": {
+          "type": "sticky-button",
+          "settings": {
+            "bg-color": "#fbbf24",
+            "color": "#ffffff",
+            "button": "GET UP TO 40% OFF",
+            "url": "#button-scroll-section",
+            "size": 14,
+            "mobile_size": 14,
+            "weight": 800,
+            "text": "Verified Lowest Price Ever",
+            "tcolor": "#2abb48",
+            "tsize": 12,
+            "tmobile_size": 13,
+            "tweight": 700
+          }
+        }
+      },
+      "block_order": [
+        "gift_text_hwaxfD",
+        "heading_fgH6pt",
+        "content_RCiW9p",
+        "button_rYENFp",
+        "countdown_gDmrWJ",
+        "text_with_background_EtRjAk",
+        "content_3iYNNC",
+        "sticky_button_DCqrQ8"
+      ],
+      "settings": {
+        "uniqueid": "button-scroll-section",
+        "background": "#f8f9fa",
+        "content-bg-color": "#ffffff",
+        "em-color": "#ff0000",
+        "width": 868,
+        "content_position": "media_first",
+        "media_type": "image",
+        "image": "shopify://shop_images/fa17c0092fb388ddcc0771f0b7989e8f0599621e.png",
+        "video_url": "shopify://files/videos/New Web Video V2.mp4",
+        "align": "center",
+        "alignmob": "center",
+        "text": "<p>☀️SUMMER SALES☀️</p>",
+        "badge-bg-color": "#58bbec",
+        "color": "#f8f9fa",
+        "size": 12,
+        "mobile_size": 12,
+        "weight": 700,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "mobile_padding_top": 40,
+        "mobile_padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "banner_landing_Em8LaE",
+    "richtext_GV3wMi",
+    "media_with_content_ls_UCMBfb",
+    "media_with_content_ls_rbqEG4",
+    "media_with_content_ls_LqMzWp",
+    "media_with_content_ls_QYmerf",
+    "media_with_content_ls_Q9CUjf",
+    "media_with_content_ls_nWXPrR",
+    "media_with_content_ls_qmAaYx",
+    "media_with_content_ls_GaQwkX",
+    "media_with_content_ls_F4VfQA",
+    "media_with_content_ls_JYBQ7x",
+    "custom_featured_bundle_9NeKh3"
+  ]
+}

@@ -1,0 +1,540 @@
+{% style %}
+  .table--{{ section.id }} .main-container {width:100%;}
+  .table--{{ section.id }} .main-container p {margin:0px;}
+  .table--{{ section.id }} .title {margin-top:0px; letter-spacing:0;line-height:1.3;}
+  .table--{{ section.id }} .content {letter-spacing:0;line-height:1.5;}
+  .table--{{ section.id }} .content p{margin:0px !important;}
+  .table--{{ section.id }} .title-container {display:flex;flex-direction:column;align-items:{{section.settings.textalignment}}; text-align:{{section.settings.textalignment}};max-width:{{section.settings.width}}px;width:100%;margin:auto;}
+  .table--{{ section.id }} .main-video-container {display:grid;grid-template-columns:repeat({{section.settings.count}} , 1fr);gap:16px;}
+  .table--{{ section.id }} .main-video-container .video-item .media-container {width:100%;border-radius:20px;overflow:hidden;position:relative;cursor:pointer;}
+  .table--{{ section.id }} .main-video-container .video-item .media-container .media {width:100%;padding-top:{{ section.settings.video-height }}%;position:relative;cursor:pointer;}
+  .table--{{ section.id }} .main-video-container .video-item .media-container .media video,
+  .table--{{ section.id }} .main-video-container .video-item .media-container .media img {width:100%;height:100%;position:absolute;top:0;right:0;bottom:0;left:0;object-fit:cover;}
+  .table--{{ section.id }} .main-video-container .video-item .media-container .media .play-btn {position:absolute;top:0;bottom:0;right:0;left:0;display:flex;flex-direction:row;align-items:center;justify-content:center;}
+  .table--{{ section.id }} .main-video-container .video-item .media-container .media .play-btn .icon{position:relative;width:45px;height:45px;border-radius:50%;border:2px solid #ffffff;display:flex;flex-direction:row;align-items:center;justify-content:center;}
+  .table--{{ section.id }} .main-video-container .video-item .media-container .media .play-btn .icon svg {width:13px;color:#FFFFFF;}
+  .table--{{ section.id }} .main-popup-container {position:fixed;top:0;bottom:0;right:0;left:0;width:100%;height:100%;z-index:99;display:none;}
+  .table--{{ section.id }} .main-popup-container .popup-container {position:relative;width:100%;height:100%;display:flex;flex-direction:row;align-items:center;justify-content:center; -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); background-color: #ffffff6b;}
+  .table--{{ section.id }} .main-popup-container .popup-container .video-container {position:relative;max-width:360px;width:100%;border-radius:6px;overflow:hidden; }
+  .table--{{ section.id }} .main-popup-container .popup-container .video-container .video{width:100%; height:100%;display:flex;}
+  .table--{{ section.id }} .main-popup-container .popup-container .video-container video{ width:100%;height:100%; }
+  .table--{{ section.id }} .main-popup-container .popup-container .cross-popup-icon {position:absolute;z-index:11;cursor:pointer;top:20px;right:20px;height:40px;width:40px;padding:4px;display:flex;flex-direction:row;align-items:center;justify-content:center;border-radius:100px;background-color:#FFFFFF;}
+  .table--{{ section.id }} .main-popup-container .popup-container .cross-popup-icon svg {width:20px;}
+  .table--{{ section.id }} .main-popup-container .background-cross {position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-index:5;background:transparent;display:block;}
+  .table--{{ section.id }} .tabs-container {width:100%;}
+  .table--{{ section.id }} .tabs-container .tab-block {display:flex;flex-direction:row;align-items:center;justify-content:center;}
+  .table--{{ section.id }} .tabs-container .tab-block .tab-items { border:1px solid transparent;border-bottom:none; color: {{section.settings.tab_text_color}}; text-align: center; cursor: pointer; background-color: {{section.settings.tab_color}};padding: 16px 24px; font-size: 16px; font-weight: 500; transition: background-color .2s;border-radius:8px 8px 0px 0px;}
+  .table--{{ section.id }} .tabs-container .tab-block .tab-items .text{letter-spacing:0.6px;line-height:1.2;}
+  .table--{{ section.id }} .tabs-container .tab-block .tab-items.active {background-color:{{section.settings.active_tab_color}}; color: {{section.settings.active_tab_text_color}}; border:1px solid #000000;border-bottom:none;}
+  .table--{{ section.id }} .widget-container {display:none;}
+  .table--{{ section.id }} .custom-main-review-video{position:absolute;max-width:212px;width:100%;inset:auto {{section.settings.right}}% {{section.settings.top}}% auto;}
+  .table--{{ section.id }} .page-width{position:relative;}
+
+  @media all and (max-width:1024px){
+    .table--{{ section.id }} .custom-main-review-video{width:100%;max-width:180px;}
+  }
+
+  @media screen and (max-width:768px){
+    .table--{{ section.id }} .main-video-container {display:grid;grid-template-columns:repeat({{section.settings.count-mob}} , 1fr);gap:8px;}
+    .table--{{ section.id }} .custom-main-review-video{display:none;}
+  }
+{% endstyle %}
+
+<section
+  class="mbr_vdrv_tab table--{{ section.id }} padding-bottom-{{ section.settings.padding_bottom }} padding-bottom-mob-{{ section.settings.mobile_padding_bottom }}"
+>
+  <div class="main-container">
+    <div
+      class="header-container  padding-top-{{ section.settings.padding_top }} padding-top-mob-{{ section.settings.mobile_padding_top }} "
+      style="background:{{ section.settings.bg-color }}; border-bottom:1px solid #000000;"
+    >
+      <div class="page-width">
+        <div class="title-container">
+          {% if section.settings.title != blank %}
+            <div
+              class="title margin-bottom-{{ section.settings.space }} margin-bottom-mob-{{ section.settings.space_mob }} font-size-{{ section.settings.font-size }} font-weight-{{ section.settings.font-weight }} font-size-mob-{{ section.settings.font-size-mob }}"
+              style="color:{{ section.settings.color }};margin-top:0px;"
+            >
+              {{ section.settings.title }}
+            </div>
+          {% endif %}
+          {% if section.settings.content != blank %}
+            <div
+              class="content margin-bottom-{{ section.settings.tcspace }} margin-bottom-mob-{{ section.settings.tcspace_mob }} font-size-{{ section.settings.tcfont-size }} font-weight-{{ section.settings.tcfont-weight }} font-size-mob-{{ section.settings.tcfont-size-mob }}"
+              style="color:{{ section.settings.tccolor }};"
+            >
+              {{ section.settings.content }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="tabs-container">
+          <div class="tab-block">
+            <div class="tab-items active" data-tab="tab-video-container">
+              <div
+                class="text font-size-{{ section.settings.tabfont-size }} font-weight-{{ section.settings.tabfont-weight }} font-size-mob-{{ section.settings.tabfont-size-mob }}"
+              >
+                {{ section.settings.tab1 }}
+              </div>
+            </div>
+            <div class="tab-items" data-tab="tab-widget-container">
+              <div
+                class="text font-size-{{ section.settings.tabfont-size }} font-weight-{{ section.settings.tabfont-weight }} font-size-mob-{{ section.settings.tabfont-size-mob }}"
+              >
+                {{ section.settings.tab2 }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% if section.settings.image != blank %}
+          <div class="custom-main-review-video">
+            <img src="{{ section.settings.image | img_url:'master' }}" width="100%" height="100%">
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="content-container-main" style="background:#FFFFFF;">
+      <div class="page-width">
+        <div class="main-content-container padding-top-60 padding-top-mob-40">
+          <div data-tab-content="tab-video-container" class="block-video-container">
+            <div class="main-video-container">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'video' %}
+                    <div class="video-item">
+                      <div class="media-container">
+                        <div class="media">
+                          {% if block.settings.image != blank %}
+                            <img src="{{ block.settings.image | img_url : 'master' }}">
+                          {% else %}
+                            <img src="{{ block.settings.video.preview_image | img_url : 'master' }}">
+                          {% endif %}
+                          <div class="play-btn">
+                            <div class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 110 110">
+                                <g id="Group_1" data-name="Group 1" transform="translate(-597 675)">
+                                  <rect id="Rectangle_1" data-name="Rectangle 1" width="110" height="110" transform="translate(597 -675)" fill="#fff" opacity="0"></rect>
+                                  <path id="Polygon_1" data-name="Polygon 1" d="M55,0l55,77H0Z" transform="translate(697 -675) rotate(90)" fill="currentColor"></path>
+                                </g>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="main-popup-container">
+                        <div class="popup-container cross-popup">
+                          <div class="video-container">
+                            <div class="cross-popup cross-popup-icon">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                aria-hidden="true"
+                                role="img"
+                                class="iconify iconify--ic"
+                                width="100%"
+                                height="100%"
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 24 24"
+                              >
+                                <path fill="currentColor" d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59L7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12L5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"></path>
+                              </svg>
+                            </div>
+                            <div class="video">
+                              {{-
+                                block.settings.video
+                                | video_tag:
+                                  controls: true,
+                                  playsinline: true,
+                                  muted: false,
+                                  autoplay: false,
+                                  loop: true,
+                                  preload: 'metadata',
+                                  class: 'video-meta',
+                                  poster: ''
+                                | replace: '<img ', '<img loading="lazy" '
+                              -}}
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="background-cross cross-popup"></div> -->
+                      </div>
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+          <div data-tab-content="tab-widget-container" class="widget-container">
+            {% render 'okendo-reviews-widget' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "New Review Video Tabs",
+  "settings": [
+  {
+    "type": "header",
+    "content": "Section Header"
+  },
+  {
+    "type":"color",
+    "id":"bg-color",
+    "label":"Background Color"
+  },
+  {
+    "type":"number",
+    "id":"width",
+    "label":"Content Width",
+    "default":800
+  },
+ {
+    "type": "select",
+    "options": [
+      {
+        "value": "left",
+        "label": "Left"
+      },
+      {
+        "value": "center",
+        "label": "Center"
+      },
+      {
+        "value": "right",
+        "label": "Right"
+      }
+    ],
+    "id": "textalignment",
+    "default": "center",
+   "label":" Content Alignment"
+  },
+  {
+    "type": "header",
+    "content": "Tabs"
+  },
+  {
+    "type":"text",
+    "id":"tab1",
+    "label":"Tab 1",
+  },
+  {
+    "type":"text",
+    "id":"tab2",
+    "label":"Tab 2",
+  },
+  {
+    "type":"color",
+    "id":"tab_color",
+    "default":"transparent",
+    "label":"Tab Color"
+  },
+  {
+    "type":"color",
+    "id":"tab_text_color",
+    "default":"#000000",
+    "label":"Tab Text Color"
+  },
+  {
+    "type":"color",
+    "id":"active_tab_color",
+    "default":"#FFF9EB",
+    "label":"Active Tab Color"
+  },
+  {
+    "type":"color",
+    "id":"active_tab_text_color",
+    "default":"#000000",
+    "label":"Active Tab Text Color"
+  },
+  {
+    "type":"range",
+    "id":"tabfont-size",
+    "min":1,
+    "max":100,
+    "default":16,
+    "label":"Tab Font Size"
+  },
+  {
+    "type":"range",
+    "id":"tabfont-size-mob",
+    "min":1,
+    "max":100,
+    "default":14,
+    "label":"Mobile Tab Font Size"
+  },
+  {
+    "type":"range",
+    "id":"tabfont-weight",
+    "step": 100,
+    "min":100,
+    "max":900,
+    "default":500,
+    "label":"Tab Font Weight"
+  },
+  {
+    "type":"header",
+    "content":"Video Customization"
+  },
+  {
+    "type":"number",
+    "id":"video-height",
+    "label":"Video Height",
+    "default":175
+  },
+  {
+    "type": "range",
+    "id": "count",
+    "min": 2,
+    "max": 6,
+    "step": 1,
+    "label": "Grid Count",
+    "default": 6
+  },
+  {
+    "type": "range",
+    "id": "count-mob",
+    "min": 1,
+    "max": 4,
+    "step": 1,
+    "label": "Mobile Grid Count",
+    "default": 3
+  },
+  {
+    "type":"header",
+    "content":"Heading Customization"
+  },
+  {
+    "type":"richtext",
+    "id":"title",
+    "label":"Heading"
+  },
+  {
+    "type":"color",
+    "id":"color",
+    "label":"Title Color"
+  },
+  {
+    "type":"range",
+    "id":"font-size",
+    "min":1,
+    "max":100,
+    "default":16,
+    "label":"Font Size"
+  },
+  {
+    "type":"range",
+    "id":"font-size-mob",
+    "min":1,
+    "max":100,
+    "default":14,
+    "label":"Mobile Font Size"
+  },
+  {
+    "type":"range",
+    "id":"font-weight",
+    "step": 100,
+    "min":100,
+    "max":900,
+    "default":700,
+    "label":"Font Weight"
+  },
+  {
+    "type":"range",
+    "id":"space",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":50,
+    "label":"Bottom Spacing"
+  },
+  {
+    "type":"range",
+    "id":"space_mob",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":40,
+    "label":"Mobile Bottom Spacing"
+  },
+  {
+    "type":"header",
+    "content":"Content Customization"
+  },
+  {
+    "type":"richtext",
+    "id":"content",
+    "label":"Content"
+  },
+  {
+    "type":"color",
+    "id":"tccolor",
+    "label":"Content Color"
+  },
+  {
+    "type":"range",
+    "id":"tcfont-size",
+    "min":1,
+    "max":100,
+    "default":16,
+    "label":"Font Size"
+  },
+  {
+    "type":"range",
+    "id":"tcfont-size-mob",
+    "min":1,
+    "max":100,
+    "default":14,
+    "label":"Mobile Font Size"
+  },
+  {
+    "type":"range",
+    "id":"tcfont-weight",
+    "step": 100,
+    "min":100,
+    "max":900,
+    "default":700,
+    "label":"Font Weight"
+  },
+  {
+    "type":"range",
+    "id":"tcspace",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":50,
+    "label":"Bottom Spacing"
+  },
+  {
+    "type":"range",
+    "id":"tcspace_mob",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":40,
+    "label":"Mobile Bottom Spacing"
+  },
+  {
+    "type": "header",
+    "content": "Image Icon"
+  },
+  {
+    "type": "image_picker",
+    "id":"image",
+    "label":"Image Icon",
+    "info":"Please upload 740x850 px size image."
+  },
+  {
+    "type": "header",
+    "content": "Image Icon Position Desktop"
+  },
+  {
+    "type": "number",
+    "id":"top",
+    "default":-60,
+    "label":"Set Position Vertically"
+  },
+  {
+    "type": "number",
+    "id":"right",
+    "default":130,
+    "label":"Set Position Horizontal"
+  },
+  {
+    "type": "header",
+    "content": "Spacing Customization"
+  },
+  {
+    "type": "number",
+    "id": "padding_top",
+    "label": "Padding Top",
+    "default": 0
+  },
+  {
+    "type": "number",
+    "id": "padding_bottom",
+    "label": "Padding Bottom",
+    "default": 0
+  },
+  {
+    "type": "number",
+    "id": "mobile_padding_top",
+    "label": "Mobile Padding Top",
+    "default": 0
+  },
+  {
+    "type": "number",
+    "id": "mobile_padding_bottom",
+    "label": "Mobile Padding Bottom",
+    "default": 0
+  }
+],
+"blocks":[
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Image"
+        },
+        {
+          "type":"video",
+          "id":"video",
+          "label":"Video"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+    "name": "New Review Video Tabs"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+      $(document).ready(function () {
+      $(".media-container").on("click", function () {
+        let $popupContainer = $(this).closest(".video-item").find(".main-popup-container");
+        let $video = $popupContainer.find("video")[0];
+
+        $popupContainer.show(); // Show the popup
+        if ($video) {
+          $video.currentTime = 0; // Reset video to start
+          $video.play(); // Play video
+          $('body').addClass('overflow-hidden');
+        }
+      });
+
+      $(".cross-popup").on("click", function () {
+        let $popupContainer = $(this).closest(".main-popup-container");
+        let $video = $popupContainer.find("video")[0];
+
+        if ($video) {
+          $video.pause(); // Pause video
+          $video.currentTime = 0; // Reset video to start
+          $('body').removeClass('overflow-hidden');
+        }
+
+        $popupContainer.hide(); // Hide the popup
+      });
+    });
+
+    $(document).ready(function () {
+      $(".tab-items").click(function () {
+          var targetTab = $(this).attr("data-tab");
+
+          // Remove 'active' class from all tab items and add it to the clicked one
+          $(".tab-items").removeClass("active");
+          $(this).addClass("active");
+
+          // Hide all tab content and show the matching one
+          $("[data-tab-content]").hide();
+          $("[data-tab-content='" + targetTab + "']").show();
+      });
+  });
+</script>

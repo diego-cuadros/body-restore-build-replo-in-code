@@ -1,0 +1,224 @@
+<div id="section-{{ section.id }}" class="announce_bar_new" >
+{% comment %}
+
+  {% if template.suffix == 'landing-page' %}
+    <section class="announcement-new">
+      <div class="marquee-wrapper">
+        <div class="container">
+          <div class="marquee-block">
+            <div class="marquee-inner to-left">
+              <span>
+                {% for block in section.blocks %}
+                  <div class="marquee-item h5">
+                    <p class="announcement_text {% if block.settings.url == blank %} button-landing-banner {% endif %}">
+                      {% if block.settings.url != blank %}
+                        <a href="{{ block.settings.url }}">
+                      {% endif %}
+                      {{ block.settings.announcement }}
+                      {% if block.settings.url != blank %}
+                        </a>
+                      {% endif %}
+                    </p>
+                  </div>
+                {% endfor %}
+              </span>
+              <span>
+                {% for block in section.blocks %}
+                  <div class="marquee-item h5">
+                    <p class="announcement_text {% if block.settings.url == blank %} button-landing-banner {% endif %}">
+                      {% if block.settings.url != blank %}
+                        <a href="{{ block.settings.url }}">
+                      {% endif %}
+                      {{ block.settings.announcement }}
+                      {% if block.settings.url != blank %}
+                        </a>
+                      {% endif %}
+                    </p>
+                  </div>
+                {% endfor %}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endcomment %}
+{% if template.suffix == 'landing-page' %}
+{% if section.settings.landingpage == true %} 
+  <section class="announcement-new">
+    <div class="marquee-wrapper">
+      <div class="container">
+        <div class="marquee-block">
+          <div class="marquee-inner to-left">
+            {% for block in section.blocks %}
+              <div class="marquee-item h5">
+                <p class="announcement_text {% if block.settings.url == blank %} button-landing-banner {% endif %}">
+                  {% if block.settings.url != blank %}
+                    <a href="{{ block.settings.url }}">
+                  {% endif %}
+                  {{ block.settings.announcement }}
+                  {% if block.settings.url != blank %}
+                    </a>
+                  {% endif %}
+                </p>
+              </div>
+            {% endfor %}
+            {% for block in section.blocks %}
+              <div class="marquee-item h5">
+                <p class="announcement_text {% if block.settings.url == blank %} button-landing-banner {% endif %}">
+                  {% if block.settings.url != blank %}
+                    <a href="{{ block.settings.url }}">
+                  {% endif %}
+                  {{ block.settings.announcement }}
+                  {% if block.settings.url != blank %}
+                    </a>
+                  {% endif %}
+                </p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+{% endif %}
+
+{% if section.settings.landingpage == true %}
+{% else %}
+  <section class="announcement-new">
+    <div class="marquee-wrapper">
+      <div class="container">
+        <div class="marquee-block">
+          <div class="marquee-inner to-left">
+            {% for block in section.blocks %}
+              <div class="marquee-item h5">
+                <p class="announcement_text {% if block.settings.url == blank %} button-landing-banner {% endif %}">
+                  {% if block.settings.url != blank %}
+                    <a href="{{ block.settings.url }}">
+                  {% endif %}
+                  {{ block.settings.announcement }}
+                  {% if block.settings.url != blank %}
+                    </a>
+                  {% endif %}
+                </p>
+              </div>
+            {% endfor %}
+            {% for block in section.blocks %}
+              <div class="marquee-item h5">
+                <p class="announcement_text {% if block.settings.url == blank %} button-landing-banner {% endif %}">
+                  {% if block.settings.url != blank %}
+                    <a href="{{ block.settings.url }}">
+                  {% endif %}
+                  {{ block.settings.announcement }}
+                  {% if block.settings.url != blank %}
+                    </a>
+                  {% endif %}
+                </p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+  </div>
+<style>
+   .announcement-new {position:fixed;    top: 0px; left: 0px; right: 0px; z-index: 12;background-color:{{section.settings.announcement-bg}};}
+   .site-announcement__icon svg{width:17px;height:17px;fill: #090a35! important;}
+   #shopify-section-{{section.id}} .announcement_text{cursor:pointer;font-size:13px;color:{{ section.settings.font-color-announcement }};font-weight:{{ section.settings.font-weight-announcement}};padding:0px;    margin: 10px auto;line-height: 1.5;}
+    #shopify-section-{{section.id}} .announcement_text a{text-decoration:none;font-size:inherit;color:inherit;font-weight:inherit;line-height: 1.5;}
+  #shopify-section-{{section.id}} .announcement_text a:hover{text-decoration:underline;    text-underline-offset: 3px;}
+  #shopify-section-{{section.id}} .announcement_text:hover{text-decoration:underline;    text-underline-offset: 3px;}
+   :root{--header-height: 114px;}
+   .marquee-wrapper{text-align:center;}
+   .marquee-wrapper .container{overflow:hidden;max-width:100%;padding:0px;}
+   .marquee-inner .marquee_item_main{float:left;width:48%;}
+   .marquee-wrapper .marquee-block{height:40px; width: 100%;overflow: hidden;position: relative;margin: 0px auto 0px;padding:0px 0 0px;}
+   .marquee-inner{display: block; width: 200%;position: absolute; width: calc(300px * 20);}
+   .marquee-inner p{margin-bottom:40px;margin-left:10px  ;}
+   .marquee-inner.to-left{ animation: scroll 25s linear infinite; }
+   .marquee-item{height: auto;width:300px; display:flex;padding: 0 30px;float: left;transition: all .2s ease-out;}
+   @keyframes marqueeLeft{
+     0% {left: 0;}
+     100% {left: -100%;}
+   }
+   @media only screen and (max-width: 768px) {
+
+   }
+   @media only screen and (max-width: 768px) {
+     #shopify-section-{{section.id}} .announcement_text{font-size:13px;}
+     .marquee-wrapper .marquee-block{width:96%;}
+     /* .marquee-item {margin:0 10px;} */
+     .marquee-inner.to-left{ animation: scroll 25s linear infinite;}
+   }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(calc(-210px * 10));
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Announcement Bar New",
+  "settings":[
+    {
+      "type": "checkbox",
+      "id": "landingpage",
+      "label":" Only On Landing Page",
+      "default":true
+    },
+    {
+    "type": "color",
+    "id": "announcement-bg",
+     "label":"background-color"
+  },
+     {
+    "type": "range",
+    "id": "font-weight-announcement",
+    "min": 100,
+    "max": 900,
+    "step": 100,
+    "default": 600,
+     "label":"Font Wight"
+     },
+  {
+    "type": "color",
+    "id": "font-color-announcement",
+    "label":"Text Color"
+  }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "announcement",
+          "label": "Announcement"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link",
+          "info":"If a link is added here the scroll functionality will be turned off by default."
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+    "name": "Announcement Bar New"
+    }
+  ]
+}
+{% endschema %} 

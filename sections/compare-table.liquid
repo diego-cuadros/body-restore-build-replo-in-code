@@ -1,0 +1,763 @@
+<style>
+  .table--{{ section.id }} .main-container {width:100%;}
+  .table--{{ section.id }} .main-container p {margin:0px;}
+  .table--{{ section.id }} .title {margin-top:0px;}
+  .table--{{ section.id }} .title-container {display:flex;flex-direction:column;align-items:{{section.settings.textalignment}}; text-align:{{section.settings.textalignment}};max-width:{{section.settings.width}}px;width:100%;margin:auto;}
+  .table--{{ section.id }} .table-header {align-items:center;width:100%;display:grid;grid-column-gap: 0px; grid-row-gap: 0px;grid-template-rows: auto;grid-template-columns: 2fr 1.5fr 1fr 1fr;margin-left: auto; margin-right: auto;}
+  .table--{{ section.id }} .table-content {align-items:center;width:100%;display:grid;grid-column-gap: 0px; grid-row-gap: 0px;grid-template-rows: auto;grid-template-columns: 2fr 1.5fr 1fr 1fr;margin-left: auto; margin-right: auto;}
+  .table--{{ section.id }} .table-header .second .image {width:100%;height:100%;display:flex;flex-direction:row;align-items:center;justify-content:center;}
+  .table--{{ section.id }} .table-header .second .image img{width:100%;height:100%;object-fit:contain;max-height:30px;}
+  .table--{{ section.id }} .table-header .second {border-radius: 10px 10px 0px 0px;color:{{section.settings.svgcolor}};}
+  .table--{{ section.id }} .table-header .second .grid-content{background-color:#ffffff0d;}
+  .table--{{ section.id }} .table-content:last-child .second:after {content:"";position:absolute;top:100%;left:0;right:0;width:100%;height:25px;background-color:{{section.settings.pcolor}};border-radius: 0px 0px 10px 10px;}
+  .table--{{ section.id }} .second {background-color:{{section.settings.pcolor}} !important;border-color:{{section.settings.pcolor}} !important;position:relative;}
+  .table--{{ section.id }} .table-header .text{display:flex;align-items:center;justify-content:center;line-height:1.2;}
+  .table--{{ section.id }} .table-header .text .grid-content{display:flex;align-items:center;justify-content:center;line-height:1.2;}
+  .table--{{ section.id }} .table-content .icon-container{display:flex;align-items:center;justify-content:center;}
+  .table--{{ section.id }} .table-content .icon-container svg{height:32px;width:32px;}
+  .table--{{ section.id }} .table-content .icon-container.second svg{width:32px;height:32px;}
+  .table--{{ section.id }} .table-content .icon-container.second svg path{color:{{section.settings.svgcolor}} !important;}
+  .table--{{ section.id }} .table-header .text{min-width:100%;width:100%;height:80px;text-align:center;}
+  .table--{{ section.id }} .table-header .text .grid-content{min-width:100%;width:100%;height:100%;padding:10px;text-align:center;}
+  .table--{{ section.id }} .table-content .grid-container {background-color:#FFFFFF;min-width:100%;width:100%; border-bottom:1px solid #00000008;min-height:72px;line-height:1.2;height: 100%;}
+  .table--{{ section.id }} .table-content .grid-container .grid-content{padding: 10px;width:100%;height:100%;display:flex;flex-direction:row;align-items:center;justify-content:center;}
+  .table--{{ section.id }} .table-content .grid-container .icon {display:flex;}
+  .table--{{ section.id }} .table-content:last-child .grid-container{border-bottom:0px solid #d7d8d5;}
+  .table--{{ section.id }} .table-header .text.second{min-width:100%;width:100%;height:80px;}
+  .table--{{ section.id }} .table-header .text.second .grid-content {min-width:100%;width:100%;height:100%;padding:15px 10px;}
+  .table--{{ section.id }} .table-content .grid-container.second {min-width:100%;width:100%;}
+  .table--{{ section.id }} .table-header .text:first-child {min-width:100%;width:100%;padding:10px 0px;}
+  .table--{{ section.id }} .table-content .grid-container:first-child {min-width:100%;width:100%;}
+  .table--{{ section.id }} .table-content .grid-container:first-child .grid-content {min-width:100%;width:100%; padding:20px 20px 20px 20px;justify-content:start; }
+  .table--{{ section.id }} .arrow-container {display:none;}
+  .table--{{ section.id }} .table-container .table-content .grid-container:first-child .grid-content{padding:20px 20px;}
+  .table--{{ section.id }} .table-container .table-block:nth-child(2n+1) .grid-container.second .grid-content {background-color:#ffffff0d;}
+  .table--{{ section.id }} .table-content:last-child .grid-container:first-child {border-bottom-left-radius:8px;}
+  .table--{{ section.id }} .table-content:last-child .grid-container:last-child {border-bottom-right-radius:8px;}
+  .table--{{ section.id }} .table-content:nth-child(2) .grid-container:first-child {border-top-left-radius:8px;}
+  .table--{{ section.id }} .table-content:nth-child(2) .grid-container:last-child {border-top-right-radius:8px;}
+  @media screen and (max-width:768px){
+  .table--{{ section.id }} .table-content .grid-container:first-child {min-width:auto;width:100%;text-align: center;}
+  .table--{{ section.id }} .table-content .grid-container:first-child .grid-content {min-width:auto;width:100%; padding:10px 10px 10px 0px; text-align: center; display: flex ; align-items: center;justify-content:center;}
+  .table--{{ section.id }} .table-header .text:first-child .grid-content{min-width:auto;padding:10px 0px;}
+  .table--{{ section.id }} .table-header .text{height:80px;}
+  .table--{{ section.id }} .table-header .text .grid-content {padding:10px 4px;}
+  .table--{{ section.id }} .table-header .text.second .grid-content {padding:10px;}
+  .table--{{ section.id }} .table-content .grid-container .grid-content{ padding: 10px;}
+  .table--{{ section.id }} .table-header .text.second{height:80px;}
+  .table--{{ section.id }} .table-header {grid-template-columns: 2fr 1.5fr 1fr;}
+  .table--{{ section.id }} .table-content {grid-template-columns: 2fr 1.5fr 1fr;}
+  #shopify-section-{{section.id}} .arrow-container {display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:20px;position:relative;margin:40px 0px 0px;}
+  .table--{{ section.id }} .table-container .table-content .grid-container:first-child  {min-width:auto;}
+  .table--{{ section.id }} .table-container .table-content .grid-container .grid-content {padding:10px 10px;}
+  #shopify-section-{{section.id}} .next-btn,
+  #shopify-section-{{section.id}} .prev-btn {display:flex;position:unset;background-color:#000000;color:#ffffff;border-radius:50%;width:40px;height:40px;padding:8px;margin:0px;}
+  #shopify-section-{{section.id}} .next-btn svg,
+  #shopify-section-{{section.id}} .prev-btn svg {width:100%;height:100%;}
+  #shopify-section-{{section.id}} .dots {display:flex;flex-direction:row;gap:8px;align-items:center;justify-content:center;width:fit-content; padding-top: 4px;}
+  #shopify-section-{{section.id}} .dots .dot {background-color:#000000;height:8px;width:8px;opacity:0.5;border-radius:50%;display:flex;}
+  #shopify-section-{{section.id}} .dots .dot.active {width: 24px; border-radius: 24px;opacity:1;}
+  #shopify-section-{{section.id}} .prev-btn  {opacity:0.5;}
+  #shopify-section-{{section.id}} .last  {display:none;}
+
+  }
+</style>
+{% assign producttitle = product.title | remove: ' ' %}
+
+<section
+  class="table--{{ section.id }}  padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} padding-top-mob-{{ section.settings.mobile_padding_top }} padding-bottom-mob-{{ section.settings.mobile_padding_bottom }}"
+  style="background:{{ section.settings.bg-color }};"
+>
+  <div class="page-width">
+    <div class="main-container">
+      <div class="title-container">
+        {% if section.settings.caption != blank %}
+          <h5
+            class="caption margin-bottom-{{ section.settings.cspace }} margin-bottom-mob-{{ section.settings.cspace_mob }} font-size-{{ section.settings.cfont-size }} font-weight-{{ section.settings.cfont-weight }} font-size-mob-{{ section.settings.cfont-size-mob }}"
+            style="color:{{ section.settings.ccolor }};margin-top:0px;"
+          >
+            {{ section.settings.caption }}
+          </h5>
+        {% endif %}
+        {% if section.settings.title != blank %}
+          <h2
+            class="h3 title margin-bottom-{{ section.settings.space }} margin-bottom-mob-{{ section.settings.space_mob }} font-size-{{ section.settings.font-size }} font-weight-{{ section.settings.font-weight }} font-size-mob-{{ section.settings.font-size-mob }}"
+            style="color:{{ section.settings.color }};margin-top:0px;"
+          >
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        {% if section.settings.content != blank %}
+          <div
+            class="content margin-bottom-{{ section.settings.tcspace }} margin-bottom-mob-{{ section.settings.tcspace_mob }} font-size-{{ section.settings.tcfont-size }} font-weight-{{ section.settings.tcfont-weight }} font-size-mob-{{ section.settings.tcfont-size-mob }}"
+            style="color:{{ section.settings.tccolor }};"
+          >
+            {{ section.settings.content }}
+          </div>
+        {% endif %}
+      </div>
+      <div class="table-container">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'header' %}
+              <div class="table-header table-block">
+                <div class="text"></div>
+                <div class="text second font-size-{{ section.settings.thfont-size }} font-weight-{{ section.settings.thfont-weight }} font-size-mob-{{ section.settings.thfont-size-mob }}">
+                  <div class="grid-content">
+                    {% if block.settings.headingtype == 'text' %}
+                      {{ block.settings['product-title'] }}
+                    {% else %}
+                      <div class="image">
+                        <img src="{{ block.settings.image | img_url : '400x' }}">
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div
+                  class="text third font-size-{{ section.settings.thfont-size }} font-weight-{{ section.settings.thfont-weight }} font-size-mob-{{ section.settings.thfont-size-mob }}"
+                  style="color:{{ section.settings.thcolor }};"
+                >
+                  <div class="grid-content">
+                    {{ block.settings.text1 }}
+                  </div>
+                </div>
+                <div
+                  class="text last font-size-{{ section.settings.thfont-size }} font-weight-{{ section.settings.thfont-weight }} font-size-mob-{{ section.settings.thfont-size-mob }}"
+                  style="color:{{ section.settings.thcolor }};"
+                >
+                  <div class="grid-content">
+                    {{ block.settings.text2 }}
+                  </div>
+                </div>
+              </div>
+            {% when 'table-text' %}
+              <div class="table-content table-block">
+                <div
+                  class=" grid-container heading font-size-{{ section.settings.tfont-size }} font-weight-{{ section.settings.tfont-weight }} font-size-mob-{{ section.settings.tfont-size-mob }}"
+                  style="color:{{ section.settings.tcolor }};"
+                >
+                  <div class="grid-content">
+                    {{ block.settings.text }}
+                  </div>
+                </div>
+                <div class=" grid-container icon-container second">
+                  <div class="grid-content">
+                    <div class="icon">
+                      {% if block.settings.icon1 == 'tick' %}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          aria-hidden="true"
+                          role="img"
+                          class="iconify iconify--heroicons"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15L15 9.75M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0Z"></path>
+                        </svg>
+                      {% elsif block.settings.icon1 == 'warning' %}
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5.55351 27.9959C4.23318 27.9959 3.63304 27.0357 4.23318 25.8754L14.9158 4.87022C15.516 3.70993 16.4762 3.70993 17.0764 4.87022L27.759 25.8754C28.3592 27.0357 27.759 27.9959 26.4387 27.9959H5.55351Z" fill="#FFCE31"/>
+                          <path d="M14.3163 12.6332L15.4366 20.035C15.5566 20.7552 16.4768 20.7552 16.5969 20.035L17.6771 12.6332C17.8772 9.75248 14.1163 9.75248 14.3163 12.6332Z" fill="#231F20"/>
+                          <path d="M15.9968 24.7163C16.9249 24.7163 17.6772 23.964 17.6772 23.0359C17.6772 22.1078 16.9249 21.3555 15.9968 21.3555C15.0688 21.3555 14.3164 22.1078 14.3164 23.0359C14.3164 23.964 15.0688 24.7163 15.9968 24.7163Z" fill="#231F20"/>
+                        </svg>
+
+                      {% else %}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          aria-hidden="true"
+                          role="img"
+                          class="iconify iconify--heroicons"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0Z"></path>
+                        </svg>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <div class=" grid-container third icon-container">
+                  <div class="grid-content">
+                    <div class="icon">
+                      {% if block.settings.icon2 == 'tick' %}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          aria-hidden="true"
+                          role="img"
+                          class="iconify iconify--heroicons"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15L15 9.75M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0Z"></path>
+                        </svg>
+                      {% elsif block.settings.icon2 == 'warning' %}
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5.55351 27.9959C4.23318 27.9959 3.63304 27.0357 4.23318 25.8754L14.9158 4.87022C15.516 3.70993 16.4762 3.70993 17.0764 4.87022L27.759 25.8754C28.3592 27.0357 27.759 27.9959 26.4387 27.9959H5.55351Z" fill="#FFCE31"/>
+                          <path d="M14.3163 12.6332L15.4366 20.035C15.5566 20.7552 16.4768 20.7552 16.5969 20.035L17.6771 12.6332C17.8772 9.75248 14.1163 9.75248 14.3163 12.6332Z" fill="#231F20"/>
+                          <path d="M15.9968 24.7163C16.9249 24.7163 17.6772 23.964 17.6772 23.0359C17.6772 22.1078 16.9249 21.3555 15.9968 21.3555C15.0688 21.3555 14.3164 22.1078 14.3164 23.0359C14.3164 23.964 15.0688 24.7163 15.9968 24.7163Z" fill="#231F20"/>
+                        </svg>
+
+                      {% else %}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          aria-hidden="true"
+                          role="img"
+                          class="iconify iconify--heroicons"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0Z"></path>
+                        </svg>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-container last icon-container">
+                  <div class="grid-content">
+                    <div class="icon">
+                      {% if block.settings.icon3 == 'tick' %}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          aria-hidden="true"
+                          role="img"
+                          class="iconify iconify--heroicons"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15L15 9.75M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0Z"></path>
+                        </svg>
+                      {% elsif block.settings.icon3 == 'warning' %}
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5.55351 27.9959C4.23318 27.9959 3.63304 27.0357 4.23318 25.8754L14.9158 4.87022C15.516 3.70993 16.4762 3.70993 17.0764 4.87022L27.759 25.8754C28.3592 27.0357 27.759 27.9959 26.4387 27.9959H5.55351Z" fill="#FFCE31"/>
+                          <path d="M14.3163 12.6332L15.4366 20.035C15.5566 20.7552 16.4768 20.7552 16.5969 20.035L17.6771 12.6332C17.8772 9.75248 14.1163 9.75248 14.3163 12.6332Z" fill="#231F20"/>
+                          <path d="M15.9968 24.7163C16.9249 24.7163 17.6772 23.964 17.6772 23.0359C17.6772 22.1078 16.9249 21.3555 15.9968 21.3555C15.0688 21.3555 14.3164 22.1078 14.3164 23.0359C14.3164 23.964 15.0688 24.7163 15.9968 24.7163Z" fill="#231F20"/>
+                        </svg>
+
+                      {% else %}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          aria-hidden="true"
+                          role="img"
+                          class="iconify iconify--heroicons"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 24 24"
+                        >
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 1 1-18 0a9 9 0 0 1 18 0Z"></path>
+                        </svg>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+      <div class="arrow-container">
+        <div class="prev-btn">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.23772 28C6.23772 28.586 6.47172 29.125 6.94072 29.57L22.4567 45.062C22.9727 45.578 23.4877 45.766 24.0507 45.766C25.1987 45.766 26.0897 44.922 26.0897 43.75C26.0897 43.187 25.9017 42.649 25.5267 42.273L20.2767 36.93L12.3787 29.734L18.0507 30.086L47.6987 30.086C48.8937 30.086 49.7617 29.219 49.7617 28C49.7617 26.781 48.8947 25.914 47.6987 25.914L18.0507 25.914L12.3547 26.266L20.2767 19.07L25.5267 13.727C25.9017 13.375 26.0897 12.813 26.0897 12.25C26.0897 11.078 25.1997 10.234 24.0497 10.234C23.4877 10.234 22.9957 10.445 22.5267 10.891L6.94072 26.43C6.47172 26.875 6.23772 27.414 6.23772 28Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="dots">
+          <span class="dot first active"></span>
+          <span class="dot second"></span>
+        </div>
+        <div class="next-btn">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M49.7623 28C49.7623 27.414 49.5283 26.875 49.0593 26.43L33.5433 10.938C33.0273 10.422 32.5123 10.234 31.9493 10.234C30.8013 10.234 29.9103 11.078 29.9103 12.25C29.9103 12.813 30.0983 13.351 30.4733 13.727L35.7233 19.07L43.6213 26.266L37.9493 25.914H8.30128C7.10628 25.914 6.23828 26.781 6.23828 28C6.23828 29.219 7.10528 30.086 8.30128 30.086H37.9493L43.6453 29.734L35.7233 36.93L30.4733 42.273C30.0983 42.625 29.9103 43.187 29.9103 43.75C29.9103 44.922 30.8003 45.766 31.9503 45.766C32.5123 45.766 33.0043 45.555 33.4733 45.109L49.0593 29.57C49.5283 29.125 49.7623 28.586 49.7623 28Z" fill="currentColor"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Compare Table",
+  "settings": [
+  {
+    "type":"color",
+    "id":"bg-color",
+    "label":"Background Color"
+  },
+  {
+    "type":"color",
+    "id":"pcolor",
+    "label":"Table Background Color"
+  },
+  {
+    "type":"color",
+    "id":"svgcolor",
+    "label":"Svg Background Color"
+  },
+  {
+    "type":"number",
+    "id":"width",
+    "label":"Content Width",
+    "default":800
+  },
+ {
+    "type": "select",
+    "options": [
+      {
+        "value": "left",
+        "label": "Left"
+      },
+      {
+        "value": "center",
+        "label": "Center"
+      },
+      {
+        "value": "right",
+        "label": "Right"
+      }
+    ],
+    "id": "textalignment",
+    "default": "center",
+   "label":"Alignment"
+  },
+  {
+    "type":"header",
+    "content":"Caption Customization"
+  },
+  {
+    "type":"text",
+    "id":"caption",
+    "label":"Caption"
+  },
+  {
+    "type":"color",
+    "id":"ccolor",
+    "label":"Caption Color"
+  },
+  {
+    "type":"range",
+    "id":"cfont-size",
+    "min":1,
+    "max":100,
+    "default":16,
+    "label":"Caption Font Size"
+  },
+  {
+    "type":"range",
+    "id":"cfont-size-mob",
+    "min":1,
+    "max":100,
+    "default":14,
+    "label":"mobile Caption Font Size"
+  },
+  {
+    "type":"range",
+    "id":"cfont-weight",
+    "step": 100,
+    "min":100,
+    "max":900,
+    "default":700,
+    "label":"Caption Font Weight"
+  },
+  {
+    "type":"range",
+    "id":"cspace",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":50,
+    "label":"Caption Bottom Spacing"
+  },
+  {
+    "type":"range",
+    "id":"cspace_mob",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":40,
+    "label":"Mobile Caption Bottom Spacing"
+  },
+  {
+    "type":"header",
+    "content":"Title Customization"
+  },
+  {
+    "type":"text",
+    "id":"title",
+    "label":"Title"
+  },
+  {
+    "type":"color",
+    "id":"color",
+    "label":"Title Color"
+  },
+  {
+    "type":"range",
+    "id":"font-size",
+    "min":1,
+    "max":100,
+    "default":16,
+    "label":"Title Font Size"
+  },
+  {
+    "type":"range",
+    "id":"font-size-mob",
+    "min":1,
+    "max":100,
+    "default":14,
+    "label":"mobile Title Font Size"
+  },
+  {
+    "type":"range",
+    "id":"font-weight",
+    "step": 100,
+    "min":100,
+    "max":900,
+    "default":700,
+    "label":"Title Font Weight"
+  },
+  {
+    "type":"range",
+    "id":"space",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":50,
+    "label":"Bottom Spacing"
+  },
+  {
+    "type":"range",
+    "id":"space_mob",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":40,
+    "label":"Mobile Bottom Spacing"
+  },
+  {
+    "type":"header",
+    "content":"Content Customization"
+  },
+  {
+    "type":"richtext",
+    "id":"content",
+    "label":"Content"
+  },
+  {
+    "type":"color",
+    "id":"tccolor",
+    "label":"Content Color"
+  },
+  {
+    "type":"range",
+    "id":"tcfont-size",
+    "min":1,
+    "max":100,
+    "default":16,
+    "label":"Content Font Size"
+  },
+  {
+    "type":"range",
+    "id":"tcfont-size-mob",
+    "min":1,
+    "max":100,
+    "default":14,
+    "label":"mobile Content Font Size"
+  },
+  {
+    "type":"range",
+    "id":"tcfont-weight",
+    "step": 100,
+    "min":100,
+    "max":900,
+    "default":700,
+    "label":"Content Font Weight"
+  },
+  {
+    "type":"range",
+    "id":"tcspace",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":50,
+    "label":"Content Bottom Spacing"
+  },
+  {
+    "type":"range",
+    "id":"tcspace_mob",
+    "step":1,
+    "min":1,
+    "max":100,
+    "default":40,
+    "label":"Mobile Content Bottom Spacing"
+  },
+  {
+    "type":"header",
+    "content":"Table Header Customization"
+  },
+  {
+    "type":"color",
+    "id":"thcolor",
+    "label":"Table Header Color"
+  },
+  {
+    "type":"range",
+    "id":"thfont-size",
+    "min":1,
+    "max":100,
+    "default":16,
+    "label":"Table Header Font Size"
+  },
+  {
+    "type":"range",
+    "id":"thfont-size-mob",
+    "min":1,
+    "max":100,
+    "default":14,
+    "label":"mobile Table Header Font Size"
+  },
+  {
+    "type":"range",
+    "id":"thfont-weight",
+    "step": 100,
+    "min":100,
+    "max":900,
+    "default":700,
+    "label":"Table Header Font Weight"
+  },
+  {
+    "type":"header",
+    "content":"Text Customization"
+  },
+  {
+    "type":"color",
+    "id":"tcolor",
+    "label":"Text Color"
+  },
+  {
+    "type":"range",
+    "id":"tfont-size",
+    "min":1,
+    "max":100,
+    "default":16,
+    "label":"Text Font Size"
+  },
+  {
+    "type":"range",
+    "id":"tfont-size-mob",
+    "min":1,
+    "max":100,
+    "default":14,
+    "label":"mobile Text Font Size"
+  },
+  {
+    "type":"range",
+    "id":"tfont-weight",
+    "step": 100,
+    "min":100,
+    "max":900,
+    "default":700,
+    "label":"Text Font Weight"
+  },
+  {
+    "type": "header",
+    "content": "Spacing Customization"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "min": 0,
+    "max": 150,
+    "step": 5,
+    "unit": "px",
+    "label": "Padding top",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "min": 0,
+    "max": 150,
+    "step": 5,
+    "unit": "px",
+    "label": "Padding bottom",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "mobile_padding_top",
+    "min": 0,
+    "max": 150,
+    "step": 5,
+    "unit": "px",
+    "label": "mobile Padding top",
+    "default": 0
+  },
+  {
+    "type": "range",
+    "id": "mobile_padding_bottom",
+    "min": 0,
+    "max": 150,
+    "step": 5,
+    "unit": "px",
+    "label": "Mobile Padding bottom",
+    "default": 0
+  }
+],
+"blocks":[
+    {
+      "type":"header",
+      "name":"Table Header",
+      "limit":1,
+      "settings":[
+       {
+          "type": "select",
+          "options": [
+            {
+              "value": "text",
+              "label": "Heading"
+            },
+            {
+              "value": "image",
+              "label": "Image"
+            }
+          ],
+          "id": "headingtype",
+          "default": "image",
+         "label":"Main Product Heading Type"
+        },
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Our Product Image"
+        },
+        {
+          "type":"text",
+          "id":"product-title",
+          "label":"Main Product Title"
+        },
+        {
+          "type":"text",
+          "id":"text1",
+          "label":"Compare Product 1"
+        },
+        {
+          "type":"text",
+          "id":"text2",
+          "label":"Compare Product 2"
+        }
+      ]
+    },
+    {
+      "type":"table-text",
+      "name":"Table Text",
+      "settings":[
+        {
+          "type":"text",
+          "id":"text",
+          "label":"Text"
+        },
+        {
+          "type": "select",
+          "options": [
+            {
+              "value": "tick",
+              "label": "Tick"
+            },
+            {
+              "value": "cross",
+              "label": "Cross"
+            }
+          ],
+          "id": "icon1",
+          "default": "tick",
+         "label":"Our Product"
+        },
+        {
+          "type": "select",
+          "options": [
+            {
+              "value": "tick",
+              "label": "Tick"
+            },
+            {
+              "value": "cross",
+              "label": "Cross"
+            },
+            {
+              "value": "warning",
+              "label": "Warning"
+            }
+          ],
+          "id": "icon2",
+          "default": "tick",
+         "label":"compare Product"
+        } ,
+        {
+          "type": "select",
+          "options": [
+            {
+              "value": "tick",
+              "label": "Tick"
+            },
+            {
+              "value": "cross",
+              "label": "Cross"
+            },
+            {
+              "value": "warning",
+              "label": "Warning"
+            }
+          ],
+          "id": "icon3",
+          "default": "tick",
+         "label":"compare Product"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+    "name": "Product Compare Table"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  if (window.screen.width < 769) {
+    $( document ).ready(function() {
+    $(".prev-btn").click(function() {
+      $(this).parent().parent().find(".last").css("display", "none");
+      $(this).parent().parent().find(".third").css("display", "flex");
+      $(this).siblings(".dots").find(".first").addClass("active");
+      $(this).siblings(".dots").find(".second").removeClass("active");
+      $(this).css("opacity", "0.5");
+      $(this).siblings(".next-btn").css("opacity", "1");
+    });
+      $(".next-btn").click(function() {
+      $(this).parent().parent().find(".last").css("display", "flex");
+      $(this).parent().parent().find(".third").css("display", "none");
+      $(this).siblings(".dots").find(".first").removeClass("active");
+      $(this).siblings(".dots").find(".second").addClass("active");
+      $(this).css("opacity", "0.5");
+      $(this).siblings(".prev-btn").css("opacity", "1");
+    });
+  });
+  }
+</script>

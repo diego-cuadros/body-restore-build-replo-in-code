@@ -1,0 +1,112 @@
+
+  <div class="product_popup">
+    <div class="product_popup_row ">
+      <div class="product_popup_img">
+        <div class="product_popup_img_row">
+           <div class="product-img-content">
+            <div class="product_popup_main" id="product_popup_main">
+                 {% for pro_mainimg in product.media %}
+                  <div class="product_popup_col">
+                    <img src="{{ pro_mainimg | img_url:'master' }}" alt="" />
+                  </div>
+                  {% endfor %}
+              </div>
+           </div>
+           <div class="product-thumbimg-content">
+            <div class="product_popup_thumb" id="product_popup_thumb">
+               {% for pro_thumbimg in product.media %}
+                <div class="product_popup_col">
+                  <img src="{{ pro_thumbimg | img_url:'112x' }}" alt="" />
+                </div>
+                {% endfor %}
+            </div>
+           </div>
+        </div>
+      
+        
+        <span class="popup_closed">
+          <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-3 -3)" fill="none" fill-rule="evenodd"><rect width="20" height="20"></rect> <g stroke="#222" stroke-width="2"><path d="M16.092 3.908L3.908 16.092M16.092 16.092L3.908 3.908"></path></g></g></svg>
+        </span>
+      </div>
+    </div>
+</div>
+
+
+<script>
+  $window = $(window);
+  $slick_slider_main = $('#product_popup_main');
+  settings1 = {
+   slidesToShow: 1,
+   slidesToScroll: 1,
+   arrows: true,
+   fade: true,
+    dots: false,
+   infinite:false,
+     asNavFor: '#product_popup_thumb',
+  }
+  $slick_slider_main.slick(settings1);
+  $slick_slider_thumb = $('#product_popup_thumb');
+  settings = {
+    slidesToShow: 5,
+   slidesToScroll: 1,
+   asNavFor: '#product_popup_main',
+   dots: false,
+   arrows: false,
+   infinite:false,
+   focusOnSelect: true,
+     responsive: [
+    {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 4,
+        }
+    },
+    {
+        breakpoint: 371,
+        settings: {
+          slidesToShow: 3,
+        }
+    }
+    ]
+  }
+  $slick_slider_thumb.slick(settings);
+
+	
+// product popup
+
+$(".product__media").click(function() {
+  $(".product_popup_row").addClass("product_popup_open");
+    $("body").addClass("body_product_popup");
+  var current_clickcontent = $(this);
+    setTimeout(function(){
+       if ($slick_slider_main.hasClass('slick-initialized')){
+          $slick_slider_main.slick('refresh');
+      }
+      if ($slick_slider_thumb.hasClass('slick-initialized')){
+          $slick_slider_thumb.slick('refresh');
+      }
+      if($(current_clickcontent).hasClass('supliment_popup')){        
+        var supliment_index = $('.product__media[data-alt="supplements"]').parents('.slick-slide').data('slick-index');
+        console.log(supliment_index);
+         $('#product_popup_main').slick('slickGoTo', parseInt(supliment_index));
+        setTimeout(function(){
+          $('#product_popup_thumb').slick('slickGoTo', parseInt(supliment_index));  
+        },500);
+        
+      }else{
+        var supliment_index = $(current_clickcontent).data('slick-index');
+        console.log(supliment_index);
+         $('#product_popup_main').slick('slickGoTo', parseInt(supliment_index));
+        setTimeout(function(){
+        $('#product_popup_thumb').slick('slickGoTo', parseInt(supliment_index));
+        },500);
+      }
+    },200);
+      
+});
+$(".popup_closed").click(function() {
+    $(".product_popup_row").removeClass("product_popup_open");
+    $("body").removeClass("body_product_popup");
+});
+
+</script>

@@ -1,0 +1,43 @@
+<div class="product-progress-bar-container pack4">
+  <div class="progress-bar">
+    <ul class="progress-new">
+      {% assign first_variant = product.variants.first %}
+      {% for i in (1..4) %}
+        {% assign setting_variant = 'varianttext' | append: i %}
+        {% assign varianttitle = block.settings[setting_variant] %}
+
+        {% assign setting_varianttext = 'varianttext' | append: i %}
+        {% assign varianttext = block.settings[setting_varianttext] %}
+
+        {% assign setting_variantdiscount = 'variantdiscount' | append: i %}
+        {% assign variantdiscount = block.settings[setting_variantdiscount] %}
+
+        {% assign matched_variant = null %}
+
+        {% for variant in product.variants %}
+          {% if variant.title == varianttitle %}
+            {% assign matched_variant = variant %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+
+        {% if matched_variant %}
+          <li
+            {% if first_variant.id == matched_variant.id %}
+              class="active"
+            {% endif %}
+            data-blockvar="{{ matched_variant.id }}"
+            data-firstvar="{{ first_variant.id }}"
+          >
+            <span class="progressbar-title">{{ varianttext }}</span>
+            <div class="progressimage"></div>
+            <span class="progressfreetext">{{ variantdiscount }}%</span>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <div class="bar">
+      <div class="fill"></div>
+    </div>
+  </div>
+</div>

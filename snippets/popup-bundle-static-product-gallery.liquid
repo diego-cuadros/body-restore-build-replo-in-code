@@ -1,0 +1,60 @@
+<div class="product__column-sticky">
+  <div class="bundle-custom-product-media-container">
+    <div class="bundle-custom-product-media-main">
+      <popup-product-custom-slider style="opacity:0;" class="custom-main-product-slider">
+        <div class="product__media-gallery">
+          {%- if section.settings.iconimage -%}
+            <div class="custom_media_product_icon">
+              <img src="{{ section.settings.iconimage | img_url:'master' }}" width="100%" height="100%">
+            </div>
+          {%- endif -%}
+          <div class="main-slider main-product-popup-slider swiper">
+            <div class="swiper-wrapper">
+              {% for media in product.metafields.custom.product_popup_image.value %}
+                <div class="swiper-slide" data-media-id="{{ media.id }}" data-index="{{ forloop.index0 }}">
+                  <div
+                    id="pr-img-{{ forloop.index }}"
+                    class="pr-swiper-image"
+                  >
+                    <img
+                      class="pr-img"
+                      src="{{ media | img_url:'master' }}"
+                      data-class="LazyLoad"
+                      width="100%"
+                      height="100%"
+                    >
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+
+          {% assign thumbcount = 0 %}
+          {% capture thumbnailmedia %}
+           {% for media in product.metafields.custom.product_popup_image.value %}
+            {% assign thumbcount = thumbcount | plus:1 %}
+              <div data-index="{{ forloop.index0 }}" class="swiper-slide" data-media-id="{{ media.id }}">
+                    <img
+                      class="thumb-img"
+                      src="{{ media | img_url:'master' }}"
+                      height="100%"
+                      width="100%"
+                    >
+                  </div>
+            {%- endfor -%}
+          {% endcapture %}
+
+          {% if thumbcount > 1 %}
+            <div class="custom-thumbnail-slider">
+              <div class="thumb-slider thumb-product-popup-slider swiper">
+                <div class="swiper-wrapper">
+                  {{ thumbnailmedia }}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </popup-product-custom-slider>
+    </div>
+  </div>
+</div>

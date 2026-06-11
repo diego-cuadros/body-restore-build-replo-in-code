@@ -1,0 +1,65 @@
+<div class="product-progress-bar-container pack6">
+  <div class="progress-bar">
+    <ul class="progress-new">
+      <li class="active">
+        <div class="progressimage">
+          <div class="lock-container">
+            <div class="lock">
+              {% render 'lock-svg' %}
+            </div>
+            <div class="text">1 Bag</div>
+          </div>
+          <div class="image">
+            <img src="{{ block.settings.freeimage1 | img_url : 'master' }}">
+          </div>
+        </div>
+        <span>{{ block.settings.freetext1 }}</span>
+      </li>
+      <li>
+        <div class="progressimage">
+          <div class="lock-container">
+            <div class="lock">
+              {% render 'lock-svg' %}
+            </div>
+            <div class="text">2 Bag</div>
+          </div>
+          <div class="image">
+            <img src="{{ block.settings.freeimage2 | img_url : 'master' }}">
+          </div>
+        </div>
+        <span>{{ block.settings.freetext2 }}</span>
+      </li>
+      <li>
+        <div class="progressimage">
+          <div class="lock-container">
+            <div class="lock">
+              {% render 'lock-svg' %}
+            </div>
+            <div class="text">3 Bag</div>
+          </div>
+          <div class="image">
+            <img src="{{ block.settings.freeimage3 | img_url : 'master' }}">
+          </div>
+        </div>
+        <span>{{ block.settings.freetext3 }}</span>
+      </li>
+      <li>
+        <div class="progressimage">
+          <div class="lock-container">
+            <div class="lock">
+              {% render 'lock-svg' %}
+            </div>
+            <div class="text">6 Bag</div>
+          </div>
+          <div class="image">
+            <img src="{{ block.settings.freeimage6 | img_url : 'master' }}">
+          </div>
+        </div>
+        <span>{{ block.settings.freetext6 }}</span>
+      </li>
+    </ul>
+    <div class="bar">
+      <div class="fill"></div>
+    </div>
+  </div>
+</div>

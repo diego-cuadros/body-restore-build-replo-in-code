@@ -1,0 +1,100 @@
+{% style %}
+  .block--{{ block.id }} .content{line-height:1.5;margin-bottom:{{block.settings.margin_bottom}}px;color:{{block.settings.color}};font-size:{{block.settings.font_size}}px;font-weight:{{ block.settings.font_weight }};}
+@media screen and (max-width:768px){
+ .block--{{ block.id }} .content{margin-bottom:{{block.settings.mobile_margin_bottom}}px;color:{{block.settings.mobile_color}};font-size:{{block.settings.mobile_font_size}}px;}
+
+}
+
+  {% endstyle %}
+
+
+<div class="block--{{ block.id }}">
+  <div class="content">{{ block.settings.content }}</div>
+</div>
+{% schema %}
+{
+      "name": "content",
+      "settings": [
+        {
+          "type":"number",
+          "id":"width",
+          "label":"Width"
+        },
+        {
+          "type":"richtext",
+          "id":"content",
+          "label":"Content"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label":"Color"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 20,
+          "label":"Font Size"
+        },
+        {
+          "type": "range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default": 400,
+          "label":"Font Weight"
+        },
+        {
+          "type":"header",
+          "content":"Mobile View Customization"
+        },
+        {
+          "type": "color",
+          "id": "mobile_color",
+          "label":"Mobile Color"
+        },
+        {
+          "type": "range",
+          "id": "mobile_font_size",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "default": 20,
+          "label":"Font Size"
+        },
+        {
+          "type":"header",
+          "content":"Bottom Spacing Customization"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 10,
+          "label":"Margin Bottom"
+        },
+        {
+          "type": "range",
+          "id": "margin_margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 10,
+          "label":"Mobile Margin Bottom"
+        }
+      ],
+    "presets": [
+      {
+        "name":"content"
+      }
+    ]
+    }
+{% endschema %}

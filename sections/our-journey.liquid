@@ -1,0 +1,126 @@
+{% if section.settings.journey_img != blank or section.settings.journey_title != blank %}
+<section class="lr_section" style="background-color:#F8F9FA;">
+  <div class="lr_container">
+    <div class="row">
+      <div class="col-6">
+        <div class="lr_img_wrapper">
+          <img src="{{ section.settings.journey_img | img_url: 'master' }}">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="lr_info_wrapper">
+          <h2>{{ section.settings.journey_title }}</h2>
+          <div class="lr_info_text">
+            {{ section.settings.journey_content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<style>
+  body.template-our-storypage,
+  .template-our-storypage main .gradient {
+    background-color: #fff !important;
+  }
+  /* ---------------- left right section ------------- */
+  .lr_img_wrapper img {
+    width: 100%;
+  }
+  .lr_section{
+    padding:75px 0px;
+  }
+  .lr_container{
+    max-width:1440px;
+    margin:0px auto;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .lr_container .row{
+    display: flex;
+    align-items: center;
+    gap:80px;
+  }
+  .lr_container .row .col-6{
+    width:50%;
+    display: flex;
+  }
+  .lr_container .row.lr_reverse {
+    flex-direction: row-reverse;
+  }
+  .lr_section .lr_info_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .lr_section .lr_info_wrapper h2 {
+    font-size: 48px;
+    line-height: 58px;
+  }
+  .lr_section .lr_info_wrapper p {
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 0;
+    }
+  .lr_img_wrapper img{
+      border-radius: 10px;
+  }
+    @media(max-width:992px){
+      .lr_container .row,
+        .lr_container .row.lr_reverse {
+        flex-direction: column-reverse;
+        gap: 40px;
+      }
+      .lr_container .row .col-6 {
+          width: 100%;
+      }
+      .lr_section .lr_img_wrapper {
+          max-width: 600px;
+          margin: 0px auto;
+      }
+    }
+    @media(max-width:767px){
+      .lr_section {
+        padding: 50px 0px;
+      }
+      .lr_section .lr_info_wrapper h2 {
+    font-size: 34px;
+    line-height: 41px;
+}
+      .lr_section .lr_info_wrapper p {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0;
+}
+    }
+</style>
+
+{% schema %}
+  {
+    "name": "Our Journey",
+    "settings": [
+      {
+       "type": "image_picker",
+       "id": "journey_img",
+       "label": "Journey Image"
+      },
+     {
+       "type": "text",
+       "id": "journey_title",
+       "label": "Journey Title"
+     },
+     {
+       "type": "textarea",
+       "id": "journey_content",
+       "label": "Journey Content"
+     }
+    ],
+    "presets": [
+      {
+        "name": "Our Journey"
+      }
+    ]
+  }
+{% endschema %}

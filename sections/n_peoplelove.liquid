@@ -1,0 +1,69 @@
+<div class="mbr_ppllv_tp">
+    <h2>{{ section.settings.title }}</h2>
+    <img src="{{ section.settings.banner | img_url: '2000x' }}" alt=""/ width="auto" height="auto">
+</div>
+<div class="mbr_ppllv_btm">
+    <div class="mbr_main">
+        <h4>{{ section.settings.subtitle }}</h4>
+        <div class="mbr_ppllv_btm_ul">
+            {% for block in section.blocks %}
+                <div class="mbr_ppllv_btm_li">
+                    <img src="{{ block.settings.logo | img_url: '1000x' }}" alt=""/ width="auto" height="auto">
+                    <h5>{{ block.settings.title }}</h5>
+                    <p>{{ block.settings.des }}</p>
+                </div>
+            {% endfor %}
+        </div>     
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "People Love",
+    "settings": [
+      {
+       "type": "image_picker",
+       "id": "banner",
+       "label": "banner"
+      },
+      {
+       "type": "richtext",
+       "id": "title",
+       "label": "Title"
+      },
+      {
+       "type": "richtext",
+       "id": "subtitle",
+       "label": "Sub title"
+      }
+    ],
+    "blocks": [
+      {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+           "type": "text",
+           "id": "title",
+           "label": "Title"
+        },
+        {
+           "type": "text",
+           "id": "des",
+           "label": "Description"
+        }
+      ]
+    }
+    ],
+    "presets": [
+      {
+        "name": "People Love"
+      }
+    ]
+  }
+{% endschema %}

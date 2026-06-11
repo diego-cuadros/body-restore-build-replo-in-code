@@ -1,0 +1,102 @@
+class LogoSlider extends HTMLElement {
+ 
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    const handleIntersection = (entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+      observer.unobserve(this);
+      this.style.opacity = "1";
+      var carouselSpeed = this.getAttribute("data-speed");
+      var swiper = new Swiper(".logo-list-slider--" + this.getAttribute("data-sectionid"), {
+        spaceBetween: 50,
+        centeredSlides: true,
+        speed: carouselSpeed,
+        autoplay: {
+          delay: 0,
+        },
+        loop: true,
+        slidesPerView: "auto",
+        allowTouchMove: false,
+        disableOnInteraction: true,
+        breakpoints: {
+          768: {
+            slidesPerView: "auto",
+            spaceBetween: 80,
+          },
+        },
+      });
+    };
+
+    new IntersectionObserver(handleIntersection.bind(this), {
+      rootMargin: "0px 0px 400px 0px",
+    }).observe(this);
+  }
+}
+customElements.define("custom-logo-slider", LogoSlider);
+
+
+
+class CustomIconText extends HTMLElement {
+ 
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    const handleIntersection = (entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+      observer.unobserve(this);
+const sectionId = this.getAttribute("data-sectionid");
+const perView = this.getAttribute("data-perview");
+
+// Step 1: Create a config object
+let swiperConfig = {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    990: {
+      slidesPerView: perView,
+      spaceBetween: 40,
+    },
+    1025: {
+      slidesPerView: perView,
+      spaceBetween: 60,
+    },
+  },
+};
+
+// Step 2: Add autoplay/loop only for mobile
+if (window.innerWidth < 990) {
+  swiperConfig.loop = true;
+  swiperConfig.autoplay = {
+    delay: 2500,
+    disableOnInteraction: false,
+  };
+}
+
+// Step 3: Init Swiper
+const swiper = new Swiper(".custom_icontext_slider-" + sectionId, swiperConfig);
+    };
+
+    new IntersectionObserver(handleIntersection.bind(this), {
+      rootMargin: "0px 0px 400px 0px",
+    }).observe(this);
+  }
+}
+customElements.define("custom-icontext", CustomIconText);
+

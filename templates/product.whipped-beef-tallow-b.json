@@ -1,0 +1,760 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "n_productheader_MxxXbF": {
+      "type": "n_productheader",
+      "name": "Product Header",
+      "settings": {
+        "saletext": "🎁 EARLY BLACK FRIDAY VIP ACCESS 🎁 ends in",
+        "bartext": "⏰ Limited Time: Save Up To 40% Off",
+        "logo": "shopify://shop_images/Group_28401.svg"
+      }
+    },
+    "main": {
+      "type": "main-product-bundlelanding",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "okendo_star_rating_kd6L6E": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
+          "settings": {
+            "product": ""
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "okendo_star_rating_kd6L6E",
+        "vendor",
+        "description"
+      ],
+      "settings": {
+        "glic1": "shopify://shop_images/Group_1171275741_150cc681-227f-4e36-88b0-8d6b5d45947f.svg",
+        "gltxt1": "100% Natural Ingredients",
+        "glic2": "shopify://shop_images/Group_bebae039-4b1a-4ece-997c-c22614fdfa04.svg",
+        "gltxt2": "Deeply Moisturizing",
+        "glic3": "shopify://shop_images/Frame_9294c00b-7f37-4dc9-b2f2-538d24807f20.svg",
+        "gltxt3": "Calms Skin Irritation",
+        "rvstar": "shopify://shop_images/Container.svg",
+        "rvstarcnt": "(129)",
+        "speciality": "<ul><li>Nourish</li><li>Hydrate</li><li>Restore</li></ul>",
+        "aficon1": "shopify://shop_images/fi_3129282.svg",
+        "afttxt1": "30-Day Happiness Guarantee",
+        "aficon2": "shopify://shop_images/fi_685388.svg",
+        "afttxt2": "Free Shipping",
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "buttons": true,
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 16,
+        "padding_bottom": 40
+      }
+    },
+    "n_reviewlogoslider_DGDbqr": {
+      "type": "n_reviewlogoslider",
+      "blocks": {
+        "scroller_zYaCqR": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_23.png"
+          }
+        },
+        "scroller_TWJKjp": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_24.png"
+          }
+        },
+        "scroller_9ALVxR": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_26.png"
+          }
+        },
+        "scroller_nprxMk": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_29.png"
+          }
+        },
+        "scroller_47tpgN": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_32_538b9617-b628-434c-8d15-bd4abfa2af1d.png"
+          }
+        },
+        "scroller_VbLGA3": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_25.png"
+          }
+        },
+        "scroller_4FXb7N": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_28.png"
+          }
+        },
+        "scroller_3bpYEy": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_30_0a6b8a52-a712-477a-894a-b3da16e89f8d.png"
+          }
+        },
+        "scroller_CmMD6K": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_24.png"
+          }
+        },
+        "scroller_4nJqfX": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_26.png"
+          }
+        },
+        "scroller_xPAtBz": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_29.png"
+          }
+        },
+        "scroller_eGjXVa": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_32_538b9617-b628-434c-8d15-bd4abfa2af1d.png"
+          }
+        },
+        "scroller_b64Ezn": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_25.png"
+          }
+        },
+        "scroller_D6FD94": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_28.png"
+          }
+        }
+      },
+      "block_order": [
+        "scroller_zYaCqR",
+        "scroller_TWJKjp",
+        "scroller_9ALVxR",
+        "scroller_nprxMk",
+        "scroller_47tpgN",
+        "scroller_VbLGA3",
+        "scroller_4FXb7N",
+        "scroller_3bpYEy",
+        "scroller_CmMD6K",
+        "scroller_4nJqfX",
+        "scroller_xPAtBz",
+        "scroller_eGjXVa",
+        "scroller_b64Ezn",
+        "scroller_D6FD94"
+      ],
+      "name": "Review Logo Slider",
+      "settings": {
+        "star": "shopify://shop_images/Frame_1707479733.svg",
+        "title": "BEST SELLER",
+        "desc1": "30,000,000+ Capsules Delivered",
+        "desc2": "& AS SEEN ON"
+      }
+    },
+    "n_peoplelove_FVzTea": {
+      "type": "n_peoplelove",
+      "blocks": {
+        "block_ULUcER": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_102_b0a00d95-b1c0-4f71-aa16-2c0cad70760e.png",
+            "title": "100% Natural Ingredients",
+            "des": "Made with grass-fed tallow, Manuka Honey, and Jojoba Oil to deeply moisturize and protect skin."
+          }
+        },
+        "block_TXaUgG": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_100_1_f44be5b0-d111-4d72-b134-f2f00bf424ec.png",
+            "title": "Multi-Purpose Hydration",
+            "des": "Use on hands, heels, face, or lips to soften, repair, and lock in lasting moisture."
+          }
+        },
+        "block_Pk33rW": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_100_3b8c3711-db7f-46de-b4cd-b882038d52e0.png",
+            "title": "Noticeable & Real Results",
+            "des": "Experience smoother, radiant skin that feels nourished from within."
+          }
+        }
+      },
+      "block_order": [
+        "block_ULUcER",
+        "block_TXaUgG",
+        "block_Pk33rW"
+      ],
+      "name": "People Love",
+      "settings": {
+        "banner": "shopify://shop_images/New_Project_bf397c08-4ced-44a9-8b28-1ac01a05d095.webp",
+        "title": "<p>Why People Love <strong>Body Restore</strong></p>",
+        "subtitle": "<p><strong>Deep nourishment and visible results — no spa required.</strong></p>"
+      }
+    },
+    "n_steps_BRPAwR": {
+      "type": "n_steps",
+      "blocks": {
+        "block_MAYKRz": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ADA4279_4_2.webp",
+            "title": "Apply to Hands",
+            "number": "1"
+          }
+        },
+        "block_P9CQVh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ADA4279_4_2_1.webp",
+            "title": "Massage into Elbows",
+            "number": "2"
+          }
+        },
+        "block_zzXgVc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ADA4279_4_2_2.webp",
+            "title": "Use on Heels",
+            "number": "3"
+          }
+        },
+        "block_MCnp39": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/ADA4279_4_2_3.webp",
+            "title": "Indulge in Ritual Moments",
+            "number": "4"
+          }
+        }
+      },
+      "block_order": [
+        "block_MAYKRz",
+        "block_P9CQVh",
+        "block_zzXgVc",
+        "block_MCnp39"
+      ],
+      "name": "Simple Steps",
+      "settings": {
+        "title": "<p>Use <strong>Anywhere</strong> You Need It</p>"
+      }
+    },
+    "n_reason_kBTUAB": {
+      "type": "n_reason",
+      "blocks": {
+        "block_mnnxBy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479895.svg",
+            "title": "Premium Ingredients",
+            "des": "Made with grass-fed tallow, manuka honey, and colloidal oatmeal"
+          }
+        },
+        "block_JRgDUN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479898.svg",
+            "title": "Portable To Everywhere",
+            "des": "Compact pouches for gym, travel, or home."
+          }
+        },
+        "block_CeL6cH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479897_a2dbe65f-eb9e-4c9a-aee3-954975085af0.svg",
+            "title": "Made in the USA",
+            "des": "High quality and proven ingredients made right here in the United States."
+          }
+        },
+        "block_CCAeCR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479899.svg",
+            "title": "Eco-Conscious For You",
+            "des": "Made with natural, clean, eco-friendly ingredients."
+          }
+        },
+        "block_aEMNXp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479897_1.svg",
+            "title": "Fast Result in Mins",
+            "des": "Spa-like results with deep healing properties to combat irritation."
+          }
+        },
+        "block_LM6QPx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479900.svg",
+            "title": "Trusted by Happy Customers",
+            "des": "Hundreds of verified 5-star reviews and testimonials."
+          }
+        }
+      },
+      "block_order": [
+        "block_mnnxBy",
+        "block_JRgDUN",
+        "block_CeL6cH",
+        "block_CCAeCR",
+        "block_aEMNXp",
+        "block_LM6QPx"
+      ],
+      "name": "Reason",
+      "settings": {
+        "subtitle": "6 Reasons",
+        "title": "<p>You'll Love To Relax With <strong>Body Restore</strong></p>",
+        "bg": "shopify://shop_images/Group_28461.webp"
+      }
+    },
+    "n_ingredient_tab_phR6Yk": {
+      "type": "n_ingredient_tab",
+      "blocks": {
+        "grid_mprTp7": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/eucalyptus_720_2_6336f344-9804-4187-b586-7e4cc9874e2a.png",
+            "tab-label": "EUCALYPTUS",
+            "circlecolor": "#6cb8b9",
+            "tabcontentbg": "#6cb8b9",
+            "image1": "shopify://shop_images/Asset_11_b43d9656-0342-491d-8252-d7322628a66e.png",
+            "image2": "shopify://shop_images/Asset_6_8eaa7419-9de6-4124-a4bc-348e011d693f.png",
+            "text": "<p>Sodium Bicarbonate, Sodium Sulfate, Citric Acid, Sodium Carbonate, Zea Mays (Corn) Starch, Menthol, Eucalyptus Globulus Oil, PEG-150, PEG-8</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#add4d3"
+          }
+        },
+        "grid_JTmNAj": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/mockup_lavender_720_2.png",
+            "tab-label": "LAVENDER",
+            "circlecolor": "#a985b7",
+            "tabcontentbg": "#a985b7",
+            "image1": "shopify://shop_images/Asset_10_013a402d-79fa-4f6d-a9fd-05b2df36fdc8.png",
+            "image2": "shopify://shop_images/Asset_7_475a2178-ecd0-4bd8-b05e-901576f1688a.png",
+            "text": "<p>Sodium Bicarbonate, Sodium Sulfate, Citric Acid, Sodium Carbonate, Zea Mays (Corn) Starch, Citrus Limon Peel Oil, Menthol, PEG 150, PEG 8, Citrus Sinensis Peel Oil, Citrus Paradisi Peel Oil</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#c2aecc"
+          }
+        },
+        "grid_MyeMrd": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/grapefruit_720_1.png",
+            "tab-label": "GRAPEFRUIT",
+            "circlecolor": "#dd817a",
+            "tabcontentbg": "#dd817a",
+            "image1": "shopify://shop_images/Asset_12_d0b333dd-8edf-4f85-826f-6906f4b297c1.png",
+            "image2": "shopify://shop_images/Asset_5_ecdf9783-220f-4bef-855c-71b5f866a458.png",
+            "text": "<p>Sodium Bicarbonate, Sodium Sulfate, Citric Acid, Sodium Carbonate, Zea Mays (Corn) Starch, Lavandula Officinalis Flower Oil, Menthol, PEG 150, PEG</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#f1a6a5"
+          }
+        },
+        "grid_bmepqr": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/mockup_unscented__1__720_2_a5cb9ff9-98fe-4ba4-aa68-2cf0050599a6.png",
+            "tab-label": "UNSCENTED",
+            "circlecolor": "#c59275",
+            "tabcontentbg": "#c59275",
+            "image1": "shopify://shop_images/Asset_9_250ec5a2-6d09-4e86-88c2-8d8619e411b1.png",
+            "image2": "shopify://shop_images/Asset_8_31043236-d0f3-4585-9bbf-ba48d31e9784.png",
+            "text": "<p>Sodium Bicarbonate, Sodium Sulfate, Citric Acid, Sodium Carbonate, Zea Mays (Corn) Starch, Melaleuca alternifolia leaf oil, Menthol, PEG 150, PEG 8</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#e6c3b2"
+          }
+        }
+      },
+      "block_order": [
+        "grid_mprTp7",
+        "grid_JTmNAj",
+        "grid_MyeMrd",
+        "grid_bmepqr"
+      ],
+      "name": "New Ingredient List Tab",
+      "settings": {
+        "heading": "<p>Ingredients List <strong>Call Out!</strong></p>",
+        "tabtfontsize": 16,
+        "tabtfontsizemob": 14,
+        "tabtfontweight": 400,
+        "tabtcolor": "#0c2331",
+        "bgcolor": "#fff9eb",
+        "gridmaxwidth": 890,
+        "tabcfontsize": 15,
+        "tabcfontsizemob": 14,
+        "tabcfontweight": 400,
+        "padding_top": 50,
+        "padding_bottom": 86,
+        "padding_top_mob": 40,
+        "padding_bottom_mob": 60
+      }
+    },
+    "n_textreview_7XBrwd": {
+      "type": "n_textreview",
+      "name": "New Review Text",
+      "settings": {
+        "bg-color": "",
+        "width": 800,
+        "textalignment": "center",
+        "tab2": "Written Reviews",
+        "tab_color": "rgba(0,0,0,0)",
+        "tab_text_color": "#000000",
+        "active_tab_color": "#fff9eb",
+        "active_tab_text_color": "#000000",
+        "tabfont-size": 16,
+        "tabfont-size-mob": 14,
+        "tabfont-weight": 500,
+        "video-height": 175,
+        "count": 6,
+        "count-mob": 3,
+        "title": "",
+        "color": "",
+        "font-size": 16,
+        "font-size-mob": 14,
+        "font-weight": 700,
+        "space": 50,
+        "space_mob": 40,
+        "content": "",
+        "tccolor": "",
+        "tcfont-size": 16,
+        "tcfont-size-mob": 14,
+        "tcfont-weight": 700,
+        "tcspace": 50,
+        "tcspace_mob": 40,
+        "top": -60,
+        "right": 130,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "n_faq_M7hUjR": {
+      "type": "n_faq",
+      "blocks": {
+        "faq_grid_yDNGke": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What makes Body Restore different?",
+            "faq_title_desc": "<p>Body Restore is proudly made in the USA using premium, grass-fed beef tallow and pure, natural ingredients. We never use fillers, synthetics, or harsh additives. Each product is crafted with nutrient-rich, clean formulas that deliver real results while reflecting our commitment to quality, transparency, and uncompromising skin care.</p>"
+          }
+        },
+        "faq_grid_CH8WaX": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Can I use it on my face as well as my body?",
+            "faq_title_desc": "<p>Yes — the formula is marketed for head-to-toe use: face, hands, body. A little goes a long way. Because the texture is richer than typical lotions, you may want to use a smaller amount on the face until you gauge how your skin responds.</p>"
+          }
+        },
+        "faq_grid_hwBK86": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What are the key ingredients?",
+            "faq_title_desc": "<ul><li>Grass-fed beef tallow: rich in fat-soluble vitamins (A, D, E, K) and fatty acids, chosen for barrier-support and deep occlusion.</li><li>Manuka honey: a natural humectant and soothing agent, supporting skin repair and calming irritation.</li><li>Jojoba oil: a skin-friendly oil that mimics skin’s natural sebum, helping absorption and skin compatibility.</li><li>Colloidal oatmeal: a classic soothing agent for sensitive or irritated skin.</li></ul>"
+          }
+        },
+        "faq_grid_zeU97E": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Does it have a scent or fragrance?",
+            "faq_title_desc": "<p>Some variants may include light natural aroma (depending on essential-oil additions or scent options such as grapefruit, lavender). For those with fragrance sensitivity, look for the unscented or “light scent” version if available. The base product uses clean ingredients with no synthetic fragrance fillers.</p>"
+          }
+        },
+        "faq_grid_aMxt4j": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What’s the shelf life and how should I store it?",
+            "faq_title_desc": "<p>Store in a cool, dry place away from direct heat or sunlight (since fats can melt or degrade). Use within a reasonable timeframe (e.g., 12 months after opening) for optimal freshness.</p>"
+          }
+        },
+        "faq_grid_9YQRgp": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Where is it made and is it safe?",
+            "faq_title_desc": "<p>The Whipped Beef Tallow product is made in the USA. We always emphasize clean, minimal ingredients and grass-fed sourcing of the tallow. As with any skincare product, if you have a known allergy (e.g., to bees/honey, oats, etc.), check the full ingredients list thoroughly.</p>"
+          }
+        },
+        "faq_grid_kwXjAe": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does shipping take?",
+            "faq_title_desc": "<p>Orders are processed quickly and typically arrive within 3 to 5 business days. You’ll receive a tracking number once your order ships so you can follow it right to your door.</p>"
+          }
+        },
+        "faq_grid_inWn3g": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What is your return policy if I’m not satisfied?",
+            "faq_title_desc": "<p>We offer a 30-day money-back guarantee if you’re not fully satisfied.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_grid_yDNGke",
+        "faq_grid_CH8WaX",
+        "faq_grid_hwBK86",
+        "faq_grid_zeU97E",
+        "faq_grid_aMxt4j",
+        "faq_grid_9YQRgp",
+        "faq_grid_kwXjAe",
+        "faq_grid_inWn3g"
+      ],
+      "name": "New Faq",
+      "settings": {
+        "enablesvg": false,
+        "faq_bg": "",
+        "topspacing": 150,
+        "topspacingmob": 20,
+        "showbordertop": false,
+        "showborderbottom": false,
+        "faq_title": "<p>Frequently Asked <strong>Questions</strong></p>",
+        "tfontsize": 44,
+        "tfontsizemob": 34,
+        "tfontweight": 700,
+        "textalignment": "center",
+        "faq_title_color": "#0c2331",
+        "tpaddingbottom": 0,
+        "tpaddingbottommob": 48,
+        "ftfontsize": 18,
+        "ftfontsizemob": 16,
+        "ftfontweight": 700,
+        "ftcolor": "#000000",
+        "fcfontsize": 16,
+        "fcfontsizemob": 14,
+        "fccfontweight": 400,
+        "fccolor": "#000000",
+        "spaddingtop": 0,
+        "spaddingbottom": 0,
+        "spaddingtopmob": 0,
+        "spaddingbottommob": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "accent-1",
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "n_save_4neDj3": {
+      "type": "n_save",
+      "blocks": {
+        "scroller_7abniX": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_k6txtx": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_BFpVdf": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_3QfzPJ": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_YJKAa4": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_QjXaRN": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_RhBMmT": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_pyLYy9": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_fJBd3y": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_98q9Dc": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_MCRfzC": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_dmQDrQ": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_AaiaRP": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_dB3K9c": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_yAmkEp": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_rBhQdK": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_AxQdeE": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_pRExGP": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_MkwXVg": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_7ddqjK": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        }
+      },
+      "block_order": [
+        "scroller_7abniX",
+        "scroller_k6txtx",
+        "scroller_BFpVdf",
+        "scroller_3QfzPJ",
+        "scroller_YJKAa4",
+        "scroller_QjXaRN",
+        "scroller_RhBMmT",
+        "scroller_pyLYy9",
+        "scroller_fJBd3y",
+        "scroller_98q9Dc",
+        "scroller_MCRfzC",
+        "scroller_dmQDrQ",
+        "scroller_AaiaRP",
+        "scroller_dB3K9c",
+        "scroller_yAmkEp",
+        "scroller_rBhQdK",
+        "scroller_AxQdeE",
+        "scroller_pRExGP",
+        "scroller_MkwXVg",
+        "scroller_7ddqjK"
+      ],
+      "name": "Save Section",
+      "settings": {
+        "rvwimg": "shopify://shop_images/Frame_1707479828_1.webp",
+        "mainimg": "shopify://shop_images/Group_6_1.png",
+        "title": "<p>BUNDLE Whipped Beef Tallow</p>",
+        "des": "<p>The more you bundle, the more your skin glows.</p>",
+        "btnurl": "#",
+        "btntext": "Build your bundle",
+        "aicon1": "shopify://shop_images/fi_3129282.svg",
+        "atext1": "30-Day Happiness Guarantee",
+        "aicon2": "shopify://shop_images/fi_685388.svg",
+        "atext2": "Free Shipping"
+      }
+    }
+  },
+  "order": [
+    "n_productheader_MxxXbF",
+    "main",
+    "n_reviewlogoslider_DGDbqr",
+    "n_peoplelove_FVzTea",
+    "n_steps_BRPAwR",
+    "n_reason_kBTUAB",
+    "n_ingredient_tab_phR6Yk",
+    "n_textreview_7XBrwd",
+    "n_faq_M7hUjR",
+    "related-products",
+    "n_save_4neDj3"
+  ]
+}

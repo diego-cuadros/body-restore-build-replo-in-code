@@ -1,0 +1,473 @@
+{% style %}
+  #shopify-section-{{section.id}} .main-container {position:relative;width:100%;}
+  #shopify-section-{{section.id}} strong {font-weight:700 !important;}
+  #shopify-section-{{section.id}} .page-width{ {% if section.settings.width != 0 %} max-width:{{section.settings.width}}px; {% endif %} width:100%;}
+  #shopify-section-{{section.id}} {margin-top:{{section.settings.margintop}}px;}
+  #shopify-section-{{section.id}} .bright-video-wrapper{display:grid; align-items: center;}
+  #shopify-section-{{section.id}} .bright-video-wrapper.media_first{grid-template-areas:'media content';grid-template-columns:1fr 1fr;}
+  #shopify-section-{{section.id}} .bright-video-wrapper.content_first{grid-template-areas:'content media';grid-template-columns:1fr 1fr;}
+  #shopify-section-{{section.id}} .page-width .bright-video-wrapper { gap:48px;}
+  #shopify-section-{{section.id}} .bright-video-container{position:relative;padding-top:{{section.settings.mediaheight}}%;height:0%;grid-area:media;top:0px;border-radius:10px;overflow:hidden;}
+  #shopify-section-{{section.id}} .bright-video-container video{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover;object-position:center;}
+  #shopify-section-{{section.id}} .bright-video-container img{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover;object-position:center;}
+  #shopify-section-{{section.id}} .banner_inner_detail .button-landing-banner{cursor:pointer;}
+  #shopify-section-{{section.id}} .section-heading {text-align:center;margin-top:0px;}
+  #shopify-section-{{section.id}} .svg-bottom {width:100%;position:relative;}
+  {% if section.settings.content_position == 'image-first' %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:0px 0px 0px 0px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% else %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:0px 0px 0px 0px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% endif %}
+   #shopify-section-{{section.id}} .icons {position:absolute;top:0;bottom:0px;left:0px;right:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:end;justify-content:end;z-index:5;gap:12px;padding:12px;}
+   #shopify-section-{{section.id}} .icons .icon-container {box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;width:48px;min-width:48x;height:48px;background-color:#FFFFFF;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+   #shopify-section-{{section.id}} .icons .icon-container span{ display:flex;align-items:center;justify-content:center;padding:5px;}
+   #shopify-section-{{section.id}} .icons .icon-container .unmute {display:none;}
+   #shopify-section-{{section.id}} .icons .icon-container .play {display:none;}
+   #shopify-section-{{section.id}} .icons .icon-container svg{width:24px;}
+   #shopify-section-{{section.id}} .icons .icon-container svg path{fill:#000000;}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content {width:100%;display:grid;grid-template-columns:repeat(2 , 1fr);gap:20px;}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content h2 {line-height:1.15;}
+  #shopify-section-{{section.id}} .bright-video-content .heading{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .content{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .content p{margin:0px;line-height:1.4;}
+  #shopify-section-{{section.id}} .bright-video-content .brightangel-button{margin:20px auto 0px;display:flex;}
+  #shopify-section-{{section.id}} .speaker-btn-icons{display:flex;gap:20px;}
+  #shopify-section-{{section.id}} .videobtns{cursor:pointer;display: flex;align-items: center;width: 24px;height: 24px;}
+  #shopify-section-{{section.id}} .desktop-view {display:block;}
+  #shopify-section-{{section.id}} .mobile-view {display:none;}
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'content' %}
+        .block--{{ block.id }} {text-align:{{block.settings.align}};}
+    {% endcase %}
+  {% endfor %}
+  @media screen and (max-width:1200px){
+
+  {% if section.settings.content_position == 'image-first' %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:0px 0px 0px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% else %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:0px 30px 0px 0px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% endif %}
+  }
+  @media screen and (max-width:990px){
+    #shopify-section-{{section.id}} .bright-video-wrapper{display:grid;height:100%;}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content {width:100%;display:grid;grid-template-columns:repeat(1 , 1fr);gap:20px;}
+
+  }
+  @media screen and (max-width:768px){
+  #shopify-section-{{section.id}} .bright-video-container{position:relative;grid-area:media;top:0px; width: 100%;}
+   #shopify-section-{{section.id}} .icons .icon-container {width:40px;min-width:40x;height:40px;background-color:#FFFFFF;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+   #shopify-section-{{section.id}} .icons .icon-container svg{width:20px;}
+  #shopify-section-{{section.id}} .page-width .bright-video-wrapper { gap:0px;}
+  #shopify-section-{{section.id}} {margin-top:{{section.settings.margintopmob}}px;}
+  #shopify-section-{{section.id}} .heading{margin-top:0px !important;width:100% !important;text-align:{{section.settings.alignmob}}; }
+  #shopify-section-{{section.id}} .bright-video-content .content{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-wrapper{display:flex;flex-direction:column;}
+  #shopify-section-{{section.id}} .bright-video-container{ top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content-container{padding:24px 0px;}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content  {display:flex;flex-direction:column;align-items:{{section.settings.alignmob}};justify-content:center;text-align:{{section.settings.alignmob}}; }
+  #shopify-section-{{section.id}} .bright-video-content .brightangel-button{margin:12px auto 0px;}
+  #shopify-section-{{section.id}} .bright-video-container .custom-controls{position:absolute;z-index:9;bottom:20px;left:20px;}
+  #shopify-section-{{section.id}} .desktop-view {display:none;}
+  #shopify-section-{{section.id}} .mobile-view {display:block;}
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'content' %}
+        .block--{{ block.id }} {text-align:{{block.settings.alignmob}};}
+    {% endcase %}
+  {% endfor %}
+  }
+{% endstyle %}
+
+{% if section.settings.image != blank or section.settings.video_url != blank %}
+  <landing-banner
+    data-sectionid="{{ section.id }}"
+  >
+    <div class="main-container">
+      <div
+        class="padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} padding-top-mob-{{ section.settings.mobile_padding_top }} padding-bottom-mob-{{ section.settings.mobile_padding_bottom }}"
+        style="background:{{ section.settings.background }};"
+      >
+        <div class="page-width">
+          <div class="header-container">
+            <h2
+              class="heading section-heading margin-bottom-{{ section.settings.space }} margin-bottom-mob-{{ section.settings.space_mob }} font-size-mob-{{ section.settings.mobile_size }} font-size-{{ section.settings.size }} font-weight-{{ section.settings.weight }}"
+              style="color:{{ section.settings.color }};"
+            >
+              {{ section.settings.heading }}
+            </h2>
+          </div>
+          <div
+            class="bright-video-wrapper {{ section.settings.content_position }} "
+          >
+            <div class="bright-video-container">
+              {% if section.settings.media_type == 'image' %}
+                <img
+                  src="{{ section.settings.image | img_url : 'master' }}"
+                >
+              {% else %}
+                <video
+                  class="myVideo {% if section.settings.video_urlmob != blank %} desktop-view {% endif %}"
+                  preload="metadata"
+                  loop
+                  playsinline
+                  muted
+                  autoplay
+                >
+                  <source src="{{ section.settings.video_url.sources[1].url }}#t=0.001">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/quicktime">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/mp4">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/ogg">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/webm">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/3gp">
+                  <source src="{{ section.settings.video_url.sources[1].url }}" type="video/mov">
+                </video>
+                <div class="icons">
+                  <div class="icon-container muteBtn">
+                    <span class="mute">{% render 'mute-icon' %}</span>
+                    <span class="unmute" hidden>{% render 'unmute-icon' %}</span>
+                  </div>
+                  <div class="pause-button icon-container">
+                    <span class="pause">{% render 'pause-icon' %}</span>
+                    <span class="play" hidden>{% render 'play-icon' %}</span>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+            <div class="bright-video-content-container ">
+              <div class="bright-video-content">
+                {% for block in section.blocks %}
+                  <div class="item">
+                    <h4
+                      class="h4 heading  margin-bottom-5 margin-bottom-mob-5 font-size-mob-{{ section.settings.itmobile_size }} font-size-{{ section.settings.itsize }} font-weight-{{ section.settings.itweight }}"
+                      style="color:{{ section.settings.itcolor }};"
+                    >
+                      {{ block.settings.heading }}
+                    </h4>
+                    <div
+                      class="content margin-bottom-0 margin-bottom-mob-0 font-size-mob-{{ section.settings.icmobile_size }} font-size-{{ section.settings.icsize }} font-weight-{{ section.settings.icweight }}"
+                      style="color:{{ section.settings.iccolor }};"
+                    >
+                      {{ block.settings.content }}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </landing-banner>
+{% endif %}
+{% schema %}
+{
+  "name": "PDP Media With Grid",
+  "settings": [
+    {
+      "type":"color",
+      "id":"background",
+      "label":"Background"
+    },
+    {
+      "type":"number",
+      "id":"width",
+      "label":"Section Custom Width",
+      "default":868
+    },
+    {
+      "type":"select",
+      "id":"content_position",
+      "options":[
+        {
+          "value":"media_first",
+          "label":"Media First"
+        },
+        {
+          "value":"content_first",
+          "label":"Content First"
+        }
+      ],
+      "default":"media_first",
+      "label":"Position"
+    },
+    {
+      "type":"select",
+      "id":"media_type",
+      "options":[
+        {
+          "value":"video",
+          "label":"Video"
+        },
+        {
+          "value":"image",
+          "label":"Image"
+        }
+      ],
+      "default":"image",
+      "label":"Media Type"
+    },
+    {
+      "type":"number",
+      "label":"Media Height",
+      "id":"mediaheight",
+      "default":100
+    },
+    {
+      "type":"image_picker",
+      "id":"image",
+      "label":"Image",
+      "info":"Please upload 1000 x 1000 px size image"
+    },
+    {
+      "type": "video",
+      "label": "Video URL",
+      "id": "video_url",
+      "info":"Please upload 1000 x 1000 px size video, please upload video in .mp4 type."
+    },
+    {
+      "type":"header",
+      "content":"Section Heading Customization"
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Heading"
+    },
+    {
+      "type":"color",
+      "id":"color",
+      "label":"Color"
+    },
+    {
+      "type":"range",
+      "id":"size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "id":"mobile_size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Mobile Font Size"
+    },
+    {
+      "type":"range",
+      "id":"weight",
+      "step":100,
+      "min":100,
+      "max":900,
+      "default":500,
+      "label":"Font Weight"
+    },
+    {
+      "type":"range",
+      "id":"space",
+      "step":1,
+      "min":0,
+      "max":100,
+      "default":0,
+      "label":"Bottom Spacing"
+    },
+    {
+      "type":"range",
+      "id":"space_mob",
+      "step":1,
+      "min":0,
+      "max":100,
+      "default":0,
+      "label":"Mobile Bottom Spacing"
+    },
+    {
+      "type":"header",
+      "content":"Item Customization"
+    },
+    {
+      "type":"header",
+      "content":"Item Title Customization"
+    },
+    {
+      "type":"color",
+      "id":"itcolor",
+      "label":"Color"
+    },
+    {
+      "type":"range",
+      "id":"itsize",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "id":"itmobile_size",
+      "min":0,
+      "max":100,
+      "default":28,
+      "label":"Mobile Font Size"
+    },
+    {
+      "type":"range",
+      "id":"itweight",
+      "step":100,
+      "min":100,
+      "max":900,
+      "default":500,
+      "label":"Font Weight"
+    },
+    {
+      "type":"header",
+      "content":"Item Text Customization"
+    },
+    {
+      "type":"color",
+      "id":"iccolor",
+      "label":"Color"
+    },
+    {
+      "type":"range",
+      "id":"icsize",
+      "min":0,
+      "max":100,
+      "default":16,
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "id":"icmobile_size",
+      "min":0,
+      "max":100,
+      "default":16,
+      "label":"Mobile Font Size"
+    },
+    {
+      "type":"range",
+      "id":"icweight",
+      "step":100,
+      "min":100,
+      "max":900,
+      "default":500,
+      "label":"Font Weight"
+    },
+    {
+      "type":"header",
+      "content":"Section Spacing"
+    },
+    {
+      "type":"number",
+      "id":"padding_top",
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"padding_bottom",
+      "label":"Padding Bottom"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_top",
+      "label":"Mobile Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_bottom",
+      "label":"Mobile Padding Bottom"
+    },
+    {
+      "type":"header",
+      "content":"Margin Top Customization"
+    },
+    {
+      "type":"number",
+      "id":"margintop",
+      "label":"Margin Top"
+    },
+    {
+      "type":"number",
+      "id":"margintopmob",
+      "label":"Mobile Margin Top"
+    }
+  ],
+  "blocks":[
+    {
+      "type":"item",
+      "name":"Item",
+      "settings":[
+        {
+          "type":"text",
+          "id":"heading",
+          "label":"Heading"
+        },
+        {
+          "type":"richtext",
+          "id":"content",
+          "label":"Content"
+        },
+      ]
+    }
+  ],
+  "presets":[
+    {
+    "name": "PDP Media With Grid"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+      // $('.myVideo').each(function(index, video) {
+      //   var $muteBtn = $(video).closest('.bright-video-container').find('.muteBtn');
+
+      //   $muteBtn.on('click', function() {
+      //     if (video.muted) {
+      //       video.muted = false;
+      //       $muteBtn.find('.mute').hide();
+      //       $muteBtn.find('.unmute').show();
+      //     } else {
+      //       video.muted = true;
+      //       $muteBtn.find('.mute').show();
+      //       $muteBtn.find('.unmute').hide();
+      //     }
+      //   });
+      // });
+
+
+   $('.myVideo').each(function(index, video) {
+    var $container = $(video).closest('.bright-video-container');
+    var $muteBtn = $container.find('.muteBtn');
+    var $pauseBtn = $container.find('.pause-button');
+
+    // Mute/Unmute Functionality
+    $muteBtn.on('click', function() {
+      if (video.muted) {
+        video.muted = false;
+        $muteBtn.find('.mute').css('display', 'none');
+        $muteBtn.find('.unmute').css('display', 'flex');
+      } else {
+        video.muted = true;
+        $muteBtn.find('.mute').css('display', 'flex');
+        $muteBtn.find('.unmute').css('display', 'none');
+      }
+    });
+
+    // Play/Pause Functionality
+    $pauseBtn.on('click', function() {
+      if (video.paused) {
+        video.play();
+        $pauseBtn.find('.pause').css('display', 'flex');
+        $pauseBtn.find('.play').css('display', 'none');
+      } else {
+        video.pause();
+        $pauseBtn.find('.pause').css('display', 'none');
+        $pauseBtn.find('.play').css('display', 'flex');
+      }
+    });
+  });
+</script>

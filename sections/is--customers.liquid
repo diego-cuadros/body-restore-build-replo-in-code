@@ -1,0 +1,117 @@
+<section class="man_customer_sec" style="background-color:{{ section.settings.bg_color }};" >
+  <div class="container">
+    <div class="main_customer">
+      <div class="customer_row">
+        {% for block in section.blocks %}
+          <div class="main_customer_col">
+            <div class="customer_inner">
+              <div class="customer_title">
+                <div class="cus_review_rating">
+                  <span>{{ block.settings.review_star }}</span>
+                  <span>{{ block.settings.review_count }}</span>
+                </div>
+                <h2>{{ block.settings.cust_title }}</h2>
+              </div>
+              <div class="customer_user">
+                <div class="cus_user_col">
+                  <h3>{{ block.settings.user_title1 }}</h3>
+                  <p>{{ block.settings.user_content1 }}</p>
+                  <span>{{ block.settings.user_name1 }}</span>
+                </div>
+                <div class="cus_user_col">
+                  <h3>{{ block.settings.user_title2 }}</h3>
+                  <p>{{ block.settings.user_content2 }}</p>
+                  <span>{{ block.settings.user_name2 }}</span>
+                </div>
+              </div>
+            </div>
+          </div>  
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Customers",
+    "settings": [
+      {
+        "type":"color",
+        "id":"bg_color",
+        "label":"Background Color"
+      }
+    ],
+    "blocks":[
+      {
+        "type":"image",
+        "name":"Customer User",
+        "settings":[
+          {
+            "type":"html",
+            "id":"review_star",
+            "label":"Reivew Star Svg Code"
+          },
+          {
+            "type":"text",
+            "id":"review_count",
+            "label":"Reivew Count Text"
+          },
+          {
+            "type":"text",
+            "id":"cust_title",
+            "label":"Title"
+          },
+          {
+            "type":"text",
+            "id":"user_title1",
+            "label":"User Title 1"
+          },
+          {
+            "type":"textarea",
+            "id":"user_content1",
+            "label":"User Content 1"
+          },
+          {
+            "type":"text",
+            "id":"user_name1",
+            "label":"User Name 1"
+          },
+                    {
+            "type":"text",
+            "id":"user_title2",
+            "label":"User Title 2"
+          },
+          {
+            "type":"textarea",
+            "id":"user_content2",
+            "label":"User Content 2"
+          },
+          {
+            "type":"text",
+            "id":"user_name2",
+            "label":"User Name 2"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name":"Customers"
+      }
+    ]
+  }
+{% endschema %}
+
+<script>
+  $().ready(function(){
+  $('.customer_row').slick({
+    arrows: true,
+    dots: false,
+    slidesToShow: 1,
+    infinite: true,
+    prevArrow:'<button type="button" class="slick-prev pull-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg></button>',
+    nextArrow:'<button type="button" class="slick-next pull-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path></svg></button>',
+  });
+});
+</script>

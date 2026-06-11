@@ -1,0 +1,274 @@
+<style>
+  body.template-our-storypage,
+  .template-our-storypage .main .gradient {
+    background: #FFF !important;
+  }
+  img{
+    width:100%
+  }
+  .os_hero_sec{
+    padding:75px 0px;
+    padding-top:0px;
+  }
+  .os_container{
+    max-width:1280px;
+    margin:0px auto;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .os_container .row{
+    display: flex;
+    align-items: center;
+    gap:80px;
+  }
+  .os_container .row .col-6{
+    width:50%;
+    display: flex;
+  }
+  .os_hero_sec .hero_info_wrapper > *,
+  .lr_section .lr_info_wrapper > *,
+  .os_hero_sec .hero_info_wrapper .hero_info_text *,
+  .lr_section .lr_info_wrapper .lr_info_text *{
+    margin:0px;
+  }
+  .os_hero_sec .hero_info_wrapper .hero_info_text p,
+  .lr_section .lr_info_wrapper .lr_info_text p{
+    margin-bottom:20px;
+  }
+  .os_hero_sec .hero_info_wrapper p:last-of-type,
+  .lr_section .lr_info_wrapper p:last-of-type{
+    margin-bottom:0px;
+  }
+  .os_hero_sec .hero_info_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .os_hero_sec .hero_info_wrapper p{
+    letter-spacing: 0;
+    margin-top:0px;
+  }
+  .os_hero_sec .hero_info_wrapper h1 {
+    font-size: 80px;
+    line-height: 90px;
+    font-weight: 700;
+  }
+  .os_hero_sec .hero_info_text p {
+      font-size: 20px;
+      line-height: 24.3px;
+  }
+  .os_hero_sec .hero_info_wrapper{
+    max-width:585px;
+  }
+  @media(max-width:992px){
+
+    .os_container .row {
+      flex-direction: column;
+      gap: 50px;
+    }
+    .os_container .row .col-6 {
+        width: 100%;
+    }
+    .os_hero_sec .hero_info_wrapper{
+      margin-top:70px;
+    }
+    .os_hero_sec .hero_info_wrapper h1 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .os_hero_sec .hero_info_wrapper {
+      max-width: 100%;
+      gap: 20px;
+    }
+    .hero_img_wrapper {
+      width: 100%;
+      max-width:600px;
+      margin:0px auto;
+    }
+  }
+  @media(max-width:767px){
+    .os_hero_sec{
+      padding: 50px 0px;
+      padding-top: 0px;
+    }
+    .os_hero_sec .hero_info_wrapper {
+          margin-top: 50px;
+      }
+      .os_hero_sec .hero_info_wrapper h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+      .os_hero_sec .hero_info_text p {
+          font-size: 15px;
+          line-height: 20px;
+      }
+      .os_hero_sec .hero_info_wrapper {
+          max-width: 100%;
+          gap: 15px;
+      }
+      .os_container .row {
+        flex-direction: column;
+        gap: 35px;
+      }
+  }
+  /* ---------------- left right section ------------- */
+  .lr_section{
+    padding:75px 0px;
+  }
+  .lr_container{
+    max-width:1440px;
+    margin:0px auto;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .lr_container .row{
+    display: flex;
+    align-items: center;
+    gap:80px;
+  }
+  .lr_container .row .col-6{
+    width:50%;
+    display: flex;
+  }
+  .lr_container .row.lr_reverse {
+    flex-direction: row-reverse;
+  }
+  .lr_section .lr_info_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .lr_section .lr_info_wrapper h2 {
+    font-size: 48px;
+    line-height: 58px;
+  }
+  .lr_section .lr_info_wrapper p {
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 0;
+    }
+  .lr_img_wrapper img{
+      border-radius: 10px;
+  }
+    @media(max-width:992px){
+      .lr_container .row,
+        .lr_container .row.lr_reverse {
+        flex-direction: column-reverse;
+        gap: 40px;
+      }
+      .lr_container .row .col-6 {
+          width: 100%;
+      }
+      .lr_section .lr_img_wrapper {
+          max-width: 600px;
+          margin: 0px auto;
+      }
+    }
+    @media(max-width:767px){
+      .lr_section {
+        padding: 50px 0px;
+      }
+      .lr_section .lr_info_wrapper h2 {
+    font-size: 34px;
+    line-height: 41px;
+}
+      .lr_section .lr_info_wrapper p {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0;
+}
+    }
+</style>
+<section class="os_hero_sec">
+  <div class="os_container">
+    <div class="row">
+      <div class="col-6">
+        <div class="hero_info_wrapper">
+          <h1>Our Brand Story</h1>
+          <div class="hero_info_text">
+            <p>
+              Body Restore was founded to bridge the gap between self-care and the time we dedicate to living our busy
+              lives
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="hero_img_wrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0220/5935/2160/files/hero-img.jpg?v=1714368063">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lr_section" style="background-color:#F8F9FA;">
+  <div class="lr_container">
+    <div class="row">
+      <div class="col-6">
+        <div class="lr_img_wrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0220/5935/2160/files/b20ce90427aa2ff2cab5ebc07d76ff07.jpg?v=1714368064">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="lr_info_wrapper">
+          <h2>Where it all started</h2>
+          <div class="lr_info_text">
+            <p>
+              Our journey began with a simple yet powerful idea: to inspire moments of mindfulness and rejuvenation in
+              our everyday routines. Whether it's a calming shower ritual at the end of a long day or a moment of quiet
+              reflection during your morning routine, we're here to remind you to pause, breathe, and prioritize your
+              well-being.
+            </p>
+            <p>
+              Now more than ever, the importance of self-care cannot be overstated. In a world that never seems to slow
+              down, it's essential to carve out moments of restoration and renewal. Body Restore is your ally in this
+              journey, providing the tools, resources, and support you need to nurture your mind, body, and soul.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lr_section">
+  <div class="lr_container">
+    <div class="row">
+      <div class="col-6">
+        <div class="lr_img_wrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0220/5935/2160/files/3bbf99a035340d2d891313e8e04d3b01.png?v=1714368052">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="lr_info_wrapper">
+          <h2>Our mission is to empower self-care and encourage moments of mindfulness in everyday routines</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lr_section">
+  <div class="lr_container">
+    <div class="row lr_reverse">
+      <div class="col-6">
+        <div class="lr_img_wrapper">
+          <img src="https://cdn.shopify.com/s/files/1/0220/5935/2160/files/52360af562b8a393162ef6463550f1c0.jpg?v=1714368064">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="lr_info_wrapper">
+          <h2>Self-care isn't a luxury— it's a necessity</h2>
+          <div class="lr_info_text">
+            <p>
+              Join us as we embark on this journey together, one mindful moment at a time. Let Body Restore be your
+              guide as you strive to be the best version of yourself, every single day. Together, we can create a world
+              where self-care isn't just a luxury; it's a way of life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

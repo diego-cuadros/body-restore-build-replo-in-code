@@ -1,0 +1,170 @@
+<section class="os_hero_sec">
+  <div class="os_container">
+    <div class="row">
+      
+      <div class="col-6">
+        <div class="hero_info_wrapper">
+          {% if section.settings.brand_title != blank %}
+          <h1>{{ section.settings.brand_title }}</h1>
+          <div class="hero_info_text">
+            <p>{{ section.settings.brand_content }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+       {% if section.settings.brand_img != blank %}
+        <div class="col-6">
+          <div class="hero_img_wrapper">
+            <img src="{{ section.settings.brand_img | img_url: 'master' }}">
+          </div>
+        </div>
+       {% endif %}
+      
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Brand Story",
+    "settings": [
+    {
+      "type": "text",
+      "id": "brand_title",
+      "label": "Brand Title"
+    },
+    {
+      "type": "text",
+      "id": "brand_content",
+      "label": "Brand Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "brand_img",
+      "label": "Brand Image"
+    }  
+    ],
+    "presets": [
+      {
+        "name": "Brand Story"
+      }
+    ]
+  }
+{% endschema %}
+
+
+<style>
+    body.template-our-story,
+  .template-our-story .main .gradient {
+    background: #FFF !important;
+  }
+  .os_hero_sec{
+    padding:75px 0px;
+    padding-top:0px;
+  }
+  .os_container{
+    max-width:1280px;
+    margin:0px auto;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  .os_container .row{
+    display: flex;
+    align-items: center;
+    gap:80px;
+  }
+  .os_container .row .col-6{
+    width:50%;
+    display: flex;
+  }
+  .os_hero_sec .hero_info_wrapper > *,
+  .lr_section .lr_info_wrapper > *,
+  .os_hero_sec .hero_info_wrapper .hero_info_text *,
+  .lr_section .lr_info_wrapper .lr_info_text *{
+    margin:0px;
+  }
+  .os_hero_sec .hero_info_wrapper .hero_info_text p,
+  .lr_section .lr_info_wrapper .lr_info_text p{
+    margin-bottom:20px;
+  }
+  .os_hero_sec .hero_info_wrapper p:last-of-type,
+  .lr_section .lr_info_wrapper p:last-of-type{
+    margin-bottom:0px;
+  }
+  .os_hero_sec .hero_info_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .os_hero_sec .hero_info_wrapper p{
+    letter-spacing: 0;
+    margin-top:0px;
+  }
+  .os_hero_sec .hero_info_wrapper h1 {
+    font-size: 80px;
+    line-height: 90px;
+    font-weight: 700;
+  }
+  .os_hero_sec .hero_info_text p {
+      font-size: 20px;
+      line-height: 24.3px;
+  }
+  .os_hero_sec .hero_info_wrapper{
+    max-width:585px;
+  }
+   .hero_img_wrapper img{
+    width:100%
+  }
+  @media(max-width:992px){
+
+    .os_container .row {
+      flex-direction: column;
+      gap: 50px;
+    }
+    .os_container .row .col-6 {
+        width: 100%;
+    }
+    .os_hero_sec .hero_info_wrapper{
+      margin-top:70px;
+    }
+    .os_hero_sec .hero_info_wrapper h1 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .os_hero_sec .hero_info_wrapper {
+      max-width: 100%;
+      gap: 20px;
+    }
+    .hero_img_wrapper {
+      width: 100%;
+      max-width:600px;
+      margin:0px auto;
+    }
+  }
+  @media(max-width:767px){
+    .os_hero_sec{
+      padding: 50px 0px;
+      padding-top: 0px;
+    }
+    .os_hero_sec .hero_info_wrapper {
+          margin-top: 50px;
+      }
+      .os_hero_sec .hero_info_wrapper h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+      .os_hero_sec .hero_info_text p {
+          font-size: 15px;
+          line-height: 20px;
+      }
+      .os_hero_sec .hero_info_wrapper {
+          max-width: 100%;
+          gap: 15px;
+      }
+      .os_container .row {
+        flex-direction: column;
+        gap: 35px;
+      }
+  }
+</style>

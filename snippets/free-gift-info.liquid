@@ -1,0 +1,65 @@
+<div class="custom-free-gift-info">
+  {% if block.settings.popupproduct != blank %}
+    <div
+      class="free-gift-product-title font-size-{{ block.settings.ppfontsize }} font-size-mob-{{ block.settings.ppfontsizemob }} font-weight-{{ block.settings.ppfontweight }}"
+      style="color:{{ block.settings.ppcolor }};"
+    >
+      {{ block.settings.popupproduct }}
+    </div>
+  {% endif %}
+  <div class="free-gift-time-info">
+    {% if block.settings.productstockselltitle != blank %}
+      <div class="free-gift-svg">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 100 100"
+          width="100"
+          height="100"
+          preserveAspectRatio="xMidYMid meet"
+          style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;"
+        >
+          <defs><clipPath id="__lottie_element_2"><rect width="100" height="100" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#__lottie_element_2)"><g transform="matrix(1,0,0,1,50,56.75)" opacity="0.9198437285051668" style="display: block;"><g opacity="1" transform="matrix(0,0,0,0,-10,29)"><path fill="rgb(187,16,22)" fill-opacity="1" d=" M-19.264999389648438,4.103000164031982 C0.6579999923706055,6.191999912261963 9.562999725341797,39.50899887084961 -8.164999961853027,35.25299835205078 C-21.722999572753906,28.179000854492188 -0.7070000171661377,17.73900032043457 -19.264999389648438,4.103000164031982z"></path></g><g opacity="1" transform="matrix(0,0,0,0,12,-30)"><path fill="rgb(206,12,20)" fill-opacity="1" d=" M16.464000701904297,-33.25 C9.178000450134277,-30.89299964904785 7.813000202178955,-16.875999450683594 14.567000389099121,-18.716999053955078 C20.320999145507812,-20.28499984741211 10.520000457763672,-25.900999069213867 16.464000701904297,-33.25z"></path></g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill="rgb(237,28,36)" fill-opacity="1" d=" M-4.877260208129883,-48.35160827636719 C2.0983500480651855,-21.324939727783203 -11.822446823120117,-7.482570171356201 0.3555533289909363,1.1194299459457397 C12.317553520202637,6.475430011749268 14.906316757202148,-10.618069648742676 16.431774139404297,-8.32367992401123 C44.088401794433594,30.341276168823242 -13.928072929382324,59.11193084716797 -24.676610946655273,13.67632007598877 C-28.862293243408203,-8.589133262634277 -7.203283309936523,-18.90119743347168 -4.877260208129883,-48.35160827636719z"></path></g></g></g>
+        </svg>
+      </div>
+      <div
+        class="free-gift-product-time-title font-size-{{ block.settings.psfontsize }} font-size-mob-{{ block.settings.psfontsizemob }} font-weight-{{ block.settings.psfontweight }}"
+        style="color:{{ block.settings.pscolor }};"
+      >
+        {{ block.settings.productstockselltitle }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="free-gift-time-data-container">
+    {% if block.settings.restockinfo %}
+      <div class="free-gift-time-data-restock">
+        <div
+          class="free-gift-restock-title font-size-{{ block.settings.rtfontsize }} font-size-mob-{{ block.settings.rtfontsizemob }} font-weight-{{ block.settings.rtfontweight }}"
+          style="color:{{ block.settings.rtcolor }};"
+        >
+          {{ block.settings.restockinfo }}
+        </div>
+        <div
+          class="free-gift-restock-content font-size-{{ block.settings.rcfontsize }} font-size-mob-{{ block.settings.rcfontsizemob }} font-weight-{{ block.settings.rcfontweight }}"
+          style="color:{{ block.settings.rccolor }};"
+        ></div>
+      </div>
+    {% endif %}
+    <div class="free-gift-divider" style="background-color:{{ block.settings.rtcolor }};">&nbsp;</div>
+    {% if block.settings.selloutinfo != blank %}
+      <div class="free-gift-data-sell-out">
+        <div
+          class="free-gift-time-data-sell-title font-size-{{ block.settings.stfontsize }} font-size-mob-{{ block.settings.stfontsizemob }} font-weight-{{ block.settings.stfontweight }}"
+          style="color:{{ block.settings.stcolor }};"
+        >
+          {{ block.settings.selloutinfo }}
+        </div>
+        <div
+          class="free-gift-time-data-sell-content font-size-{{ block.settings.scfontsize }} font-size-mob-{{ block.settings.scfontsizemob }} font-weight-{{ block.settings.scfontweight }}"
+          style="color:{{ block.settings.sccolor }};"
+        ></div>
+      </div>
+    {% endif %}
+  </div>
+</div>

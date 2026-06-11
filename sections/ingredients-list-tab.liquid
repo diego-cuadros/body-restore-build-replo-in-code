@@ -1,0 +1,438 @@
+{% style %}
+  #shopify-section-{{ section.id }} {overflow:hidden;}
+  #section-{{ section.id}} .banner-container{width:100%;position:relative;}
+  #section-{{ section.id}} .banner-container .list-tab-section-heading{margin:0;letter-spacing:0px;line-height:normal;}
+  #section-{{ section.id}} .banner-inner-container{width:100%;max-width:{{section.settings.gridmaxwidth}}px;margin-left:auto;margin-right:auto;}
+  #section-{{ section.id}} .grid-container {display:flex;gap:24px;padding-top:26px;position:relative;width:100%;margin-left:auto;margin-right:auto;}
+  #section-{{ section.id}} .grid-container .grid-item{width:100%;border-radius:8px;overflow:hidden;}
+  #section-{{ section.id}} .grid-container .grid-item .inner-container{display:grid;grid-template-columns: calc( 48% - 15px ) calc(52% - 15px);gap:30px;padding:50px 50px 50px 10px;align-items: center;}
+  #section-{{ section.id}} .grid-container .grid-item .image-container{width:100%;position:relative;/*box-shadow: 10px 10px #fff;*/}
+  #section-{{ section.id}} .grid-container .grid-item .image-container .image{position:relative;width:100%;height:0%;padding-top:83%;z-index:1;}
+  #section-{{ section.id}} .grid-container .grid-item .image-container .image:after{content:"";display:block;position:absolute; width:100%;height:100%; top:12px;left:10px;z-index:-1;background:#fff; border:1px solid #000;z-index:0;}
+  #section-{{ section.id}} .grid-container .grid-item .image-container .icon-container {position:absolute;top:0;right:0;bottom:auto;left:auto;padding:0px 0px 18px 18px;background-color:#FFFFFF;z-index:2;  border-radius: 0px 0px 0px 16px;}
+  #section-{{ section.id}} .grid-container .grid-item .image-container .image img {position:absolute;width:100%;height:100%;top:0;left:0;right:0;bottom:0;object-fit:cover;z-index:1;}
+  #section-{{ section.id}} .grid-container .grid-item .inner-container .tab-content-container{width:100%;height:100%;}
+  #section-{{ section.id}} .grid-container .grid-item .inner-container .tab-content-container .image{position:relative;padding-top:110%;width: 100%;}
+  #section-{{ section.id}} .grid-container .grid-item .inner-container .tab-content-container .image img{position:absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: contain;}
+  #section-{{ section.id}} .grid-container .grid-item .inner-container .tab-content-container .image-circle{position:absolute;width:90%;height:90%;min-height:90%;min-width:90%;max-width:90%;max-height:90%;top: 50%;left: 50%;transform: translate(-50%, -50%);border-radius: 100%;}
+  #section-{{ section.id}} .tab-main-container .tab-container .tab-item {line-height:normal;padding:14px 0px;border-radius:8px;cursor:pointer;border:2px solid #E5E7EB;letter-spacing:0px;display:flex;flex-direction: column;gap: 7px;}
+  #section-{{ section.id}} .tab-main-container .tab-container .tab-item .tab-item-image{display:flex;flex-wrap:wrap;max-width:70px;width:100%;margin-left:auto;margin-right:auto;}
+  #section-{{ section.id}} .tab-main-container .tab-container .tab-item .tab-item-image img{width:100%;height:100%;}
+  #section-{{ section.id}} .tab-main-container .tab-container .swiper-slide-thumb-active .tab-item{border:2px solid #0C2331;background-color:{{section.settings.bgcolor}};}
+  #section-{{ section.id}} .grid-container .grid-item .tab-info-content{padding:20px;}
+
+  @media all and (max-width:990px){
+    #section-{{ section.id}} .grid-container .grid-item .inner-container{grid-template-columns:repeat(1 , 1fr);padding:50px 30px 50px;}
+    #section-{{ section.id}} .grid-container .grid-item .tab-info-content{padding:15px;}
+  }
+{% endstyle %}
+
+{% assign grid_count = 0 %}
+{% for block in section.blocks %}
+  {% if block.type == 'grid' %}
+    {% assign grid_count = grid_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+<custom-banner id="section-{{ section.id }}" data-sectionid="{{ section.id }}" style="opacity:0;">
+  <div
+    class="banner-container banner-container--{{ section.id }} padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} padding-top-mob-{{ section.settings.padding_top_mob }} padding-bottom-mob-{{ section.settings.padding_bottom_mob}}"
+  >
+    <div class="page-width">
+      <div class="banner-inner-container">
+        <div class="header-container">
+          <div
+            class="banner-text-inner-box"
+          >
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'heading' %}
+                  <h2
+                    class="heading list-tab-section-heading font-montserrat  {{ block.settings.text_box_align }} {{ block.settings.text_box_align_mob }} font-size-{{ block.settings.font_size }} font-size-mob-{{ block.settings.font_size_mob }} font-weight-{{ block.settings.font_weight }} margin-bottom-{{ block.settings.margin_bottom }} margin-bottom-mob-{{ block.settings.margin_bottom_mob }}"
+                    style="color:{{ block.settings.color }}"
+                  >
+                    {{ block.settings.sectionheading }}
+                  </h2>
+              {% endcase %}
+            {% endfor %}
+            {% if grid_count >= 1 %}
+              <div class="tab-main-container banner-button-box {{ section.settings.text_box_align }} {{ section.settings.text_box_align_mob }}">
+                <div class="tab-container tab-container-thumbnail-slider tab-container-thumbnail-slider-{{ section.id }} swiper">
+                  <div class="swiper-wrapper">
+                    {% assign counttab = 0 %}
+                    {% for block in section.blocks %}
+                      {% case block.type %}
+                        {% when 'grid' %}
+                          {% assign raw_button = block.settings['tab-label'] | strip %}
+                          {% assign clean_button = raw_button
+                            | downcase
+                            | replace: ' ', ''
+                            | replace: '_', ''
+                            | replace: '-', ''
+                            | replace: ',', ''
+                          %}
+                          {% assign counttab = counttab | plus: 1 %}
+                          <div class="swiper-slide">
+                            <div
+                              class="tab-item text-align-center font-montserrat font-size-{{ section.settings.tabtfontsize }} font-size-mob-{{ section.settings.tabtfontsizemob }} font-weight-{{ section.settings.tabtfontweight }}  {% if counttab == 1 %} active {% endif %}"
+                              data-work-button="{{ clean_button }}"
+                              style="color:{{ section.settings.tabtcolor }};"
+                            >
+                              <div class="tab-item-image">
+                                <img src="{{ block.settings.image | img_url : 'master' }}" width="100%" height="100%">
+                              </div>
+                              <span>{{ block.settings['tab-label'] }}</span>
+                            </div>
+                          </div>
+                      {% endcase %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        {% if grid_count >= 1 %}
+          {% assign count = 0 %}
+          <div class="grid-container grid-container-main-slider grid-container-main-slider-{{ section.id }} swiper">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'grid' %}
+                    {% assign raw_button = block.settings['tab-label'] | strip %}
+                    {% assign clean_button = raw_button
+                      | downcase
+                      | replace: ' ', ''
+                      | replace: '_', ''
+                      | replace: '-', ''
+                      | replace: ',', ''
+                    %}
+                    <div class="swiper-slide">
+                      <div
+                        {% assign count = count | plus: 1 %}
+                        class="grid-item"
+                        style="background-color:{{block.settings.tabcontentbg}};"
+                        data-work-grid="{{ clean_button }}"
+                      >
+                        <div class="inner-container">
+                          <div class="tab-content-container">
+                            <div class="image">
+                              <div class="image-circle" style="background-color:{{ block.settings.circlecolor }};">
+                                &nbsp;
+                              </div>
+                              <img src="{{ block.settings.image1 | img_url : 'master' }}" width="100%" height="100%">
+                            </div>
+                          </div>
+                          <div class="image-container">
+                            <div class="image">
+                              <img src="{{ block.settings.image2 | img_url : 'master' }}" width="100%" height="100%">
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="tab-info-content margin-top-0 margin-bottom-0 font-robot font-size-{{ section.settings.tabcfontsize }} font-size-mob-{{ section.settings.tabcfontsizemob }} font-weight-{{ section.settings.tabcfontweight }}"
+                          style="background-color:{{ block.settings.tabcontentsbg }};color:{{ block.settings.tabcontenttextcolor }};line-height:1.4;"
+                        >
+                          {{ block.settings.text }}
+                        </div>
+                      </div>
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</custom-banner>
+
+{% schema %}
+{
+  "name":"Ingredients List Tab",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Tab Title Customization"
+    },
+    {
+      "type":"range",
+      "id": "tabtfontsize",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default":16,
+      "label": "Font Size"
+    },
+    {
+      "type":"range",
+      "id": "tabtfontsizemob",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default":14,
+      "label": "Mobile Font Size"
+    },
+    {
+      "type":"range",
+      "id": "tabtfontweight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default":400,
+      "label": "Font Weight"
+    },
+    {
+      "type":"color",
+      "id":"tabtcolor",
+      "label":"Text Color",
+      "default":"#0C2331"
+    },
+    {
+      "type":"color",
+      "id":"bgcolor",
+      "default":"#FFF9EB",
+      "label":"Active Tab BG Color"
+    },
+    {
+      "type":"header",
+      "content":"Tab Content Info Customization"
+    },
+    {
+      "type":"number",
+      "id":"gridmaxwidth",
+      "label":"Max Width",
+      "default":850
+    },
+    {
+      "type":"range",
+      "id": "tabcfontsize",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default":16,
+      "label": "Font Size"
+    },
+    {
+      "type":"range",
+      "id": "tabcfontsizemob",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default":14,
+      "label": "Mobile Font Size"
+    },
+    {
+      "type":"range",
+      "id": "tabcfontweight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "default":400,
+      "label": "Font Weight"
+    },
+    {
+      "type": "header",
+      "content": "Banner Spacing"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "default":0,
+      "label": "Padding Top"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "default":0,
+      "label": "Padding Bottom"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mob",
+      "default":0,
+      "label": "Mobile Padding Top"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mob",
+      "default":0,
+      "label": "Mobile Padding Bottom"
+    }
+  ],
+  "blocks":[
+    {
+      "type": "heading",
+      "name":"Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sectionheading",
+          "default":"5. Ingredients List Call Out",
+          "label": "Heading"
+        },
+            {
+      "type": "select",
+      "id":"text_box_align",
+      "options": [
+        {
+          "label": "Left",
+          "value": "middle-left",
+        },
+        {
+          "label": "Center",
+          "value": "middle-center",
+        },
+        {
+          "label": "Right",
+          "value": "middle-right",
+        },
+      ],
+      "default":"middle-center",
+      "label": "Heading Alignment Desktop"
+    },
+    {
+      "type": "select",
+      "id":"text_box_align_mob",
+      "options": [
+        {
+          "label": "Left",
+          "value": "mobile_middle-left",
+        },
+        {
+          "label": "Center",
+          "value": "mobile_middle-center",
+        },
+        {
+          "label": "Right",
+          "value": "mobile_middle-right",
+        },
+      ],
+      "default":"mobile_middle-center",
+      "label": "Heading Alignment Mobile"
+    },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Heading Color"
+        },
+        {
+          "type":"range",
+          "id": "font_size",
+          "unit": "px",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "default":40,
+          "label": "Font Size"
+        },
+        {
+          "type":"range",
+          "id": "font_size_mob",
+          "unit": "px",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "default":32,
+          "label": "Mobile Font Size"
+        },
+        {
+          "type":"range",
+          "id": "font_weight",
+          "min": 100,
+          "max": 900,
+          "step": 100,
+          "default":400,
+          "label": "Font Weight"
+        },
+        {
+          "type":"number",
+          "id": "margin_bottom",
+          "default":0,
+          "label": "Margin Bottom"
+        },
+        {
+          "type":"number",
+          "id": "margin_bottom_mob",
+          "default":0,
+          "label": "Mobile Margin Bottom"
+        },
+      ]
+    },
+    {
+      "type": "grid",
+      "name":"Grid",
+      "settings": [
+        {
+          "type":"header",
+          "content":"Heading Tab"
+        },
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Image"
+        },
+        {
+          "type":"text",
+          "id":"tab-label",
+          "label":"Title"
+        },
+        {
+          "type":"header",
+          "content":"Tab Info Images"
+        },
+        {
+          "type":"color",
+          "id":"circlecolor",
+          "label":"Circle Background Color"
+        },
+        {
+          "type":"color",
+          "id":"tabcontentbg",
+          "label":"Background Color"
+        },
+        {
+          "type":"image_picker",
+          "id":"image1",
+          "label":"Image 1"
+        },
+        {
+          "type":"image_picker",
+          "id":"image2",
+          "label":"Image 2",
+          "info": "Recommended Size - 1000x : 830px"
+        },
+        {
+          "type":"header",
+          "content":"Tab Info Content"
+        },
+        {
+          "type":"richtext",
+          "id":"text",
+          "label":"Content"
+        },
+        {
+          "type":"color",
+          "id":"tabcontenttextcolor",
+          "default":"#fff",
+          "label":"Text Color"
+        },
+        {
+          "type":"color",
+          "id":"tabcontentsbg",
+          "default":"#000",
+          "label":"Background Color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"Ingredient List Tab"
+    }
+  ]
+}
+{% endschema %}

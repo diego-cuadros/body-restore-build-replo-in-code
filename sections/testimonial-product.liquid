@@ -1,0 +1,566 @@
+<style>
+  #shopify-section-{{ section.id }} {position:relative;z-index:0;}
+  #shopify-section-{{ section.id }} .container { display:flex;flex-direction:column;gap:40px;align-items:center;}
+  #shopify-section-{{ section.id }} .design-bottom {position:relative;top:-1px;left:0;right:0;width:calc(100% + 1px);height: fit-content;display: flex;z-index:1;margin-top:0px;}
+  #shopify-section-{{ section.id }} .design-bottom svg{width:100%;height:100%;}
+  #shopify-section-{{ section.id }} .container .header-container{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px; max-width:{{section.settings.width}}px;margin-bottom:20px; }
+  #shopify-section-{{ section.id }} .container .header-container .content-container {display:flex;flex-direction:row;align-items:center;gap:8px; justify-content: center; flex-wrap: wrap;}
+  #shopify-section-{{ section.id }} .container .header-container .heading {margin-bottom:5px;}
+  #shopify-section-{{ section.id }} .container .header-container p {margin:0px;font-size:inherit;font-weight:inherit;color:inherit;line-height:1.2;}
+  #shopify-section-{{ section.id }} .container .main-testimonial-container {width:100%;max-width:100%;}
+  #shopify-section-{{ section.id }} .container .swiper {width:100%;max-width:100%;overflow:hidden;position:relative;}
+  #shopify-section-{{ section.id }} .container .swiper .swiper-wrapper {padding-bottom:80px;}
+  #shopify-section-{{ section.id }} .container .swiper .swiper-slide {max-width:100%;height:auto;}
+  #shopify-section-{{ section.id }} .container .swiper .swiper-pagination .swiper-pagination-bullet {height:13px;width:13px;bottom:0px;outline:2px solid {{section.settings.bar-color}};opacity:1;background-color:transparent;}
+  #shopify-section-{{ section.id }} .container .swiper .swiper-pagination .swiper-pagination-bullet-active {background-color:{{section.settings.bar-color}};}
+  #shopify-section-{{ section.id }} .swiper-button-next { user-select: none;position:absolute;display:flex;align-items:center;justify-content:center;width: 50px;height: 50px; z-index: 1;background-color:#ffffff;border-radius: 50%; top: 50%;right:5px; transform:translate( 0 , -50% );padding: 10px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
+  #shopify-section-{{ section.id }} .swiper-button-prev { user-select: none;position:absolute;display:flex;align-items:center;justify-content:center;width: 50px;height: 50px; z-index: 1;background-color:#ffffff;border-radius: 50%;top: 50%; left:5px;transform:translate( 0 , -50% ); padding: 10px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
+  #shopify-section-{{ section.id }} .swiper-button-lock {display:none;opacity:0;}
+  #shopify-section-{{ section.id }} .swiper-button-next svg,
+  #shopify-section-{{ section.id }} .swiper-button-prev svg{ color:#000000;fill:#000000; width: 20px;height:20px;}
+  #shopify-section-{{ section.id }} .swiper{overflow:unset;position:unset;}
+  #shopify-section-{{ section.id }} .swiper-button-next:after,
+  #shopify-section-{{ section.id }} .swiper-button-prev:after {content:none;}
+  #shopify-section-{{ section.id }} .container .cont-pro .img-pro-text { gap: 5px;flex-wrap: wrap;}
+  #shopify-section-{{ section.id }} .main-heading-{{ section.id }} em{font-style:normal !important;color:{{section.settings.hcolornew}} !important;}
+  #shopify-section-{{ section.id }} .grid-item {display:flex;flex-direction:column;gap:5px;justify-content:start;align-items:center;text-align:center;height:100%;}
+  #shopify-section-{{ section.id }} .grid-item .title{margin:0px;line-height:1.2 !important;}
+  #shopify-section-{{ section.id }} .grid-item .text{line-height:1.2 !important;}
+  #shopify-section-{{ section.id }} .grid-item .name{line-height:1.2 !important;}
+  #shopify-section-{{ section.id }} .grid-item .text {display:flex;align-items:center;flex-direction:row;gap:5px;}
+  #shopify-section-{{ section.id }} .grid-item .text .icon{width:15px;min-width:17px;height:17px;}
+  #shopify-section-{{ section.id }} .grid-item .content p{margin:0px;}
+  #shopify-section-{{ section.id }} .grid-item .content {margin:15px 0px 15px; margin-bottom: auto;}
+  #shopify-section-{{ section.id }} .grid-item .name {margin-bottom:5px;margin-top:15px;}
+  #shopify-section-{{ section.id }} .grid-item .text .icon svg{width:100%;height:100%;}
+  #shopify-section-{{ section.id }} .button-container {display:flex;align-items:center;justify-content:center;}
+  #shopify-section-{{ section.id }} .button-container .btn-pro{padding:16px 20px;text-align:center;min-width:320px;width:fit-content;border:1px solid {{section.settings.bcolor}};border-radius:10px;line-height:1.2;}
+  #shopify-section-{{ section.id }} .button-container a {text-decoration:none;}
+  #shopify-section-{{ section.id }} a {color:inherit;}
+  @media screen and (min-width: 769px){
+     #shopify-section-{{ section.id }} .destop-arrow{display:none;}
+  }
+
+  @media screen and (max-width: 9999px) {
+    @supports (-webkit-touch-callout: none) {
+      #shopify-section-{{ section.id }} .container .main-testimonial-container .video-container .video .play-button{visibility: visible !important;z-index: 9999 !important;}
+    }
+  }
+
+  @media screen and (max-width:1200px){
+  #shopify-section-{{ section.id }} .container .main-testimonial-container .video-container .video .play-button {visibility:visible;z-index:999;position:absolute;top:50%;left:50%;transform:translate(-50% , -50%);justify-content:center;background-color:#ffffff;border-radius:50%;width:60px;cursor:pointer;height:60px;min-width:60px;display:flex;flex-direction:row;align-items:center; opacity:1;}
+  #shopify-section-{{ section.id }} .container .main-testimonial-container .video-container .video .play-button svg {width:16px;height:16px;}
+  }
+  @media screen and (max-width:768px){
+    #shopify-section-{{ section.id }} .container { display:flex;flex-direction:column;gap:40px;align-items:center;}
+    #shopify-section-{{ section.id }} .container .header-container{width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:15px;margin-bottom:10px;}
+    #shopify-section-{{ section.id }} .container .main-testimonial-container .video-container .video .play-button {width:80px;cursor:pointer;height:80px;min-width:80px;}
+    #shopify-section-{{ section.id }} .swiper-button-next,
+    #shopify-section-{{ section.id }} .swiper-button-prev {width: 40px;height: 40px;}
+    #shopify-section-{{ section.id }} .container .swiper .swiper-wrapper {padding-bottom:60px;}
+    #shopify-section-{{ section.id }} .mobile-arrow{display:none;}
+    #shopify-section-{{ section.id }} .container .swiper .swiper-pagination .swiper-pagination-bullet {height:10px;width:10px;}
+  #shopify-section-{{ section.id }} .container .main-testimonial-container .video-container .video .play-button {visibility:visible;z-index:999;position:absolute;top:50%;left:50%;transform:translate(-50% , -50%);justify-content:center;background-color:#ffffff;border-radius:50%;width:45px;cursor:pointer;height:45px;min-width:45px;display:flex;flex-direction:row;align-items:center; opacity:1;}
+  #shopify-section-{{ section.id }} .container .main-testimonial-container .video-container .video .play-button svg {width:14px;height:14px;}
+
+  }
+</style>
+
+<testimonial-section data-sectionid="{{ section.id }}" style="opacity:0;">
+  {% if section.settings['bottom-design'] == true %}
+    <div class="design-bottom">
+      <svg width="1920" height="70" viewBox="0 0 1920 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1920 -21.9998C2187.2 -7.29976 1708.5 58.7002 1603 66.0002C1497.5 73.3002 1392.8 21.3002 1287 22.0002C1181.2 22.7002 1075.3 69.7002 968 70.0002C860.7 70.3002 748.3 31.0002 643 24.0002C537.7 17.0002 443.2 35.7002 336 28.0002C228.8 20.3002 -264 -13.6998 0 -21.9998" fill="{{ section.settings.design-color }}"/>
+      </svg>
+    </div>
+  {% endif %}
+  <section
+    class="trustpilot--{{ section.id }} padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} mobile-padding-top-{{ section.settings.mobile_padding_top }} mobile-padding-bottom-{{ section.settings.mobile_padding_bottom }}"
+    style="background:{{ section.settings.background }};"
+  >
+    <div class="page-width">
+      <div class="container">
+        <div class="header-container">
+          {% if section.settings.heading != blank %}
+            <div
+              class="main-heading-{{ section.id }} heading font-weight-{{ section.settings.hfont_weight }} font-size-{{ section.settings.hfont_size }} mobile-font-size-{{ section.settings.hfont_size_mob }}"
+              style="color:{{ section.settings.hcolor }};"
+            >
+              {{ section.settings.heading }}
+            </div>
+          {% endif %}
+          {% if section.settings.content != blank %}
+            <div
+              class="content font-weight-{{ section.settings.cfont_weight }} font-size-{{ section.settings.cfont_size }} mobile-font-size-{{ section.settings.cfont_size_mob }}"
+              style="color:{{ section.settings.ccolor }};"
+            >
+              {{ section.settings.content }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="main-testimonial-container">
+          <div class="swiper testimonial-slider--{{ section.id }}">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                <div class="swiper-slide">
+                  <div class="grid-item">
+                    <div class="star-container">
+                      {% for i in (1..block.settings.star) %}
+                        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.86818 0.48375C8.07818 -0.16125 8.99018 -0.16125 9.20018 0.48375L10.7342 5.20675C10.78 5.34725 10.8691 5.46965 10.9887 5.55642C11.1084 5.64318 11.2524 5.68985 11.4002 5.68975H16.3662C17.0442 5.68975 17.3262 6.55775 16.7772 6.95675L12.7602 9.87475C12.6406 9.9617 12.5516 10.0843 12.5059 10.225C12.4603 10.3656 12.4604 10.5171 12.5062 10.6577L14.0402 15.3807C14.2502 16.0257 13.5112 16.5608 12.9632 16.1628L8.94618 13.2447C8.82657 13.1578 8.68252 13.111 8.53468 13.111C8.38683 13.111 8.24278 13.1578 8.12318 13.2447L4.10418 16.1628C3.55618 16.5618 2.81718 16.0257 3.02718 15.3807L4.56118 10.6577C4.60698 10.5171 4.60707 10.3656 4.56144 10.225C4.5158 10.0843 4.4268 9.9617 4.30718 9.87475L0.290178 6.95675C-0.258822 6.55775 0.0231779 5.68975 0.701178 5.68975H5.66718C5.81496 5.68985 5.95899 5.64318 6.07862 5.55642C6.19826 5.46965 6.28736 5.34725 6.33318 5.20675L7.86818 0.48375Z" fill="{{ section.settings.star-color }}"/>
+                        </svg>
+                      {% endfor %}
+                    </div>
+                    <div
+                      class="title font-weight-{{ section.settings.ttfont_weight }} font-size-{{ section.settings.ttfont_size }} mobile-font-size-{{ section.settings.ttfont_size_mob }}"
+                      style="color:{{ section.settings.ttcolor }};"
+                    >
+                      {{ block.settings.title }}
+                    </div>
+                    <div
+                      class="content font-weight-{{ section.settings.tcfont_weight }} font-size-{{ section.settings.tcfont_size }} mobile-font-size-{{ section.settings.tcfont_size_mob }}"
+                      style="color:{{ section.settings.tccolor }};"
+                    >
+                      {{ block.settings.content }}
+                    </div>
+                    <div
+                      class="name font-weight-{{ section.settings.nfont_weight }} font-size-{{ section.settings.nfont_size }} mobile-font-size-{{ section.settings.nfont_size_mob }}"
+                      style="color:{{ section.settings.ncolor }};"
+                    >
+                      — {{ block.settings.name }}
+                    </div>
+                    <div
+                      class="text font-weight-{{ section.settings.vfont_weight }} font-size-{{ section.settings.vfont_size }} mobile-font-size-{{ section.settings.vfont_size_mob }}"
+                      style="color:{{ section.settings.vcolor }};"
+                    >
+                      <span class="icon">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                          focusable="false"
+                          height="100%"
+                          viewBox="0 0 16.566 16.566"
+                        >
+                          <g data-name="Grupo 9174"><path data-name="Trazado 113450" d="M10.5 0 8.283 1.423 6.063 0l-1.21 2.342-2.634-.123.123 2.633L0 6.063l1.423 2.22L0 10.5l2.342 1.211-.123 2.633 2.633-.123 1.21 2.342 2.219-1.423 2.219 1.425 1.211-2.342 2.633.123-.122-2.633 2.343-1.213-1.422-2.217 1.423-2.219-2.342-1.21.122-2.633-2.633.122z" style="fill: currentColor;"></path> <path data-name="Icon awesome-check" d="M2.567 10.1.111 7.646a.378.378 0 0 1 0-.534l.534-.534a.378.378 0 0 1 .534 0l1.655 1.654 3.544-3.544a.378.378 0 0 1 .534 0l.534.534a.378.378 0 0 1 0 .534L3.1 10.1a.378.378 0 0 1-.533 0z" transform="translate(4.381 .966)" style="fill: rgb(255, 255, 255);"></path></g>
+                        </svg>
+                      </span>
+                      {{ block.settings.text }}
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next  {% if section.settings['show-icon'] == false %}destop-arrow{% endif %} {% if section.settings['show-icon-mob'] == false %}mobile-arrow{% endif %}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+              </svg>
+            </div>
+            <div class="swiper-button-prev {% if section.settings['show-icon'] == false %}destop-arrow{% endif %} {% if section.settings['show-icon-mob'] == false %}mobile-arrow{% endif %}">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</testimonial-section>
+
+{% schema %}
+{
+  "name": "Testimonial Section",
+  "settings": [
+    {
+      "type":"checkbox",
+      "id":"show-icon",
+      "label":"Show Arrows on Slider Desktop"
+    },
+    {
+      "type":"checkbox",
+      "id":"show-icon-mob",
+      "label":"Show Arrows on Slider Mobile"
+    },
+    {
+      "type":"color",
+      "id":"background",
+      "label":"Background",
+      "default":"#FFF4DD"
+    },
+    {
+      "type":"color",
+      "id":"star-color",
+      "label":"Star Color",
+      "default":"#fdb913"
+    },
+    {
+      "type":"color",
+      "id":"bar-color",
+      "label":"Dots Color",
+      "default":"#fdb913"
+    },
+    {
+      "type":"checkbox",
+      "id":"bottom-design",
+      "label":"Show Top Design"
+    },
+    {
+      "type":"color",
+      "id":"design-color",
+      "label":"Show Design Color",
+      "default":"#FFF4DD"
+    },
+    {
+      "type":"header",
+      "content":"Heading"
+    },
+    {
+      "type":"richtext",
+      "id":"heading",
+      "label":"Heading"
+    },
+    {
+      "type":"color",
+      "id":"hcolor",
+      "label":"Color",
+      "default":"#241F1F"
+    },
+    {
+      "type":"color",
+      "id":"hcolornew",
+      "label":"Second Color",
+      "default":"#bf8979",
+      "info":"This color will apply when your heading becomes italic using the rich text option"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":30,
+      "id":"hfont_size",
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":16,
+      "id":"hfont_size_mob",
+      "label":"Font Size Mobile"
+    },
+    {
+      "type":"range",
+      "min":100,
+      "max":900,
+      "default":500,
+      "step":100,
+      "id":"hfont_weight",
+      "label":"Font Weight"
+    },
+     {
+      "type":"header",
+      "content":"content customization"
+    },
+    {
+      "type":"richtext",
+      "id":"content",
+      "label":"Content"
+    },
+    {
+      "type":"color",
+      "id":"ccolor",
+      "label":"Color",
+      "default":"#241F1F"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":30,
+      "id":"cfont_size",
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":16,
+      "id":"cfont_size_mob",
+      "label":"Font Size Mobile"
+    },
+    {
+      "type":"range",
+      "min":100,
+      "max":900,
+      "default":500,
+      "step":100,
+      "id":"cfont_weight",
+      "label":"Font Weight"
+    },
+     {
+      "type":"header",
+      "content":"Testimonial Title customization"
+    },
+    {
+      "type":"color",
+      "id":"ttcolor",
+      "label":"Color",
+      "default":"#241F1F"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":30,
+      "id":"ttfont_size",
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":16,
+      "id":"ttfont_size_mob",
+      "label":"Font Size Mobile"
+    },
+    {
+      "type":"range",
+      "min":100,
+      "max":900,
+      "default":500,
+      "step":100,
+      "id":"ttfont_weight",
+      "label":"Font Weight"
+    },
+     {
+      "type":"header",
+      "content":"Testimonial content customization"
+    },
+    {
+      "type":"color",
+      "id":"tccolor",
+      "label":"Color",
+      "default":"#241F1F"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":30,
+      "id":"tcfont_size",
+      "label":"Font Size"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":16,
+      "id":"tcfont_size_mob",
+      "label":"Font Size Mobile"
+    },
+    {
+      "type":"range",
+      "min":100,
+      "max":900,
+      "default":500,
+      "step":100,
+      "id":"tcfont_weight",
+      "label":"Font Weight"
+    },
+     {
+      "type":"header",
+      "content":"Name customization"
+    },
+    {
+      "type":"color",
+      "id":"ncolor",
+      "label":"Name Color",
+      "default":"#241F1F"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":30,
+      "id":"nfont_size",
+      "label":"Name Font Size"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":16,
+      "id":"nfont_size_mob",
+      "label":"Name Font Size Mobile"
+    },
+    {
+      "type":"range",
+      "min":100,
+      "max":900,
+      "default":500,
+      "step":100,
+      "id":"nfont_weight",
+      "label":"Name Font Weight"
+    },
+     {
+      "type":"header",
+      "content":"Verified customization"
+    },
+    {
+      "type":"color",
+      "id":"vcolor",
+      "label":"Verified Color",
+      "default":"#241F1F"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":30,
+      "id":"vfont_size",
+      "label":"Verified Font Size"
+    },
+    {
+      "type":"range",
+      "min":1,
+      "max":100,
+      "default":16,
+      "id":"vfont_size_mob",
+      "label":"Verified Font Size Mobile"
+    },
+    {
+      "type":"range",
+      "min":100,
+      "max":900,
+      "default":500,
+      "step":100,
+      "id":"vfont_weight",
+      "label":"Verified Font Weight"
+    },
+    {
+      "type":"header",
+      "content":"Section Spacing"
+    },
+    {
+      "type":"number",
+      "id":"padding_top",
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"padding_bottom",
+      "label":"Padding Bottom"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_top",
+      "label":"Mobile Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_bottom",
+      "label":"Mobile Padding Bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type":"range",
+          "min":1,
+          "max":5,
+          "default":5,
+          "id":"star",
+          "label":"Star Count"
+        },
+        {
+          "type":"text",
+          "id":"title",
+          "label":"Title"
+        },
+        {
+          "type":"richtext",
+          "id":"content",
+          "label":"Content"
+        },
+        {
+          "type":"text",
+          "id":"name",
+          "label":"Name"
+        },
+        {
+          "type":"text",
+          "id":"text",
+          "label":"Text"
+        }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"Testimonial Section"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  class testimonialsection extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      const handleIntersection = (entries, observer) => {
+        if (!entries[0].isIntersecting) return;
+        observer.unobserve(this);
+
+        var this2= this;
+
+        $(this2).css('opacity',1)
+        var swiper = new Swiper(
+          ".testimonial-slider--" + this.getAttribute("data-sectionid"),
+          {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop:true,
+            observer: true,
+            observeParents: true,
+            observeSlideChildren: true,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            breakpoints: {
+              600: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              990: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1300: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            },
+          }
+        );
+
+      };
+
+      new IntersectionObserver(handleIntersection.bind(this), {
+        rootMargin: "0px 0px 400px 0px",
+      }).observe(this);
+    }
+  }
+  customElements.define("testimonial-section", testimonialsection);
+</script>

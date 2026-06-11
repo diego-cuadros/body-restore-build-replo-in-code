@@ -1,0 +1,713 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "n_productheader_MxxXbF": {
+      "type": "n_productheader",
+      "name": "Product Header",
+      "settings": {
+        "saletext": "🎁 EARLY BLACK FRIDAY VIP ACCESS 🎁 ends in",
+        "bartext": "⏰ Limited Time: Save Up To 40% Off",
+        "logo": "shopify://shop_images/Group_28401.svg"
+      }
+    },
+    "main": {
+      "type": "main-product-bundlelanding",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "okendo_star_rating_kd6L6E": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "disabled": true,
+          "settings": {
+            "product": ""
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "okendo_star_rating_kd6L6E",
+        "vendor",
+        "description"
+      ],
+      "settings": {
+        "glic1": "shopify://shop_images/Group_1171275741_3c6b74cc-3d16-4e82-b5ed-3f6f3c65a3c8.svg",
+        "gltxt1": "100% Natural Ingredients",
+        "glic2": "shopify://shop_images/Frame_8788170b-09cb-4670-8315-8bf11c1130ad.svg",
+        "gltxt2": "Made with Coconut Water",
+        "glic3": "shopify://shop_images/Vector_a069d72d-c00a-458f-9f8b-b6056c2d23ed.svg",
+        "gltxt3": "Moisturizes  & Repairs",
+        "rvstar": "shopify://shop_images/Container.svg",
+        "rvstarcnt": "(130)",
+        "speciality": "<ul><li>Nourish</li><li>Hydrate</li><li>Restore</li></ul>",
+        "aficon1": "shopify://shop_images/fi_3129282.svg",
+        "afttxt1": "30-Day Happiness Guarantee",
+        "aficon2": "shopify://shop_images/fi_685388.svg",
+        "afttxt2": "Free Shipping",
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "buttons": true,
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 16,
+        "padding_bottom": 40
+      }
+    },
+    "n_reviewlogoslider_DGDbqr": {
+      "type": "n_reviewlogoslider",
+      "blocks": {
+        "scroller_zYaCqR": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_23.png"
+          }
+        },
+        "scroller_TWJKjp": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_24.png"
+          }
+        },
+        "scroller_9ALVxR": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_26.png"
+          }
+        },
+        "scroller_nprxMk": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_29.png"
+          }
+        },
+        "scroller_47tpgN": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_32_538b9617-b628-434c-8d15-bd4abfa2af1d.png"
+          }
+        },
+        "scroller_VbLGA3": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_25.png"
+          }
+        },
+        "scroller_4FXb7N": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_28.png"
+          }
+        },
+        "scroller_3bpYEy": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_30_0a6b8a52-a712-477a-894a-b3da16e89f8d.png"
+          }
+        },
+        "scroller_CmMD6K": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_24.png"
+          }
+        },
+        "scroller_4nJqfX": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_26.png"
+          }
+        },
+        "scroller_xPAtBz": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_29.png"
+          }
+        },
+        "scroller_eGjXVa": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_32_538b9617-b628-434c-8d15-bd4abfa2af1d.png"
+          }
+        },
+        "scroller_b64Ezn": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_25.png"
+          }
+        },
+        "scroller_D6FD94": {
+          "type": "scroller",
+          "settings": {
+            "logo": "shopify://shop_images/image_28.png"
+          }
+        }
+      },
+      "block_order": [
+        "scroller_zYaCqR",
+        "scroller_TWJKjp",
+        "scroller_9ALVxR",
+        "scroller_nprxMk",
+        "scroller_47tpgN",
+        "scroller_VbLGA3",
+        "scroller_4FXb7N",
+        "scroller_3bpYEy",
+        "scroller_CmMD6K",
+        "scroller_4nJqfX",
+        "scroller_xPAtBz",
+        "scroller_eGjXVa",
+        "scroller_b64Ezn",
+        "scroller_D6FD94"
+      ],
+      "name": "Review Logo Slider",
+      "settings": {
+        "star": "shopify://shop_images/Frame_1707479733.svg",
+        "title": "BEST SELLER",
+        "desc1": "30,000,000+ Capsules Delivered",
+        "desc2": "& AS SEEN ON"
+      }
+    },
+    "n_peoplelove_FVzTea": {
+      "type": "n_peoplelove",
+      "blocks": {
+        "block_ULUcER": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_102_f3a7c4a7-3edd-495a-b18a-d1d5cdf3fd10.png",
+            "title": "Exfoliate, Balance, Illuminate",
+            "des": "Bakuchiol smooths texture and refines tone for visibly softer, balanced skin."
+          }
+        },
+        "block_TXaUgG": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_100_4436bc03-4158-410b-b714-cdf16329473f.png",
+            "title": "Bright, Poreless Radiance",
+            "des": "Niacinamide brightens, evens tone, and helps minimize pores for a clean, glassy finish."
+          }
+        },
+        "block_Pk33rW": {
+          "type": "block",
+          "settings": {
+            "logo": "shopify://shop_images/Ellipse_100_1_d598b923-a2d8-44ef-8bc6-afa3a889d485.png",
+            "title": "Effortless Glow-Up Routine",
+            "des": "Inspired by Korean facials — swipe, glow, and go. Hydrated, luminous skin in seconds."
+          }
+        }
+      },
+      "block_order": [
+        "block_ULUcER",
+        "block_TXaUgG",
+        "block_Pk33rW"
+      ],
+      "name": "People Love",
+      "settings": {
+        "banner": "shopify://shop_images/New_Project_3fcee45e-e1b5-4813-832c-c3e28b5d9cee.webp",
+        "title": "<p>Why People Love <strong>Body Restore</strong></p>",
+        "subtitle": "<p><strong>Your All-Natural Korean Facial Protocol. Bakuchiol & Niacinamide in Perfect Balance.</strong></p>"
+      }
+    },
+    "n_steps_BRPAwR": {
+      "type": "n_steps",
+      "blocks": {
+        "block_MAYKRz": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/New_Project_1_33ff846e-97a9-4c72-b998-ef0dfddc6902.webp",
+            "title": "Use provided tweezers",
+            "number": "1"
+          }
+        },
+        "block_P9CQVh": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/New_Project_2_49264862-c743-4db3-96fb-54f1170ff8dc.webp",
+            "title": "Cleanse Face Gently",
+            "number": "2"
+          }
+        },
+        "block_zzXgVc": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/New_Project_3.webp",
+            "title": "Feel Fresh & Hydrated",
+            "number": "3"
+          }
+        }
+      },
+      "block_order": [
+        "block_MAYKRz",
+        "block_P9CQVh",
+        "block_zzXgVc"
+      ],
+      "name": "Simple Steps",
+      "settings": {
+        "title": "<p>Your Cleansing Routine <strong>Made Better.</strong></p>"
+      }
+    },
+    "n_reason_kBTUAB": {
+      "type": "n_reason",
+      "blocks": {
+        "block_mnnxBy": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479895.svg",
+            "title": "Get the Glass-Skin Look",
+            "des": "Premium and effective ingredients for actual results."
+          }
+        },
+        "block_JRgDUN": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479898.svg",
+            "title": "Portable To Everywhere",
+            "des": "Compact containers for gym, travel, or home."
+          }
+        },
+        "block_CeL6cH": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479897_3992e82a-4f32-4e29-ba9a-988a27d96b51.svg",
+            "title": "Made in Korea",
+            "des": "See the instant results of Korean facial traditions without the high price-tag."
+          }
+        },
+        "block_CCAeCR": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479899.svg",
+            "title": "Eco-Conscious For You",
+            "des": "Made with natural, clean, eco-friendly ingredients."
+          }
+        },
+        "block_aEMNXp": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479897_1_479d3bc1-0d97-406d-a6ad-800b2cd62053.svg",
+            "title": "All Natural Ingredients",
+            "des": "Spa-like results without the harsh chemicals."
+          }
+        },
+        "block_LM6QPx": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1707479900.svg",
+            "title": "Trusted by Happy Customers",
+            "des": "Hundreds of verified 5-star reviews and testimonials."
+          }
+        }
+      },
+      "block_order": [
+        "block_mnnxBy",
+        "block_JRgDUN",
+        "block_CeL6cH",
+        "block_CCAeCR",
+        "block_aEMNXp",
+        "block_LM6QPx"
+      ],
+      "name": "Reason",
+      "settings": {
+        "subtitle": "6 Reasons",
+        "title": "<p>You'll Love To Relax With <strong>Body Restore</strong></p>",
+        "bg": "shopify://shop_images/New_Project_4.webp"
+      }
+    },
+    "n_ingredient_tab_phR6Yk": {
+      "type": "n_ingredient_tab",
+      "blocks": {
+        "grid_mprTp7": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/square_jar_mockup2_360_1_dbac992a-bdd7-41ed-808e-6b71b1417600.png",
+            "tab-label": "PEPPERMINT",
+            "circlecolor": "#8f6b9d",
+            "tabcontentbg": "#8f6b9d",
+            "image1": "shopify://shop_images/Asset_8_f7177b81-0c3a-4eb0-b3c3-36069c78227b.png",
+            "image2": "shopify://shop_images/Asset_7_9c11c630-c787-4d39-a3ea-9894847f40a0.png",
+            "text": "<p>Water, Methylpropanediol, Glycerin, Hydroxyethylcellulose, Propanediol, PEG-40 Hydrogenated Castor Oil, Dipropylene Glycol, Betaine, Bakuchiol, Trehalose, Hydroxyacetophenone, Butylene Glycol, Caprylyl Glycol, Allantoin, Panthenol, Citrus Aurantium Bergamia (Bergamot) Fruit Oil, Sorbitol, Gluconolactone, 1,2-Hexanediol, Centella Asiatica Extract, Lavandula Angustifolia (Lavender) Oil, Scutellaria Baicalensis Root Extract, Polygonum Cuspidatum Root Extract, Xanthan Gum, Sodium Hyaluronate, Stevia Rebaudiana Leaf Extract, Camellia Sinensis Leaf Extract, Citrus Aurantium Amara (Bitter Orange) Peel Oil, Chamomilla Recutita (Matricaria) Flower Extract, Rosmarinus Officinalis (Rosemary) Leaf Extract, Dipotassium Glycyrrhizate, Houttuynia Cordata Extract, Hyaluronic Acid, Hydrolyzed Hyaluronic Acid, Hydrolyzed Sodium Hyaluronate, Hydroxypropyltrimonium Hyaluronate, PEG-9 Diglycidyl Ether/Sodium Hyaluronate Crosspolymer, Potassium Hyaluronate, Sodium Acetylated Hyaluronate, and Dimethylsilanol Hyaluronate</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#deb7f0"
+          }
+        },
+        "grid_JTmNAj": {
+          "type": "grid",
+          "settings": {
+            "image": "shopify://shop_images/square_jar_mockup_360_1_eb597593-5169-4997-9dc5-d31f51a93013.png",
+            "tab-label": "BERGAMOT",
+            "circlecolor": "#57aea5",
+            "tabcontentbg": "#57aea5",
+            "image1": "shopify://shop_images/Asset_9_021fd2c8-59ed-4625-a02c-6f10a1e61a85.png",
+            "image2": "shopify://shop_images/Asset_5_7fd1e145-6274-4a0c-9ce2-ea3b3df44f5b.png",
+            "text": "<p>Water, Methylpropanediol, Niacinamide, Propanediol, Glyceryl Glucoside, 1,2-Hexanediol, C12-14 Alketh-12, Hydroxyacetophenone, Glycerin, Xylitol, Carbomer, Arginine, Caprylic/Capric Triglyceride, Adenosine, Menthyl Lactate, Butylene Glycol, Xanthan Gum, Disodium EDTA, Sodium Hyaluronate, Ethyl Menthane Carboxamide, Melia Azadirachta Leaf Extract, Melia Azadirachta Flower Extract, Methyl Diisopropyl Propionamide, Coccinia Indica Fruit Extract, Decyl Glucoside, Solanum Melongena (Eggplant) Fruit Extract, Aloe Barbadensis Flower Extract, Biosaccharide Gum-1, Eucommia Ulmoides Bark Extract, Ocimum Sanctum Leaf Extract, Corallina Officinalis Extract, Curcuma Longa (Turmeric) Root Extract, Centella Asiatica Leaf Extract, Camellia Sinensis Leaf Extract, Salix Alba (Willow) Bark Extract, Cladosiphon Okamuranus Extract, Hydroxypropyltrimonium Hyaluronate, Hyaluronic Acid, Hydrolyzed Sodium Hyaluronate, Potassium Hyaluronate, Ethylhexylglycerin, Hydrolyzed Hyaluronic Acid, Coffea Arabica (Coffee) Seed Extract, Pentylene Glycol, Sodium Hyaluronate Crosspolymer, Citrus Aurantium Bergamia (Bergamot) Leaf Extract, Gluconolactone, Sodium Acetylated Hyaluronate, and Pinus Densiflora Leaf Extract</p>",
+            "tabcontenttextcolor": "#ffffff",
+            "tabcontentsbg": "#afeae2"
+          }
+        }
+      },
+      "block_order": [
+        "grid_mprTp7",
+        "grid_JTmNAj"
+      ],
+      "name": "New Ingredient List Tab",
+      "settings": {
+        "heading": "<p>Ingredients List <strong>Call Out!</strong></p>",
+        "tabtfontsize": 16,
+        "tabtfontsizemob": 14,
+        "tabtfontweight": 400,
+        "tabtcolor": "#0c2331",
+        "bgcolor": "#fff9eb",
+        "gridmaxwidth": 890,
+        "tabcfontsize": 15,
+        "tabcfontsizemob": 14,
+        "tabcfontweight": 400,
+        "padding_top": 50,
+        "padding_bottom": 86,
+        "padding_top_mob": 40,
+        "padding_bottom_mob": 60
+      }
+    },
+    "n_textreview_z7mYqG": {
+      "type": "n_textreview",
+      "name": "New Review Text",
+      "settings": {
+        "bg-color": "",
+        "width": 800,
+        "textalignment": "center",
+        "tab2": "Written Reviews",
+        "tab_color": "rgba(0,0,0,0)",
+        "tab_text_color": "#000000",
+        "active_tab_color": "#fff9eb",
+        "active_tab_text_color": "#000000",
+        "tabfont-size": 16,
+        "tabfont-size-mob": 14,
+        "tabfont-weight": 500,
+        "video-height": 175,
+        "count": 6,
+        "count-mob": 3,
+        "title": "<p>Delivering Real Results and Radiant Skin for <strong>Thousands</strong></p>",
+        "color": "",
+        "font-size": 40,
+        "font-size-mob": 34,
+        "font-weight": 700,
+        "space": 1,
+        "space_mob": 1,
+        "content": "<p>and Counting!</p>",
+        "tccolor": "",
+        "tcfont-size": 16,
+        "tcfont-size-mob": 14,
+        "tcfont-weight": 700,
+        "tcspace": 1,
+        "tcspace_mob": 1,
+        "top": -60,
+        "right": 130,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 0
+      }
+    },
+    "n_faq_M7hUjR": {
+      "type": "n_faq",
+      "blocks": {
+        "faq_grid_yDNGke": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What makes Body Restore different?",
+            "faq_title_desc": "<p>Unlike liquid chemical toners, these essence-soaked pads deliver consistent, even coverage — combining exfoliation, hydration, and brightening in one quick step inspired by Korean skin rituals.</p>"
+          }
+        },
+        "faq_grid_pfLeY6": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What are the key ingredients?",
+            "faq_title_desc": "<p>Each pad is infused with Bakuchiol and Niacinamide, two powerhouse ingredients inspired by Korean skincare. Bakuchiol helps smooth and firm skin without irritation, while Niacinamide brightens, refines pores, and strengthens the skin barrier.</p>"
+          }
+        },
+        "faq_grid_kbz4JE": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Can I use them with other skincare products?",
+            "faq_title_desc": "<p>Absolutely. They layer seamlessly under serums, moisturizers, and SPF. Think of them as your first step toward that fresh, glass-skin glow.</p>"
+          }
+        },
+        "faq_grid_RrCEtR": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Where is it made and is it safe?",
+            "faq_title_desc": "<p>Body Restore toner pads are proudly made in Korea, following the same high standards that define advanced K-beauty skincare. Each formula is tested, cruelty-free, and designed for daily, gentle use on all skin types. The ingredients are clean, non-irritating, and free from harsh alcohols or synthetic fragrances.</p>"
+          }
+        },
+        "faq_grid_AnELPC": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Are they suitable for sensitive skin?",
+            "faq_title_desc": "<p>Yes. The formula is alcohol-free, fragrance-free, and dermatologist-tested. Bakuchiol offers retinol-like results without irritation, while Niacinamide helps calm and strengthen your skin barrier.</p>"
+          }
+        },
+        "faq_grid_3aE7Xe": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does shipping take?",
+            "faq_title_desc": "<p>Orders are processed quickly and typically arrive within 3 to 5 business days. You’ll receive a tracking number once your order ships so you can follow it right to your door.</p>"
+          }
+        },
+        "faq_grid_wzXkHV": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What is your return policy if I’m not satisfied?",
+            "faq_title_desc": "<p>We offer a 30-day money-back guarantee if you’re not fully satisfied. </p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_grid_yDNGke",
+        "faq_grid_pfLeY6",
+        "faq_grid_kbz4JE",
+        "faq_grid_RrCEtR",
+        "faq_grid_AnELPC",
+        "faq_grid_3aE7Xe",
+        "faq_grid_wzXkHV"
+      ],
+      "name": "New Faq",
+      "settings": {
+        "enablesvg": false,
+        "faq_bg": "",
+        "topspacing": 150,
+        "topspacingmob": 20,
+        "showbordertop": false,
+        "showborderbottom": false,
+        "faq_title": "<p>Frequently Asked <strong>Questions</strong></p>",
+        "tfontsize": 44,
+        "tfontsizemob": 34,
+        "tfontweight": 700,
+        "textalignment": "center",
+        "faq_title_color": "#0c2331",
+        "tpaddingbottom": 0,
+        "tpaddingbottommob": 48,
+        "ftfontsize": 18,
+        "ftfontsizemob": 16,
+        "ftfontweight": 700,
+        "ftcolor": "#000000",
+        "fcfontsize": 16,
+        "fcfontsizemob": 14,
+        "fccfontweight": 400,
+        "fccolor": "#000000",
+        "spaddingtop": 0,
+        "spaddingbottom": 0,
+        "spaddingtopmob": 0,
+        "spaddingbottommob": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "accent-1",
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "n_save_4neDj3": {
+      "type": "n_save",
+      "blocks": {
+        "scroller_7abniX": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_aghK4D": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_BFpVdf": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_MDJmi4": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_YJKAa4": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_xG6WFa": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_RhBMmT": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_FBwCDm": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_fJBd3y": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_y86hfi": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_MCRfzC": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_98NtKy": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_AaiaRP": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_XBBgfy": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_yAmkEp": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_iqqCgT": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_AxQdeE": {
+          "type": "scroller",
+          "settings": {
+            "content": "Holiday Sale"
+          }
+        },
+        "scroller_nRg6MK": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        },
+        "scroller_MkwXVg": {
+          "type": "scroller",
+          "settings": {
+            "content": "ENDS SOON!"
+          }
+        },
+        "scroller_7fnU9r": {
+          "type": "scroller",
+          "settings": {
+            "content": "🎄"
+          }
+        }
+      },
+      "block_order": [
+        "scroller_7abniX",
+        "scroller_aghK4D",
+        "scroller_BFpVdf",
+        "scroller_MDJmi4",
+        "scroller_YJKAa4",
+        "scroller_xG6WFa",
+        "scroller_RhBMmT",
+        "scroller_FBwCDm",
+        "scroller_fJBd3y",
+        "scroller_y86hfi",
+        "scroller_MCRfzC",
+        "scroller_98NtKy",
+        "scroller_AaiaRP",
+        "scroller_XBBgfy",
+        "scroller_yAmkEp",
+        "scroller_iqqCgT",
+        "scroller_AxQdeE",
+        "scroller_nRg6MK",
+        "scroller_MkwXVg",
+        "scroller_7fnU9r"
+      ],
+      "name": "Save Section",
+      "settings": {
+        "rvwimg": "shopify://shop_images/Frame_1707479828_1.webp",
+        "mainimg": "shopify://shop_images/New_Project_5.webp",
+        "title": "<p>BUNDLE WHIPPED BEEF TALLOW</p>",
+        "des": "<p><strong>The more you bundle, the more your skin glows.</strong></p>",
+        "btnurl": "#",
+        "btntext": "Build your bundle",
+        "aicon1": "shopify://shop_images/fi_3129282.svg",
+        "atext1": "30-Day Happiness Guarantee",
+        "aicon2": "shopify://shop_images/fi_685388.svg",
+        "atext2": "Free Shipping"
+      }
+    }
+  },
+  "order": [
+    "n_productheader_MxxXbF",
+    "main",
+    "n_reviewlogoslider_DGDbqr",
+    "n_peoplelove_FVzTea",
+    "n_steps_BRPAwR",
+    "n_reason_kBTUAB",
+    "n_ingredient_tab_phR6Yk",
+    "n_textreview_z7mYqG",
+    "n_faq_M7hUjR",
+    "related-products",
+    "n_save_4neDj3"
+  ]
+}

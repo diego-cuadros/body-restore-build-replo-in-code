@@ -1,0 +1,41 @@
+{% if section.settings.mission_img != blank or section.settings.mission_text != blank %}
+<section class="lr_section">
+  <div class="lr_container">
+    <div class="row">
+      <div class="col-6">
+        <div class="lr_img_wrapper">
+          <img src="{{ section.settings.mission_img | img_url: 'master' }}">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="lr_info_wrapper">
+          <h2>{{ section.settings.mission_text }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Our Mission",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "mission_img",
+        "label": "Mission Image"
+      },
+      {
+        "type": "text",
+        "id": "mission_text",
+        "label": "Mission Title"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Our Mission"
+      }
+    ]
+  }
+{% endschema %}

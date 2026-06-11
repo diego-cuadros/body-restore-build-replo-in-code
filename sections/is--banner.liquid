@@ -1,0 +1,156 @@
+<section class="banner_section  {{ section.settings.custom_class | handle }}">
+  <div class="main_banner">
+    <div class="banner_main_row">
+        <div class="banner_col">
+          <div class="inner_banner {% if section.settings.text_position == 'right' %} text_position_right{% endif %}">
+            <div class="banner_inn_det">
+              {% for block in section.blocks %}
+                {% if block.type == 'banner_detail' %}
+              <div class="banner_inner_detail">
+                <h2>{{ block.settings.banner_title }}</h2>
+                <p class="sub_title" >{{ block.settings.sub_title }}</p>
+                {% if block.settings.banner_btn != blank %}
+                <a href="{{ block.settings.button_url }}" >{{ block.settings.banner_btn }}</a>
+                {% endif %}
+                <div class="review_star_banner">
+                <p>{{ block.settings.star_banner }}</p>
+                <span>{{ block.settings.review_text }}</span>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="banner_video_img">
+              {% for block in section.blocks %}
+                {% if block.type == 'banner_image' %}
+              <div class="banner_image_col">
+                {% if block.settings.banner_img != blank %}
+                  {{ block.settings.banner_img | image_url: width: 3840 | image_tag:
+                    loading: 'lazy',
+                    sizes: '100vw',
+                    widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                    alt: block.settings.banner_img.alt
+                  }}
+                {% else %}
+                  {{ block.settings.video | video_tag: image_size: '1100x', autoplay: true, loop: true, controls: false, muted: true, playsinline: true }}
+                {% endif %}
+              </div>
+                  {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>  
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Hero Banner",
+    "settings": [
+      {
+        "type":"text",
+        "id":"custom_class",
+        "label":"Custom Class",
+        "info":"Please Do Not Change"
+      },
+      {
+     	"type": "select",
+     	"id": "text_position",
+     	"label": "Text Position",
+     	"options": [
+            {
+     			"value": "left",
+     			"label": "Left"
+     		},
+     		{
+     			"value": "right",
+     			"label": "Right"
+     		}
+     	],
+     	"default": "left"
+     }
+    ],
+    "blocks":[
+      {
+        "type":"banner_detail",
+        "name":"Banner Detail",
+        "settings":[
+          {
+            "type":"text",
+            "id":"banner_title",
+            "label":"Title"
+          },
+          {
+            "type":"textarea",
+            "id":"sub_title",
+            "label":"Sub Title"
+          },
+          {
+            "type":"text",
+            "id":"banner_btn",
+            "label":"Button Text"
+          },
+          {
+            "type":"url",
+            "id":"button_url",
+            "label":"Button Url"
+          },
+          {
+            "type":"html",
+            "id":"star_banner",
+            "label":"Review Star"
+          },
+          {
+            "type":"text",
+            "id":"review_text",
+            "label":"Reivew Text"
+          }
+        ]
+      },
+      {
+        "type":"banner_image",
+        "name":"banner Image",
+        "settings":[
+          {
+            "type":"image_picker",
+            "id":"banner_img",
+            "label":"Select Banner Image"
+          },
+          {
+            "type":"video",
+            "id":"video",
+            "label":"Video"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name":"Hero Banner"
+      }
+    ]
+  }
+{% endschema %}
+
+<script>
+$('.banner_inn_det').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  fade: true,
+  adaptiveHeight: true,
+  asNavFor: '.banner_video_img'
+});
+$('.banner_video_img').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  asNavFor: '.banner_inn_det',
+  dots: false,
+  arrows: false,
+  centerMode: false,
+  focusOnSelect: true
+});
+</script>

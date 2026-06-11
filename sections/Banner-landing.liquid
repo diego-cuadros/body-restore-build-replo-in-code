@@ -1,0 +1,436 @@
+<style>
+  .banner-{{ section.id }} * { letter-spacing: normal;}
+  .banner-{{ section.id }} .mobile-view {display:none;}
+  .banner-{{ section.id }} .desktop-view {display:block;}
+  .banner-{{ section.id }} a {text-decoration:none;color:inherit;}
+  .banner-{{ section.id }} p {margin-top:0px;margin-bottom:10px;}
+  .banner-{{ section.id }} p:last-child {margin-top:0px;margin-bottom:0px;}
+  .banner-{{ section.id }} .main_container {position:relative;height:auto;display:flex;flex-direction:row;}
+  .banner-{{ section.id }} .main_container .image{position:relative;width:100%;height:100%;}
+  .banner-{{ section.id }} .main_container.small{min-height:76vh;height:100%;}
+  .banner-{{ section.id }} .main_container.medium{min-height:80vh;height:100%;}
+  .banner-{{ section.id }} .main_container.large{min-height:86vh;height:100%;}
+  .banner-{{ section.id }} .main_container.x-large{min-height:100vh;height:100%;}
+  .banner-{{ section.id }} .main_container .media {position:absolute;top:0;bottom:0;left:0;right:0px;width:100%;height:100%;}
+  .banner-{{ section.id }} .main_container .media .image img {position:absolute;top:0;bottom:0;left:0;object-fit:cover;right:0px;width:100%;height:100%;}
+  .banner-{{ section.id }} .main_container .image img{position:absolute;top:0;bottom:0;right:0;left:0;width:100%;height:100%;object-fit:cover;}
+  .banner-{{ section.id }} .main_container.small .content_container{min-height:76vh;height:100%;}
+  .banner-{{ section.id }} .main_container.medium .content_container{min-height:80vh;height:100%;}
+  .banner-{{ section.id }} .main_container.large .content_container{min-height:86vh;height:100%;}
+  .banner-{{ section.id }} .main_container.x-large .content_container{min-height:100vh;height:100%;}
+  .banner-{{ section.id }} .main_container .content_container{padding: 40px;{% if section.settings.content-width != 0 %}max-width:{{section.settings.content-width}}px;{% endif %} width:100%;padding-top:{{section.settings.padding_top}}px;padding-bottom:{{section.settings.padding_bottom}}px;position:relative;height:100%;display:flex;flex-direction:column;}
+  .banner-{{ section.id }} .main_container .content_container > div{width:100%;}
+  .banner-{{ section.id }} .main_container .overlay_color{background-color:#000000{{section.settings.opacity}};position:absolute;left:0;right:0;top:0;bottom:0;display:block;}
+  .banner-{{ section.id }} .inner-container {display:flex;flex-direction:column;height:100%;}
+
+  .banner-main-wrapper.top-left,
+  .banner-main-wrapper.bottom-left,
+  .banner-main-wrapper.middle-left,
+  .banner-main-wrapper.top-left .content_container,
+  .banner-main-wrapper.top-center .content_container,
+  .banner-main-wrapper.top-right .content_container{justify-content:start;}
+
+  .banner-main-wrapper.top-center,
+  .banner-main-wrapper.middle-center,
+  .banner-main-wrapper.bottom-center,
+  .banner-main-wrapper.middle-left .content_container,
+  .banner-main-wrapper.middle-center .content_container,
+  .banner-main-wrapper.middle-right .content_container{justify-content:center;}
+
+  .banner-main-wrapper.top-right,
+  .banner-main-wrapper.middle-right,
+  .banner-main-wrapper.bottom-right,
+  .banner-main-wrapper.bottom-left .content_container,
+  .banner-main-wrapper.bottom-center .content_container,
+  .banner-main-wrapper.bottom-right .content_container{justify-content:end;}
+
+  .content_container.content-start *{margin-left:0px;margin-right:auto;text-align:left;}
+  .content_container.content-center *{margin-right:auto;margin-left:auto;text-align:center;}
+  .content_container.content-end *{margin-right:0px;margin-left:auto;text-align:right;}
+
+
+
+  @media screen and (min-width:1450px){
+  .banner-{{ section.id }} .main_container .image{position:relative;}
+  .banner-{{ section.id }} .main_container .image img{position:absolute;top:0;bottom:0;right:0;left:0;width:100%;height:100%;object-fit:cover;}
+
+  }
+  @media screen and (max-width:768px){
+  .banner-{{ section.id }} .mobile-view {display:block;}
+  .banner-{{ section.id }} .desktop-view {display:none;}
+  .banner-{{ section.id }} .main_container .overlay_color{background-color:#000000{{section.settings.opacity-mob}};position:absolute;left:0;right:0;top:0;bottom:0;display:block;}
+  .banner-{{ section.id }} .main_container .content_container {max-width:100%;}
+  {% if section.settings.mobile_position == 'overlay' %}
+  .banner-{{ section.id }} .main_container {display:flex;flex-direction:column;}
+  .banner-{{ section.id }} .main_container.mobile_xsmall {min-height:66vh;height:100%;}
+  .banner-{{ section.id }} .main_container.mobile_small{min-height:76vh;height:100%;}
+  .banner-{{ section.id }} .main_container.mobile_medium{min-height:80vh;height:100%;}
+  .banner-{{ section.id }} .main_container.mobile_large{min-height:86vh;height:100%;}
+  .banner-{{ section.id }} .main_container.mobile_x-large{min-height:100vh;height:100%;}
+  .banner-{{ section.id }} .main_container.mobile_xsmall .content_container {min-height:66vh;height:100%;}
+  .banner-{{ section.id }} .main_container.mobile_small .content_container{min-height:76vh;height:100%;}
+  .banner-{{ section.id }} .main_container.mobile_medium .content_container{min-height:80vh;height:100%;}
+  .banner-{{ section.id }} .main_container.mobile_large .content_container{min-height:86vh;height:100%;}
+  .banner-{{ section.id }} .main_container.mobile_x-large .content_container{min-height:100vh;height:100%;}
+  {% elsif section.settings.mobile_position == 'above' %}
+  .banner-{{ section.id }} .main_container {display:flex;flex-direction:column-reverse;}
+  .banner-{{ section.id }} .main_container {min-height:fit-content !important;height:100%;}
+  .banner-{{ section.id }} .main_container .media{position:relative; }
+  .banner-{{ section.id }} .main_container .banner-main-wrapper{ background-color:{{section.settings.bg-color}} }
+  .banner-{{ section.id }} .main_container .content_container{min-height:fit-content !important;padding: 20px;padding-top:{{section.settings.mobile_padding_top}}px;padding-bottom:{{section.settings.mobile_padding_bottom}}px; }
+  .banner-{{ section.id }} .main_container .image{position:relative;padding-top:{{ section.settings.imageheight }}%;height:auto;}
+  {% elsif section.settings.mobile_position == 'below' %}
+  .banner-{{ section.id }} .main_container {display:flex;flex-direction:column;}
+  .banner-{{ section.id }} .main_container {min-height:fit-content !important;height:100%;}
+  .banner-{{ section.id }} .main_container .media{position:relative; }
+  .banner-{{ section.id }} .main_container .content_container{min-height:fit-content !important;background-color:{{section.settings.bg-color}};padding: 20px;padding-top:{{section.settings.mobile_padding_top}}px;padding-bottom:{{section.settings.mobile_padding_bottom}}px; }
+  .banner-{{ section.id }} .main_container .image{position:relative;padding-top:{{ section.settings.imageheight }}%;height:auto;}
+
+  {% endif %}
+  .banner-{{ section.id }} .main_container .media .image img {position:absolute;top:0;bottom:0;left:0;object-position:top center;object-fit:cover;right:0px;width:100%;height:100%;}
+  .banner-{{ section.id }} .main_container .content_container{padding: 40px 0px;}
+  .banner-{{ section.id }} .banner-main-wrapper.mobile_top-left .content_container{align-items:start;justify-content:start;text-align:center;}
+  .banner-{{ section.id }} .banner-main-wrapper.mobile_top-center .content_container{align-items:center;justify-content:start;text-align:center;}
+  .banner-{{ section.id }} .banner-main-wrapper.mobile_top-right .content_container{align-items:end;justify-content:start;text-align:center;}
+  .banner-{{ section.id }} .banner-main-wrapper.mobile_middle-left .content_container{align-items:start;justify-content:center;text-align:center;}
+  .banner-{{ section.id }} .banner-main-wrapper.mobile_middle-center .content_container{align-items:center;justify-content:center;text-align:center;}
+  .banner-{{ section.id }} .banner-main-wrapper.mobile_middle-right .content_container{align-items:end;justify-content:center;text-align:center;}
+  .banner-{{ section.id }} .banner-main-wrapper.mobile_bottom-left .content_container{align-items:start;justify-content:end;text-align:center;}
+  .banner-{{ section.id }} .banner-main-wrapper.mobile_bottom-center .content_container{align-items:center;justify-content:end;text-align:center;}
+  .banner-{{ section.id }} .banner-main-wrapper.mobile_bottom-right .content_container{align-items:end;justify-content:end;text-align:center;}
+      }
+</style>
+
+<section class="banner-{{ section.id }}">
+  <div class="main_container {{ section.settings.image_height }} {{ section.settings.mobile_image_height }}">
+    <div class="media ">
+      <div class="image ">
+        <img
+          src="{{ section.settings.image | img_url:'master' }}"
+          {% if section.settings.image_mob != blank %}
+            class="desktop-view"
+          {% endif %}
+        >
+        {% if section.settings.image_mob != blank %}
+          <img src="{{ section.settings.image_mob | img_url:'master' }}" class="mobile-view">
+        {% endif %}
+        <div class="overlay_color"></div>
+      </div>
+    </div>
+    <div
+      class="page-width banner-main-wrapper {{ section.settings.content_alignment }} {{ section.settings.mobile_content_alignment }}"
+      style="display:flex;width:100%;"
+    >
+      <div class="content_container content-{{ section.settings.position }}">
+        {% content_for 'blocks' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banner Landing",
+  "settings": [
+    {
+      "type":"color",
+      "id":"bg-color",
+      "label":"mobile Background Color"
+    },
+    {
+      "type":"number",
+      "id":"content-width",
+      "label":"Content Width",
+      "default":600
+    },
+    {
+      "type":"header",
+      "content":"Image Customization"
+    },
+    {
+      "type":"image_picker",
+      "id":"image",
+      "label":"Image",
+      "info":"Image Size 1933x 990"
+    },
+    {
+      "type":"image_picker",
+      "id":"image_mob",
+      "label":"Mobile Image",
+      "info":"Image Size 768x 600"
+    },
+    {
+      "type":"header",
+      "content":"Image Overlay opacity Customization"
+    },
+    {
+      "type": "range",
+      "id": "opacity",
+      "min": 0,
+      "max": 99,
+      "step": 1,
+      "default": 20,
+      "label":"banner Overlay"
+    },
+    {
+      "type": "range",
+      "id": "opacity-mob",
+      "min": 0,
+      "max": 99,
+      "step": 1,
+      "default": 20,
+      "label":"Mobile banner Overlay"
+    },
+    {
+      "type":"header",
+      "content":"Image Height Customization"
+    },
+    {
+      "type": "select",
+      "default": "small",
+      "options": [
+        {
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "x-large",
+          "label": "X Large"
+        }
+      ],
+      "id": "image_height",
+      "label":"Image Height"
+    },
+    {
+      "type": "select",
+      "default": "mobile_small",
+      "options": [
+        {
+          "label": "Extra Small",
+          "value": "mobile_xsmall"
+        },
+        {
+          "label": "Small",
+          "value": "mobile_small"
+        },
+        {
+          "value": "mobile_medium",
+          "label": "Medium"
+        },
+        {
+          "value": "mobile_large",
+          "label": "Large"
+        },
+        {
+          "value": "mobile_x-large",
+          "label": "X Large"
+        }
+      ],
+      "id": "mobile_image_height",
+      "label":"Mobile Image Height",
+      "info":"It works when the content position is overlay."
+    },
+    {
+      "type":"header",
+      "content":"content Position Customization"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "default": "start",
+      "id": "position",
+      "label":"Desktop Content Position"
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "label": "overlay Image",
+          "value": "overlay"
+        },
+        {
+          "label": "Above Image",
+          "value": "above"
+        },
+        {
+          "value": "below",
+          "label": "below Image"
+        }
+      ],
+      "id": "mobile_position",
+      "label":"Mobile Content Position"
+    },
+    {
+      "type": "range",
+      "id": "imageheight",
+      "min": 25,
+      "max": 125,
+      "step": 1,
+      "default": 56,
+      "label":"Mobile Image Height",
+      "info":"It works when the content position is above and below."
+    },
+    {
+      "type":"header",
+      "content":"Content Alignment Customization"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "options": [
+        {
+          "value": "top-left",
+          "label": "Top Left"
+        },
+        {
+          "value": "top-center",
+          "label": "Top Center"
+        },
+        {
+          "value": "top-right",
+          "label": "Top Right"
+        },
+        {
+          "value": "middle-left",
+          "label": "Middle Left"
+        },
+        {
+          "value": "middle-center",
+          "label": "Middle Center"
+        },
+        {
+          "value": "middle-right",
+          "label": "Middle Right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "bottom-right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "top-center",
+      "label":"Content Alignment"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "mobile_top-left",
+          "label": "Top Left"
+        },
+        {
+          "value": "mobile_top-center",
+          "label": "Top Center"
+        },
+        {
+          "value": "mobile_top-right",
+          "label": "Top Right"
+        },
+        {
+          "value": "mobile_middle-left",
+          "label": "Middle Left"
+        },
+        {
+          "value": "mobile_middle-center",
+          "label": "Middle Center"
+        },
+        {
+          "value": "mobile_middle-right",
+          "label": "Middle Right"
+        },
+        {
+          "value": "mobile_bottom-left",
+          "label": "Bottom Left"
+        },
+        {
+          "value": "mobile_bottom-center",
+          "label": "Bottom Center"
+        },
+        {
+          "value": "mobile_bottom-right",
+          "label": "Bottom Right"
+        }
+      ],
+      "default": "mobile_middle-center",
+      "label":"Mobile Content Alignment"
+    },
+    {
+      "type":"header",
+      "content":"Spacing section"
+    },
+    {
+      "type":"number",
+      "id":"padding_top",
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"padding_bottom",
+      "label":"Padding Bottom"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_top",
+      "label":"Mobile Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_bottom",
+      "label":"Mobile_Padding Top"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image"
+    },
+    {
+      "type": "heading"
+    },
+    {
+      "type": "content"
+    },
+    {
+      "type":"button-container"
+    },
+    {
+      "type":"button"
+    }
+
+
+  ],
+  "presets":[
+    {
+      "name": "Banner Landing"
+    }
+  ]
+}
+{% endschema %}

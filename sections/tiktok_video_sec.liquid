@@ -1,0 +1,156 @@
+<div class="main_tiktok_video">
+  <div class="container">
+    <div class="tiktok_heading">
+      {% if section.settings.tiktok_title != blank %}
+        <h3>{{ section.settings.tiktok_title }}
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 125 | image_tag: loading: 'lazy', sizes: '100vw', widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: section.settings.image.alt }}
+        {% endif %}</h3>
+      {% endif %}
+      {% if section.settings.tiktok_text != blank %}
+      {{ section.settings.tiktok_text }}
+      {% endif %}
+    </div>
+    <ul class="tik_tok_main">
+      {% for block in section.blocks %}
+        {% if block.settings.tiktok_content != blank %}
+        <li class="tik_tok_item">
+          {{ block.settings.tiktok_content }}
+        </li>
+        {% endif %}
+      {% endfor %}  
+    </ul>
+  </div>
+</div>
+<style>
+    .main_tiktok_video {
+      padding-top: 40px; 
+      padding-bottom: 40px; 
+      background-color: {{ section.settings.bg_color }};
+    }
+  @media only screen and (min-width: 750px) {
+    .main_tiktok_video {
+      padding-top: 80px; 
+      padding-bottom: 20px; 
+    }
+    .template-product .main_tiktok_video {
+        padding-bottom: 40px;
+    }
+  }
+  .tik_tok_main {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 0 0;
+  }
+  
+  .tik_tok_main .tik_tok_item {
+    max-width: calc(33.33% - 10px * 2 / 3);
+    width: 100%;
+  }
+  
+  .tik_tok_main .tik_tok_item .tiktok-embed {
+    margin: 0 0;
+    border: none;
+    padding: 0 0;
+  }
+  .tiktok_heading {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .tiktok_heading h3 {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight-bold);
+    font-size: 36px;
+    line-height: normal;
+    margin: 0 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .tiktok_heading h3 img {
+    height: 3.6rem;
+    width: auto;
+  }
+  
+  .tiktok_heading p {
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight-medium);
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 0;
+  }
+
+  @media only screen and (max-width: 749px) {
+    .tik_tok_main .tik_tok_item {
+      max-width: 100% ;
+      width: 100%;
+    }
+    .tiktok_heading p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .tik_tok_main {
+      gap: 30px;
+    }
+    .tiktok_heading h3 {
+      font-size: 24px;
+    }
+    .tiktok_heading h3 img {
+      height: 2.4rem;
+      width: auto;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "TikTok Video",
+    "settings": [
+      {
+        "type":"color",
+        "id":"bg_color",
+        "label":"Background Color"
+      },
+      {
+        "type":"text",
+        "id":"tiktok_title",
+        "label":"Title"
+      },
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"TikTok logo Image"
+      },
+      {
+        "type":"richtext",
+        "id":"tiktok_text",
+        "label":"Text"
+      }
+    ],
+    "blocks":[
+      {
+        "type":"tiktok_video",
+        "name":"Main Tiktok Item",
+        "settings":[
+          {
+            "type":"html",
+            "id":"tiktok_content",
+            "label":"Tiktok Video"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name":"TikTok Video"
+      }
+    ]
+  }
+{% endschema %}

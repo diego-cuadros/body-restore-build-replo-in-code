@@ -1,0 +1,767 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "okendo_star_rating_kd6L6E": {
+          "type": "shopify://apps/okendo/blocks/star-rating/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "2b460a12-1b22-47a4-bb8a-98efeb2d036a": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "f4cf1949-4c95-4815-b2ef-b8d663fb501e": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "truck",
+            "image_1": "shopify://shop_images/img36541.png",
+            "heading_1": "Free Ship Over $50",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/Group_28384_e65a00c7-957c-40e0-86be-f2280246713d.svg",
+            "heading_2": "Money Back Guarantee",
+            "icon_3": "paw_print",
+            "image_3": "shopify://shop_images/usa.png",
+            "heading_3": "Proudly Made in USA"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "8e0fcf53-f4eb-4c41-bcd4-6a1746667f54": {
+          "type": "line",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "0de4e276-0b29-46f5-915d-4a565861b7de": {
+          "type": "line",
+          "settings": {}
+        },
+        "b42f45e0-25ce-4280-baa0-088cc3de7201": {
+          "type": "line",
+          "disabled": true,
+          "settings": {}
+        },
+        "05a8dc8d-08df-4284-8f0b-5d83038c656d": {
+          "type": "reviews-carousel",
+          "settings": {
+            "review_title": "Hear from our customers:"
+          }
+        },
+        "collapsible_tab_PjVhbg": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Benefits",
+            "icon": "none",
+            "content": "<ul><li>Transform your shower into a spa-like escape — our aromatherapy steamers dissolve to release soothing essential oils for deep relaxation and stress relief. A perfect birthday gift for women or men.</li><li>A Deluxe Home Spa Experience: Lasting longer than typical shower steamers, our set is a must-have for women who want to restore and relax naturally. Ideal for bridal, self-care, or new mom gifts.</li><li>Wash Away Stress and Fatigue: Melt away the day’s stress with our relaxing shower bombs. Great for teacher appreciation, dad gifts, or postpartum care packages for women.</li><li>Travel Essentials: Compact and convenient, these steamers are travel must-haves for on-the-go relaxation. Perfect for college students, graduation gifts, or unique spa gifts.</li><li>Surprise Your Loved Ones: Spoil your sweetheart on Christmas, Father’s Day, Valentine’s Day or friend on her birthday. When it comes to spa gifts, relaxing gifts for women or stress relief gifts for men, our shower steamers are the ultimate choice.<br/></li></ul>",
+            "page": ""
+          }
+        },
+        "854f5adf-053b-484b-9964-bfb18f826823": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Products Ingredients",
+            "icon": "none",
+            "content": "<p>{{ product.metafields.custom.ingredients.value }}</p>",
+            "page": ""
+          }
+        },
+        "0795029f-cb91-4a87-a6cd-d7839556a74e": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Free Shipping & Returns",
+            "icon": "none",
+            "content": "<p>We proudly offer a <strong>30-day money-back guarantee</strong> if you are not fully satisfied with your product for any reason. </p><p>If 30 days have gone by since your purchase, unfortunately we cannot offer you a refund or exchange. <br/><br/>However, email us at help@mybodyrestore.com and we would love to make things right for you!</p>",
+            "page": ""
+          }
+        },
+        "de6e5c5f-c012-4ee4-a567-e53cf8b293ea": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Privacy Policy",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "8bf390a3-627e-4eac-a888-bdacb6a0972f": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Contact Us",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "vendor",
+        "okendo_star_rating_kd6L6E",
+        "2b460a12-1b22-47a4-bb8a-98efeb2d036a",
+        "price",
+        "variant_picker",
+        "f4cf1949-4c95-4815-b2ef-b8d663fb501e",
+        "buy_buttons",
+        "8e0fcf53-f4eb-4c41-bcd4-6a1746667f54",
+        "description",
+        "0de4e276-0b29-46f5-915d-4a565861b7de",
+        "b42f45e0-25ce-4280-baa0-088cc3de7201",
+        "05a8dc8d-08df-4284-8f0b-5d83038c656d",
+        "collapsible_tab_PjVhbg",
+        "854f5adf-053b-484b-9964-bfb18f826823",
+        "0795029f-cb91-4a87-a6cd-d7839556a74e",
+        "de6e5c5f-c012-4ee4-a567-e53cf8b293ea",
+        "8bf390a3-627e-4eac-a888-bdacb6a0972f"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "buttons": false,
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 16,
+        "padding_bottom": 40
+      }
+    },
+    "logo_list_carousel_XGiLC3": {
+      "type": "logo-list-carousel",
+      "blocks": {
+        "title_jwrcdC": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "title": "As Seen On:",
+            "color": "",
+            "font_size": 36,
+            "font_weight": 700,
+            "mobile_font_size": 30,
+            "mobile_font_weight": 300,
+            "padding_bottom": 24,
+            "mobile_padding_bottom": 40
+          }
+        },
+        "logo_CrACWz": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/good-morning-america-a-b-c-logo-nu0sbs6w63xoy428.png"
+          }
+        },
+        "logo_M4VgdC": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/People-Magazine-Logo.png"
+          }
+        },
+        "logo_8i8BtD": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/Today_logo_svg.png"
+          }
+        },
+        "logo_tGQK4w": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/download_7018bbda-c713-4af1-b797-c9c365b56ce8.png"
+          }
+        },
+        "logo_MEUqh6": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/GQ-Logo_1.png"
+          }
+        },
+        "logo_bWinCz": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/download_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "title_jwrcdC",
+        "logo_CrACWz",
+        "logo_M4VgdC",
+        "logo_8i8BtD",
+        "logo_tGQK4w",
+        "logo_MEUqh6",
+        "logo_bWinCz"
+      ],
+      "settings": {
+        "background": "#fff",
+        "carousel_speed": 10,
+        "border": true,
+        "border_color": "#dddddd",
+        "alignment": "center",
+        "height": 35,
+        "height_mob": 40,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "margin_top": 20,
+        "mobile_margin_top": 10
+      }
+    },
+    "1743525354e35c5173": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "rich_text_xfUVh4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WzQVEX": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Daily Relief From Stress One Shower At A time",
+            "heading_size": "h1"
+          }
+        },
+        "text_8FXPkt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_GGa7z9": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_WzQVEX",
+        "text_8FXPkt",
+        "button_GGa7z9"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100%;}",
+        ".rich-text__blocks .rich-text__text p {font-size: 18px; color: #102332 !important; font-weight: 500;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "accent-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 32
+      }
+    },
+    "170599762876aaf947": {
+      "type": "apps",
+      "blocks": {
+        "tolstoy_shoppable_video_ugc_carousel_block_98XH4k": {
+          "type": "shopify://apps/tolstoy-ads-image-video/blocks/carousel-block/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "pi997isau0jit"
+          }
+        }
+      },
+      "block_order": [
+        "tolstoy_shoppable_video_ugc_carousel_block_98XH4k"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "b7d2d967-d583-41b0-ab9a-fe656e4b8a12": {
+      "type": "is--video-block",
+      "blocks": {
+        "16375539-5309-443f-842b-17239353db78": {
+          "type": "video_block_grid",
+          "settings": {
+            "button_color_bg": "{{ product.metafields.custom._button_background.value }}",
+            "button_color_text": "{{ product.metafields.custom.button_text_color.value }}",
+            "solve_bg_color_inside": "{{ product.metafields.custom._background_color.value }}",
+            "solvesub__image": "{{ product.metafields.custom.product_video_image.value }}",
+            "solvesub__video": "{{ product.metafields.custom.video.value }}",
+            "solvesub__title": "<p>{{ product.metafields.custom.sub_title.value }}</p>",
+            "solvesub__desc": "{{ product.metafields.custom.sub_description | metafield_tag }}",
+            "solvesub__btn": "<p>{{ product.metafields.custom.button_label.value }}</p>",
+            "solvesub__btn_url": "{{ product.metafields.custom.button_url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "16375539-5309-443f-842b-17239353db78"
+      ],
+      "disabled": true,
+      "settings": {
+        "solve_bg_color": "{{ product.metafields.custom.main_background_color.value }}",
+        "solve_title": "{{ product.metafields.custom.title.value }}"
+      }
+    },
+    "7aa830e9-a8b3-4faa-bcb9-5f7b40997a72": {
+      "type": "collage",
+      "blocks": {
+        "0fa718c4-23ef-415e-b6c7-38e4ebb1921e": {
+          "type": "video",
+          "settings": {
+            "cover_image": "shopify://shop_images/Rectangle_745.png",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "Describe the video"
+          }
+        },
+        "438d4dd8-3cf3-45f2-9c7f-5009b81e22df": {
+          "type": "video",
+          "settings": {
+            "cover_image": "shopify://shop_images/Rectangle_747.png",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "description": "Describe the video"
+          }
+        },
+        "template--14471204274272__7aa830e9-a8b3-4faa-bcb9-5f7b40997a72-product-1": {
+          "type": "product",
+          "settings": {
+            "product": "calm-bedtime-shower-steamers-lavender",
+            "second_image": true
+          }
+        }
+      },
+      "block_order": [
+        "0fa718c4-23ef-415e-b6c7-38e4ebb1921e",
+        "438d4dd8-3cf3-45f2-9c7f-5009b81e22df",
+        "template--14471204274272__7aa830e9-a8b3-4faa-bcb9-5f7b40997a72-product-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Some Best Experience",
+        "heading_size": "h2",
+        "description": "<p>Enjoy the ultimate at home spa experience</p>",
+        "desktop_layout": "right",
+        "mobile_layout": "column",
+        "card_styles": "none",
+        "color_scheme": "accent-1",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "de13e894-2120-4183-af49-ccb770e34e4d": {
+      "type": "how-it-works",
+      "blocks": {
+        "template--14471204274272__de13e894-2120-4183-af49-ccb770e34e4d-steps-1": {
+          "type": "steps",
+          "settings": {
+            "image": "shopify://shop_images/e7edef4f74f74390661b4ee6343141ca.gif",
+            "video": "shopify://files/videos/easy-peasy-video-1.mp4",
+            "use_video": false,
+            "title": "Step 1",
+            "content": "<p>Place one tablet for shower floor.</p>",
+            "background": "#355070",
+            "title_color": "#ffffff",
+            "text_color": "#ffffff"
+          }
+        },
+        "template--14471204274272__de13e894-2120-4183-af49-ccb770e34e4d-steps-2": {
+          "type": "steps",
+          "settings": {
+            "image": "shopify://shop_images/ec41856c92ee545ee9b7d281164a2e3c.gif",
+            "video": "shopify://files/videos/easy-peasy-video-2.mp4",
+            "use_video": false,
+            "title": "Step 2",
+            "content": "<p>Turn on the warm water and enjoy!</p>",
+            "background": "#355070",
+            "title_color": "#ffffff",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--14471204274272__de13e894-2120-4183-af49-ccb770e34e4d-steps-1",
+        "template--14471204274272__de13e894-2120-4183-af49-ccb770e34e4d-steps-2"
+      ],
+      "settings": {
+        "work_bg_color": "",
+        "grid": 2,
+        "grid-mob": 1,
+        "heading": "How Shower Steamers Works",
+        "heading_size": "h1",
+        "description": "<p>Enjoy the ultimate at home spa experience as easy as 1, 2, 3</p>",
+        "sub_title_work": "",
+        "sub_description_work": "",
+        "color_scheme": "accent-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "e518ab33-5e01-454d-a0b1-8af81ac26413": {
+      "type": "tiktok_video_sec",
+      "blocks": {
+        "d19c2f1d-c5c2-4810-9dcf-2a77ced9034d": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_content": "<blockquote class=\"tiktok-embed\" cite=\"https://www.tiktok.com/@bodyrestoreco/video/6920010314385739014\" data-video-id=\"6920010314385739014\" style=\"max-width: 100%;\"> \n    <section> \n        <a target=\"_blank\" title=\"@bodyrestoreco\" href=\"https://www.tiktok.com/@bodyrestoreco?refer=embed\">@bodyrestoreco</a> \n        Body Restore Shower Steamers - Feel the relief in minutes! P.S : Check out our friends over at @ourfavoritefinds \n        <a target=\"_blank\" title=\"♬\" original=\"\" sound=\"\" body=\"\" restore=\"\" shop=\"\" href=\"https://www.tiktok.com/music/original-sound-6920010318982761221?refer=embed\">♬ original sound - Body Restore Shop</a> \n    </section> \n</blockquote> \n<script async=\"\" src=\"https://www.tiktok.com/embed.js\"></script>"
+          }
+        },
+        "49689475-9407-4551-bdf2-4671eac1b0d1": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_content": "<blockquote class=\"tiktok-embed\" cite=\"https://www.tiktok.com/@bodyrestoreco/video/6976514488795204870\" data-video-id=\"6976514488795204870\" style=\"max-width: 100%\"> \n    <section> \n        <a target=\"_blank\" title=\"@bodyrestoreco\" href=\"https://www.tiktok.com/@bodyrestoreco?refer=embed\">@bodyrestoreco</a> \n        If you haven’t tried yet, you’re definitely missing out!!  \n        <a title=\"showertok\" target=\"_blank\" href=\"https://www.tiktok.com/tag/showertok?refer=embed\">#showertok</a> \n        <a title=\"shower\" target=\"_blank\" href=\"https://www.tiktok.com/tag/shower?refer=embed\">#shower</a> \n        <a title=\"showersteamers\" target=\"_blank\" href=\"https://www.tiktok.com/tag/showersteamers?refer=embed\">#showersteamers</a> \n        <a title=\"bodyrestore\" target=\"_blank\" href=\"https://www.tiktok.com/tag/bodyrestore?refer=embed\">#bodyrestore</a> \n        <a target=\"_blank\" title=\"♬ Pieces (Solo Piano Version) - Danilo Stankovic\" href=\"https://www.tiktok.com/music/Pieces-Solo-Piano-Version-6777274113254754306?refer=embed\">♬ Pieces (Solo Piano Version) - Danilo Stankovic</a> \n    </section> \n</blockquote> \n<script async=\"\" src=\"https://www.tiktok.com/embed.js\"></script>"
+          }
+        },
+        "1d099c94-2b71-4aae-9350-cff8a6717e07": {
+          "type": "tiktok_video",
+          "settings": {
+            "tiktok_content": "<blockquote class=\"tiktok-embed\" cite=\"https://www.tiktok.com/@bodyrestoreco/video/7241282547005525291\" data-video-id=\"7241282547005525291\" style=\"max-width: 100%;\"> \n    <section> \n        <a target=\"_blank\" title=\"@bodyrestoreco\" href=\"https://www.tiktok.com/@bodyrestoreco?refer=embed\">@bodyrestoreco</a> \n        Destress with essence shower bombs by Body Restore clear your congestion, and your mind with the stress relieving tea tree scent  \n        <a title=\"destress\" target=\"_blank\" href=\"https://www.tiktok.com/tag/destress?refer=embed\">#destress</a> \n        <a target=\"_blank\" title=\"♬ original sound - Body Restore Shop\" href=\"https://www.tiktok.com/music/original-sound-7241282548222610219?refer=embed\">♬ original sound - Body Restore Shop</a> \n    </section> \n</blockquote> \n<script async=\"\" src=\"https://www.tiktok.com/embed.js\"></script>"
+          }
+        }
+      },
+      "block_order": [
+        "d19c2f1d-c5c2-4810-9dcf-2a77ced9034d",
+        "49689475-9407-4551-bdf2-4671eac1b0d1",
+        "1d099c94-2b71-4aae-9350-cff8a6717e07"
+      ],
+      "disabled": true,
+      "settings": {
+        "bg_color": "",
+        "tiktok_title": "As seen on",
+        "image": "shopify://shop_images/2560px-TikTok_logo_svg.png",
+        "tiktok_text": ""
+      }
+    },
+    "daf5576b-3d9f-4936-82e9-f46c415ae397": {
+      "type": "multirow",
+      "blocks": {
+        "template--14471204274272__daf5576b-3d9f-4936-82e9-f46c415ae397-row-1": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/1800x1800_12_1aeb806a-e330-4f47-be38-88de1761430e.jpg",
+            "caption": "",
+            "heading": "Brand Promise",
+            "svg_1": "<svg fill=\"#000000\" version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"27px\" height=\"27px\" viewbox=\"0 0 473.068 473.068\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\">\n<g>\n\t<g id=\"Layer_2_31_\">\n\t\t<g>\n\t\t\t<path d=\"M355.507,181.955c8.793-6.139,29.39-20.519,29.39-55.351v-71.77h9.814c4.49,0,8.17-3.679,8.17-8.169v-38.5\n\t\t\t\tc0-4.49-3.681-8.165-8.17-8.165H78.351c-4.495,0-8.165,3.675-8.165,8.165v38.5c0,4.491,3.67,8.169,8.165,8.169h9.82v73.071\n\t\t\t\tc0,34.499,10.502,42.576,29.074,53.89l80.745,49.203v20.984c-20.346,12.23-73.465,44.242-80.434,49.107\n\t\t\t\tc-8.793,6.135-29.384,20.51-29.384,55.352v61.793h-9.82c-4.495,0-8.165,3.676-8.165,8.166v38.498c0,4.49,3.67,8.17,8.165,8.17\n\t\t\t\th316.361c4.49,0,8.17-3.68,8.17-8.17V426.4c0-4.49-3.681-8.166-8.17-8.166h-9.814v-63.104c0-34.493-10.508-42.572-29.069-53.885\n\t\t\t\tl-80.745-49.202v-20.987C295.417,218.831,348.537,186.822,355.507,181.955z M252.726,272.859l87.802,53.5\n\t\t\t\tc6.734,4.109,10.333,6.373,12.001,9.002c1.991,3.164,2.963,9.627,2.963,19.768v63.104H117.574v-61.793\n\t\t\t\tc0-19.507,9.718-26.289,16.81-31.242c5.551-3.865,54.402-33.389,85.878-52.289c4.428-2.658,7.135-7.441,7.135-12.611v-37.563\n\t\t\t\tc0-5.123-2.671-9.883-7.053-12.55l-87.54-53.339l-0.265-0.165c-6.741-4.105-10.336-6.369-11.998-9.009\n\t\t\t\tc-1.992-3.156-2.968-9.626-2.968-19.767V54.835h237.918v71.77c0,19.5-9.718,26.288-16.814,31.235\n\t\t\t\tc-5.546,3.872-54.391,33.395-85.869,52.295c-4.427,2.658-7.134,7.442-7.134,12.601v37.563\n\t\t\t\tC245.675,265.431,248.346,270.188,252.726,272.859z\"></path>\n\t\t\t<path d=\"M331.065,154.234c0,0,5.291-4.619-2.801-3.299c-19.178,3.115-53.079,15.133-92.079,15.133s-57-11-82.507-11.303\n\t\t\t\tc-5.569-0.066-5.456,3.629,0.937,7.391c6.386,3.758,63.772,35.681,71.671,40.08c7.896,4.389,12.417,4.05,20.786,0\n\t\t\t\tC259.246,196.334,331.065,154.234,331.065,154.234z\"></path>\n\t\t\t<path d=\"M154.311,397.564c-6.748,6.209-9.978,10.713,5.536,10.713c12.656,0,139.332,0,155.442,0\n\t\t\t\tc16.099,0,9.856-5.453,2.311-12.643c-14.576-13.883-45.416-23.566-82.414-23.566\n\t\t\t\tC196.432,372.068,169.342,383.723,154.311,397.564z\"></path>\n\t\t</g>\n\t</g>\n</g>\n</svg>",
+            "detail_title1": "Lasts Your Entire Shower",
+            "text_1": "<p>Unlike other tablets, our tablets will last your entire shower.</p>",
+            "svg_2": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"36\" height=\"36\" viewbox=\"0 0 36 36\" fill=\"none\">\n  <mask id=\"mask0_130_470\" style=\"mask-type:luminance\" maskunits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"36\" height=\"36\">\n    <path d=\"M35.25 35.25V0.75H0.75V35.25H35.25Z\" fill=\"white\" stroke=\"white\" stroke-width=\"1.5\"></path>\n  </mask>\n  <g mask=\"url(#mask0_130_470)\">\n    <path d=\"M25.9886 17.4262C26.9697 18.5585 28.073 20.0222 28.073 22.1473C28.073 25.0393 26.7245 26.1002 24.9473 26.1002C23.0367 26.1002 21.7617 24.9081 21.7617 24.9081\" stroke=\"#000\" stroke-width=\"1.5\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    <path d=\"M14.5391 4.01164C15.3207 1.99479 16.3812 0.562527 17.9996 0.562527C22.5879 0.562527 22.6919 12.0761 24.6721 15.7817\" stroke=\"#000\" stroke-width=\"1.5\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    <path d=\"M14.2386 24.9081C14.2386 24.9081 12.9636 26.1002 11.0529 26.1002C9.27577 26.1002 7.92725 25.0393 7.92725 22.1473C7.92725 18.8353 10.6073 17.1296 11.3276 15.7817C12.3931 13.7878 12.9154 9.5334 13.8853 6.02832\" stroke=\"#000\" stroke-width=\"1.5\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    <path d=\"M11.7954 23.472C11.7954 23.472 13.3142 23.569 14.2379 24.9081C15.0959 26.1519 15.9314 27.2203 17.9994 27.2203C20.0675 27.2203 20.9029 26.1519 21.761 24.9081C22.6848 23.569 24.2035 23.472 24.2035 23.472\" stroke=\"#000\" stroke-width=\"1.5\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    <path d=\"M21.5552 29.5836C22.2108 28.8803 22.8407 28.4603 22.8407 28.4603C22.8407 28.4603 25.5794 30.2861 25.5794 32.6988C25.5794 34.2113 24.3533 35.4375 22.8407 35.4375C21.3282 35.4375 20.1021 34.2113 20.1021 32.6988C20.1021 32.2279 20.2063 31.7795 20.3742 31.3626\" stroke=\"#000\" stroke-width=\"1.5\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    <path d=\"M13.3898 28.4606C13.3898 28.4606 15.3201 29.7474 15.3201 31.4479C15.3201 32.514 14.4558 33.3782 13.3898 33.3782C12.3237 33.3782 11.4595 32.514 11.4595 31.4479C11.4595 29.7474 13.3898 28.4606 13.3898 28.4606Z\" stroke=\"#000\" stroke-width=\"1.5\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n  </g>\n</svg>",
+            "detail_title2": "Natural Essential Oil",
+            "text_2": "<p>Ensuring a pure and safe aromatherapy experience</p>",
+            "svg_3": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"29\" height=\"28\" viewbox=\"0 0 29 28\" fill=\"none\">\n  <path d=\"M27.6768 6.14359C27.4221 3.67758 24.5379 3.59268 24.1954 5.75838C23.9063 6.03006 23.2086 6.73304 22.9374 7.42487C22.6526 8.15356 22.3329 10.6802 22.2601 11.2799C21.8211 12.3205 19.537 13.7454 19.4613 13.6639C14.4056 16.1706 14.7272 19.4473 14.848 20.6811C14.848 20.6811 14.8568 24.9567 14.8417 27.5032C14.8349 27.7652 15.0649 27.9961 15.3269 27.9913H19.7029C19.9751 27.9976 20.2109 27.7453 20.1871 27.4741L20.0124 24.8611C19.9789 24.3905 20.0543 23.9186 20.2326 23.4818C20.411 23.0451 20.6876 22.6553 21.041 22.3427C22.6255 20.9353 25.1507 18.9035 25.189 18.8729C26.0555 18.1258 26.8521 17.0216 27.1708 16.125C28.7141 11.7859 27.72 6.37258 27.6768 6.14456V6.14359ZM23.8417 7.77805C23.9247 7.56604 24.0858 7.33075 24.2633 7.11049L24.0896 9.90155C23.8418 9.97324 23.6037 10.0752 23.3808 10.2053C23.5264 9.18402 23.7054 8.12639 23.8417 7.77805ZM26.2568 15.799C25.9938 16.5389 25.2943 17.5004 24.5685 18.1263C24.5433 18.1467 21.9996 20.1935 20.3972 21.6164C19.9328 22.027 19.5692 22.5389 19.3347 23.1126C19.1001 23.6864 19.0008 24.3064 19.0446 24.9247L19.1848 27.02H15.8159C15.828 24.8825 15.8145 20.5855 15.8145 20.5855C15.7019 19.4352 15.438 16.7417 19.8708 14.5425C19.9387 14.5129 21.5353 13.8094 22.5483 12.5442C23.1048 11.2042 25.9584 9.52508 24.6044 12.273C23.442 14.379 20.6276 17.2967 20.599 17.3263C20.5542 17.372 20.5189 17.426 20.4951 17.4854C20.4714 17.5448 20.4596 17.6083 20.4604 17.6722C20.4612 17.7362 20.4747 17.7993 20.5001 17.8581C20.5254 17.9168 20.5621 17.9699 20.6081 18.0144C20.654 18.0589 20.7083 18.0939 20.7679 18.1173C20.8274 18.1407 20.8909 18.1521 20.9549 18.1509C21.0188 18.1496 21.0819 18.1358 21.1405 18.1101C21.199 18.0844 21.2519 18.0473 21.2962 18.0011C21.415 17.8779 24.2279 14.9612 25.4529 12.7421C26.0715 11.6219 26.088 10.6429 25.4966 10.1228C25.3708 10.0122 25.2232 9.92919 25.0633 9.87923L25.336 5.49688C25.8803 4.62459 26.6255 5.44885 26.724 6.32309C26.7647 6.54044 27.7132 11.7039 26.2568 15.799ZM8.57021 13.6639C8.49453 13.7449 6.21045 12.3205 5.77139 11.2799C5.69862 10.6802 5.37842 8.15356 5.09412 7.42487C4.82292 6.73304 4.12528 6.03006 3.83613 5.75838C3.49362 3.59268 0.609405 3.67758 0.354702 6.14359C0.311524 6.37209 -0.682546 11.7849 0.860713 16.1241C1.17946 17.0206 1.97607 18.1248 2.84255 18.872C2.88087 18.9025 5.40607 20.9343 6.99057 22.3417C7.34393 22.6543 7.62052 23.0441 7.79889 23.4808C7.97726 23.9176 8.05261 24.3896 8.01908 24.8601L7.84443 27.4732C7.82066 27.7444 8.05644 27.9966 8.32861 27.9903H12.7047C12.9666 27.9952 13.1966 27.7642 13.1898 27.5023C13.1752 24.9562 13.1835 20.6801 13.1835 20.6801C13.3043 19.4464 13.6259 16.1697 8.57021 13.6629V13.6639ZM4.19029 7.77805C4.32662 8.12639 4.50564 9.18353 4.65118 10.2053C4.42826 10.0753 4.19021 9.97333 3.94238 9.90155L3.76869 7.11049C3.94626 7.33075 4.10733 7.56604 4.19029 7.77805ZM12.218 20.586C12.218 20.586 12.2045 24.8825 12.2166 27.0205H8.84772L8.98793 24.9252C9.03167 24.3069 8.93241 23.6869 8.69784 23.1131C8.46327 22.5394 8.0997 22.0274 7.63533 21.6169C6.03288 20.1935 3.48925 18.1471 3.46402 18.1268C2.73824 17.5009 2.03865 16.5398 1.7757 15.7995C0.319286 11.7044 1.26775 6.54141 1.3085 6.32406C1.40699 5.44983 2.15218 4.62556 2.69652 5.49786L2.96917 9.88021C2.80956 9.93115 2.66353 10.0112 2.53593 10.1237C1.94453 10.6438 1.96054 11.6233 2.57959 12.7431C3.8046 14.9621 6.61749 17.8789 6.73635 18.0021C6.82605 18.0936 6.94831 18.1459 7.07646 18.1476C7.2046 18.1493 7.32821 18.1002 7.42029 18.0111C7.51237 17.922 7.56544 17.8 7.56792 17.6719C7.5704 17.5438 7.52208 17.4199 7.43351 17.3272C7.40489 17.2976 4.59102 14.38 3.42812 12.2739C2.07407 9.52556 4.92772 11.2051 5.48418 12.5451C6.49717 13.8104 8.0938 14.5143 8.16172 14.5435C12.595 16.7426 12.3311 19.4357 12.218 20.586ZM21.7546 0.0578809C21.5648 -0.0118617 21.3577 -0.0187656 21.1636 0.0381875C20.9696 0.0951407 20.7991 0.212936 20.6771 0.374198C19.7034 1.6385 17.7133 2.38029 14.9218 2.51759C8.81036 2.81935 7.19579 7.83385 7.19579 10.4435C7.19579 10.6681 7.34958 10.8626 7.5679 10.9155C9.51043 11.3813 11.272 11.6132 12.8473 11.6132C15.3608 11.6132 17.399 11.0208 18.9369 9.83945C21.9079 7.55586 22.3412 3.70426 22.4081 1.00489C22.4133 0.798219 22.3529 0.595217 22.2354 0.42506C22.118 0.254903 21.9497 0.126352 21.7546 0.0578809ZM18.3455 9.07001C16.3137 10.6317 13.2354 11.031 9.18344 10.2678C11.3181 8.56497 14.3925 7.36616 17.8511 5.80932C13.1777 5.96796 9.52644 8.47133 8.25875 9.46055C8.55226 7.59855 9.78503 3.74356 14.9693 3.4874C18.0981 3.33312 20.2769 2.48508 21.4378 0.981119C21.3757 3.48109 20.9871 7.03917 18.3455 9.07001Z\" fill=\"#000\"></path>\n</svg>",
+            "detail_title3": "Made In USA",
+            "text_3": "<p>Crafted with Pride, Quality, and Care</p>",
+            "svg_4": "",
+            "detail_title4": "",
+            "text_4": "",
+            "svg_5": "",
+            "detail_title5": "",
+            "text_5": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "template--14471204274272__daf5576b-3d9f-4936-82e9-f46c415ae397-row-2": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_750.png",
+            "caption": "",
+            "heading": "Our Guarantee",
+            "svg_1": "<svg width=\"37\" height=\"37\" viewbox=\"0 0 37 46\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g id=\"Group 28384\">\n<g id=\"Group\">\n<path id=\"Vector\" d=\"M41.1921 25.0512C41.1921 29.2195 41.1921 33.3877 41.1921 37.556C41.1921 40.8485 39.1955 43.7558 36.1832 45.0168C35.1324 45.4721 34.0465 45.6473 32.9256 45.6473C24.7293 45.6473 16.4978 45.6473 8.30147 45.6473C5.81453 45.6473 3.67787 44.7365 2.03158 42.8801C0.700547 41.3739 0.0350273 39.6226 0 37.626C0 29.2895 0 20.9881 0 12.6516C0 9.28894 1.96153 6.38168 5.14901 5.08567C6.23486 4.63031 6.26988 4.66534 6.26988 5.82124C6.26988 6.45173 6.26988 7.0472 6.26988 7.67769C6.33994 9.39402 7.74103 10.62 9.45737 10.4098C10.7183 10.2697 11.8392 9.07878 11.8742 7.78277C11.9093 6.97714 11.8742 6.17151 11.8742 5.36589C11.8742 4.4902 11.8742 4.4902 12.7499 4.4902C15.9024 4.4902 19.0198 4.4902 22.1723 4.4902C24.3089 4.4902 26.4456 4.4902 28.5472 4.4902C29.1777 4.4902 29.2128 4.52523 29.2128 5.15573C29.2128 5.96135 29.2128 6.80201 29.2128 7.60763C29.2478 9.39403 30.859 10.69 32.6104 10.3398C33.6612 10.1296 34.677 9.14883 34.7821 8.06299C34.8521 7.1873 34.8521 6.27659 34.8521 5.36589C34.8521 4.73539 34.9572 4.66534 35.5527 4.87551C37.5142 5.54102 39.0204 6.76698 40.0712 8.58839C40.8418 9.91943 41.122 11.3906 41.122 12.9318C41.1571 17.03 41.1921 21.0231 41.1921 25.0512ZM20.596 16.3995C20.596 16.3645 20.596 16.3645 20.596 16.3995C19.9655 16.3995 19.3351 16.3995 18.7046 16.3995C14.0459 16.3995 9.35228 16.3995 4.69366 16.3995C4.13322 16.3995 4.02814 16.4695 4.02814 17.03C4.02814 23.8603 4.02814 30.7256 4.02814 37.556C4.02814 39.8327 5.81453 41.5841 8.0913 41.6191C16.3928 41.6191 24.7293 41.6191 33.0307 41.6191C35.2024 41.6191 37.0939 39.9028 37.1289 37.556C37.1639 30.7256 37.1289 23.9303 37.1289 17.1C37.1289 16.4695 37.0589 16.3995 36.4284 16.3995C31.1392 16.3995 25.8501 16.3995 20.596 16.3995ZM20.0706 9.84938C20.0356 9.53413 20.0356 9.21889 20.0356 8.93867C20.0356 7.9579 20.0356 7.95791 19.0548 8.02796H19.0198C18.9147 8.13304 18.6695 8.27315 18.6695 8.37823C18.6695 9.46408 18.6695 10.5849 18.7396 11.6708C18.7746 12.0211 18.9848 12.4414 19.23 12.7216C19.8605 13.4922 20.7712 13.4572 21.6118 13.247C22.3824 13.0719 22.8378 12.4064 22.8728 11.6708C22.9779 10.5499 22.9429 9.42905 22.9429 8.3432C22.9429 8.23812 22.7677 8.09802 22.6276 8.02796C22.4875 7.95791 22.3474 8.02796 22.2073 7.99293C21.787 7.9579 21.6469 8.09802 21.6469 8.55337C21.6819 9.49911 21.6469 10.4448 21.6118 11.3556C21.5768 11.8459 21.2265 12.1612 20.8412 12.1612C20.4209 12.1612 20.1057 11.8109 20.0706 11.3556C20.0706 10.8652 20.0706 10.3748 20.0706 9.84938ZM24.1338 10.585C24.1338 11.3205 24.1338 12.0561 24.1338 12.7917C24.1338 13.1069 24.2389 13.3171 24.5891 13.3171C25.4298 13.3171 26.2705 13.3171 27.1111 13.3171C27.5314 13.3171 27.5314 13.0369 27.5314 12.7566C27.5314 12.4764 27.5665 12.1262 27.1111 12.1262C26.7959 12.1262 26.4806 12.1262 26.1304 12.1262C25.6049 12.1262 25.5699 12.0911 25.5699 11.5307C25.5699 10.69 25.5699 9.81435 25.5699 8.9737C25.5699 7.99293 25.5699 7.99293 24.5891 8.02796C24.2739 8.02796 24.1338 8.16807 24.1338 8.48332C24.1338 9.18386 24.1338 9.88441 24.1338 10.585ZM16.1476 9.91943C16.1125 10.4799 16.1476 11.0753 16.1125 11.6358C16.0775 12.1262 15.6922 12.3013 15.2719 12.0561C14.7465 11.7759 14.6064 11.7759 14.2211 12.2312C14.151 12.3363 14.116 12.5815 14.186 12.6516C14.7115 13.3521 15.447 13.4572 16.2527 13.3171C16.8481 13.212 17.4086 12.6866 17.4786 12.0211C17.5487 10.9703 17.5487 9.95446 17.5837 8.90364C17.5837 7.99293 17.5487 7.95791 16.638 8.02796H16.6029C16.3227 8.02796 16.1826 8.16807 16.1826 8.44829C16.1476 8.93867 16.1476 9.42905 16.1476 9.91943Z\" fill=\"#000\"></path>\n<path id=\"Vector_2\" d=\"M7.35446 4.63037C7.35446 3.68463 7.38949 2.73889 7.35446 1.82819C7.31943 0.812394 8.09003 0.0417902 9.0708 0.00676288C10.0516 -0.0282644 10.7871 0.742338 10.8222 1.79316C10.8572 3.71966 10.8222 5.68119 10.8222 7.60769C10.8222 8.58845 10.0516 9.35905 9.10582 9.35905C8.16009 9.35905 7.42452 8.58845 7.38949 7.60769C7.31943 6.59189 7.35446 5.61113 7.35446 4.63037Z\" fill=\"#000\"></path>\n<path id=\"Vector_3\" d=\"M30.3671 4.66534C30.3671 3.68458 30.3671 2.73884 30.3671 1.75808C30.3671 0.847367 30.8925 0.251905 31.7682 0.0417413C32.5038 -0.133395 33.2744 0.251906 33.6597 1.02251C33.7648 1.23267 33.7998 1.51288 33.7998 1.75808C33.7998 3.7196 33.7998 5.64611 33.7998 7.60763C33.7998 8.44829 33.3445 9.00872 32.5038 9.28894C31.9434 9.46408 31.1728 9.25392 30.7524 8.65845C30.5423 8.37823 30.4022 7.95791 30.3671 7.60763C30.3321 6.62687 30.3671 5.6461 30.3671 4.66534Z\" fill=\"#000\"></path>\n<path id=\"Vector_4\" d=\"M20.07 9.84946C20.07 10.3398 20.035 10.8652 20.07 11.3556C20.1051 11.846 20.4203 12.1613 20.8406 12.1613C21.261 12.1613 21.6112 11.846 21.6112 11.3556C21.6463 10.4099 21.6463 9.46416 21.6463 8.55345C21.6463 8.13312 21.7864 7.95798 22.2067 7.99301C22.3468 7.99301 22.5219 7.95798 22.627 8.02804C22.7671 8.09809 22.9423 8.2382 22.9423 8.34328C22.9423 9.46415 22.9773 10.585 22.8722 11.6709C22.8022 12.4415 22.3818 13.072 21.6112 13.2471C20.7706 13.4573 19.8599 13.4923 19.2294 12.7217C18.9842 12.4415 18.774 12.0211 18.739 11.6709C18.6689 10.585 18.6689 9.46416 18.6689 8.37831C18.6689 8.27323 18.8791 8.13312 19.0192 8.02804H19.0542C20.035 7.95798 20.035 7.95798 20.035 8.93874C20.035 9.25399 20.035 9.56924 20.07 9.84946Z\" fill=\"white\"></path>\n<path id=\"Vector_5\" d=\"M24.1338 10.5849C24.1338 9.8844 24.1338 9.18385 24.1338 8.48331C24.1338 8.16806 24.2739 8.02795 24.5891 8.02795C25.5349 7.99292 25.5699 7.99292 25.5699 8.97369C25.5699 9.81434 25.5699 10.69 25.5699 11.5307C25.5699 12.0911 25.6049 12.1261 26.1303 12.1261C26.4456 12.1261 26.7608 12.1261 27.1111 12.1261C27.5665 12.1261 27.5314 12.4764 27.5314 12.7566C27.5314 13.0369 27.5314 13.3521 27.1111 13.3171C26.2705 13.3171 25.4298 13.3171 24.5891 13.3171C24.2389 13.3171 24.1338 13.1069 24.1338 12.7917C24.1338 12.0561 24.1338 11.3205 24.1338 10.5849Z\" fill=\"white\"></path>\n<path id=\"Vector_6\" d=\"M16.147 9.91946C16.147 9.42908 16.147 8.9387 16.147 8.48335C16.147 8.1681 16.2872 8.06301 16.5674 8.06301H16.6024C17.5131 7.99296 17.5481 8.02799 17.5481 8.9387C17.5481 9.98952 17.5481 11.0053 17.4431 12.0561C17.373 12.7216 16.8476 13.2471 16.2171 13.3521C15.4115 13.4922 14.6759 13.3872 14.1505 12.6866C14.0804 12.5815 14.1155 12.3363 14.1855 12.2663C14.5708 11.8109 14.7109 11.8109 15.2363 12.0912C15.6567 12.3363 16.077 12.1612 16.077 11.6708C16.147 11.0754 16.112 10.4799 16.147 9.91946Z\" fill=\"white\"></path>\n<path id=\"Vector_7\" d=\"M32.1555 28.659C32.0504 30.2352 31.9103 31.8115 31.1397 33.2476C30.264 34.9639 28.8629 35.9096 26.9014 35.9096C24.9749 35.9096 23.5388 34.9989 22.6631 33.2826C21.7173 31.4261 21.5772 29.4646 21.7524 27.4681C21.8575 26.3122 22.0676 25.1913 22.6281 24.1405C23.5738 22.3541 25.0099 21.4784 27.0415 21.5134C29.2482 21.5485 30.7194 22.9145 31.4199 24.6659C31.9803 25.8918 32.0854 27.2579 32.1555 28.659ZM28.6528 28.659C28.6177 28.659 28.6177 28.659 28.5827 28.659C28.5477 27.9234 28.5126 27.1878 28.4776 26.4523C28.4426 26.137 28.3375 25.8218 28.2674 25.5065C28.0923 24.7359 27.5669 24.3156 26.8664 24.3506C26.2709 24.3857 25.8155 24.771 25.6404 25.4715C25.185 27.5732 25.185 29.6748 25.6404 31.7414C25.8506 32.7222 26.5861 33.1425 27.3918 32.8623C27.9522 32.6521 28.1624 32.1617 28.2674 31.6713C28.4076 30.6906 28.5126 29.6748 28.6528 28.659Z\" fill=\"#000\"></path>\n<path id=\"Vector_8\" d=\"M17.3387 28.5189C18.1443 28.7641 18.7748 29.1494 19.2652 29.7799C20.4912 31.3911 19.9658 33.8781 18.1443 34.9639C16.7082 35.8046 15.167 36.0147 13.5558 35.8396C12.1897 35.6995 10.9988 35.2791 9.94796 34.3684C9.52763 33.9831 9.52763 33.9131 9.84288 33.4577C10.2282 32.9323 10.6135 32.4419 10.9637 31.9165C11.1739 31.6013 11.349 31.6713 11.5942 31.8465C12.0846 32.1617 12.575 32.477 13.1354 32.6871C13.836 32.9673 14.6066 32.9673 15.3071 32.6521C15.8676 32.4069 16.1128 32.0566 16.0777 31.4261C16.0427 30.8657 15.7625 30.3753 15.202 30.2352C14.5365 30.0951 13.871 29.99 13.1705 29.92C12.7501 29.8849 12.575 29.7448 12.61 29.3245C12.6451 28.7991 12.61 28.2387 12.61 27.6782C12.61 27.363 12.7501 27.2579 13.0304 27.2229C13.6608 27.1178 14.3264 27.0127 14.9218 26.7675C15.4823 26.5573 15.6924 25.9269 15.5523 25.2964C15.4122 24.7359 15.0269 24.4207 14.3614 24.3857C13.5207 24.3156 12.8552 24.5958 12.1897 25.1212C11.6643 25.5416 11.6643 25.5416 11.244 25.0161C10.8587 24.5258 10.4734 24.0704 10.053 23.6151C9.84288 23.3699 9.84287 23.1947 10.0881 22.9846C11.1389 22.1789 12.2948 21.5835 13.6258 21.4784C14.8518 21.4083 16.0777 21.4434 17.2336 22.0038C18.5296 22.6343 19.2302 23.6501 19.3353 25.0512C19.4403 26.4523 18.7748 27.4681 17.5489 28.1336C17.5839 28.2036 17.5138 28.3437 17.3387 28.5189Z\" fill=\"#000\"></path>\n</g>\n<rect id=\"Rectangle 744\" x=\"14.0107\" y=\"7.70605\" width=\"13.6606\" height=\"6.30491\" fill=\"#000\"></rect>\n</g>\n</svg>",
+            "detail_title1": "Free 30 Day Scent exchange",
+            "text_1": "<p>Not a fan of the scent? No problem. Send us an email and we'll exchange it for <strong>FREE.</strong></p>",
+            "svg_2": "<!--?xml version=\"1.0\" standalone=\"no\"?-->\n\n<svg version=\"1.0\" xmlns=\"http://www.w3.org/2000/svg\" width=\"51.000000pt\" height=\"51.000000pt\" viewbox=\"0 0 51.000000 51.000000\" preserveaspectratio=\"xMidYMid meet\">\n\n<g transform=\"translate(0.000000,51.000000) scale(0.100000,-0.100000)\" fill=\"#000000\" stroke=\"none\">\n<path d=\"M111 441 l-111 -56 0 -106 0 -107 91 -51 c51 -28 96 -51 101 -51 22\n0 -8 22 -87 66 l-85 46 0 89 c0 49 2 89 5 89 2 0 20 -8 40 -17 32 -15 35 -20\n35 -60 0 -24 5 -43 10 -43 6 0 10 16 10 35 0 19 2 35 5 35 2 0 25 -10 50 -22\nl46 -22 94 47 c53 26 97 47 100 47 3 0 5 -18 5 -40 0 -22 5 -40 10 -40 6 0 10\n24 10 53 l0 53 -109 55 -109 55 -111 -55z m149 14 c17 -9 30 -18 30 -20 0 -3\n-40 -25 -90 -50 l-89 -45 -35 18 c-20 9 -36 19 -36 22 0 7 162 89 178 89 7 1\n26 -6 42 -14z m105 -52 c19 -9 35 -19 35 -23 0 -3 -40 -26 -89 -50 l-90 -44\n-40 19 c-23 10 -41 21 -41 24 0 8 160 90 177 90 7 1 28 -7 48 -16z\"></path>\n<path d=\"M292 250 c-29 -4 -56 -11 -59 -14 -15 -15 11 -18 69 -8 35 5 66 7 70\n3 3 -3 8 -35 10 -71 l3 -65 -57 -3 c-61 -3 -84 -19 -73 -51 7 -22 38 -36 56\n-26 5 4 14 17 19 30 12 32 70 41 89 14 16 -23 54 -25 71 -4 39 47 -12 192 -63\n179 -15 -3 -28 0 -36 10 -14 17 -19 17 -99 6z m161 -54 c4 -9 -2 -17 -13 -21\n-24 -8 -40 1 -40 21 0 19 46 19 53 0z m31 -52 c11 -28 7 -35 -18 -28 -13 3\n-27 1 -30 -5 -12 -19 -26 -12 -26 13 0 23 9 29 56 35 7 0 15 -6 18 -15z m-14\n-69 c0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z\nm-160 -20 c0 -8 -6 -15 -14 -15 -17 0 -28 14 -19 24 12 12 33 6 33 -9z\"></path>\n<path d=\"M230 183 c-38 -7 -49 -23 -15 -23 40 0 75 10 75 21 0 9 -16 10 -60 2z\"></path>\n<path d=\"M250 130 c0 -5 14 -10 30 -10 17 0 30 5 30 10 0 6 -13 10 -30 10 -16\n0 -30 -4 -30 -10z\"></path>\n</g>\n</svg>",
+            "detail_title2": "Free Shipping On Orders $49+",
+            "text_2": "<p>Never pay a dollar for standard shipping, we got it covered.</p>",
+            "svg_3": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"29\" height=\"28\" viewbox=\"0 0 29 28\" fill=\"none\">\n  <path d=\"M27.6768 6.14359C27.4221 3.67758 24.5379 3.59268 24.1954 5.75838C23.9063 6.03006 23.2086 6.73304 22.9374 7.42487C22.6526 8.15356 22.3329 10.6802 22.2601 11.2799C21.8211 12.3205 19.537 13.7454 19.4613 13.6639C14.4056 16.1706 14.7272 19.4473 14.848 20.6811C14.848 20.6811 14.8568 24.9567 14.8417 27.5032C14.8349 27.7652 15.0649 27.9961 15.3269 27.9913H19.7029C19.9751 27.9976 20.2109 27.7453 20.1871 27.4741L20.0124 24.8611C19.9789 24.3905 20.0543 23.9186 20.2326 23.4818C20.411 23.0451 20.6876 22.6553 21.041 22.3427C22.6255 20.9353 25.1507 18.9035 25.189 18.8729C26.0555 18.1258 26.8521 17.0216 27.1708 16.125C28.7141 11.7859 27.72 6.37258 27.6768 6.14456V6.14359ZM23.8417 7.77805C23.9247 7.56604 24.0858 7.33075 24.2633 7.11049L24.0896 9.90155C23.8418 9.97324 23.6037 10.0752 23.3808 10.2053C23.5264 9.18402 23.7054 8.12639 23.8417 7.77805ZM26.2568 15.799C25.9938 16.5389 25.2943 17.5004 24.5685 18.1263C24.5433 18.1467 21.9996 20.1935 20.3972 21.6164C19.9328 22.027 19.5692 22.5389 19.3347 23.1126C19.1001 23.6864 19.0008 24.3064 19.0446 24.9247L19.1848 27.02H15.8159C15.828 24.8825 15.8145 20.5855 15.8145 20.5855C15.7019 19.4352 15.438 16.7417 19.8708 14.5425C19.9387 14.5129 21.5353 13.8094 22.5483 12.5442C23.1048 11.2042 25.9584 9.52508 24.6044 12.273C23.442 14.379 20.6276 17.2967 20.599 17.3263C20.5542 17.372 20.5189 17.426 20.4951 17.4854C20.4714 17.5448 20.4596 17.6083 20.4604 17.6722C20.4612 17.7362 20.4747 17.7993 20.5001 17.8581C20.5254 17.9168 20.5621 17.9699 20.6081 18.0144C20.654 18.0589 20.7083 18.0939 20.7679 18.1173C20.8274 18.1407 20.8909 18.1521 20.9549 18.1509C21.0188 18.1496 21.0819 18.1358 21.1405 18.1101C21.199 18.0844 21.2519 18.0473 21.2962 18.0011C21.415 17.8779 24.2279 14.9612 25.4529 12.7421C26.0715 11.6219 26.088 10.6429 25.4966 10.1228C25.3708 10.0122 25.2232 9.92919 25.0633 9.87923L25.336 5.49688C25.8803 4.62459 26.6255 5.44885 26.724 6.32309C26.7647 6.54044 27.7132 11.7039 26.2568 15.799ZM8.57021 13.6639C8.49453 13.7449 6.21045 12.3205 5.77139 11.2799C5.69862 10.6802 5.37842 8.15356 5.09412 7.42487C4.82292 6.73304 4.12528 6.03006 3.83613 5.75838C3.49362 3.59268 0.609405 3.67758 0.354702 6.14359C0.311524 6.37209 -0.682546 11.7849 0.860713 16.1241C1.17946 17.0206 1.97607 18.1248 2.84255 18.872C2.88087 18.9025 5.40607 20.9343 6.99057 22.3417C7.34393 22.6543 7.62052 23.0441 7.79889 23.4808C7.97726 23.9176 8.05261 24.3896 8.01908 24.8601L7.84443 27.4732C7.82066 27.7444 8.05644 27.9966 8.32861 27.9903H12.7047C12.9666 27.9952 13.1966 27.7642 13.1898 27.5023C13.1752 24.9562 13.1835 20.6801 13.1835 20.6801C13.3043 19.4464 13.6259 16.1697 8.57021 13.6629V13.6639ZM4.19029 7.77805C4.32662 8.12639 4.50564 9.18353 4.65118 10.2053C4.42826 10.0753 4.19021 9.97333 3.94238 9.90155L3.76869 7.11049C3.94626 7.33075 4.10733 7.56604 4.19029 7.77805ZM12.218 20.586C12.218 20.586 12.2045 24.8825 12.2166 27.0205H8.84772L8.98793 24.9252C9.03167 24.3069 8.93241 23.6869 8.69784 23.1131C8.46327 22.5394 8.0997 22.0274 7.63533 21.6169C6.03288 20.1935 3.48925 18.1471 3.46402 18.1268C2.73824 17.5009 2.03865 16.5398 1.7757 15.7995C0.319286 11.7044 1.26775 6.54141 1.3085 6.32406C1.40699 5.44983 2.15218 4.62556 2.69652 5.49786L2.96917 9.88021C2.80956 9.93115 2.66353 10.0112 2.53593 10.1237C1.94453 10.6438 1.96054 11.6233 2.57959 12.7431C3.8046 14.9621 6.61749 17.8789 6.73635 18.0021C6.82605 18.0936 6.94831 18.1459 7.07646 18.1476C7.2046 18.1493 7.32821 18.1002 7.42029 18.0111C7.51237 17.922 7.56544 17.8 7.56792 17.6719C7.5704 17.5438 7.52208 17.4199 7.43351 17.3272C7.40489 17.2976 4.59102 14.38 3.42812 12.2739C2.07407 9.52556 4.92772 11.2051 5.48418 12.5451C6.49717 13.8104 8.0938 14.5143 8.16172 14.5435C12.595 16.7426 12.3311 19.4357 12.218 20.586ZM21.7546 0.0578809C21.5648 -0.0118617 21.3577 -0.0187656 21.1636 0.0381875C20.9696 0.0951407 20.7991 0.212936 20.6771 0.374198C19.7034 1.6385 17.7133 2.38029 14.9218 2.51759C8.81036 2.81935 7.19579 7.83385 7.19579 10.4435C7.19579 10.6681 7.34958 10.8626 7.5679 10.9155C9.51043 11.3813 11.272 11.6132 12.8473 11.6132C15.3608 11.6132 17.399 11.0208 18.9369 9.83945C21.9079 7.55586 22.3412 3.70426 22.4081 1.00489C22.4133 0.798219 22.3529 0.595217 22.2354 0.42506C22.118 0.254903 21.9497 0.126352 21.7546 0.0578809ZM18.3455 9.07001C16.3137 10.6317 13.2354 11.031 9.18344 10.2678C11.3181 8.56497 14.3925 7.36616 17.8511 5.80932C13.1777 5.96796 9.52644 8.47133 8.25875 9.46055C8.55226 7.59855 9.78503 3.74356 14.9693 3.4874C18.0981 3.33312 20.2769 2.48508 21.4378 0.981119C21.3757 3.48109 20.9871 7.03917 18.3455 9.07001Z\" fill=\"#000\"></path>\n</svg>",
+            "detail_title3": "Try It Risk Free",
+            "text_3": "<p>If you're not 100% satisfied with your order. We'll give you with a <strong>FULL REFUND</strong>. No questions asked.</p>",
+            "svg_4": "",
+            "detail_title4": "",
+            "text_4": "",
+            "svg_5": "",
+            "detail_title5": "",
+            "text_5": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14471204274272__daf5576b-3d9f-4936-82e9-f46c415ae397-row-1",
+        "template--14471204274272__daf5576b-3d9f-4936-82e9-f46c415ae397-row-2"
+      ],
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "accent-1",
+        "row_color_scheme": "accent-1",
+        "mobile_content_alignment": "center",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "6d6d1672-a27a-4cc8-9d30-104f62b2f3cd": {
+      "type": "new_feature_collection",
+      "disabled": true,
+      "settings": {
+        "custom_class": "collection limited offer",
+        "title": "Limited Time Offers",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "{{ product.metafields.custom.feature_collection.value }}",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "e30cad7a-7621-4bfb-a059-dad119b3d3a4": {
+      "type": "what-different",
+      "blocks": {
+        "template--14471204274272__e30cad7a-7621-4bfb-a059-dad119b3d3a4-different-tab-1": {
+          "type": "different-tab",
+          "settings": {
+            "title": "Others",
+            "image": "{{ product.metafields.custom.other_image.value }}"
+          }
+        },
+        "template--14471204274272__e30cad7a-7621-4bfb-a059-dad119b3d3a4-different-tab-2": {
+          "type": "different-tab",
+          "settings": {
+            "title": "Body Restore",
+            "image": "{{ product.metafields.custom.body_restore_image.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "template--14471204274272__e30cad7a-7621-4bfb-a059-dad119b3d3a4-different-tab-1",
+        "template--14471204274272__e30cad7a-7621-4bfb-a059-dad119b3d3a4-different-tab-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "What makes Body Restore different?",
+        "heading_size": "h2",
+        "description": "<p>Enjoy the ultimate at home spa experience as easy as 1, 2, 3</p>",
+        "color_scheme": "accent-1",
+        "tab_background": "#b9dce1",
+        "tab_text_color": "#0c2331",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "is_faq_XwUHMp": {
+      "type": "is--faq",
+      "blocks": {
+        "faq_grid_fapPic": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What makes Body Restore different?",
+            "faq_title_desc": "<p>Body Restore Shower Steamers are proudly made in the <strong>USA</strong> with <strong>natural essential oils</strong> 🍃 and clean ingredients, ensuring a <strong>pure</strong> and <strong>safe</strong> aromatherapy experience. Each steamer comes in high-quality packaging, delivering a strong and refreshing natural scent that enhances your self-care routine.</p>"
+          }
+        },
+        "faq_grid_iywAgV": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What are the best practices in using these shower tablets?",
+            "faq_title_desc": "<p>We recommend to use one tablet per shower or two tablets to double the strength if needed. Use in hot shower and make sure it’s not submerged in water but rather placed under the shower stream of hot water.</p>"
+          }
+        },
+        "faq_grid_LejEdk": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Will these tablet make floor slippery and create stains/draing clogs",
+            "faq_title_desc": "<p>These shower tablets will not make the floor slippery and unlike other branded shower tablets with petals, it will dissolve smoothly to create a no mess no drain clog experience.</p>"
+          }
+        },
+        "faq_grid_NV8LNa": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Can these shower tablets be used as a bath bombs?",
+            "faq_title_desc": "<p>We do not recommend these used as bath bombs. These tablets work best when not submerged in water, making it perfect for the shower experience. However, you can place the shower tablet on the side of the bath tub and it will activate the aromatherapy with a sprinkle of water contact.</p>"
+          }
+        },
+        "faq_grid_FD4jTU": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Do these showe tablets have a shelf life?",
+            "faq_title_desc": "<p>These shower tablets are individually foil wrapped to ensure maximum shell life. We recommend using the shower steamers within a year for the best experience.</p>"
+          }
+        },
+        "faq_grid_jcNnh7": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does each shower tabet last?",
+            "faq_title_desc": "<p>Each tablet duration can vary for each person as shower water pressure can play a role in the longevity of each tablet. It can range from 5 minutes to 15 minutes.</p>"
+          }
+        },
+        "faq_grid_Bimrd6": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "Are the shower steamers safe to use during the pregnancy?",
+            "faq_title_desc": "<p>Aromatherapy is generally safe for pregnant women. However, please do consult a doctor before use to confirm.</p>"
+          }
+        },
+        "faq_grid_7PVCk9": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "How long does shipping take?",
+            "faq_title_desc": "<p>Shipping generally takes 3-5 business days.</p>"
+          }
+        },
+        "faq_grid_jhegB9": {
+          "type": "faq_grid",
+          "settings": {
+            "faq_title_sub": "What is the return policy?",
+            "faq_title_desc": "<p>We strive our best to ensure the best customer experience. We're so confident you'll love our products that we offer a 30 day 100% money back guarantee!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_grid_fapPic",
+        "faq_grid_iywAgV",
+        "faq_grid_LejEdk",
+        "faq_grid_NV8LNa",
+        "faq_grid_FD4jTU",
+        "faq_grid_jcNnh7",
+        "faq_grid_Bimrd6",
+        "faq_grid_7PVCk9",
+        "faq_grid_jhegB9"
+      ],
+      "settings": {
+        "enablesvg": true,
+        "faq_bg": "#265e7a",
+        "topspacing": 150,
+        "topspacingmob": 20,
+        "showbordertop": true,
+        "showborderbottom": true,
+        "faq_title": "FAQ",
+        "tfontsize": 36,
+        "tfontsizemob": 36,
+        "tfontweight": 700,
+        "textalignment": "center",
+        "faq_title_color": "#ffffff",
+        "tpaddingbottom": 50,
+        "tpaddingbottommob": 50,
+        "ftfontsize": 22,
+        "ftfontsizemob": 20,
+        "ftfontweight": 700,
+        "ftcolor": "#0c2331",
+        "fcfontsize": 18,
+        "fcfontsizemob": 16,
+        "fccfontweight": 500,
+        "fccolor": "#102332",
+        "spaddingtop": 80,
+        "spaddingbottom": 80,
+        "spaddingtopmob": 44,
+        "spaddingbottommob": 44
+      }
+    },
+    "3a1b6831-bfa3-466e-8890-1de0207077f5": {
+      "type": "review-widget",
+      "settings": {
+        "color_scheme": "accent-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "accent-1",
+        "columns_mobile": "2",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "1629746450643786911": {
+      "type": "areviews-section",
+      "settings": {
+        "hide_areviews_title_rating": false,
+        "areviews_theme_font": "inherit",
+        "areviews_stars_colors": "#f3c621",
+        "areviews_write_reviews_botton_color": "#373737"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "logo_list_carousel_XGiLC3",
+    "1743525354e35c5173",
+    "rich_text_xfUVh4",
+    "170599762876aaf947",
+    "b7d2d967-d583-41b0-ab9a-fe656e4b8a12",
+    "7aa830e9-a8b3-4faa-bcb9-5f7b40997a72",
+    "de13e894-2120-4183-af49-ccb770e34e4d",
+    "e518ab33-5e01-454d-a0b1-8af81ac26413",
+    "daf5576b-3d9f-4936-82e9-f46c415ae397",
+    "6d6d1672-a27a-4cc8-9d30-104f62b2f3cd",
+    "e30cad7a-7621-4bfb-a059-dad119b3d3a4",
+    "is_faq_XwUHMp",
+    "3a1b6831-bfa3-466e-8890-1de0207077f5",
+    "related-products",
+    "1629746450643786911"
+  ]
+}

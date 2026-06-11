@@ -1,0 +1,285 @@
+<style>
+  #shopify-section-{{section.id}} .how-to-use-block{display:grid;grid-template-columns:repeat({{section.settings.gridperrow}},1fr);gap:16px;}
+  #shopify-section-{{section.id}} .how-to-use-block .how-to-use-image{position:relative;padding-top:90%;}
+  #shopify-section-{{section.id}} .how-to-use-block .how-to-use-image img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center center;}
+  #shopify-section-{{section.id}} .how-to-use-block .how-to-use-block-main{border-radius:8px;overflow:hidden;}
+  #shopify-section-{{section.id}} .how-to-use-index{line-height:normal;width:31px;height:31px;display:flex;border-radius:100px;align-items:center;justify-content:center;}
+  #shopify-section-{{section.id}} .how-to-use-title{display: grid;grid-template-columns: 31px calc(100% - 41px);gap: 10px;align-items: center;}
+  #shopify-section-{{section.id}} .how-to-use-title span p{letter-spacing:0px; line-height:1.2;}
+  #shopify-section-{{section.id}} .how-to-use-title p em{font-style:normal;font-weight:500;}
+  #shopify-section-{{section.id}} .how-to-use-main {display:grid;height:100%;grid-template-rows:max-content;}
+
+
+  @media all and (max-width:990px){
+    #shopify-section-{{section.id}} .how-to-use-block{display:grid;grid-template-columns:repeat({{section.settings.gridperrowmob}},1fr);gap:10px;}
+    #shopify-section-{{section.id}} .how-to-use-index{width:26px;height:26px;}
+    #shopify-section-{{section.id}} .how-to-use-title{display: grid;grid-template-columns: 26px calc(100% - 36px);gap: 10px;align-items: center;}
+  }
+</style>
+<div class="custom-how-to-use-container padding-top-{{ section.settings.spaddingtop }} padding-bottom-{{ section.settings.spaddingbottom }} padding-top-mob-{{ section.settings.spaddingtopmob }} padding-bottom-mob-{{ section.settings.spaddingbottommob }}">
+  <div class="how-to-use-wrapper">
+    <div class="page-width">
+      {% if section.settings['section-heading'] != blank %}
+        <div class="how-to-use-main-title padding-bottom-{{ section.settings.tpaddingbottom }} padding-bottom-mob-{{ section.settings.tpaddingbottommob }}">
+          <h2
+            class="margin-top-0 font-montserrat margin-bottom-0 font-size-{{ section.settings.tfontsize }} font-size-mob-{{ section.settings.tfontsizemob }} font-weight-{{ section.settings.tfontweight }}"
+            style="color: {{ section.settings.tcolor }};text-align:{{ section.settings.ttextalignment }};"
+          >
+            {{ section.settings['section-heading'] }}
+          </h2>
+        </div>
+      {% endif %}
+
+      <div class="how-to-use-block">
+        {%- for block in section.blocks -%}
+          <div class="how-to-use-block-main" style="background-color:{{- block.settings.bgcolor -}}">
+            <a
+              href="{{ block.settings.url }}"
+              class="how-to-use-main no-text-decoration"
+            >
+              <div class="how-to-use-image">
+                <img
+                  src="{{ block.settings.image | img_url:'master' }}"
+                  class="how-to-use-img"
+                  width="100%"
+                  height="100%"
+                >
+              </div>
+              <div
+                class="how-to-use-title margin-top-17 margin-bottom-17 margin-top-14 margin-bottom-14 font-montserrat padding-left-22 padding-right-mob-10 padding-left-mob-10 padding-right-22 font-size-{{ section.settings.btfontsize }} font-size-mob-{{ section.settings.btfontsizemob }} font-weight-{{ section.settings.btfontweight }}"
+                style="color:{{ block.settings.color }};text-align:{{ block.settings.textalignment }};"
+              >
+                <span
+                  class="how-to-use-index"
+                  style="color:{{ block.settings.bgcolor }};background-color:{{ block.settings.color }};"
+                >
+                  {{- forloop.index -}}
+                </span>
+                <span class="margin-top-0 margin-bottom-0">
+                  {{- block.settings.title -}}
+                </span>
+              </div>
+            </a>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "How to Use",
+  "settings": [
+    {
+      "type":"header",
+      "content":"Section Title"
+    },
+    {
+      "type": "text",
+      "id": "section-heading",
+      "default":"How to Use",
+      "label": "Title"
+    },
+    {
+      "type":"range",
+      "id":"tfontsize",
+      "label":"Font Size",
+      "default":40,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"tfontsizemob",
+      "label":"Font Size Mobile",
+      "default":34,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"tfontweight",
+      "label":"Font Weight",
+      "default":700,
+      "min":100,
+      "max":900,
+      "step":100
+    },
+    {
+      "type": "select",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "id": "ttextalignment",
+      "default": "center",
+      "label":"Title Alignment"
+    },
+    {
+      "type": "color",
+      "id": "tcolor",
+      "label": "Color"
+    },
+    {
+      "type":"number",
+      "id":"tpaddingbottom",
+      "default":24,
+      "label":"Bottom Spacing Desktop"
+    },
+    {
+      "type":"number",
+      "id":"tpaddingbottommob",
+      "default":18,
+      "label":"Bottom Spacing Mobile"
+    },
+    {
+      "type":"header",
+      "content":"Block Customization"
+    },
+    {
+      "type":"range",
+      "id":"gridperrow",
+      "label":"Column Per Row(Desktop)",
+      "default":4,
+      "min":1,
+      "max":6,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"gridperrowmob",
+      "label":"Column Per Row(Mobile)",
+      "default":2,
+      "min":1,
+      "max":3,
+      "step":1
+    },
+    {
+      "type":"header",
+      "content":"Block Title Customization"
+    },
+    {
+      "type":"range",
+      "id":"btfontsize",
+      "label":"Font Size",
+      "default":18,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"btfontsizemob",
+      "label":"Font Size Mobile",
+      "default":16,
+      "min":0,
+      "max":100,
+      "step":1
+    },
+    {
+      "type":"range",
+      "id":"btfontweight",
+      "label":"Font Weight",
+      "default":600,
+      "min":100,
+      "max":900,
+      "step":100
+    },
+    {
+      "type":"header",
+      "content":"Desktop Spacing"
+    },
+    {
+      "type":"number",
+      "id":"spaddingtop",
+      "default":72,
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"spaddingbottom",
+      "default":81,
+      "label":"Padding Bottom"
+    },
+    {
+      "type":"header",
+      "content":"Mobile Spacing"
+    },
+    {
+      "type":"number",
+      "id":"spaddingtopmob",
+      "default":50,
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"spaddingbottommob",
+      "default":50,
+      "label":"Padding Bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name":"Block",
+      "settings": [
+        {
+          "type":"header",
+          "content":"Image"
+        },
+        {
+          "type":"image_picker",
+          "id":"image",
+          "label":"Image",
+          "info": "Recommended Size - 1000px : 900px "
+        },
+        {
+          "type":"header",
+          "content":"Title"
+        },
+        {
+          "type":"richtext",
+          "id":"title",
+          "label":"Title"
+        },
+        {
+          "type":"url",
+          "id":"url",
+          "label":"URL"
+        },
+        {
+          "type":"header",
+          "content":"Color Customization"
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Text Color"
+        },
+        {
+          "type": "color",
+          "id":"bgcolor",
+          "label":"Background Color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"How to Use"
+    }
+  ]
+}
+{% endschema %}

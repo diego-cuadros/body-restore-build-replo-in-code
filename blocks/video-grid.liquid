@@ -1,0 +1,143 @@
+{% style %}
+  #shopify-block-{{ block.id }} .main-video-container {display:grid;grid-template-columns:repeat({{block.settings.count}} , 1fr);gap:8px;}
+  #shopify-block-{{ block.id }} .main-video-container .video-item .media-container {width:100%;border-radius:20px;overflow:hidden;position:relative;cursor:pointer;}
+  #shopify-block-{{ block.id }} .main-video-container .video-item .media-container .media {width:100%;padding-top:{{ block.settings.video-height }}%;position:relative;cursor:pointer;}
+  #shopify-block-{{ block.id }} .main-video-container .video-item .media-container .media video,
+  #shopify-block-{{ block.id }} .main-video-container .video-item .media-container .media img {width:100%;height:100%;position:absolute;top:0;right:0;bottom:0;left:0;object-fit:cover;}
+  #shopify-block-{{ block.id }} .main-video-container .video-item .media-container .media .play-btn {position:absolute;top:0;bottom:0;right:0;left:0;display:flex;flex-direction:row;align-items:center;justify-content:center;}
+  #shopify-block-{{ block.id }} .main-video-container .video-item .media-container .media .play-btn .icon{position:relative;width:45px;height:45px;border-radius:50%;border:2px solid #ffffff;display:flex;flex-direction:row;align-items:center;justify-content:center;}
+  #shopify-block-{{ block.id }} .main-video-container .video-item .media-container .media .play-btn .icon svg {width:13px;color:#FFFFFF;}
+  #shopify-block-{{ block.id }} .main-popup-container {position:fixed;top:0;bottom:0;right:0;left:0;width:100%;height:100%;z-index:99;display:none;}
+  #shopify-block-{{ block.id }} .main-popup-container .popup-container {position:relative;width:100%;height:100%;display:flex;flex-direction:row;align-items:center;justify-content:center; -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); background-color: #ffffff6b;}
+  #shopify-block-{{ block.id }} .main-popup-container .popup-container .video-container {position:relative;max-width:360px;width:100%;border-radius:6px;overflow:hidden; }
+  #shopify-block-{{ block.id }} .main-popup-container .popup-container .video-container .video{width:100%; height:100%;}
+  #shopify-block-{{ block.id }} .main-popup-container .popup-container .video-container video{ width:100%;height:100%; }
+  #shopify-block-{{ block.id }} .main-popup-container .popup-container .cross-popup-icon {position:absolute;z-index:11;cursor:pointer;top:20px;right:20px;height:40px;width:40px;padding:4px;display:flex;flex-direction:row;align-items:center;justify-content:center;border-radius:100px;background-color:#FFFFFF;}
+  #shopify-block-{{ block.id }} .main-popup-container .popup-container .cross-popup-icon svg {width:20px;}
+  #shopify-block-{{ block.id }} .main-popup-container .background-cross {position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-index:5;background:transparent;display:block;}
+  @media screen and (max-width:768px){
+  #shopify-block-{{ block.id }} .main-video-container {display:grid;grid-template-columns:repeat({{block.settings.count-mob}} , 1fr);gap:8px;}
+  }
+{% endstyle %}
+
+<div data-tab-content="tab-video-container" class="main-video-container">
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Video Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "uniqueid",
+      "label":"Unique ID"
+    },
+    {
+      "type":"number",
+      "id":"video-height",
+      "label":"Video Height",
+      "default":175
+    },
+    {
+      "type": "range",
+      "id": "count",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Grid Count",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "count-mob",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Mobile Grid Count",
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Spacing Customization"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "mobile Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Padding bottom",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type":"video"
+    }
+  ],
+  "presets": [
+    {
+      "name":"Video Grid",
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  //   $(document).ready(function () {
+  //   $(".media-container").on("click", function () {
+  //     let $popupContainer = $(this).closest(".video-item").find(".main-popup-container");
+  //     let $video = $popupContainer.find("video")[0];
+
+  //     $popupContainer.show(); // Show the popup
+  //     if ($video) {
+  //       $video.currentTime = 0; // Reset video to start
+  //       $video.play(); // Play video
+  //     }
+  //   });
+
+  //   $(".cross-popup").on("click", function () {
+  //     let $popupContainer = $(this).closest(".main-popup-container");
+  //     let $video = $popupContainer.find("video")[0];
+
+  //     if ($video) {
+  //       $video.pause(); // Pause video
+  //       $video.currentTime = 0; // Reset video to start
+  //     }
+
+  //     $popupContainer.hide(); // Hide the popup
+  //   });
+  // });
+</script>

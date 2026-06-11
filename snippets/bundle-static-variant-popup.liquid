@@ -1,0 +1,85 @@
+<div class="var-container">
+  {% render 'bundle-free-gift-info', block: block %}
+  <div class="products-grid">
+    {% assign product_list = product.metafields.custom.offer_ladder_products.value %}
+    {% if product_list %}
+      {% assign product_gift = product_list | parse_json %}
+      {% assign count = 0 %}
+      {% for product in product_gift %}
+        {% assign count = count | plus: 1 %}
+        {% render 'bundle-product-lists', product: product, block: block, count: count %}
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div class="main-gift-product-container">
+    {% if block.settings.pinfosale != blank %}
+      <div class="products-title">
+        <div
+          class="text font-size-{{ block.settings.salefontsize }} font-size-mob-{{ block.settings.salefontsizemob }} font-weight-{{ block.settings.salefontweight }}"
+          style="color:{{ block.settings.salecolor }};"
+        >
+          {{ block.settings.pinfosale }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% render 'bundle-page-progressbar', block: block, product: product %}
+
+    {% comment %}     {% render 'bundle-progressgrid', block: block %} {% endcomment %}
+
+   
+      <hr>
+      <div class="save-order-text">
+        <div class="save-container font-size-{{ block.settings.savinginfofontsize }} font-size-mob-{{ block.settings.savinginfofontsizemob }} font-weight-{{ block.settings.savinginfofontweight }}" style="color:{{ block.settings.savinginfocolor }};"><span class="saving-bundle-info"></span></div>
+        <div class="product-count-bundle font-size-{{ block.settings.savinginfofontsize }} font-size-mob-{{ block.settings.savinginfofontsizemob }} font-weight-{{ block.settings.savinginfofontweight }}">
+          <div class="product-total-heading">Total: </div>
+          <div class="text product-total-price"></div>
+        </div>
+      </div>
+    
+    <div class="error-msgs" style="display:none;"></div>
+    <div
+      class="flavour-btn-container flavour-checkout-atc-btn-container flavour-atc-btn-container inactive"
+      data-bpid="{{ product.selected_or_first_available_variant.id }}"
+    >
+      <div class="button button--full-width button--primary">
+        <div class="load-more__spinner">&nbsp;</div>
+          <div class="button-flavour-info button-flavour-info-checkout inactivebtn">
+            <span class="btn-text font-size-{{ section.settings.cfontsize }} font-size-mob-{{ section.settings.cfontsizemob }} font-weight-{{ section.settings.cfontweight }}">
+              {{- section.settings.cbutton -}}</span
+            ><span class="icon">
+              {% render 'right-arrow' %}
+            </span>
+          </div>
+        
+        <div class="button-flavour-info button-flavour-info-select">
+          <span class="button-flavour-info-text font-size-{{ section.settings.cfontsize }} font-size-mob-{{ section.settings.cfontsizemob }} font-weight-{{ section.settings.cfontweight }}">Please Select at Least <span class="selectvarcountbtn"></span></span>
+          <span class="button-flavour-count-main"><span class="total-count-product">0</span>/<span class="selectvarcount"></span></span>
+        </div>
+      </div>
+    </div>
+
+    {% if block.settings.productverinfo %}
+      <div
+        class="popup-icon-with-text"
+        style="background:{{ block.settings.vbgcolor }};border:1px dotted {{ block.settings.vbordercolor }};"
+      >
+        {% if block.settings.image != blank %}
+          <div class="popup-icon">
+            <img
+              src="{{ block.settings.image | img_url:'master' }}"
+              width="100%"
+              height="100%"
+            >
+          </div>
+        {% endif %}
+        <div
+          class="content font-size-{{ block.settings.vfontsize }} margin-top-0 margin-bottom-0 font-size-mob-{{ block.settings.vfontsizemob }} font-weight-{{ block.settings.vfontweight }}"
+          style="color:{{ block.settings.vcolor }}"
+        >
+          {{ block.settings.productverinfo }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

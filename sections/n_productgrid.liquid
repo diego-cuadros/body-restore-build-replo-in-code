@@ -1,0 +1,87 @@
+<div class="mbr_prdgrid" id="scrolltobundle">
+<div class="mbr_main">
+    <h2>{{ section.settings.title }}</h2>
+    <h5>{{ section.settings.subtitle }}</h5>
+    <div class="mbr_prdgrid_ul">
+        <div class="mbr_prdgrid_li">
+            <h3>{{ section.settings.product1.title }}</h3>
+            <img class="mainimg" src="{{ section.settings.product1.featured_image | img_url: '2000x' }}" alt=""/ width="auto" height="auto">
+            <div class="mbr_prdgrid_liprice">
+                <span class="reg">{{ section.settings.product1.price | money }}</span>
+            </div>
+            <div class="mbr_prdgrid_lides">{{ section.settings.product1.description }}</div>
+            <form method="post" action="/cart/add">
+                <input type="hidden" name="id" value="{{ section.settings.product1.variants.first.id }}" />
+                <input type="submit" value="Add to cart" class="btn" />
+            </form>
+            <span class="freeshp"><img src="https://cdn.shopify.com/s/files/1/0220/5935/2160/files/truck.svg?v=1765524579" alt=""/ width="auto" height="auto">FREE SHIPPING</span>
+        </div>
+        <div class="mbr_prdgrid_li mostpopular">
+            <h3>{{ section.settings.product2.title }}</h3>
+            <img class="mainimg" src="{{ section.settings.product2.featured_image | img_url: '2000x' }}" alt=""/ width="auto" height="auto">
+            <div class="mbr_prdgrid_liprice">
+                <span class="cmp">{{ section.settings.product2.compare_at_price | money }}</span>
+                <span class="reg">{{ section.settings.product2.price | money }}</span>
+            </div>
+            <div class="mbr_prdgrid_lides">{{ section.settings.product2.description }}</div>
+            <form method="post" action="/cart/add">
+                <input type="hidden" name="id" value="{{ section.settings.product2.variants.first.id }}" />
+                <input type="submit" value="Add to cart" class="btn" />
+            </form>
+            <span class="freeshp"><img src="https://cdn.shopify.com/s/files/1/0220/5935/2160/files/truck.svg?v=1765524579" alt=""/ width="auto" height="auto">FREE SHIPPING</span>
+        </div>
+        <div class="mbr_prdgrid_li bestdeal">
+            <h3>{{ section.settings.product3.title }}</h3>
+            <img class="mainimg" src="{{ section.settings.product3.featured_image | img_url: '2000x' }}" alt=""/ width="auto" height="auto">
+            <div class="mbr_prdgrid_liprice">
+                <span class="cmp">{{ section.settings.product3.compare_at_price | money }}</span>
+                <span class="reg">{{ section.settings.product3.price | money }}</span>
+            </div>
+            <div class="mbr_prdgrid_lides">{{ section.settings.product3.description }}</div>
+            <form method="post" action="/cart/add">
+                <input type="hidden" name="id" value="{{ section.settings.product3.variants.first.id }}" />
+                <input type="submit" value="Add to cart" class="btn" />
+            </form>
+            <span class="freeshp"><img src="https://cdn.shopify.com/s/files/1/0220/5935/2160/files/truck.svg?v=1765524579" alt=""/ width="auto" height="auto">FREE SHIPPING</span>
+        </div>
+    </div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "New Product Grid",
+    "settings": [
+      {
+       "type": "text",
+       "id": "title",
+       "label": "Title"
+      },
+      {
+       "type": "text",
+       "id": "subtitle",
+       "label": "Sub title"
+      },
+      {
+       "type": "product",
+       "id": "product1",
+       "label": "Product 1"
+      },
+      {
+       "type": "product",
+       "id": "product2",
+       "label": "Product 2"
+      },
+      {
+       "type": "product",
+       "id": "product3",
+       "label": "Product 3"
+      }
+    ],
+    "presets": [
+      {
+        "name": "New Product Grid"
+      }
+    ]
+  }
+{% endschema %}

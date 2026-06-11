@@ -1,0 +1,427 @@
+{% style %}
+  #shopify-section-{{section.id}} .fullwidth{width:100% !important;max-width:100% !important;}
+  #shopify-section-{{section.id}} {margin-top:{{section.settings.margintop}}px;}
+  #shopify-section-{{section.id}} .bright-video-wrapper{display:grid; min-height:690px;}
+  #shopify-section-{{section.id}} .bright-video-wrapper.media_first{grid-template-areas:'media content';grid-template-columns:1fr 1fr;}
+  #shopify-section-{{section.id}} .bright-video-wrapper.content_first{grid-template-areas:'content media';grid-template-columns:1fr 1fr;}
+  #shopify-section-{{section.id}} .bright-video-container{position:relative;padding-top:10%;height:100%;grid-area:media;top:0px;}
+  #shopify-section-{{section.id}} .bright-video-container video{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover;object-position:center;}
+  #shopify-section-{{section.id}} .bright-video-container img{position:absolute;top:0;left:0;height:100%;width:100%;object-fit:cover;object-position:center;}
+  #shopify-section-{{section.id}} .banner_inner_detail .button-landing-banner{cursor:pointer;} 
+  {% if section.settings.fullwidth %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:20px 15px 20px 115px;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;width:100%;}
+  {% else %}
+  {% if section.settings.content_position == 'image-first' %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:20px 0px 20px 65px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% else %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:20px 65px 20px 0px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% endif %}
+  {% endif %}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content {width:100%;display:flex;flex-direction:column;align-items:{{section.settings.align}};justify-content:center;text-align:{{section.settings.align}}; gap:0px;}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content h2 {line-height:1.15;}
+  #shopify-section-{{section.id}} .bright-video-content .heading{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .content{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .content p{margin:0px;line-height:1.4;}
+  #shopify-section-{{section.id}} .bright-video-content .brightangel-button{margin:20px auto 0px;display:flex;}
+  #shopify-section-{{section.id}} .speaker-button{position: absolute;top: auto;bottom:20px;left:20px;right: auto;}
+  #shopify-section-{{section.id}} .speaker-btn-icons{display:flex;gap:20px;}
+  #shopify-section-{{section.id}} .videobtns{cursor:pointer;display: flex;align-items: center;width: 24px;height: 24px;}
+  #shopify-section-{{section.id}} .star-link {text-decoration:none;}
+  #shopify-section-{{section.id}} .star-link .star-container{display:flex;flex-direction:row;align-items:center;justify-content:start; gap:10px;line-height:1.2;}
+  #shopify-section-{{section.id}} .star-link .star-container .stars {display:flex;flex-direction:row;align-items:center;justify-content:start;gap:4px;}
+  #shopify-section-{{section.id}} .star-link .star-container .stars svg{width:16px ;height:16px ;}
+  #shopify-section-{{section.id}} .desktop-view {display:block;}
+  #shopify-section-{{section.id}} .mobile-view {display:none;}
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'content' %}
+        .block--{{ block.id }} {text-align:{{block.settings.align}};}
+    {% endcase %}
+  {% endfor %}
+  @media screen and (max-width:1400px){
+  #shopify-section-{{section.id}} .bright-video-wrapper{display:grid; min-height:600px;}
+
+  {% if section.settings.fullwidth %}
+  #shopify-section-{{section.id}} .bright-video-content-container{padding-left:30px;}
+  {% endif %}
+  }
+  @media screen and (max-width:1024px){
+  #shopify-section-{{section.id}} .bright-video-wrapper{display:grid; min-height:450px;}
+
+  }
+  @media screen and (max-width:1200px){
+
+   {% if section.settings.fullwidth %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:20px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% else %}
+  {% if section.settings.content_position == 'image-first' %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:20px 0px 20px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% else %}
+  #shopify-section-{{section.id}} .bright-video-content-container{grid-area:content;padding:20px 30px 20px 0px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  {% endif %}
+  {% endif %}
+  }
+  @media screen and (max-width:990px){
+    #shopify-section-{{section.id}} .bright-video-wrapper{display:grid;min-height:400px;height:100%;}
+  #shopify-section-{{section.id}} .bright-video-content-container{padding-left:25px;}
+  }
+  @media screen and (max-width:768px){
+  #shopify-section-{{section.id}} .bright-video-container{position:relative; height: 350px;grid-area:media;top:0px; width: 100%;/*  height: 90vh; max-width: 100vh;*/}
+  #shopify-section-{{section.id}} {margin-top:{{section.settings.margintopmob}}px;}
+  #shopify-section-{{section.id}} .page-width {padding:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .heading{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content .content{margin-top:0px;}
+  #shopify-section-{{section.id}} .bright-video-wrapper{display:flex;flex-direction:column;min-height:200;}
+  #shopify-section-{{section.id}} .bright-video-container{ top:0px;}
+  #shopify-section-{{section.id}} .bright-video-content-container{padding:24px 20px;}
+  #shopify-section-{{section.id}} .bright-video-content-container .bright-video-content  {display:flex;flex-direction:column;align-items:{{section.settings.alignmob}};justify-content:center;text-align:{{section.settings.alignmob}}; }
+  #shopify-section-{{section.id}} .bright-video-content .brightangel-button{margin:12px auto 0px;}
+  #shopify-section-{{section.id}} .bright-video-container .custom-controls{position:absolute;z-index:9;bottom:20px;left:20px;}
+  #shopify-section-{{section.id}} .star-link .star-container .stars {display:flex;flex-direction:row;align-items:center;justify-content:start;gap:2px;}
+  #shopify-section-{{section.id}} .star-link .star-container{display:flex;flex-direction:row;align-items:center;justify-content:start; gap:6px;margin-bottom:5px;}
+  #shopify-section-{{section.id}} .star-link .star-container .stars svg{width:14px !important;height:14px !important;}
+  #shopify-section-{{section.id}} .desktop-view {display:none;}
+  #shopify-section-{{section.id}} .mobile-view {display:block;}
+  #shopify-section-{{section.id}} .bright-video-content-container{padding-left:15px;}
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'content' %}
+        .block--{{ block.id }} {text-align:{{block.settings.alignmob}};}
+    {% endcase %}
+  {% endfor %}
+  }
+  @media screen and (max-width:575px){
+  #shopify-section-{{section.id}} .bright-video-container{position:relative; height: 280px;}
+
+  }
+  @media screen and (max-width:320px){
+  #shopify-section-{{section.id}} .bright-video-container{position:relative; height: 250px;}
+
+  }
+{% endstyle %}
+
+{% if section.settings.image != blank or section.settings.video_url != blank %}
+  <landing-banner data-sectionid="{{ section.id }}">
+    <div class="{% if section.settings.fullwidth %}fullwidth {% else %}page-width{% endif %}">
+      <div
+        class="bright-video-wrapper {{ section.settings.content_position }} padding-top-{{ section.settings.padding_top }} padding-bottom-{{ section.settings.padding_bottom }} padding-top-mob-{{ section.settings.mobile_padding_top }} padding-bottom-mob-{{ section.settings.mobile_padding_bottom }}"
+        style="background:{{ section.settings.background }};"
+      >
+        <div class="bright-video-container">
+          {% if section.settings.media_type == 'image' %}
+            <img
+              src="{{ section.settings.image | img_url : 'master' }}"
+              {% if section.settings.imagemob != blank %}
+                class="desktop-view"
+              {% endif %}
+            >
+            {% if section.settings.imagemob != blank %}
+              <img src="{{ section.settings.imagemob | img_url : 'master' }}" class="mobile-view">
+            {% endif %}
+          {% else %}
+            <video
+              class="myVideo {% if section.settings.video_urlmob != blank %} desktop-view {% endif %}"
+              preload="metadata"
+              loop
+              playsinline
+              muted
+              autoplay
+            >
+              <source src="{{ section.settings.video_url }}#t=0.001">
+              <source src="{{ section.settings.video_url }}" type="video/quicktime">
+              <source src="{{ section.settings.video_url }}" type="video/mp4">
+              <source src="{{ section.settings.video_url }}" type="video/ogg">
+              <source src="{{ section.settings.video_url }}" type="video/webm">
+              <source src="{{ section.settings.video_url }}" type="video/3gp">
+              <source src="{{ section.settings.video_url }}" type="video/mov">
+            </video>
+            {% if section.settings.video_urlmob != blank %}
+              <video
+                class="myVideo mobile-view"
+                preload="metadata"
+                loop
+                playsinline
+                muted
+                autoplay
+              >
+                <source src="{{ section.settings.video_urlmob }}#t=0.001">
+                <source src="{{ section.settings.video_urlmob }}" type="video/quicktime">
+                <source src="{{ section.settings.video_urlmob }}" type="video/mp4">
+                <source src="{{ section.settings.video_urlmob }}" type="video/ogg">
+                <source src="{{ section.settings.video_urlmob }}" type="video/webm">
+                <source src="{{ section.settings.video_urlmob }}" type="video/3gp">
+                <source src="{{ section.settings.video_urlmob }}" type="video/mov">
+              </video>
+            {% endif %}
+          {% endif %}
+        </div>
+        <div class="inner_banner">
+          <div class="bright-video-content-container banner_inn_det   banner_inner_detail">
+            <div class="bright-video-content">
+              <div class="star-link">
+                <div class="star-container">
+                  <div class="stars">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewbox="0 0 21 21"
+                      fill="none"
+                    >
+                      <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ section.settings.svgcolor }}"></path>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewbox="0 0 21 21"
+                      fill="none"
+                    >
+                      <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ section.settings.svgcolor }}"></path>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewbox="0 0 21 21"
+                      fill="none"
+                    >
+                      <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ section.settings.svgcolor }}"></path>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewbox="0 0 21 21"
+                      fill="none"
+                    >
+                      <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ section.settings.svgcolor }}"></path>
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewbox="0 0 21 21"
+                      fill="none"
+                    >
+                      <path d="M20.833 7.40163L13.9221 6.76066L11.1768 0.386037C10.9846 -0.0603194 10.3518 -0.0603194 10.1596 0.386037L7.41437 6.7607L0.503418 7.40163C0.0195146 7.44651 -0.176055 8.04839 0.189039 8.3691L5.40337 12.9498L3.8774 19.7207C3.77056 20.1947 4.28255 20.5667 4.7004 20.3186L10.6682 16.775L16.636 20.3186C17.0539 20.5667 17.5659 20.1947 17.4591 19.7207L15.9331 12.9498L21.1474 8.3691C21.5125 8.04839 21.3169 7.44651 20.833 7.40163Z" fill="{{ section.settings.svgcolor }}"></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="text"
+                  >
+                    {{ section.settings.review_text }}
+                  </div>
+                </div>
+              </div>
+              <h2>{{ section.settings.banner_title }}</h2>
+              <p class="sub_title">{{ section.settings.sub_title }}</p>
+              {% if section.settings.banner_btn != blank %}
+                <a class="button-landing-banner">{{ section.settings.banner_btn }}</a>
+              {% endif %}
+              <p>{{ section.settings.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </landing-banner>
+{% endif %}
+{% schema %}
+{
+  "name": "Landing Banner New",
+  "settings": [
+    {
+      "type":"color",
+      "id":"background",
+      "label":"Background"
+    },
+    {
+      "type":"checkbox",
+      "id":"fullwidth",
+      "label":"Enable Full Width"
+    },
+    {
+      "type":"select",
+      "id":"content_position",
+      "options":[
+        {
+          "value":"media_first",
+          "label":"Media First"
+        },
+        {
+          "value":"content_first",
+          "label":"Content First"
+        }
+      ],
+      "default":"media_first",
+      "label":"Position"
+    },
+    {
+      "type":"select",
+      "id":"media_type",
+      "options":[
+        {
+          "value":"video",
+          "label":"Video"
+        },
+        {
+          "value":"image",
+          "label":"Image"
+        }
+      ],
+      "default":"image",
+      "label":"Media Type"
+    },
+    {
+      "type":"image_picker",
+      "id":"image",
+      "label":"Image",
+      "info":"Please upload 1000 x 1000 px size image"
+    },
+    {
+      "type":"image_picker",
+      "id":"imagemob",
+      "label":"Mobile Image",
+      "info":"Please upload 760 x 570 px size image"
+    },
+    {
+      "type": "text",
+      "label": "Video URL",
+      "id": "video_url",
+      "info":"Please upload 1000 x 1000 px size video, please upload video in .mp4 type."
+    },
+    {
+      "type": "text",
+      "label": "Mobile Video URL",
+      "id": "video_urlmob",
+      "info":"Please upload 760 x 570 px size video, please upload video in .mp4 type."
+    },
+     {
+        "type": "select",
+        "options": [
+          {
+            "value": "start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "Right"
+          }
+        ],
+        "id": "align",
+        "default": "center",
+       "label":"Content Alignment"
+      },
+     {
+        "type": "select",
+        "options": [
+          {
+            "value": "start",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "end",
+            "label": "Right"
+          }
+        ],
+        "id": "alignmob",
+        "default": "center",
+       "label":"Mobile Content Alignment"
+      },
+      {
+        "type":"color",
+        "id":"svgcolor",
+        "label":"Svg Color",
+        "default":"#FFC107"
+      },
+      {
+        "type":"text",
+        "id":"review_text",
+        "label":"Reivew Text"
+      },
+      {
+        "type":"text",
+        "id":"banner_title",
+        "label":"Title"
+      },
+      {
+        "type":"textarea",
+        "id":"sub_title",
+        "label":"Sub Title"
+      },
+      {
+        "type":"text",
+        "id":"banner_btn",
+        "label":"Button Text"
+      },
+      {
+        "type":"text",
+        "id":"text",
+        "label":" Text"
+      },
+    {
+      "type":"header",
+      "content":"Section Spacing"
+    },
+    {
+      "type":"number",
+      "id":"padding_top",
+      "label":"Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"padding_bottom",
+      "label":"Padding Bottom"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_top",
+      "label":"Mobile Padding Top"
+    },
+    {
+      "type":"number",
+      "id":"mobile_padding_bottom",
+      "label":"Mobile Padding Bottom"
+    },
+    {
+      "type":"header",
+      "content":"Margin Top Customization"
+    },
+    {
+      "type":"number",
+      "id":"margintop",
+      "label":"Margin Top"
+    },
+    {
+      "type":"number",
+      "id":"margintopmob",
+      "label":"Mobile Margin Top"
+    }
+  ],
+  "presets":[
+    {
+    "name": "Landing Banner New"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  $(document).ready(function(){
+  $(".button-landing-banner").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".featured-product-section-new-landing").offset().top},
+    'slow');
+  });
+  });
+</script>

@@ -1,0 +1,68 @@
+<div class="mbr_rvlgsld">
+    <div class="mbr_rvlgsld_logo aw_txtscr">
+      <div class="aw_txtscr_box oxel_logo_slider">
+        <div class="aw_txtscr_cnt oxel_logo_slider__image_carrier">
+          {% for block in section.blocks %}
+            <img src="{{ block.settings.logo | img_url: '1000x' }}" alt=""/ width="auto" height="auto">
+          {% endfor %}
+        </div>
+        <div class="aw_txtscr_cnt oxel_logo_slider__image_carrier oxel_logo_slider__image_carrier--delay">
+          {%- for block in section.blocks -%}
+            <img src="{{ block.settings.logo | img_url: '1000x' }}" alt=""/ width="auto" height="auto">
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+    <div class="mbr_rvlgsld_cnt">
+        <img src="{{ section.settings.star | img_url: '1000x' }}" alt=""/ width="auto" height="auto">
+        <div class="mbr_rvlgsld_cnt_tl">{{ section.settings.title }}</div>
+        <div class="mbr_rvlgsld_cnt_des1">{{ section.settings.desc1 }}</div>
+        <div class="mbr_rvlgsld_cnt_des2">{{ section.settings.desc2 }}</div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Review Logo Slider",
+    "settings": [
+      {
+       "type": "image_picker",
+       "id": "star",
+       "label": "Star"
+      },
+      {
+       "type": "text",
+       "id": "title",
+       "label": "Title"
+      },
+      {
+       "type": "text",
+       "id": "desc1",
+       "label": "Description 1"
+      },
+      {
+       "type": "text",
+       "id": "desc2",
+       "label": "Description 2"
+      }
+    ],
+    "blocks": [
+      {
+      "type": "scroller",
+      "name": "Scroller",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        }
+      ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Review Logo Slider"
+      }
+    ]
+  }
+{% endschema %}

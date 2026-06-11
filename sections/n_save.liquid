@@ -1,0 +1,145 @@
+<div class="mbr_save">
+    <div class="mbr_save_scroller">
+        <div class="aw_txtscr_box oxel_logo_slider">
+        <div class="aw_txtscr_cnt oxel_logo_slider__image_carrier">
+          {% for block in section.blocks %}
+            <span>{{ block.settings.content }}</span>
+          {% endfor %}
+        </div>
+        <div class="aw_txtscr_cnt oxel_logo_slider__image_carrier oxel_logo_slider__image_carrier--delay">
+          {%- for block in section.blocks -%}
+            <span>{{ block.settings.content }}</span>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+    <div class="mbr_main">
+        <div class="mbr_saveblk">
+            <div class="mbr_saveblk_lft">
+                <img class="mbr_save_rv" src="{{ section.settings.rvwimg | img_url: '1000x' }}" alt=""/ width="auto" height="auto">
+                <h2>{{ section.settings.title }}</h2>
+                <div class="mbr_p">{{ section.settings.des }}</div>
+                <img class="mbr_save_mbimg" src="{{ section.settings.mainimg | img_url: '1000x' }}" alt=""/ width="auto" height="auto">
+                <a class="mbr_save_btn" href="{{ section.settings.btnurl }}">{{ section.settings.btntext }}</a>
+                <div class="mbr_afbtn">
+                  <div class="mbr_afbtninn">
+                    <img src="{{ section.settings.aicon1 | img_url: '500x' }}" alt="" width="auto" height="auto" >
+                    {{ section.settings.atext1 }}
+                  </div>
+                  <div class="mbr_afbtninn">
+                    <img src="{{ section.settings.aicon2 | img_url: '500x' }}" alt="" width="auto" height="auto" >
+                    {{ section.settings.atext2 }}
+                  </div>
+                </div>
+              </div>
+            <div class="mbr_saveblk_rgt">
+                <img src="{{ section.settings.mainimg | img_url: '1000x' }}" alt=""/ width="auto" height="auto">
+            </div>
+        </div>
+    </div>
+    <div class="mbr_save_scroller">
+        <div class="aw_txtscr_box oxel_logo_slider">
+        <div class="aw_txtscr_cnt oxel_logo_slider__image_carrier">
+          {% for block in section.blocks %}
+            <span>{{ block.settings.content }}</span>
+          {% endfor %}
+        </div>
+        <div class="aw_txtscr_cnt oxel_logo_slider__image_carrier oxel_logo_slider__image_carrier--delay">
+          {%- for block in section.blocks -%}
+            <span>{{ block.settings.content }}</span>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+      $(document).ready(function() {
+        $('..mbr_save a').on('click', function(e) {
+            e.preventDefault(); 
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'slow'); 
+        });
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "Save Section",
+    "settings": [
+      {
+       "type": "image_picker",
+       "id": "rvwimg",
+       "label": "Review Image"
+      },
+      {
+       "type": "image_picker",
+       "id": "mainimg",
+       "label": "Main Image"
+      },
+      {
+       "type": "richtext",
+       "id": "title",
+       "label": "Title"
+      },
+      {
+       "type": "richtext",
+       "id": "des",
+       "label": "Description"
+      },
+      {
+       "type": "url",
+       "id": "btnurl",
+       "label": "Button URL"
+      },
+      {
+       "type": "text",
+       "id": "btntext",
+       "label": "Button Text"
+      },
+      {
+       "type": "header",
+       "content": "After Button Text"
+      },
+      {
+       "type": "image_picker",
+       "id": "aicon1",
+       "label": "Icon 1"
+      },
+      {
+       "type": "text",
+       "id": "atext1",
+       "label": "Text 1"
+      },
+      {
+       "type": "image_picker",
+       "id": "aicon2",
+       "label": "Icon 2"
+      },
+      {
+       "type": "text",
+       "id": "atext2",
+       "label": "Text 2"
+      }
+    ],
+    "blocks": [
+      {
+      "type": "scroller",
+      "name": "Scroller",
+      "settings": [
+        {
+           "type": "text",
+           "id": "content",
+           "label": "Content"
+        }
+      ]
+    }
+    ],
+    "presets": [
+      {
+        "name": "Save Section"
+      }
+    ]
+  }
+{% endschema %}
