@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "shopify-expert": {
+      "source": "Jeffallan/claude-skills",
+      "sourceType": "github",
+      "skillPath": "skills/shopify-expert/SKILL.md",
+      "computedHash": "b44431e08c55a0439ee41ed8893e6f6698f5e75e216b0a8f6c756cb5d461c016"
+    }
+  }
+}
