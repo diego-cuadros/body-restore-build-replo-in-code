@@ -10,7 +10,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
+      "type": "main-product-bottomless-v1",
       "blocks": {
         "title": {
           "type": "title",
