@@ -7,3 +7,41 @@
     font-size: 28px;
   }
 }
+
+.dc_okendo-and-text-container {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #6c7b91;
+  gap: 10px;
+}
+
+.oke-sr-count {
+  text-decoration: underline;
+  font-weight: 600;
+}
+.dc_okendo-companion-text {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 767px) {
+  .dc_okendo-and-text-container {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 6px;
+  }
+  .dc_okendo-and-text-container .oke-sr {
+    white-space: nowrap;
+  }
+  .oke-sr .oke-stars svg {
+    height: 14px;
+    width: auto;
+  }
+  .dc_okendo-and-text-container .oke-sr-count,
+  .dc_okendo-and-text-container .oke-sr-label-text {
+    font-size: 14px;
+  }
+  .dc_okendo-companion-text {
+    font-size: 14px;
+  }
+}

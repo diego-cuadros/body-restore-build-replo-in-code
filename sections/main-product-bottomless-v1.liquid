@@ -157,6 +157,11 @@
                   </h2>
                 </a>
               </div>
+            {% when 'okendo_companion_text' %}
+              <div class="dc_okendo-and-text-container">
+                {{ product.metafields.okendo.StarRatingSnippet }}
+                <div class="dc_okendo-companion-text">· {{ block.settings.companion_text }}</div>
+              </div>
             {%- when 'line' -%}
               <hr {{ block.shopify_attributes }}>
             {%- when 'price' -%}
@@ -1182,6 +1187,18 @@
       "type": "quantity_selector",
       "name": "t:sections.main-product.blocks.quantity_selector.name",
       "limit": 1
+    },
+    {
+      "type": "okendo_companion_text",
+      "name": "Okendo Companion Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "companion_text",
+          "label": "Companion Text"
+        }
+      ]
     },
     {
       "type": "variant_picker",
