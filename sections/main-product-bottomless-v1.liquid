@@ -39,6 +39,9 @@
   data-section="{{ section.id }}"
 >
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {% if template.suffix == 'bottomless-v1' %}
+    {{ 'custom-section-main-product.css' | asset_url | stylesheet_tag }}
+  {% endif %}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-slider.css' | asset_url | stylesheet_tag }}
