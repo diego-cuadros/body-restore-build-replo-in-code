@@ -73,3 +73,8 @@
     align-items: flex-start;
   }
 }
+
+.product__text {
+  font-size: 16px;
+  font-family: var(--font-body-family);
+}
