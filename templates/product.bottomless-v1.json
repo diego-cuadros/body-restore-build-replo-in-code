@@ -140,8 +140,8 @@
       },
       "block_order": [
         "title",
-        "vendor",
         "okendo_companion_text",
+        "vendor",
         "2b460a12-1b22-47a4-bb8a-98efeb2d036a",
         "price",
         "variant_picker",
