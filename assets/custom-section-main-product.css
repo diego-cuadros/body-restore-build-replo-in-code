@@ -8,6 +8,20 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .product__info-wrapper {
+    padding-left: 0px;
+  }
+  .page-width {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  media-gallery {
+    max-width: 575px;
+    margin: auto;
+  }
+}
+
 .dc_okendo-and-text-container {
   display: flex;
   align-items: center;
